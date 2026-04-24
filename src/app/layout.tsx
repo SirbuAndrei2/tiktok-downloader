@@ -7,7 +7,7 @@ import AdExitIntent from '@/components/ads/AdExitIntent'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
+const geist = Geist({ subsets: ['latin', 'latin-ext'], variable: '--font-geist' })
 
 const BASE = 'https://tokdown.org'
 
