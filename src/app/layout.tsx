@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Monetag MultiTag - Replace ZONE_ID with your actual ID from Monetag */}
         {process.env.NODE_ENV === 'production' && (
           <script
-            src="https://alwingulla.com/88/p.js?z=ZONE_ID_HERE"
+            src="https://alwingulla.com/88/p.js?z=10919698"
             data-cfasync="false"
             async
           />
