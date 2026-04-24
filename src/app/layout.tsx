@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   alternates: { canonical: BASE },
-  verification: { google: 'google596c504e1dad04d9' },
+  verification: { google: 'xnV1VhvvNYeWQ0Z4MLJ-EXoqJnNYQ1lssV64wTaiti0' },
 }
 
 const jsonLdSite = {
