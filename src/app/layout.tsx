@@ -57,6 +57,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   alternates: { canonical: BASE },
+  verification: { google: 'google596c504e1dad04d9' },
 }
 
 const jsonLdSite = {
