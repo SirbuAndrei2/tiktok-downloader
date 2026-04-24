@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import Downloader from '@/components/Downloader'
 
-const BASE = 'https://www.tokdown.org'
+const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
   title: 'TikTok Video Downloader — No Watermark, Free HD Download',

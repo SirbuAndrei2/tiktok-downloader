@@ -9,7 +9,7 @@ import './globals.css'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
 
-const BASE = 'https://www.tokdown.org'
+const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
