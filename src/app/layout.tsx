@@ -81,10 +81,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
 
-        {/* Monetag MultiTag - Replace ZONE_ID with your actual ID from Monetag */}
+        {/* Monetag MultiTag */}
         {process.env.NODE_ENV === 'production' && (
           <script
-            src="https://alwingulla.com/88/p.js?z=10919698"
+            src="https://quge5.com/88/tag.min.js"
+            data-zone="233102"
             data-cfasync="false"
             async
           />
