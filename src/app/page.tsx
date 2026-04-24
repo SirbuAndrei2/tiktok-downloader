@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     title: 'TikTok Video Downloader — No Watermark, Free HD',
     description: 'Paste any TikTok link and download without watermark in HD. Free, instant, all devices.',
     url: `${BASE}/`,
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
 }
 
@@ -41,6 +40,7 @@ const schemas = [
   { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'TikTok Video Downloader', url: `${BASE}/`, description: 'Free online tool to download TikTok videos without watermark in HD quality.', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
   { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to download a TikTok video without watermark', step: [{ '@type': 'HowToStep', position: 1, name: 'Copy TikTok link', text: 'Open TikTok, tap Share, then Copy link.' }, { '@type': 'HowToStep', position: 2, name: 'Paste into the downloader', text: 'Paste the link and click Download Video.' }, { '@type': 'HowToStep', position: 3, name: 'Save HD video', text: 'Click "HD · No Watermark" to download.' }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FAQ.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'TikTok Downloader', item: `${BASE}/` }] },
 ]
 
 export default function Page() {
@@ -91,6 +91,13 @@ export default function Page() {
                 in HD. Free, instant, no account needed.
               </p>
             </div>
+
+            {/* Intro paragraph — keyword-rich for SEO */}
+            <p className="text-sm max-w-lg mx-auto leading-relaxed" style={{ color: 'var(--t4)' }}>
+              TokDown lets you <strong style={{ color: 'var(--t2)' }}>download any TikTok video without watermark</strong> in HD quality — straight to your phone or PC.
+              Paste any public TikTok link, pick MP4 or MP3, and save it in seconds.
+              No app, no login, no limits. Works on iPhone, Android, Windows and Mac.
+            </p>
 
             {/* Steps */}
             <ol className="flex items-center gap-3 flex-wrap justify-center list-none p-0 m-0">

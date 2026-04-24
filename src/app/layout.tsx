@@ -45,13 +45,11 @@ export const metadata: Metadata = {
     siteName: 'TikTok Downloader',
     title: 'TikTok Video Downloader — No Watermark, Free HD',
     description: 'Download TikTok videos without watermark in HD quality. Free, instant, no login. Also extract audio as MP3.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'TikTok Downloader — No Watermark HD', type: 'image/png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TikTok Downloader — No Watermark, Free HD',
     description: 'Download TikTok videos without watermark in HD quality. Free, instant, no login.',
-    images: ['/og-image.png'],
   },
   icons: {
     icon: '/icon.png',
