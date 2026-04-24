@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
-import AdSidebar from '@/components/ads/AdSidebar'
-import AdStickyBottom from '@/components/ads/AdStickyBottom'
+// import AdSidebar from '@/components/ads/AdSidebar'
+// import AdStickyBottom from '@/components/ads/AdStickyBottom'
 import AdExitIntent from '@/components/ads/AdExitIntent'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -114,8 +114,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
 
         {/* ── Global Ad Units ─────────────────────────────────── */}
-        <AdSidebar />
-        <AdStickyBottom />
+        {/* <AdSidebar /> */}
+        {/* <AdStickyBottom /> */}
         {/* <AdExitIntent /> */}
         <Analytics />
       </body>
