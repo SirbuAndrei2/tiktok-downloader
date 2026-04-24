@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-const PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX' // Replace with your AdSense ID
+const PUB_ID = 'ca-pub-9408608842276737'
 const IS_DEV = process.env.NODE_ENV === 'development'
 
 interface Props {

@@ -98,16 +98,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         )}
 
-        {/* Google AdSense - Placeholder for later use */}
-        {/*
-        {process.env.NODE_ENV === 'production' && (
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-            crossOrigin="anonymous"
-          />
-        )}
-        */}
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9408608842276737"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen bg-black antialiased">
         {children}
