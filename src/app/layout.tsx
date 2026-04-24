@@ -4,6 +4,7 @@ import AdSidebar from '@/components/ads/AdSidebar'
 import AdStickyBottom from '@/components/ads/AdStickyBottom'
 import AdPopup from '@/components/ads/AdPopup'
 import AdExitIntent from '@/components/ads/AdExitIntent'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
@@ -54,8 +55,8 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   icons: {
-    icon: [{ url: '/favicon.ico', sizes: 'any' }, { url: '/icon.svg', type: 'image/svg+xml' }],
-    apple: '/apple-touch-icon.png',
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
   },
   manifest: '/manifest.json',
   alternates: { canonical: BASE },
@@ -108,6 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AdStickyBottom />
         <AdPopup />
         <AdExitIntent />
+        <Analytics />
       </body>
     </html>
   )
