@@ -24,8 +24,8 @@ export default function AdUnit({ slot, monetagZoneId, format = 'auto', style, cl
       // @ts-expect-error global injected by AdSense
       ;(window.adsbygoogle = window.adsbygoogle || []).push({})
       pushed.current = true
-    } catch {
-      // AdSense script not yet loaded
+    } catch (e) {
+      console.error('AdSense error:', e)
     }
   }, [slot])
 

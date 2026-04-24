@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
-const BASE = 'https://yourdomain.com'
-const NOW  = new Date()
+const BASE = 'https://www.tokdown.org'
+const NOW = new Date()
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

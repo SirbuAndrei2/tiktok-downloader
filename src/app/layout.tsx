@@ -9,7 +9,7 @@ import './globals.css'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
 
-const BASE = 'https://yourdomain.com'
+const BASE = 'https://www.tokdown.org'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={geist.variable}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
-        
+
         {/* Monetag MultiTag - Replace ZONE_ID with your actual ID from Monetag */}
         {process.env.NODE_ENV === 'production' && (
           <script

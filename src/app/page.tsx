@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import Downloader from '@/components/Downloader'
 
-const BASE = 'https://yourdomain.com'
+const BASE = 'https://www.tokdown.org'
 
 export const metadata: Metadata = {
   title: 'TikTok Video Downloader — No Watermark, Free HD Download',
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   { icon: '🚫', title: 'No Watermark', desc: 'Clean video without the TikTok logo burned in.' },
-  { icon: '🎬', title: 'HD Quality',   desc: 'Highest resolution the creator uploaded.' },
-  { icon: '🎵', title: 'MP3 Audio',    desc: 'Extract and save just the audio track.' },
-  { icon: '⚡', title: 'Instant',      desc: 'Processed in seconds, no queue.' },
-  { icon: '🔓', title: 'No Login',     desc: 'Zero accounts, zero registration.' },
-  { icon: '📱', title: 'All Devices',  desc: 'iPhone, Android, PC and Mac.' },
+  { icon: '🎬', title: 'HD Quality', desc: 'Highest resolution the creator uploaded.' },
+  { icon: '🎵', title: 'MP3 Audio', desc: 'Extract and save just the audio track.' },
+  { icon: '⚡', title: 'Instant', desc: 'Processed in seconds, no queue.' },
+  { icon: '🔓', title: 'No Login', desc: 'Zero accounts, zero registration.' },
+  { icon: '📱', title: 'All Devices', desc: 'iPhone, Android, PC and Mac.' },
 ]
 
 const FAQ = [
@@ -74,7 +74,7 @@ export default function Page() {
               aria-hidden
             >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.18 8.18 0 004.78 1.54V7.11a4.85 4.85 0 01-1.01-.42z"/>
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.18 8.18 0 004.78 1.54V7.11a4.85 4.85 0 01-1.01-.42z" />
               </svg>
             </div>
 
@@ -101,7 +101,7 @@ export default function Page() {
                   </div>
                   {i < 2 && (
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,45,85,0.5)" strokeWidth="2.5" strokeLinecap="round" aria-hidden>
-                      <path d="M9 18l6-6-6-6"/>
+                      <path d="M9 18l6-6-6-6" />
                     </svg>
                   )}
                 </li>
@@ -166,7 +166,7 @@ export default function Page() {
           <div style={{ maxWidth: 672, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, textAlign: 'center' }}>
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: 'var(--grad-brand)' }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.18 8.18 0 004.78 1.54V7.11a4.85 4.85 0 01-1.01-.42z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.18 8.18 0 004.78 1.54V7.11a4.85 4.85 0 01-1.01-.42z" /></svg>
               </div>
               <span className="text-sm font-bold text-gradient">TikTok Downloader</span>
             </div>
