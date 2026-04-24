@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import Downloader from '@/components/Downloader'
+import AdUnit from '@/components/ads/AdUnit'
 
 const BASE = 'https://tokdown.org'
 
@@ -119,6 +120,14 @@ export default function Page() {
                 <span key={t} className="text-xs font-medium" style={{ color: 'var(--t4)' }}>{t}</span>
               ))}
             </div>
+
+            {/* Banner 1: Middle after Downloader */}
+            <AdUnit 
+              monetagZoneId="7654321" 
+              className="mt-4 mb-2 max-w-full overflow-hidden" 
+              style={{ minHeight: 90 }}
+              label="Horizontal Banner"
+            />
           </section>
 
           {/* ── Features ──────────────────────────────────────── */}
@@ -139,6 +148,14 @@ export default function Page() {
                 </div>
               ))}
             </div>
+            
+            {/* Banner 2: Above FAQ */}
+            <AdUnit 
+              monetagZoneId="7654321" 
+              className="mt-10 mb-2 max-w-full overflow-hidden" 
+              style={{ minHeight: 250 }}
+              label="Square/Native Banner"
+            />
           </section>
 
           {/* ── FAQ ───────────────────────────────────────────── */}
