@@ -1,0 +1,26 @@
+# TikTok Downloader
+
+> Free online tool to download TikTok videos without watermark in HD quality.
+
+## About
+TikTok Downloader allows users to paste a TikTok video URL and download it without the watermark. It also supports extracting the audio and downloading it as an MP3 file.
+
+## Features
+- **No Watermark:** Download videos clean, without the TikTok logo.
+- **HD Quality:** Videos are downloaded in the highest available quality.
+- **MP3 Extraction:** Option to download just the audio track.
+- **Free & No Login:** Completely free to use, no registration required.
+
+## How to Use
+1. Find a video on TikTok and click "Copy Link".
+2. Paste the link into the input field on the homepage.
+3. Click the "Download" button.
+4. Select your desired format (Video without watermark, HD Video, or MP3 Audio).
+
+## Legal
+- [Terms of Service](/terms)
+- [Privacy Policy](/privacy)
+- [DMCA](/dmca)
+- [Disclaimer](/disclaimer)
+
+*Note: This tool is not affiliated with TikTok or ByteDance.*
