@@ -117,7 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ── Global Ad Units ─────────────────────────────────── */}
         <AdSidebar />
         <AdStickyBottom />
-        <AdPopup />
+        {/* <AdPopup /> */}
         <AdExitIntent />
         <Analytics />
       </body>
