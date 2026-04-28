@@ -73,11 +73,26 @@ const jsonLdSite = {
   },
 }
 
+const jsonLdOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TikTok Downloader',
+  url: BASE,
+  logo: `${BASE}/icon.png`,
+  sameAs: [],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'blastsky00@gmail.com',
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={geist.variable}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />
 
         {/* Monetag MultiTag */}
         {process.env.NODE_ENV === 'production' && (

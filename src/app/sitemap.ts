@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 const BASE = 'https://tokdown.org'
-const LEGAL_DATE = new Date('2025-01-15')
+const LEGAL_DATE = new Date('2025-04-24')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

@@ -1,17 +1,42 @@
 import type { Metadata } from 'next'
 import LegalLayout from '@/components/legal/LegalLayout'
 
+const BASE = 'https://tokdown.org'
+
 export const metadata: Metadata = {
   title: 'Privacy Policy — TikTok Downloader',
-  description: 'Privacy Policy for TikTok Downloader. Learn what data we collect, how we use it, and your rights.',
+  description: 'Privacy Policy for TikTok Downloader. We do not store your videos or personal data. Learn exactly what we collect, how we use it, and your GDPR rights.',
+  alternates: { canonical: `${BASE}/privacy` },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Privacy Policy — TikTok Downloader',
+    description: 'We do not store videos or personal data. Read our full privacy policy, data retention practices, and your rights under GDPR.',
+    url: `${BASE}/privacy`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy — TikTok Downloader',
+    description: 'We do not store videos or personal data. Read our full privacy policy and your rights.',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TikTok Downloader', item: `${BASE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${BASE}/privacy` },
+  ],
 }
 
 const UPDATED = 'April 24, 2025'
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <LegalLayout
       title="Privacy Policy"
       subtitle="We believe in full transparency about how this service handles your data."
       lastUpdated={UPDATED}
@@ -164,16 +189,17 @@ export default function PrivacyPage() {
             <p>
               For any privacy-related questions or requests, please contact us at:{' '}
               <a
-                href="mailto:legal@yourdomain.com"
+                href="mailto:blastsky00@gmail.com"
                 className="underline"
                 style={{ color: 'var(--brand-pink)' }}
               >
-                legal@yourdomain.com
+                blastsky00@gmail.com
               </a>
             </p>
           ),
         },
       ]}
     />
+    </>
   )
 }

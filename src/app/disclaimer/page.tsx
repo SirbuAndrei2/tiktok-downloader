@@ -1,17 +1,42 @@
 import type { Metadata } from 'next'
 import LegalLayout from '@/components/legal/LegalLayout'
 
+const BASE = 'https://tokdown.org'
+
 export const metadata: Metadata = {
   title: 'Disclaimer — TikTok Downloader',
-  description: 'Disclaimer for TikTok Downloader. Read about limitations of liability and our independence from TikTok.',
+  description: 'Disclaimer for TikTok Downloader. This tool is independent of TikTok and ByteDance. Read our limitations of liability, user responsibilities, and copyright notice.',
+  alternates: { canonical: `${BASE}/disclaimer` },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Disclaimer — TikTok Downloader',
+    description: 'This service is independent of TikTok and ByteDance. Read our full disclaimer covering liability, user responsibility, and copyright.',
+    url: `${BASE}/disclaimer`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Disclaimer — TikTok Downloader',
+    description: 'This service is independent of TikTok and ByteDance. Read our full disclaimer.',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TikTok Downloader', item: `${BASE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Disclaimer', item: `${BASE}/disclaimer` },
+  ],
 }
 
 const UPDATED = 'April 24, 2025'
 
 export default function DisclaimerPage() {
   return (
-    <LegalLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <LegalLayout
       title="Disclaimer"
       subtitle="Important information about the nature and limitations of this Service."
       lastUpdated={UPDATED}
@@ -146,16 +171,17 @@ export default function DisclaimerPage() {
             <p>
               For any questions regarding this Disclaimer:{' '}
               <a
-                href="mailto:legal@yourdomain.com"
+                href="mailto:blastsky00@gmail.com"
                 className="underline"
                 style={{ color: 'var(--brand-pink)' }}
               >
-                legal@yourdomain.com
+                blastsky00@gmail.com
               </a>
             </p>
           ),
         },
       ]}
     />
+    </>
   )
 }

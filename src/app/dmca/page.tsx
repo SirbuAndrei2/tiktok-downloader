@@ -1,17 +1,42 @@
 import type { Metadata } from 'next'
 import LegalLayout from '@/components/legal/LegalLayout'
 
+const BASE = 'https://tokdown.org'
+
 export const metadata: Metadata = {
   title: 'DMCA Policy — TikTok Downloader',
-  description: 'DMCA takedown policy for TikTok Downloader. Submit copyright infringement notices here.',
+  description: 'DMCA takedown policy for TikTok Downloader. We respect copyright and respond to valid infringement notices within 48 hours. Learn how to submit a notice.',
+  alternates: { canonical: `${BASE}/dmca` },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'DMCA Policy — TikTok Downloader',
+    description: 'We respect intellectual property rights and respond to valid DMCA takedown notices promptly. Read our full DMCA policy.',
+    url: `${BASE}/dmca`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'DMCA Policy — TikTok Downloader',
+    description: 'We respect copyright and respond to valid DMCA notices promptly. Read our policy.',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TikTok Downloader', item: `${BASE}/` },
+    { '@type': 'ListItem', position: 2, name: 'DMCA Policy', item: `${BASE}/dmca` },
+  ],
 }
 
 const UPDATED = 'April 24, 2025'
 
 export default function DmcaPage() {
   return (
-    <LegalLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <LegalLayout
       title="DMCA Policy"
       subtitle="We respect intellectual property rights and respond promptly to valid takedown notices."
       lastUpdated={UPDATED}
@@ -47,11 +72,11 @@ export default function DmcaPage() {
               <p>
                 <strong style={{ color: 'white' }}>Contact:</strong>{' '}
                 <a
-                  href="mailto:dmca@yourdomain.com"
+                  href="mailto:blastsky00@gmail.com"
                   className="underline"
                   style={{ color: 'var(--brand-pink)' }}
                 >
-                  dmca@yourdomain.com
+                  blastsky00@gmail.com
                 </a>
               </p>
             </>
@@ -133,11 +158,11 @@ export default function DmcaPage() {
               If you believe material was wrongly blocked, you may submit a counter-notification
               under 17 U.S.C. § 512(g) to{' '}
               <a
-                href="mailto:dmca@yourdomain.com"
+                href="mailto:blastsky00@gmail.com"
                 className="underline"
                 style={{ color: 'var(--brand-pink)' }}
               >
-                dmca@yourdomain.com
+                blastsky00@gmail.com
               </a>.
               The counter-notification must include your contact information, identification of the
               blocked URL, a statement under penalty of perjury that you have a good faith belief
@@ -168,5 +193,6 @@ export default function DmcaPage() {
         },
       ]}
     />
+    </>
   )
 }
