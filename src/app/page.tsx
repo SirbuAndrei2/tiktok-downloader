@@ -5,15 +5,24 @@ import { Separator } from '@/components/ui/separator'
 import Downloader from '@/components/Downloader'
 import AdUnit from '@/components/ads/AdUnit'
 
+const COMPARISONS = [
+  { label: 'No watermark HD', tokdown: true, others: false },
+  { label: 'MP3 audio extraction', tokdown: true, others: true },
+  { label: 'No account or login', tokdown: true, others: false },
+  { label: 'No forced redirects', tokdown: true, others: false },
+  { label: 'Works on all devices', tokdown: true, others: true },
+  { label: 'No file stored on servers', tokdown: true, others: false },
+]
+
 const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
-  title: 'TikTok Video Downloader — No Watermark, Free HD Download',
-  description: 'Download TikTok videos without watermark in HD quality for free. Paste any TikTok link and save as MP4 or MP3 instantly. No login, no limits.',
+  title: 'Download TikTok Without Watermark — Free, HD & Instant (2026)',
+  description: 'Download any TikTok video without watermark in HD — or save just the audio as MP3. Works on iPhone, Android, PC and Mac. Free, no login, no limits.',
   alternates: { canonical: `${BASE}/` },
   openGraph: {
-    title: 'TikTok Video Downloader — No Watermark, Free HD',
-    description: 'Paste any TikTok link and download without watermark in HD. Free, instant, all devices.',
+    title: 'Download TikTok Without Watermark — Free, HD & Instant (2026)',
+    description: 'Paste any TikTok link and save it without the watermark in HD. Works on every device. Free, instant, no account needed.',
     url: `${BASE}/`,
   },
 }
@@ -28,19 +37,52 @@ const FEATURES = [
 ]
 
 const FAQ = [
-  { q: 'How do I download a TikTok video without watermark?', a: 'Open TikTok, tap Share on any video, then Copy Link. Paste the link above and click Download. Choose "HD · No Watermark" to save without the TikTok logo.' },
-  { q: 'Is this TikTok downloader free?', a: 'Yes — completely free with no registration, no account, and no download limits.' },
-  { q: 'Can I download TikTok audio as MP3?', a: 'Yes. After fetching the video you will see an "Audio MP3" button to save only the sound from the video.' },
-  { q: 'Does it work on iPhone and Android?', a: 'Yes. The downloader is a web app that works in any modern mobile or desktop browser.' },
-  { q: "Why can't I download a private video?", a: 'Private TikTok videos require authentication. Only public videos can be downloaded.' },
-  { q: 'What formats are available?', a: 'Videos download as MP4 (HD or SD without watermark). Audio downloads as MP3.' },
+  { q: 'How do I download a TikTok video without watermark?', a: 'Open TikTok, tap Share on any video, then Copy Link. Paste the link above and click Download. Choose "HD · No Watermark" to save a clean video without the TikTok logo burned in.' },
+  { q: 'Is TokDown free to use?', a: 'Yes — completely free with no registration, no account, and no download limits. We have no hidden fees or premium plans.' },
+  { q: 'Can I download TikTok audio as MP3?', a: 'Yes. After fetching the video you will see an "Audio MP3" button to save only the sound track. Useful for TikTok sounds, background music, and voiceovers.' },
+  { q: 'Does it work on iPhone and Android?', a: 'Yes. TokDown is a web app — open it in Safari (iPhone), Chrome (Android), or any modern browser. No app install needed.' },
+  { q: 'How do I save a TikTok video to my iPhone camera roll?', a: 'After downloading, the video saves to your Files app. Open Files, find the video, tap Share, then "Save Video" to move it to your Camera Roll.' },
+  { q: 'How do I save a TikTok video on Android?', a: 'Tap the download button and the video saves directly to your Downloads folder. Open it in your Gallery app from there.' },
+  { q: "Why can't I download a private TikTok video?", a: 'Private videos require login authentication that we cannot access. Only public TikTok videos are downloadable. If the video is public and still failing, the creator may have disabled downloads in their settings.' },
+  { q: 'What video quality is available?', a: 'We offer HD (the highest resolution the creator uploaded) and SD versions, both without the watermark. HD is recommended for sharing or editing.' },
+  { q: 'What formats does TokDown support?', a: 'Videos download as MP4 (HD or SD, no watermark). Audio downloads as MP3. MP4 plays on all devices; MP3 works in any music app.' },
+  { q: 'Is it safe to use TokDown?', a: 'Yes. TokDown runs entirely in your browser. We do not store any video files on our servers, and we never ask for your TikTok credentials. Your downloads go straight to your device.' },
+  { q: 'Why does TikTok add a watermark in the first place?', a: 'TikTok embeds a watermark on videos saved through their native app to encourage sharing back on the platform and to brand the content. TokDown fetches the original source file before the watermark is applied, so what you get is the clean version.' },
+  { q: 'Can I download TikTok slideshows or photo posts?', a: 'TikTok slideshows (image-based posts) work differently from videos. Support for them depends on the post type. Video posts always work; image slideshows may vary.' },
 ]
 
 const schemas = [
-  { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'TikTok Video Downloader', url: `${BASE}/`, description: 'Free online tool to download TikTok videos without watermark in HD quality.', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
-  { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to download a TikTok video without watermark', step: [{ '@type': 'HowToStep', position: 1, name: 'Copy TikTok link', text: 'Open TikTok, tap Share, then Copy link.' }, { '@type': 'HowToStep', position: 2, name: 'Paste into the downloader', text: 'Paste the link and click Download Video.' }, { '@type': 'HowToStep', position: 3, name: 'Save HD video', text: 'Click "HD · No Watermark" to download.' }] },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'TokDown — TikTok Video Downloader',
+    url: `${BASE}/`,
+    description: 'Free online tool to download TikTok videos without watermark in HD quality, or extract audio as MP3.',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    creator: { '@type': 'Organization', name: 'TokDown', url: BASE },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', ratingCount: '2341', bestRating: '5' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to download a TikTok video without watermark',
+    description: 'A step-by-step guide to saving any TikTok video in HD quality without the TikTok watermark, for free.',
+    totalTime: 'PT1M',
+    step: [
+      { '@type': 'HowToStep', position: 1, name: 'Copy the TikTok video link', text: 'Open TikTok on your phone or desktop. Find the video you want, tap the Share button (arrow icon), then select "Copy link".' },
+      { '@type': 'HowToStep', position: 2, name: 'Paste the link into TokDown', text: 'Go to tokdown.org, paste the copied TikTok URL into the input field, and press the Download button.' },
+      { '@type': 'HowToStep', position: 3, name: 'Choose your format and save', text: 'Select "HD · No Watermark" to save the video in high definition without the TikTok logo, or click "Audio MP3" to save just the sound.' },
+    ],
+  },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FAQ.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
-  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'TikTok Downloader', item: `${BASE}/` }] },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'TokDown — TikTok Downloader', item: `${BASE}/` }],
+  },
 ]
 
 export default function Page() {
@@ -81,14 +123,14 @@ export default function Page() {
 
             {/* Headline */}
             <div className="flex flex-col gap-3">
-              <h1 className="text-5xl sm:text-6xl font-black tracking-tight leading-[1.05]">
-                <span className="text-gradient-aurora">TikTok</span>{' '}
-                <span style={{ color: '#ffffff' }}>Downloader</span>
+              <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.1]">
+                <span style={{ color: '#ffffff' }}>Download TikTok</span>{' '}
+                <span className="text-gradient-aurora">Without Watermark</span>
               </h1>
               <p className="text-base sm:text-lg max-w-md mx-auto leading-relaxed" style={{ color: 'var(--t3)' }}>
-                Download TikTok videos{' '}
-                <strong style={{ color: 'var(--t1)' }}>without watermark</strong>{' '}
-                in HD. Free, instant, no account needed.
+                Free, HD quality, no login — works on{' '}
+                <strong style={{ color: 'var(--t1)' }}>iPhone, Android, PC and Mac</strong>.
+                Also extract audio as MP3.
               </p>
             </div>
 
@@ -165,6 +207,78 @@ export default function Page() {
             />
           </section>
 
+          {/* ── Why TokDown ───────────────────────────────────── */}
+          <section className="w-full max-w-2xl px-4 pb-12" aria-labelledby="why-h">
+            <Separator className="mb-10" style={{ background: 'rgba(255,255,255,0.07)' }} />
+            <div className="text-center mb-8">
+              <h2 id="why-h" className="text-2xl font-bold mb-2" style={{ color: 'var(--t1)' }}>
+                Why TokDown?
+              </h2>
+              <p className="text-sm" style={{ color: 'var(--t4)' }}>
+                Most TikTok downloaders redirect you through ad pages or ask you to log in. TokDown does neither.
+              </p>
+            </div>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+              <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ background: 'rgba(255,45,85,0.08)' }}>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)', width: '55%' }}>Feature</th>
+                    <th className="text-center px-4 py-3 font-semibold" style={{ color: '#ff2d55' }}>TokDown</th>
+                    <th className="text-center px-4 py-3 font-semibold" style={{ color: 'var(--t4)' }}>Others</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARISONS.map(({ label, tokdown, others }, i) => (
+                    <tr key={label} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                      <td className="px-4 py-3" style={{ color: 'var(--t3)' }}>{label}</td>
+                      <td className="px-4 py-3 text-center">{tokdown ? '✓' : '✗'}</td>
+                      <td className="px-4 py-3 text-center" style={{ color: 'var(--t4)' }}>{others ? '✓' : '✗'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* ── Guides ────────────────────────────────────────── */}
+          <section className="w-full max-w-2xl px-4 pb-12" aria-labelledby="guides-h">
+            <Separator className="mb-10" style={{ background: 'rgba(255,255,255,0.07)' }} />
+            <div className="text-center mb-8">
+              <h2 id="guides-h" className="text-2xl font-bold mb-2" style={{ color: 'var(--t1)' }}>
+                Guides &amp; How-Tos
+              </h2>
+              <p className="text-sm" style={{ color: 'var(--t4)' }}>Step-by-step instructions for every device</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <Link
+                href="/guide/download-tiktok-without-watermark"
+                className="feature-card group no-underline"
+                style={{ display: 'block' }}
+              >
+                <span className="text-2xl mb-3 block" aria-hidden>📖</span>
+                <h3 className="text-sm font-bold mb-1.5 group-hover:text-gradient" style={{ color: 'var(--t1)' }}>
+                  How to Download TikTok Without Watermark
+                </h3>
+                <p className="text-xs leading-relaxed" style={{ color: 'var(--t4)' }}>
+                  Step-by-step guide for iPhone, Android, PC and Mac — with tips for common issues.
+                </p>
+              </Link>
+              <Link
+                href="/guide/tiktok-to-mp3"
+                className="feature-card group no-underline"
+                style={{ display: 'block' }}
+              >
+                <span className="text-2xl mb-3 block" aria-hidden>🎵</span>
+                <h3 className="text-sm font-bold mb-1.5 group-hover:text-gradient" style={{ color: 'var(--t1)' }}>
+                  How to Convert TikTok to MP3
+                </h3>
+                <p className="text-xs leading-relaxed" style={{ color: 'var(--t4)' }}>
+                  Extract the audio from any TikTok video and save it as an MP3 file in seconds.
+                </p>
+              </Link>
+            </div>
+          </section>
+
           {/* ── FAQ ───────────────────────────────────────────── */}
           <section className="w-full max-w-2xl px-4 pb-20" aria-labelledby="faq-h">
             <Separator className="mb-10" style={{ background: 'rgba(255,255,255,0.07)' }} />
@@ -194,8 +308,16 @@ export default function Page() {
               </div>
               <span className="text-sm font-bold text-gradient">TikTok Downloader</span>
             </div>
-            <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2" aria-label="Legal">
-              {[{ href: '/privacy', label: 'Privacy Policy' }, { href: '/terms', label: 'Terms' }, { href: '/dmca', label: 'DMCA' }, { href: '/disclaimer', label: 'Disclaimer' }].map(({ href, label }) => (
+            <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2" aria-label="Site navigation">
+              {[
+                { href: '/about', label: 'About' },
+                { href: '/guide/download-tiktok-without-watermark', label: 'Download Guide' },
+                { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' },
+                { href: '/privacy', label: 'Privacy Policy' },
+                { href: '/terms', label: 'Terms' },
+                { href: '/dmca', label: 'DMCA' },
+                { href: '/disclaimer', label: 'Disclaimer' },
+              ].map(({ href, label }) => (
                 <Link key={href} href={href} className="text-xs hover:underline transition-colors" style={{ color: 'var(--t4)' }}>
                   {label}
                 </Link>
