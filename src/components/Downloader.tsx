@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card } from '@/components/ui/card'
@@ -26,6 +27,7 @@ type State =
   | { status: 'error'; message: string }
 
 export default function Downloader() {
+  const t = useTranslations('Downloader')
   const [url, setUrl] = useState('')
   const [state, setState] = useState<State>({ status: 'idle' })
   const inputRef = useRef<HTMLInputElement>(null)
@@ -50,10 +52,10 @@ export default function Downloader() {
         body: JSON.stringify({ url: trimmed }),
       })
       const json = await res.json()
-      if (!res.ok) { setState({ status: 'error', message: json.error ?? 'Something went wrong.' }); return }
+      if (!res.ok) { setState({ status: 'error', message: json.error ?? t('errorNetwork') }); return }
       setState({ status: 'success', data: json })
     } catch {
-      setState({ status: 'error', message: 'Network error. Please try again.' })
+      setState({ status: 'error', message: t('errorNetwork') })
     }
   }
 
@@ -77,7 +79,6 @@ export default function Downloader() {
           {/* URL row */}
           <div className="flex gap-2">
             <div className="relative flex-1">
-              {/* Link icon */}
               <span className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'oklch(0.45 0.015 265)' }}>
                 <LinkIcon />
               </span>
@@ -86,7 +87,7 @@ export default function Downloader() {
                 type="url"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                placeholder="https://www.tiktok.com/@user/video/..."
+                placeholder={t('placeholder')}
                 className="pl-9 pr-9 h-11 text-sm glow-border"
                 style={{ background: 'var(--s2)', borderColor: 'oklch(0.22 0.012 265)', color: '#fff' }}
                 disabled={isLoading}
@@ -101,7 +102,7 @@ export default function Downloader() {
                   style={{ color: 'oklch(0.45 0.015 265)' }}
                   onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
                   onMouseLeave={e => (e.currentTarget.style.color = 'oklch(0.45 0.015 265)')}
-                  aria-label="Clear"
+                  aria-label={t('clear')}
                 >
                   <XIcon />
                 </button>
@@ -116,7 +117,7 @@ export default function Downloader() {
               className="h-11 px-4 gap-1.5 btn-ghost border-0 text-sm"
             >
               <ClipboardIcon />
-              <span className="hidden sm:inline">Paste</span>
+              <span className="hidden sm:inline">{t('paste')}</span>
             </Button>
           </div>
 
@@ -131,12 +132,12 @@ export default function Downloader() {
                 <svg className="spin w-4 h-4" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="3" strokeDasharray="31.4" strokeDashoffset="10" strokeLinecap="round" />
                 </svg>
-                Fetching video…
+                {t('fetching')}
               </>
             ) : (
               <>
                 <DownArrowIcon />
-                Download Video
+                {t('download')}
               </>
             )}
           </Button>
@@ -167,7 +168,7 @@ export default function Downloader() {
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium" style={{ color: '#ffaaaa' }}>{state.message}</p>
             <button onClick={reset} className="mt-1 text-xs underline" style={{ color: 'rgba(255,100,100,0.6)' }}>
-              Try again
+              {t('tryAgain')}
             </button>
           </div>
         </div>
@@ -185,7 +186,7 @@ export default function Downloader() {
             onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
             onMouseLeave={e => (e.currentTarget.style.color = 'oklch(0.45 0.015 265)')}
           >
-            ← Download another video
+            {t('downloadAnother')}
           </button>
         </div>
       )}
@@ -194,13 +195,13 @@ export default function Downloader() {
 }
 
 /* Icons */
-const svg = (d: string, w = 16) => (
-  <svg width={w} height={w} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d={d} />
-  </svg>
-)
-
-function LinkIcon() { return svg('M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71') }
+function LinkIcon() {
+  return (
+    <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+    </svg>
+  )
+}
 function XIcon() { return (<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>) }
 function ClipboardIcon() { return (<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>) }
 function DownArrowIcon() { return (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>) }

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
@@ -23,11 +24,12 @@ function proxy(url: string, filename: string, type = 'video') {
 }
 
 export default function VideoResult({ data }: { data: VideoData }) {
+  const t = useTranslations('VideoResult')
   const base = (data.title.slice(0, 40).replace(/[^a-z0-9 ]/gi, '') || 'tiktok')
     .trim().replace(/\s+/g, '-').toLowerCase()
 
   return (
-    <Card className="overflow-hidden glass border-0 p-0" role="region" aria-label="Download options">
+    <Card className="overflow-hidden glass border-0 p-0" role="region" aria-label={t('downloadOptions')}>
 
       {/* ── Top: thumbnail + info ─────────────────────────────── */}
       <div className="flex gap-4 p-5">
@@ -41,7 +43,6 @@ export default function VideoResult({ data }: { data: VideoData }) {
             ? <Image src={data.cover} alt={data.title || 'thumbnail'} fill sizes="108px" className="object-cover" unoptimized />
             : <div className="w-full h-full flex items-center justify-center" style={{ color: 'var(--s4)' }}><TkIcon /></div>
           }
-          {/* Play overlay */}
           <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.25)' }}>
             <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)' }}>
               <svg width="11" height="11" viewBox="0 0 12 12" fill="white"><path d="M2 1.5l8 4.5-8 4.5V1.5z"/></svg>
@@ -92,33 +93,30 @@ export default function VideoResult({ data }: { data: VideoData }) {
       {/* ── Download buttons ──────────────────────────────────── */}
       <div className="p-4 flex flex-col sm:flex-row gap-2.5">
 
-        {/* HD — primary gradient */}
         <a href={proxy(data.hdplay || data.play, `${base}-hd.mp4`)} download className="dl-btn dl-btn-primary">
           <span className="flex-shrink-0 opacity-80"><VideoIcon /></span>
           <span className="flex flex-col min-w-0">
-            <span className="font-bold text-xs truncate">HD · No Watermark</span>
-            <span className="text-[10px] opacity-60">Best quality</span>
+            <span className="font-bold text-xs truncate">{t('hdTitle')}</span>
+            <span className="text-[10px] opacity-60">{t('hdDesc')}</span>
           </span>
           <span className="ml-auto opacity-50 flex-shrink-0"><DlIcon /></span>
         </a>
 
-        {/* SD — ghost */}
         <a href={proxy(data.play, `${base}-sd.mp4`)} download className="dl-btn dl-btn-secondary">
           <span className="flex-shrink-0 opacity-70"><VideoIcon /></span>
           <span className="flex flex-col min-w-0">
-            <span className="font-semibold text-xs truncate">SD · No Watermark</span>
-            <span className="text-[10px] opacity-50">Smaller file</span>
+            <span className="font-semibold text-xs truncate">{t('sdTitle')}</span>
+            <span className="text-[10px] opacity-50">{t('sdDesc')}</span>
           </span>
           <span className="ml-auto opacity-40 flex-shrink-0"><DlIcon /></span>
         </a>
 
-        {/* Audio */}
         {data.music && (
           <a href={proxy(data.music, `${base}.mp3`, 'audio')} download className="dl-btn dl-btn-secondary">
             <span className="flex-shrink-0 opacity-70"><MusicIcon /></span>
             <span className="flex flex-col min-w-0">
-              <span className="font-semibold text-xs truncate">Audio MP3</span>
-              <span className="text-[10px] opacity-50">Music only</span>
+              <span className="font-semibold text-xs truncate">{t('audioTitle')}</span>
+              <span className="text-[10px] opacity-50">{t('audioDesc')}</span>
             </span>
             <span className="ml-auto opacity-40 flex-shrink-0"><DlIcon /></span>
           </a>

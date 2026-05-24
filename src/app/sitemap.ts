@@ -4,55 +4,43 @@ const BASE = 'https://tokdown.org'
 const LEGAL_DATE = new Date('2025-04-24')
 const GUIDE_DATE = new Date('2026-05-01')
 
+const CONTENT_ROUTES = [
+  { path: '/',      priority: 1.0, changeFrequency: 'daily'   as const },
+  { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/guide/download-tiktok-without-watermark', priority: 0.9, changeFrequency: 'monthly' as const },
+  { path: '/guide/tiktok-to-mp3',                     priority: 0.9, changeFrequency: 'monthly' as const },
+]
+
+const LEGAL_ROUTES = [
+  { path: '/privacy',    priority: 0.3, changeFrequency: 'yearly' as const },
+  { path: '/terms',      priority: 0.3, changeFrequency: 'yearly' as const },
+  { path: '/dmca',       priority: 0.3, changeFrequency: 'yearly' as const },
+  { path: '/disclaimer', priority: 0.3, changeFrequency: 'yearly' as const },
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${BASE}/`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    {
-      url: `${BASE}/about`,
-      lastModified: GUIDE_DATE,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/guide/download-tiktok-without-watermark`,
-      lastModified: GUIDE_DATE,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE}/guide/tiktok-to-mp3`,
-      lastModified: GUIDE_DATE,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE}/privacy`,
-      lastModified: LEGAL_DATE,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${BASE}/terms`,
-      lastModified: LEGAL_DATE,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${BASE}/dmca`,
-      lastModified: LEGAL_DATE,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${BASE}/disclaimer`,
-      lastModified: LEGAL_DATE,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-  ]
+  const contentDate = new Date()
+
+  const enRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
+    url: `${BASE}${path}`,
+    lastModified: path === '/' ? contentDate : GUIDE_DATE,
+    changeFrequency,
+    priority,
+  }))
+
+  const deRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
+    url: `${BASE}/de${path}`,
+    lastModified: path === '/' ? contentDate : GUIDE_DATE,
+    changeFrequency,
+    priority: priority * 0.95,
+  }))
+
+  const legalRoutes = LEGAL_ROUTES.map(({ path, priority, changeFrequency }) => ({
+    url: `${BASE}${path}`,
+    lastModified: LEGAL_DATE,
+    changeFrequency,
+    priority,
+  }))
+
+  return [...enRoutes, ...deRoutes, ...legalRoutes]
 }
