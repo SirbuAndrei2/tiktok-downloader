@@ -124,11 +124,21 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />
 
-        {/* Monetag MultiTag */}
+        {/* Monetag MultiTag zone 233102 */}
         {process.env.NODE_ENV === 'production' && (
           <script
             src="https://quge5.com/88/tag.min.js"
             data-zone="233102"
+            data-cfasync="false"
+            async
+          />
+        )}
+
+        {/* Monetag MultiTag zone 245447 */}
+        {process.env.NODE_ENV === 'production' && (
+          <script
+            src="https://quge5.com/88/tag.min.js"
+            data-zone="245447"
             data-cfasync="false"
             async
           />
