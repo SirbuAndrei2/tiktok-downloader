@@ -4,7 +4,6 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
-import AdExitIntent from '@/components/ads/AdExitIntent'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 
@@ -22,8 +21,11 @@ export const metadata: Metadata = {
     'The simplest TikTok downloader: save any video without watermark in HD, extract audio as MP3, works on iPhone, Android and PC. Free, instant, no account needed.',
   keywords: [
     'tiktok downloader', 'tiktok video downloader', 'download tiktok without watermark',
-    'tiktok no watermark', 'tiktok to mp3', 'save tiktok video', 'tiktok hd download',
-    'tiktok downloader online', 'download tiktok video free', 'tiktok video saver',
+    'tiktok no watermark', 'tiktok to mp3', 'tiktok to mp4', 'save tiktok video',
+    'tiktok hd download', 'tiktok downloader online', 'download tiktok video free',
+    'tiktok video saver', 'download tiktok on iphone', 'download tiktok on android',
+    'save tiktok to camera roll', 'tiktok downloader no watermark', 'snaptik alternative',
+    'ssstiktok alternative', 'free tiktok downloader', 'tiktok mp4 download',
   ],
   authors: [{ name: 'TokDown Team', url: `${BASE}/about` }],
   creator: 'TokDown',
@@ -141,12 +143,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           />
         )}
 
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9408608842276737"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className="min-h-screen bg-black antialiased">
         <NextIntlClientProvider messages={messages}>

@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card } from '@/components/ui/card'
 import VideoResult from './VideoResult'
-import AdUnit from './ads/AdUnit'
 
 interface VideoData {
   id: string
@@ -69,9 +68,6 @@ export default function Downloader() {
 
   return (
     <div className="flex flex-col gap-4 w-full">
-      {/* Top ad */}
-      <AdUnit slot="1234567890" format="horizontal" label="Top inline 728×90" style={{ minHeight: 90 }} className="w-full rounded-xl overflow-hidden" />
-
       {/* Input card */}
       <Card className="p-5 flex flex-col gap-4 glass border-0 shadow-none">
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -178,7 +174,6 @@ export default function Downloader() {
       {state.status === 'success' && (
         <div className="flex flex-col gap-4 fade-up">
           <VideoResult data={state.data} />
-          <AdUnit slot="0987654321" format="rectangle" label="Post-download 300×250" style={{ minHeight: 250 }} className="w-full rounded-xl overflow-hidden" />
           <button
             onClick={reset}
             className="text-xs text-center transition-colors"
