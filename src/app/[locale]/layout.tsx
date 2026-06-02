@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -7,7 +7,7 @@ import { routing } from '@/i18n/routing'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 
-const geist = Geist({ subsets: ['latin', 'latin-ext'], variable: '--font-geist' })
+const geist = GeistSans
 
 const BASE = 'https://tokdown.org'
 
