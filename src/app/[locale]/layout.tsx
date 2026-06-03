@@ -134,16 +134,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           />
         )}
 
-        {/* Monetag MultiTag zone 245447 */}
-        {process.env.NODE_ENV === 'production' && (
-          <script
-            src="https://quge5.com/88/tag.min.js"
-            data-zone="245447"
-            data-cfasync="false"
-            async
-          />
-        )}
-
         {/* Monetag Vignette */}
         {process.env.NODE_ENV === 'production' && (
           <script
