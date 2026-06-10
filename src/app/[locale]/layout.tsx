@@ -66,6 +66,7 @@ export const metadata: Metadata = {
     languages: {
       'en': BASE,
       'de': `${BASE}/de`,
+      'ar': `${BASE}/ar`,
     },
   },
   verification: { google: 'xnV1VhvvNYeWQ0Z4MLJ-EXoqJnNYQ1lssV64wTaiti0' },
@@ -100,7 +101,7 @@ const jsonLdOrg = {
     '@type': 'ContactPoint',
     contactType: 'customer support',
     email: 'support@tokdown.org',
-    availableLanguage: ['English', 'German'],
+    availableLanguage: ['English', 'German', 'Arabic'],
   },
 }
 
@@ -118,8 +119,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages()
 
+  const dir = locale === 'ar' ? 'rtl' : 'ltr'
+
   return (
-    <html lang={locale} className={geist.variable}>
+    <html lang={locale} dir={dir} className={geist.variable}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />

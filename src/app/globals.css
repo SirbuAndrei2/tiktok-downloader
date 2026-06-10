@@ -261,3 +261,8 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─── RTL (Arabic) ───────────────────────────────────────────── */
+[dir="rtl"] {
+  font-family: 'Segoe UI', 'Tahoma', 'Arial', system-ui, sans-serif;
+}

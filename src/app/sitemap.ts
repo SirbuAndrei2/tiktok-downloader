@@ -43,6 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: priority * 0.95,
   }))
 
+  const arRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
+    url: `${BASE}/ar${path}`,
+    lastModified: path === '/' ? contentDate : GUIDE_DATE,
+    changeFrequency,
+    priority: priority * 0.95,
+  }))
+
   const newGuideRoutes = NEW_GUIDE_ROUTES.map(({ path, priority, date }) => ({
     url: `${BASE}${path}`,
     lastModified: date,
@@ -57,5 +64,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }))
 
-  return [...enRoutes, ...deRoutes, ...newGuideRoutes, ...legalRoutes]
+  return [...enRoutes, ...deRoutes, ...arRoutes, ...newGuideRoutes, ...legalRoutes]
 }
