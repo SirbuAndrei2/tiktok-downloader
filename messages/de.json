@@ -136,6 +136,38 @@
       {
         "q": "Kann ich TikTok-Diashows oder Foto-Beiträge herunterladen?",
         "a": "TikTok-Diashows (bildbasierte Beiträge) funktionieren anders als Videos. Die Unterstützung hängt vom Beitragstyp ab. Video-Beiträge funktionieren immer; Bild-Diashows können variieren."
+      },
+      {
+        "q": "Ist es sicher, TikTok-Videos herunterzuladen?",
+        "a": "Ja. TokDown fragt nie nach deinem TikTok-Login, speichert keine Videos auf seinen Servern und läuft vollständig in deinem Browser. Dein Download ist eine direkte Verbindung zwischen deinem Gerät und TikToks CDN. Wir haben keinen Zugriff auf dein TikTok-Konto."
+      },
+      {
+        "q": "Wie lade ich TikTok herunter, ohne eine App zu installieren?",
+        "a": "Öffne tokdown.org in einem beliebigen Browser auf deinem Smartphone oder Computer — Safari, Chrome, Firefox oder Edge. Keine App oder Installation erforderlich. Einfach Link einfügen und herunterladen."
+      },
+      {
+        "q": "Kann ich TikTok-Videos auf einem PC oder Laptop herunterladen?",
+        "a": "Ja. Öffne tokdown.org in Chrome, Edge oder Firefox unter Windows oder Mac. Füge den TikTok-Link ein und klicke auf Herunterladen. Das Video wird als MP4-Datei in deinem Downloads-Ordner gespeichert."
+      },
+      {
+        "q": "Warum ist mein heruntergeladenes TikTok-Video unscharf?",
+        "a": "Du hast wahrscheinlich die SD-Option statt HD ausgewählt. Wähle \"HD · Kein Wasserzeichen\" für die beste Qualität. Achte auch darauf, dass deine Internetverbindung während des Downloads stabil war."
+      },
+      {
+        "q": "Wie lange dauert ein TikTok-Download?",
+        "a": "Die meisten Downloads dauern 5–15 Sekunden. Längere Videos (3–10 Minuten) oder langsamere Internetverbindungen können bis zu 30 Sekunden benötigen. Es gibt keine Warteschlangen."
+      },
+      {
+        "q": "Ist das Herunterladen von TikTok-Videos legal?",
+        "a": "Das Herunterladen von TikTok-Videos für den persönlichen, nicht-kommerziellen Gebrauch ist in den meisten Ländern generell legal. Was nicht erlaubt ist — und rechtliche Risiken birgt — ist das Hochladen, Weiterverbreiten oder kommerzielle Nutzen fremder Inhalte ohne ausdrückliche Erlaubnis."
+      },
+      {
+        "q": "Kann ich TikTok-Livestreams herunterladen?",
+        "a": "Nein. TikTok-Livestreams werden in Echtzeit übertragen und sind nicht als herunterladbare Videodateien gespeichert. Nur aufgezeichnete (nicht-live) öffentliche TikTok-Videos können mit TokDown heruntergeladen werden."
+      },
+      {
+        "q": "Funktioniert TokDown ohne TikTok-Konto?",
+        "a": "Ja. TokDown funktioniert nur mit öffentlich verfügbaren TikTok-Videos und benötigt kein TikTok-Konto. Füge einfach den öffentlichen Video-Link ein und lade herunter."
       }
     ]
   },
@@ -308,6 +340,66 @@
         "problem": "Audio wird vorzeitig abgebrochen",
         "fix": "TikTok-Videos können bis zu 10 Minuten lang sein. Stelle sicher, dass dein Download vollständig abgeschlossen wurde. Eine langsame Verbindung kann zu unvollständigen Downloads führen."
       }
+    ]
+  },
+  "GuideIphone": {
+    "metaTitle": "TikTok-Videos auf iPhone herunterladen — In Kamerarolle speichern (2026)",
+    "metaDescription": "Speichere beliebige TikTok-Videos ohne Wasserzeichen in der iPhone-Kamerarolle. Schritt-für-Schritt-Anleitung für iOS Safari — keine App, kein Account, kostenlos.",
+    "h1": "TikTok auf iPhone herunterladen",
+    "subtitle": "Speichere beliebige TikTok-Videos in HD in der Kamerarolle — ohne Wasserzeichen, ohne App, ohne TikTok-Konto. Funktioniert in Safari auf jedem iPhone.",
+    "stepsTitle": "Schritt für Schritt: TikTok in iPhone-Kamerarolle speichern",
+    "tipsTitle": "iPhone-spezifische Tipps",
+    "troubleshootTitle": "Fehlerbehebung auf iPhone",
+    "ctaText": "Bereit? Füge einen TikTok-Link ein — kein Login nötig.",
+    "ctaButton": "TikTok-Video herunterladen →",
+    "steps": [
+      { "title": "TikTok öffnen und Video finden", "body": "Öffne die TikTok-App auf deinem iPhone und scrolle zum Video, das du speichern möchtest." },
+      { "title": "Teilen → Link kopieren", "body": "Tippe auf das Teilen-Symbol (Pfeil nach rechts) rechts neben dem Video. Im Share-Sheet tippe auf \"Link kopieren\". Die Video-URL ist jetzt in deiner Zwischenablage." },
+      { "title": "Safari öffnen und TokDown aufrufen", "body": "Öffne Safari auf deinem iPhone. Gib tokdown.org in die Adressleiste ein. Tippe auf das Eingabefeld und füge den TikTok-Link ein (langes Drücken → Einsetzen)." },
+      { "title": "Download tippen und HD auswählen", "body": "Tippe auf den Download-Button. Wenn die Optionen erscheinen, wähle \"HD · Kein Wasserzeichen\"." },
+      { "title": "Video aus Dateien in Kamerarolle speichern", "body": "Auf iPhone werden Downloads in der Dateien-App gespeichert. Öffne Dateien → Downloads. Langes Drücken auf die Videodatei → Teilen → \"Video sichern\". Das Video ist jetzt in deiner Fotomediathek." }
+    ],
+    "tips": [
+      { "title": "Safari verwenden, nicht den TikTok-internen Browser", "body": "TikToks eingebauter Browser blockiert Downloads. Öffne tokdown.org immer in Safari — nicht innerhalb der TikTok-App." },
+      { "title": "iOS 16+ hat einen Download-Indikator in Safari", "body": "Ab iOS 16 zeigt Safari einen Download-Fortschrittsindikator in der Toolbar. Tippe darauf, um deine heruntergeladene Datei sofort zu sehen." },
+      { "title": "Standard-Download-Speicherort festlegen", "body": "Einstellungen → Safari → Downloads → \"Auf meinem iPhone\" für einfachen Zugriff in der Dateien-App." },
+      { "title": "Kein Tageslimit", "body": "TokDown hat kein Download-Limit. Öffne mehrere Links in neuen Safari-Tabs und verschiebe alle Dateien danach in die Kamerarolle." }
+    ],
+    "troubleshoot": [
+      { "problem": "\"Download fehlgeschlagen\" oder keine Optionen erscheinen", "fix": "Stelle sicher, dass das Video öffentlich ist. Kopiere den vollständigen Link über Teilen → Link kopieren — nicht aus der Adressleiste." },
+      { "problem": "Option \"Video sichern\" nicht im Share-Sheet sichtbar", "fix": "Scrolle im Share-Sheet nach unten. Stelle auch sicher, dass der Fotos-Zugriff in Einstellungen → Datenschutz → Fotos gewährt ist." },
+      { "problem": "Videodatei wird als .webm gespeichert oder spielt nicht ab", "fix": "Ändere die Dateierweiterung in der Dateien-App: Langes Drücken → Umbenennen → .mp4 eingeben." },
+      { "problem": "Download ist sehr langsam", "fix": "HD-Dateien können 20–80 MB groß sein. Wechsle zu WLAN für schnellere Downloads." }
+    ]
+  },
+  "GuideAndroid": {
+    "metaTitle": "TikTok-Videos auf Android herunterladen — In Galerie speichern (2026)",
+    "metaDescription": "Lade beliebige TikTok-Videos ohne Wasserzeichen auf dein Android-Smartphone herunter — Samsung, Xiaomi, Huawei und alle Android-Marken. Kostenlos, HD, keine App.",
+    "h1": "TikTok auf Android herunterladen",
+    "subtitle": "Speichere beliebige TikTok-Videos in HD in deiner Galerie — kein Wasserzeichen, keine App, kein Konto. Funktioniert auf Samsung, Xiaomi, Huawei und allen Android-Geräten.",
+    "stepsTitle": "Schritt für Schritt: TikTok in Android-Galerie speichern",
+    "tipsTitle": "Android-spezifische Tipps",
+    "troubleshootTitle": "Fehlerbehebung auf Android",
+    "ctaText": "Bereit? Füge einen TikTok-Link ein und speichere ihn in deiner Galerie.",
+    "ctaButton": "TikTok-Video herunterladen →",
+    "steps": [
+      { "title": "TikTok öffnen und Video finden", "body": "Öffne die TikTok-App und navigiere zum Video, das du speichern möchtest." },
+      { "title": "Teilen → Link kopieren", "body": "Tippe auf das Teilen-Symbol rechts neben dem Video → \"Link kopieren\". Die URL ist in deiner Zwischenablage." },
+      { "title": "Chrome öffnen und TokDown aufrufen", "body": "Öffne Chrome auf deinem Android-Gerät. Gehe zu tokdown.org und füge den TikTok-Link ein." },
+      { "title": "Download tippen und HD auswählen", "body": "Tippe auf den Download-Button und wähle \"HD · Kein Wasserzeichen\"." },
+      { "title": "Video in Galerie finden", "body": "Das Video wird direkt im Downloads-Ordner gespeichert. Öffne die Galerie-App oder den Dateimanager, um es zu finden." }
+    ],
+    "tips": [
+      { "title": "Beim ersten Download Speicherberechtigung erteilen", "body": "Auf Android 12 und älter kann Chrome nach einer Speicherberechtigung fragen. Tippe auf \"Zulassen\"." },
+      { "title": "Samsung Galerie erkennt Downloads automatisch", "body": "Auf Samsung-Geräten erscheinen heruntergeladene Videos sofort in der Galerie unter \"Downloads\"." },
+      { "title": "Xiaomi / MIUI-Nutzer", "body": "Den eingebauten Browser oder Chrome verwenden. Video wird in Downloads gespeichert und erscheint in Fotos unter Alben → Downloads." },
+      { "title": "Direkt aus der Download-Benachrichtigung teilen", "body": "Nach dem Download zeigt Android eine Benachrichtigung. Tippe drauf zum Öffnen oder langes Drücken zum direkten Teilen." }
+    ],
+    "troubleshoot": [
+      { "problem": "Download startet, aber Datei ist 0 Bytes", "fix": "Passiert bei langsamen Verbindungen. Versuche es erneut im WLAN und prüfe den verfügbaren Speicherplatz." },
+      { "problem": "Video erscheint nicht in der Galerie", "fix": "Öffne die Dateien-App und prüfe den Downloads-Ordner manuell. Manche Versionen benötigen einen Moment zur Aktualisierung." },
+      { "problem": "Chrome fragt, ob mit externer App öffnen", "fix": "Tippe stattdessen auf \"Herunterladen\" → \"Datei herunterladen\"." },
+      { "problem": "\"Download blockiert\"-Warnung in Chrome", "fix": "Tippe auf \"Trotzdem herunterladen\" — TokDown liefert nur Standard MP4/MP3-Dateien." }
     ]
   }
 }

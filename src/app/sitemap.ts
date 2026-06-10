@@ -10,13 +10,17 @@ const CONTENT_ROUTES = [
   { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/guide/download-tiktok-without-watermark', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/guide/tiktok-to-mp3',                     priority: 0.9, changeFrequency: 'monthly' as const },
+  { path: '/guide/download-tiktok-on-iphone',         priority: 0.9, changeFrequency: 'monthly' as const },
+  { path: '/guide/download-tiktok-on-android',        priority: 0.9, changeFrequency: 'monthly' as const },
 ]
 
 const NEW_GUIDE_ROUTES = [
-  { path: '/guide/tiktok-to-mp4',               priority: 0.9,  date: GUIDE_DATE_NEW },
-  { path: '/guide/download-tiktok-on-iphone',   priority: 0.85, date: GUIDE_DATE_NEW },
-  { path: '/guide/download-tiktok-on-android',  priority: 0.85, date: GUIDE_DATE_NEW },
-  { path: '/guide/snaptik-alternative',         priority: 0.8,  date: GUIDE_DATE_NEW },
+  { path: '/guide/tiktok-to-mp4',                    priority: 0.9,  date: GUIDE_DATE_NEW },
+  { path: '/guide/snaptik-alternative',              priority: 0.8,  date: GUIDE_DATE_NEW },
+  { path: '/guide/tiktok-downloader-chrome',         priority: 0.85, date: GUIDE_DATE_NEW },
+  { path: '/guide/download-tiktok-private-video',    priority: 0.85, date: GUIDE_DATE_NEW },
+  { path: '/guide/tiktok-video-to-gif',              priority: 0.8,  date: GUIDE_DATE_NEW },
+  { path: '/guide/download-tiktok-playlist',         priority: 0.8,  date: GUIDE_DATE_NEW },
 ]
 
 const LEGAL_ROUTES = [
