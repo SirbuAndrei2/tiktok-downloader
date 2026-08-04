@@ -7,6 +7,8 @@ import { routing } from '@/i18n/routing'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 
+import CookieConsent from '@/components/CookieConsent'
+
 const geist = GeistSans
 
 const BASE = 'https://tokdown.org'
@@ -127,29 +129,17 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />
 
-        {/* Monetag MultiTag zone 233102 */}
-        {process.env.NODE_ENV === 'production' && (
-          <script
-            src="https://quge5.com/88/tag.min.js"
-            data-zone="233102"
-            data-cfasync="false"
-            async
-          />
-        )}
-
-        {/* Monetag Vignette */}
-        {process.env.NODE_ENV === 'production' && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(s){s.dataset.zone='10919813',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`,
-            }}
-          />
-        )}
-
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9408608842276737"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen bg-black antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <CookieConsent />
         </NextIntlClientProvider>
         <Analytics />
       </body>

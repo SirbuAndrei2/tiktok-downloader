@@ -165,10 +165,9 @@ export default async function Page({ params }: Props) {
             </div>
 
             <AdUnit
-              monetagZoneId="7654321"
               className="mt-4 mb-2 max-w-full overflow-hidden"
               style={{ minHeight: 90 }}
-              label="Horizontal Banner"
+              format="horizontal"
             />
           </section>
 
@@ -190,10 +189,9 @@ export default async function Page({ params }: Props) {
             </div>
 
             <AdUnit
-              monetagZoneId="7654321"
               className="mt-10 mb-2 max-w-full overflow-hidden"
               style={{ minHeight: 250 }}
-              label="Square/Native Banner"
+              format="rectangle"
             />
           </section>
 

@@ -100,12 +100,11 @@ export default function PrivacyPage() {
           ),
         },
         {
-          title: '5. Third-Party Advertising (Google AdSense)',
+          title: '5. Third-Party Advertising & Cookies (Google AdSense)',
           content: (
             <>
               <p>
-                This Service uses Google AdSense to display advertisements. Google AdSense is operated by
-                Google LLC and is subject to Google's own privacy policy at{' '}
+                This Service uses Google AdSense to serve advertisements. Google AdSense is operated by Google LLC and is subject to Google&apos;s Privacy Policy at{' '}
                 <a
                   href="https://policies.google.com/privacy"
                   target="_blank"
@@ -117,30 +116,36 @@ export default function PrivacyPage() {
                 </a>.
               </p>
               <p>
-                Google may use cookies and device identifiers to show you personalised advertisements based
-                on your browsing activity. You can opt out of personalised ads by visiting{' '}
-                <a
-                  href="https://adssettings.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                  style={{ color: 'var(--brand-pink)' }}
-                >
-                  adssettings.google.com
-                </a>.
+                <strong style={{ color: 'white' }}>Google AdSense Disclosures &amp; Cookie Policy:</strong>
               </p>
-              <p>
-                We also comply with the{' '}
-                <a
-                  href="https://www.iab.com/guidelines/transparency-consent-framework/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                  style={{ color: 'var(--brand-pink)' }}
-                >
-                  IAB Transparency and Consent Framework
-                </a>{' '}
-                where applicable.
+              <ul className="list-disc pl-4 space-y-1">
+                <li>Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to this website or other websites on the Internet.</li>
+                <li>Google&apos;s use of advertising cookies enables it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.</li>
+                <li>
+                  Users may opt out of personalized advertising by visiting Google Ads Settings at{' '}
+                  <a
+                    href="https://adssettings.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: 'var(--brand-pink)' }}
+                  >
+                    adssettings.google.com
+                  </a>
+                  . Alternatively, users can opt out of a third-party vendor&apos;s use of cookies for personalized advertising by visiting{' '}
+                  <a
+                    href="https://www.aboutads.info/choices/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: 'var(--brand-pink)' }}
+                  >
+                    www.aboutads.info/choices/
+                  </a>.
+                </li>
+              </ul>
+              <p className="mt-2">
+                We also comply with Google&apos;s EU User Consent policy and the IAB Transparency and Consent Framework (TCF) where applicable.
               </p>
             </>
           ),
