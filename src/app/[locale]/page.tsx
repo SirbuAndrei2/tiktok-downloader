@@ -165,6 +165,7 @@ export default async function Page({ params }: Props) {
             </div>
 
             <AdUnit
+              slot="8159980011"
               className="mt-4 mb-2 max-w-full overflow-hidden"
               style={{ minHeight: 90 }}
               format="horizontal"
@@ -189,6 +190,7 @@ export default async function Page({ params }: Props) {
             </div>
 
             <AdUnit
+              slot="8159980011"
               className="mt-10 mb-2 max-w-full overflow-hidden"
               style={{ minHeight: 250 }}
               format="rectangle"
