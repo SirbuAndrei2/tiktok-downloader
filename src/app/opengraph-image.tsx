@@ -77,7 +77,7 @@ export default function OgImage() {
 
         {/* Pills */}
         <div style={{ display: 'flex', gap: 16 }}>
-          {['✓ No Watermark', '✓ HD Quality', '✓ MP3 Audio', '✓ Free'].map((t) => (
+          {['No Watermark', 'HD Quality', 'MP3 Audio', 'Free'].map((t) => (
             <div key={t} style={{
               background: 'rgba(255,45,85,0.15)',
               border: '1px solid rgba(255,45,85,0.4)',

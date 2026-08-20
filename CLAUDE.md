@@ -51,7 +51,7 @@ The site uses `next-intl` with App Router. All content pages live under `src/app
 
 - Locale routing config: [src/i18n/routing.ts](src/i18n/routing.ts) — locales `['en', 'de']`, prefix `as-needed` (English at `/`, German at `/de/`)
 - Translations: [messages/en.json](messages/en.json) and [messages/de.json](messages/de.json)
-- Proxy (middleware): [src/proxy.ts](src/proxy.ts) — Next.js 16 renamed `middleware.ts` to `proxy.ts`
+- Middleware: [src/middleware.ts](src/middleware.ts) — Edge Middleware for i18n routing (required by OpenNext Cloudflare)
 - Server components use `getTranslations({ locale, namespace })`, client components use `useTranslations(namespace)`
 - Adding a new locale: add it to `routing.locales`, create `messages/<locale>.json`, add to `hreflang` alternates in `[locale]/layout.tsx` and `sitemap.ts`
 - Translation arrays (FAQ, features, steps) are stored as JSON arrays in messages files and accessed via `t.raw('key')`
