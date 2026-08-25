@@ -8,6 +8,7 @@ import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 
 import CookieConsent from '@/components/CookieConsent'
+import MonetagTags from '@/components/ads/MonetagTags'
 
 const geist = GeistSans
 
@@ -135,6 +136,9 @@ export default async function LocaleLayout({ children, params }: Props) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9408608842276737"
           crossOrigin="anonymous"
         />
+
+        {/* Monetag */}
+        <MonetagTags />
       </head>
       <body className="min-h-screen bg-black antialiased">
         <NextIntlClientProvider messages={messages}>
