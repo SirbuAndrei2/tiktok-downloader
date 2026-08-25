@@ -35,7 +35,7 @@ Both API routes declare `export const runtime = 'nodejs'`.
 - `src/app/guide/` — English-only guide pages (mp4, iPhone, Android, SnapTik alternative) — not locale-routed, only in sitemap once
 - `src/components/` — React components
 - `src/components/ui/` — shadcn/ui primitives (badge, button, card, dialog, input, separator, tooltip)
-- `src/components/ads/` — Ad network components (Monetag)
+- `src/components/ads/` — Ad network components (Google AdSense `AdUnit` + Monetag `MonetagTags`)
 - `src/lib/utils.ts` — `cn()` helper (clsx + tailwind-merge)
 
 ### Styling
