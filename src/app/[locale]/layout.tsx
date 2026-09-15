@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
+import { OG_IMAGE } from '@/lib/seo'
 
 import CookieConsent from '@/components/CookieConsent'
 import MonetagTags from '@/components/ads/MonetagTags'
@@ -50,12 +51,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: BASE,
     siteName: 'TokDown',
+    images: [OG_IMAGE],
     title: 'TokDown — Download TikTok Videos Without Watermark, Free & HD',
     description: 'The simplest TikTok downloader: no watermark, HD quality, MP3 audio. Free, instant, no account needed.',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@tokdownorg',
+    images: [OG_IMAGE.url],
     title: 'TokDown — Download TikTok Without Watermark, Free & HD',
     description: 'Save any TikTok video without watermark in HD, or extract audio as MP3. Free, instant, works on any device.',
   },

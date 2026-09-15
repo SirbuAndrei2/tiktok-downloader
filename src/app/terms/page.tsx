@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import LegalLayout from '@/components/legal/LegalLayout'
 
 const BASE = 'https://tokdown.org'
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${BASE}/terms` },
   robots: { index: true, follow: true },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Terms of Service — TikTok Downloader',
     description: 'Read the full terms and conditions for using TikTok Downloader — a free tool for personal, lawful video downloads.',
     url: `${BASE}/terms`,
@@ -30,7 +32,7 @@ const breadcrumbSchema = {
   ],
 }
 
-const UPDATED = 'April 24, 2025'
+const UPDATED = 'April 24, 2026'
 
 export default function TermsPage() {
   return (

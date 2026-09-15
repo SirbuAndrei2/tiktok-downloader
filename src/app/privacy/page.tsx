@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import LegalLayout from '@/components/legal/LegalLayout'
 
 const BASE = 'https://tokdown.org'
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${BASE}/privacy` },
   robots: { index: true, follow: true },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Privacy Policy — TikTok Downloader',
     description: 'We do not store videos or personal data. Read our full privacy policy, data retention practices, and your rights under GDPR.',
     url: `${BASE}/privacy`,
@@ -30,7 +32,7 @@ const breadcrumbSchema = {
   ],
 }
 
-const UPDATED = 'April 24, 2025'
+const UPDATED = 'April 24, 2026'
 
 export default function PrivacyPage() {
   return (

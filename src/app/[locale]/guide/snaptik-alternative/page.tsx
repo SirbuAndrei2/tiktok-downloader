@@ -1,14 +1,20 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
+
+// English-only guide: no /de or /ar translation exists, so those URLs must 404.
+type Props = { params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
   title: 'Best SnapTik Alternative 2026 — TokDown vs SnapTik, SSSTikTok & More',
   description: 'Looking for a SnapTik or SSSTikTok alternative? TokDown downloads TikTok videos without watermark, no redirects, no forced ads. Free, instant, all devices.',
   alternates: { canonical: `${BASE}/guide/snaptik-alternative` },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Best SnapTik Alternative 2026 — TokDown vs SnapTik, SSSTikTok & More',
     description: 'Compare TokDown against SnapTik, SSSTikTok, and Tikup. No forced redirects, clean HD downloads, no account needed. See which TikTok downloader is best for you.',
     url: `${BASE}/guide/snaptik-alternative`,
@@ -75,7 +81,7 @@ const WHY_SWITCH = [
   {
     icon: '🔒',
     title: 'Privacy-conscious?',
-    desc: 'TokDown does not store any video files on its servers. The video goes from TikTok\'s CDN directly to your device. Your TikTok URL is not logged.',
+    desc: 'TokDown does not store any video files on its servers. The video is streamed from TikTok\'s CDN through our server to your device without being saved. Your TikTok URL is not logged.',
   },
   {
     icon: '⚡',
@@ -120,7 +126,10 @@ const ALTERNATIVES = [
   },
 ]
 
-export default function SnaptikAlternative() {
+export default async function SnaptikAlternative({ params }: Props) {
+  const { locale } = await params
+  if (locale !== 'en') notFound()
+
   return (
     <>
       {jsonLd.map((s, i) => (

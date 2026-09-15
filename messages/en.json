@@ -127,7 +127,7 @@
       },
       {
         "q": "Is it safe to use TokDown?",
-        "a": "Yes. TokDown runs entirely in your browser. We do not store any video files on our servers, and we never ask for your TikTok credentials. Your downloads go straight to your device."
+        "a": "Yes. TokDown never asks for your TikTok credentials and does not store any video files. The video is streamed through our server straight to your device and is never saved along the way."
       },
       {
         "q": "Why does TikTok add a watermark in the first place?",
@@ -139,7 +139,7 @@
       },
       {
         "q": "Is it safe to download TikTok videos?",
-        "a": "Yes. TokDown never asks for your TikTok login, never stores videos on its servers, and runs entirely in your browser. Your download is a direct connection between your device and TikTok's CDN. We have no access to your TikTok account."
+        "a": "Yes. TokDown never asks for your TikTok login and never stores videos on its servers. The file is fetched from TikTok's CDN and streamed to your device in a single pass — nothing is kept. We have no access to your TikTok account."
       },
       {
         "q": "How do I download TikTok without installing an app?",
@@ -180,7 +180,7 @@
     "storyTitle": "Our story",
     "story1": "Most \"free\" TikTok downloaders have the same playbook: bury the real download button under three fake ones, redirect you through ad domains, make you solve captchas, and — some of them — even ask for your TikTok username and password. We think that is unacceptable.",
     "story2": "TokDown was built to be the tool we wished existed: fast, clean, and honest. You paste a link. You get your video. That's it.",
-    "story3": "We do not store any video files on our servers. The moment you hit download, your file goes straight from TikTok's CDN to your device. We keep no record of what you downloaded, when, or from which IP address.",
+    "story3": "We do not store any video files on our servers. When you hit download, the file is streamed from TikTok's CDN through our server to your device without ever being saved. We keep no record of what you downloaded; standard server logs are deleted automatically after 30 days.",
     "valuesTitle": "What we stand for",
     "howTitle": "How TokDown works",
     "how1": "When you paste a TikTok URL, TokDown resolves the video ID and fetches the available download links from TikTok's public API. We return direct links to the original video file — in the highest quality the creator uploaded — without re-encoding or compressing anything.",

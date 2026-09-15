@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 import { useLocale } from 'next-intl'
 import Link from 'next/link'
@@ -22,25 +23,41 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: t('metaDescription'),
     keywords: t.raw('metaKeywords') as string[],
     alternates: {
-      canonical: `${BASE}${localePath}/`,
+      // No trailing slash on locale roots: /de/ 308-redirects to /de, and a
+      // canonical that redirects is ignored by Google.
+      canonical: localePath ? `${BASE}${localePath}` : `${BASE}/`,
       languages: {
         'en': `${BASE}/`,
-        'de': `${BASE}/de/`,
-        'ar': `${BASE}/ar/`,
+        'de': `${BASE}/de`,
+        'ar': `${BASE}/ar`,
+        'x-default': `${BASE}/`,
       },
     },
     openGraph: {
+      images: [OG_IMAGE],
       title: t('metaTitle'),
       description: t('metaDescription'),
-      url: `${BASE}${localePath}/`,
+      url: localePath ? `${BASE}${localePath}` : `${BASE}/`,
     },
   }
 }
 
+// English-only guides (no /de or /ar version) — linked from the English home so they are not orphaned
+const EN_ONLY_GUIDES = [
+  { href: '/guide/tiktok-to-mp4', label: 'TikTok to MP4' },
+  { href: '/guide/download-tiktok-on-iphone', label: 'Download on iPhone' },
+  { href: '/guide/download-tiktok-on-android', label: 'Download on Android' },
+  { href: '/guide/snaptik-alternative', label: 'SnapTik alternative' },
+  { href: '/guide/tiktok-downloader-chrome', label: 'TikTok downloader for Chrome' },
+  { href: '/guide/tiktok-video-to-gif', label: 'TikTok video to GIF' },
+  { href: '/guide/download-tiktok-playlist', label: 'Download a TikTok playlist' },
+  { href: '/guide/download-tiktok-private-video', label: 'Private TikTok videos' },
+]
+
 const COMPARISONS = [
-  { tokdown: true, others: false },
   { tokdown: true, others: true },
-  { tokdown: true, others: false },
+  { tokdown: true, others: true },
+  { tokdown: true, others: true },
   { tokdown: true, others: false },
   { tokdown: true, others: true },
   { tokdown: true, others: false },
@@ -58,20 +75,20 @@ export default async function Page({ params }: Props) {
 
   const isDefault = locale === 'en'
   const localePath = isDefault ? '' : `/${locale}`
+  const homeUrl = localePath ? `${BASE}${localePath}` : `${BASE}/`
 
   const schemas = [
     {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
       name: 'TokDown — TikTok Video Downloader',
-      url: `${BASE}${localePath}/`,
+      url: homeUrl,
       description: 'Free online tool to download TikTok videos without watermark in HD quality, or extract audio as MP3.',
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Any',
       browserRequirements: 'Requires JavaScript',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       creator: { '@type': 'Organization', name: 'TokDown', url: BASE },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', ratingCount: '2341', bestRating: '5' },
     },
     {
       '@context': 'https://schema.org',
@@ -88,7 +105,7 @@ export default async function Page({ params }: Props) {
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: [{ '@type': 'ListItem', position: 1, name: 'TokDown', item: `${BASE}${localePath}/` }],
+      itemListElement: [{ '@type': 'ListItem', position: 1, name: 'TokDown', item: homeUrl }],
     },
   ]
 
@@ -245,6 +262,15 @@ export default async function Page({ params }: Props) {
                 <p className="text-xs leading-relaxed" style={{ color: 'var(--t4)' }}>{t('guide2Desc')}</p>
               </Link>
             </div>
+            {isDefault && (
+              <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6" aria-label="More guides">
+                {EN_ONLY_GUIDES.map(({ href, label }) => (
+                  <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t3)' }}>
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+            )}
           </section>
 
           {/* ── FAQ ─────────────────────────────────────────────── */}

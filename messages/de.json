@@ -127,7 +127,7 @@
       },
       {
         "q": "Ist TokDown sicher?",
-        "a": "Ja. TokDown läuft vollständig in deinem Browser. Wir speichern keine Videodateien auf unseren Servern und fragen nie nach deinen TikTok-Zugangsdaten. Deine Downloads gehen direkt auf dein Gerät."
+        "a": "Ja. TokDown fragt nie nach deinen TikTok-Zugangsdaten und speichert keine Videodateien. Das Video wird über unseren Server direkt auf dein Gerät gestreamt und dabei nirgends gespeichert."
       },
       {
         "q": "Warum fügt TikTok überhaupt ein Wasserzeichen hinzu?",
@@ -139,7 +139,7 @@
       },
       {
         "q": "Ist es sicher, TikTok-Videos herunterzuladen?",
-        "a": "Ja. TokDown fragt nie nach deinem TikTok-Login, speichert keine Videos auf seinen Servern und läuft vollständig in deinem Browser. Dein Download ist eine direkte Verbindung zwischen deinem Gerät und TikToks CDN. Wir haben keinen Zugriff auf dein TikTok-Konto."
+        "a": "Ja. TokDown fragt nie nach deinem TikTok-Login und speichert keine Videos auf seinen Servern. Die Datei wird vom TikTok-CDN abgerufen und in einem Durchgang auf dein Gerät gestreamt — nichts wird aufbewahrt. Wir haben keinen Zugriff auf dein TikTok-Konto."
       },
       {
         "q": "Wie lade ich TikTok herunter, ohne eine App zu installieren?",
@@ -180,7 +180,7 @@
     "storyTitle": "Unsere Geschichte",
     "story1": "Die meisten kostenlosen TikTok-Downloader verfolgen das gleiche Konzept: den echten Download-Button unter drei gefälschten verstecken, durch Werbe-Domains weiterleiten, Captchas lösen lassen und — manche sogar — nach deinem TikTok-Benutzernamen und Passwort fragen. Das halten wir für inakzeptabel.",
     "story2": "TokDown wurde als das Tool gebaut, das wir uns gewünscht hätten: schnell, sauber und ehrlich. Du fügst einen Link ein. Du bekommst dein Video. Das war es.",
-    "story3": "Wir speichern keine Videodateien auf unseren Servern. In dem Moment, in dem du auf Herunterladen klickst, geht deine Datei direkt vom TikTok-CDN auf dein Gerät. Wir führen keine Aufzeichnung darüber, was du heruntergeladen hast, wann oder von welcher IP-Adresse.",
+    "story3": "Wir speichern keine Videodateien auf unseren Servern. Wenn du auf Herunterladen klickst, wird die Datei vom TikTok-CDN über unseren Server auf dein Gerät gestreamt, ohne jemals gespeichert zu werden. Wir führen keine Aufzeichnung darüber, was du heruntergeladen hast; normale Server-Logs werden nach 30 Tagen automatisch gelöscht.",
     "valuesTitle": "Wofür wir stehen",
     "howTitle": "Wie TokDown funktioniert",
     "how1": "Wenn du eine TikTok-URL einfügst, löst TokDown die Video-ID auf und ruft die verfügbaren Download-Links von TikToks öffentlicher API ab. Wir liefern direkte Links zur ursprünglichen Videodatei — in der höchsten Qualität, die der Ersteller hochgeladen hat — ohne Re-Encoding oder Komprimierung.",

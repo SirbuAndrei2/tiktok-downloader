@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
+
+// English-only guide: no /de or /ar translation exists, so those URLs must 404.
+type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/tiktok-video-to-gif'
 
 export const metadata: Metadata = {
@@ -10,6 +15,7 @@ export const metadata: Metadata = {
   description: 'How to convert a TikTok video to a GIF — step by step. Download the MP4 with TokDown first, then convert to GIF with free tools. Works on iPhone, Android, PC.',
   alternates: { canonical: `${BASE}${SLUG}` },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'TikTok to GIF — Convert TikTok Videos to GIF Free (2026)',
     description: 'Step-by-step guide to turning any TikTok video into a GIF. Download the video first, then use a free GIF converter. Works on all devices.',
     url: `${BASE}${SLUG}`,
@@ -77,7 +83,10 @@ const TOOLS = [
   { name: 'Shortcuts (iPhone)', platform: 'iOS only', pros: 'Fully offline, saves to Photos', cons: 'Requires setup of a shortcut workflow' },
 ]
 
-export default function TikTokToGif() {
+export default async function TikTokToGif({ params }: Props) {
+  const { locale } = await params
+  if (locale !== 'en') notFound()
+
   return (
     <>
       {jsonLd.map((s, i) => (

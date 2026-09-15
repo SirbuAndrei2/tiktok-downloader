@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
+
+// English-only guide: no /de or /ar translation exists, so those URLs must 404.
+type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/tiktok-downloader-chrome'
 
 export const metadata: Metadata = {
@@ -10,6 +15,7 @@ export const metadata: Metadata = {
   description: 'How to download TikTok videos in Google Chrome — no extension needed. Use TokDown directly in Chrome on Windows, Mac, or Android. Free, HD, no watermark.',
   alternates: { canonical: `${BASE}${SLUG}` },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'TikTok Downloader for Chrome — Download TikTok Videos in Chrome (2026)',
     description: 'Download any TikTok video in Chrome without an extension. Free, HD, no watermark. Works on Windows, Mac, and Android Chrome.',
     url: `${BASE}${SLUG}`,
@@ -79,7 +85,10 @@ const TIPS = [
   { title: '.webm vs .mp4 in Chrome', body: 'Older Chromium versions may label the file as .webm even though it is an MP4 container. Rename the extension to .mp4 and it plays correctly in VLC, Windows Media Player, or any other video player.' },
 ]
 
-export default function TikTokDownloaderChrome() {
+export default async function TikTokDownloaderChrome({ params }: Props) {
+  const { locale } = await params
+  if (locale !== 'en') notFound()
+
   return (
     <>
       {jsonLd.map((s, i) => (

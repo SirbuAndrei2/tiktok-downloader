@@ -1,14 +1,20 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
+
+// English-only guide: no /de or /ar translation exists, so those URLs must 404.
+type Props = { params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
   title: 'TikTok to MP4 — Download TikTok as MP4 Free, No Watermark (2026)',
   description: 'Convert any TikTok video to MP4 format instantly — HD quality, no watermark, no login. Free online tool that works on iPhone, Android, PC and Mac.',
   alternates: { canonical: `${BASE}/guide/tiktok-to-mp4` },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'TikTok to MP4 — Download TikTok as MP4 Free, No Watermark (2026)',
     description: 'Save any TikTok video as an MP4 file in HD without the watermark. Works on every device, free, no account needed.',
     url: `${BASE}/guide/tiktok-to-mp4`,
@@ -122,7 +128,10 @@ const USE_CASES = [
   { icon: '🖥️', title: 'Presentations & moodboards', desc: 'Embed clean TikTok clips in slide decks, design references, or inspiration boards.' },
 ]
 
-export default function TikTokToMp4() {
+export default async function TikTokToMp4({ params }: Props) {
+  const { locale } = await params
+  if (locale !== 'en') notFound()
+
   return (
     <>
       {jsonLd.map((s, i) => (

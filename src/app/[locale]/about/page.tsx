@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `${BASE}${localePath}/about`,
       languages: { 'en': `${BASE}/about`, 'de': `${BASE}/de/about` },
     },
-    openGraph: { title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}/about` },
+    openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}/about` },
   }
 }
 

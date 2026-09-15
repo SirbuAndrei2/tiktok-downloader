@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
+
+// English-only guide: no /de or /ar translation exists, so those URLs must 404.
+type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/download-tiktok-playlist'
 
 export const metadata: Metadata = {
@@ -10,6 +15,7 @@ export const metadata: Metadata = {
   description: 'Can you download a TikTok playlist in bulk? Full guide on how to download multiple TikTok videos — one by one or in batch. Free, HD, no watermark.',
   alternates: { canonical: `${BASE}${SLUG}` },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'How to Download TikTok Playlists & Multiple Videos (2026)',
     description: 'Download multiple TikTok videos or full playlists. Step-by-step guide for bulk downloading TikTok content without watermark.',
     url: `${BASE}${SLUG}`,
@@ -65,7 +71,10 @@ const TIPS = [
   { title: 'Organise downloads by playlist name', body: 'Create a folder on your device named after the playlist before you start downloading. Move each downloaded video into that folder as you go — otherwise 20 files named "video" get confusing fast.' },
 ]
 
-export default function DownloadTikTokPlaylist() {
+export default async function DownloadTikTokPlaylist({ params }: Props) {
+  const { locale } = await params
+  if (locale !== 'en') notFound()
+
   return (
     <>
       {jsonLd.map((s, i) => (

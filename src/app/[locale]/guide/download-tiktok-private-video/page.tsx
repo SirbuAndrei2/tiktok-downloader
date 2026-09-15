@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
+
+// English-only guide: no /de or /ar translation exists, so those URLs must 404.
+type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/download-tiktok-private-video'
 
 export const metadata: Metadata = {
@@ -10,6 +15,7 @@ export const metadata: Metadata = {
   description: 'Can you download private TikTok videos? Full honest explanation of what is possible, what is not, and the only legitimate ways to save TikTok content.',
   alternates: { canonical: `${BASE}${SLUG}` },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Can You Download a Private TikTok Video? — Full Explanation (2026)',
     description: 'The truth about downloading private TikTok videos — what works, what does not, and how to download public TikTok videos for free in HD.',
     url: `${BASE}${SLUG}`,
@@ -64,7 +70,10 @@ const ALTERNATIVES = [
   { icon: '🖥️', title: 'Screen record as a last resort', body: 'Screen recording captures any video regardless of privacy settings — but the quality is limited to your screen resolution and the result includes UI elements unless you go full-screen.' },
 ]
 
-export default function DownloadPrivateTikTok() {
+export default async function DownloadPrivateTikTok({ params }: Props) {
+  const { locale } = await params
+  if (locale !== 'en') notFound()
+
   return (
     <>
       {jsonLd.map((s, i) => (

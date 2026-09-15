@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 const BASE = 'https://tokdown.org'
-const LEGAL_DATE = new Date('2025-04-24')
+const LEGAL_DATE = new Date('2026-04-24')
 const GUIDE_DATE = new Date('2026-05-01')
 const GUIDE_DATE_NEW = new Date('2026-06-01')
 
@@ -14,6 +14,7 @@ const CONTENT_ROUTES = [
   { path: '/guide/download-tiktok-on-android',        priority: 0.9, changeFrequency: 'monthly' as const },
 ]
 
+// English-only guides under [locale]/guide that 404 for /de and /ar
 const NEW_GUIDE_ROUTES = [
   { path: '/guide/tiktok-to-mp4',                    priority: 0.9,  date: GUIDE_DATE_NEW },
   { path: '/guide/snaptik-alternative',              priority: 0.8,  date: GUIDE_DATE_NEW },
@@ -41,14 +42,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const deRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
-    url: `${BASE}/de${path}`,
+    url: `${BASE}/de${path === '/' ? '' : path}`,
     lastModified: path === '/' ? contentDate : GUIDE_DATE,
     changeFrequency,
     priority: priority * 0.95,
   }))
 
   const arRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
-    url: `${BASE}/ar${path}`,
+    url: `${BASE}/ar${path === '/' ? '' : path}`,
     lastModified: path === '/' ? contentDate : GUIDE_DATE,
     changeFrequency,
     priority: priority * 0.95,

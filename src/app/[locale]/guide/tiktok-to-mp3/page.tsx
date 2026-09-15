@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `${BASE}${localePath}${slug}`,
       languages: { 'en': `${BASE}${slug}`, 'de': `${BASE}/de${slug}`, 'ar': `${BASE}/ar${slug}` },
     },
-    openGraph: { title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${slug}` },
+    openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${slug}` },
   }
 }
 

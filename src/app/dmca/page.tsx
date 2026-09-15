@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import LegalLayout from '@/components/legal/LegalLayout'
 
 const BASE = 'https://tokdown.org'
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${BASE}/dmca` },
   robots: { index: true, follow: true },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'DMCA Policy — TikTok Downloader',
     description: 'We respect intellectual property rights and respond to valid DMCA takedown notices promptly. Read our full DMCA policy.',
     url: `${BASE}/dmca`,
@@ -30,7 +32,7 @@ const breadcrumbSchema = {
   ],
 }
 
-const UPDATED = 'April 24, 2025'
+const UPDATED = 'April 24, 2026'
 
 export default function DmcaPage() {
   return (

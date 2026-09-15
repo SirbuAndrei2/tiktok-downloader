@@ -52,6 +52,15 @@ export async function POST(request: NextRequest) {
 
   const json = await tikwmRes.json()
 
+  // TikWM's free tier answers "Free Api Limit: ..." once its quota is used up —
+  // don't show that raw message to visitors.
+  if (typeof json.msg === 'string' && /limit/i.test(json.msg)) {
+    return Response.json(
+      { error: 'Our download service is very busy right now. Please try again in a few minutes.' },
+      { status: 503, headers: { 'Retry-After': '120' } }
+    )
+  }
+
   if (json.code !== 0 || !json.data) {
     return Response.json(
       { error: json.msg ?? 'Video not found. Make sure the video is public.' },
