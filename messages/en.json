@@ -46,7 +46,10 @@
     "slideshowDesc": "All slides with music",
     "hdGeneric": "Video · Best quality",
     "sdGeneric": "Video · Smaller file",
-    "sourceLabel": "Source"
+    "sourceLabel": "Source",
+    "hdWatermarked": "HD · With watermark",
+    "sdWatermarked": "SD · With watermark",
+    "fallbackNote": "Our no-watermark service is at capacity right now, so this is the original TikTok file with its watermark. Try again in a few minutes for a clean copy."
   },
   "Nav": {
     "about": "About",

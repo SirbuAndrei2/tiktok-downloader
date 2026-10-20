@@ -5,6 +5,7 @@ import { fetchTwitter } from '@/lib/providers/twitter'
 import { fetchFacebook } from '@/lib/providers/facebook'
 import { fetchInstagram } from '@/lib/providers/instagram'
 import { ProviderError, type MediaResult, type Platform } from '@/lib/providers/types'
+import { cobaltEnabled, fetchViaCobalt } from '@/lib/providers/cobalt'
 
 export const runtime = 'nodejs'
 
@@ -35,8 +36,25 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const data = await PROVIDERS[platform](url)
-    return Response.json(data)
+    // Facebook/Instagram are login-walled for datacentre IPs, so cobalt (when configured) goes first;
+    // TikTok/Twitter use the built-in provider first and fall back to cobalt (e.g. TikWM quota hit).
+    const cobaltFirst = platform === 'facebook' || platform === 'instagram'
+    if (cobaltFirst && cobaltEnabled()) {
+      try {
+        const viaCobalt = await fetchViaCobalt(url, platform)
+        if (viaCobalt) return Response.json(viaCobalt)
+      } catch { /* fall through to the built-in provider */ }
+    }
+    try {
+      const data = await PROVIDERS[platform](url)
+      return Response.json(data)
+    } catch (e) {
+      if (!cobaltFirst && cobaltEnabled()) {
+        const viaCobalt = await fetchViaCobalt(url, platform).catch(() => null)
+        if (viaCobalt) return Response.json(viaCobalt)
+      }
+      throw e
+    }
   } catch (e) {
     if (e instanceof ProviderError) {
       return Response.json({ error: e.message }, { status: e.status, headers: e.retryAfter ? { 'Retry-After': String(e.retryAfter) } : undefined })

@@ -9,6 +9,8 @@ export interface VideoData {
   id: string; title: string; cover: string; play: string; hdplay: string
   /** Source network; TikTok is the default for older payloads. */
   platform?: 'tiktok' | 'facebook' | 'twitter' | 'instagram'
+  watermarked?: boolean
+  cookie?: string
   music: string; musicTitle: string
   /** Photo/slideshow posts: full-size image URLs in slide order. Empty for videos. */
   images?: string[]
@@ -23,8 +25,8 @@ function fmt(n: number) {
   return String(n)
 }
 
-function proxy(url: string, filename: string, type = 'video') {
-  return `/api/proxy?url=${encodeURIComponent(url)}&filename=${encodeURIComponent(filename)}&type=${type}`
+function proxyUrl(url: string, filename: string, type: string, cookie?: string) {
+  return `/api/proxy?url=${encodeURIComponent(url)}&filename=${encodeURIComponent(filename)}&type=${type}${cookie ? `&ck=${encodeURIComponent(cookie)}` : ''}`
 }
 
 /** TikTok serves slides as .jpeg or .webp — keep the real extension so the saved file opens everywhere. */
@@ -38,6 +40,8 @@ export default function VideoResult({ data }: { data: VideoData }) {
   const [savingAll, setSavingAll] = useState(false)
   const platform = data.platform ?? 'tiktok'
   const generic = platform !== 'tiktok'
+  const watermarked = data.watermarked === true
+  const proxy = (url: string, filename: string, type = 'video') => proxyUrl(url, filename, type, data.cookie)
   const base = (data.title.slice(0, 40).replace(/[^a-z0-9 ]/gi, '') || platform)
     .trim().replace(/\s+/g, '-').toLowerCase()
 
@@ -122,6 +126,10 @@ export default function VideoResult({ data }: { data: VideoData }) {
         </div>
       </div>
 
+      {watermarked && (
+        <p className="m-0 px-4 py-2 text-xs" style={{ borderTop: '1px solid var(--line)', background: 'var(--lime-dim)', color: 'var(--t2)' }}>{t('fallbackNote')}</p>
+      )}
+
       {isPhoto ? (
         <>
           {/* ── Photo gallery ─────────────────────────────────── */}
@@ -194,7 +202,7 @@ export default function VideoResult({ data }: { data: VideoData }) {
           <a href={proxy(data.hdplay || data.play, `${base}-hd.mp4`)} download className="dl-btn dl-btn-primary sm:col-span-2">
             <Film className="size-5 shrink-0" aria-hidden />
             <span className="flex min-w-0 flex-col">
-              <span className="truncate text-sm font-bold">{generic ? t('hdGeneric') : t('hdTitle')}</span>
+              <span className="truncate text-sm font-bold">{watermarked ? t('hdWatermarked') : generic ? t('hdGeneric') : t('hdTitle')}</span>
               <span className="text-xs opacity-75">{t('hdDesc')} · MP4</span>
             </span>
             <Download className="ms-auto size-4 shrink-0 opacity-70" aria-hidden />
@@ -204,7 +212,7 @@ export default function VideoResult({ data }: { data: VideoData }) {
           <a href={proxy(data.play, `${base}-sd.mp4`)} download className="dl-btn dl-btn-secondary">
             <Video className="size-5 shrink-0 opacity-80" aria-hidden />
             <span className="flex min-w-0 flex-col">
-              <span className="truncate text-sm font-semibold">{generic ? t('sdGeneric') : t('sdTitle')}</span>
+              <span className="truncate text-sm font-semibold">{watermarked ? t('sdWatermarked') : generic ? t('sdGeneric') : t('sdTitle')}</span>
               <span className="text-xs" style={{ color: 'var(--t4)' }}>{t('sdDesc')} · MP4</span>
             </span>
             <Download className="ms-auto size-4 shrink-0 opacity-60" aria-hidden />

@@ -18,6 +18,10 @@ export interface MediaResult {
   isPhoto: boolean
   author: { nickname: string; avatar: string; uniqueId: string }
   stats: { plays: number; likes: number; comments: number; shares: number }
+  /** True when the files carry the platform's watermark (TikTok web fallback). */
+  watermarked?: boolean
+  /** Cookie the CDN requires (TikTok web fallback); forwarded by /api/proxy for tiktok hosts only. */
+  cookie?: string
 }
 
 export class ProviderError extends Error {

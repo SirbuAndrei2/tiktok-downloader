@@ -1,7 +1,8 @@
 import { emptyResult, ProviderError, type MediaResult } from './types'
+import { fetchTikTokWeb } from './tiktok-web'
 
 /** TikWM (free tier, daily quota per egress IP). Handles videos and photo/slideshow posts. */
-export async function fetchTikTok(url: string): Promise<MediaResult> {
+async function fetchTikWM(url: string): Promise<MediaResult> {
   const form = new URLSearchParams()
   form.set('url', url)
   form.set('hd', '1')
@@ -40,5 +41,26 @@ export async function fetchTikTok(url: string): Promise<MediaResult> {
     musicTitle: d.music_info?.title ?? '',
     author: { nickname: d.author?.nickname ?? 'Unknown', avatar: d.author?.avatar ?? '', uniqueId: d.author?.unique_id ?? '' },
     stats: { plays: d.play_count ?? 0, likes: d.digg_count ?? 0, comments: d.comment_count ?? 0, shares: d.share_count ?? 0 },
+  }
+}
+
+/**
+ * TikWM first (no watermark). When its shared quota is exhausted (503), fall back to
+ * reading the TikTok page directly, which yields watermarked renditions but keeps the
+ * site working. `TIKTOK_FORCE_WEB=1` forces the fallback for local testing.
+ */
+export async function fetchTikTok(url: string): Promise<MediaResult> {
+  if (process.env.TIKTOK_FORCE_WEB === '1') return fetchTikTokWeb(url)
+  try {
+    return await fetchTikWM(url)
+  } catch (e) {
+    if (e instanceof ProviderError && e.status === 503) {
+      try {
+        return await fetchTikTokWeb(url)
+      } catch {
+        throw e
+      }
+    }
+    throw e
   }
 }

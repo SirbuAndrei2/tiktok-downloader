@@ -36,6 +36,11 @@ export async function fetchFacebook(url: string): Promise<MediaResult> {
   const hd = pick(html, /"hd_src":"([^"]+)"/) || pick(html, /"browser_native_hd_url":"([^"]+)"/) || pick(html, /"playable_url_quality_hd":"([^"]+)"/)
   const sd = pick(html, /"sd_src":"([^"]+)"/) || pick(html, /"browser_native_sd_url":"([^"]+)"/) || pick(html, /"playable_url":"([^"]+)"/)
   if (!hd && !sd) {
+    // Facebook answers data-centre IPs (incl. Cloudflare Workers) with a login wall even for public
+    // videos. Say so honestly instead of blaming the video; a non-datacentre egress (see cobalt.ts) fixes it.
+    if (/login_form|"LoginForm"|checkpoint/.test(html)) {
+      throw new ProviderError('Facebook is temporarily blocking our servers. Please try again later.', 503, 600)
+    }
     throw new ProviderError('Could not read this video. It may be private, age-restricted, in a group, or a live stream.', 404)
   }
   let cover = pick(html, /"thumbnailImage":\{"uri":"([^"]+)"/) || pick(html, /"preferred_thumbnail":\{"image":\{"uri":"([^"]+)"/)

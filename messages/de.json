@@ -46,7 +46,10 @@
     "slideshowDesc": "Alle Bilder mit Musik",
     "hdGeneric": "Video · Beste Qualität",
     "sdGeneric": "Video · Kleinere Datei",
-    "sourceLabel": "Quelle"
+    "sourceLabel": "Quelle",
+    "hdWatermarked": "HD · Mit Wasserzeichen",
+    "sdWatermarked": "SD · Mit Wasserzeichen",
+    "fallbackNote": "Unser Dienst ohne Wasserzeichen ist gerade ausgelastet, daher ist dies die Original-TikTok-Datei mit Wasserzeichen. Versuche es in ein paar Minuten erneut für eine saubere Kopie."
   },
   "Nav": {
     "about": "Über uns",

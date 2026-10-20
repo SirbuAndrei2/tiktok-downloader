@@ -43,6 +43,8 @@ export async function GET(request: NextRequest) {
   const videoUrl = request.nextUrl.searchParams.get('url')
   const filename = request.nextUrl.searchParams.get('filename') ?? 'video.mp4'
   const type = request.nextUrl.searchParams.get('type') ?? 'video'
+  // Page cookie for TikTok's own CDN (web fallback); ignored for every other host.
+  const ck = request.nextUrl.searchParams.get('ck') ?? ''
 
   if (!videoUrl) {
     return new Response('Missing url param', { status: 400 })
@@ -55,6 +57,7 @@ export async function GET(request: NextRequest) {
   const upstream = await fetch(videoUrl, {
     headers: {
       'Referer': refererFor(new URL(videoUrl).hostname),
+      ...(ck && /(^|\.)tiktok(cdn(-us|-eu)?)?\.com$/.test(new URL(videoUrl).hostname) ? { Cookie: ck } : {}),
       'User-Agent': 'Mozilla/5.0 (compatible; TikDL/1.0)',
     },
     signal: AbortSignal.timeout(30_000),
