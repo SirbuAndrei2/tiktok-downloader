@@ -11,6 +11,9 @@ import { useTranslations } from 'next-intl'
 const ZONES = {
   '300x250': { key: '292be403728778f916725fa9010d1658', w: 300, h: 250 },
   '728x90': { key: '5c958d39a4052c107d90bf30e0fc7b3c', w: 728, h: 90 },
+  // Side rails (SideRails.tsx): one zone per side.
+  'rail-left': { key: 'ea09f0f7cedceda0fa119e3b19726d95', w: 160, h: 600 },
+  'rail-right': { key: '41a06f0ccb408d91bae3418048d08c39', w: 160, h: 300 },
 } as const
 type Size = keyof typeof ZONES
 
@@ -39,6 +42,7 @@ export default function AdsterraBanner({ size = '300x250', className = '', lazy 
   const resolved: Size = size === 'responsive' ? (wide ? '728x90' : '300x250') : size
   const { key, w, h } = ZONES[resolved]
   const dev = process.env.NODE_ENV === 'development'
+  if (!key) return null
 
   return (
     <aside className={`ad-slot mx-auto w-full max-w-full ${className}`} style={{ maxWidth: Math.max(w, 300) + 2 }} aria-label={t('adLabel')}>

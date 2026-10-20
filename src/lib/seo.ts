@@ -6,5 +6,5 @@ export const OG_IMAGE = {
   url: `${BASE}/og-image.png`,
   width: 1200,
   height: 630,
-  alt: 'TokDown — Download TikTok videos without watermark in HD',
+  alt: 'TokDown — download TikTok, Facebook and Twitter videos without watermark',
 }

@@ -77,6 +77,8 @@ export default function Downloader({ variant = 'video', platform = 'tiktok' }: {
         return
       }
       setState({ status: 'success', data: json })
+      // Lets lazily-loaded ad scripts (PopunderLoader) know the visitor got what they came for.
+      window.dispatchEvent(new CustomEvent('tokdown:result'))
     } catch {
       setState({ status: 'error', message: t('errorNetwork') })
     }

@@ -10,7 +10,8 @@ import '../globals.css'
 import { OG_IMAGE } from '@/lib/seo'
 
 import CookieConsent from '@/components/CookieConsent'
-import MonetagTags from '@/components/ads/MonetagTags'
+import PopunderLoader from '@/components/ads/PopunderLoader'
+import SideRails from '@/components/ads/SideRails'
 import AdsterraTags from '@/components/ads/AdsterraTags'
 
 
@@ -70,7 +71,10 @@ export const metadata: Metadata = {
     description: 'Save any TikTok video without watermark in HD, or extract audio as MP3. Free, instant, works on any device.',
   },
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', type: 'image/png', sizes: '1024x1024' },
+    ],
     apple: '/apple-icon.png',
   },
   manifest: '/manifest.json',
@@ -142,8 +146,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />
 
-        {/* Monetag */}
-        <MonetagTags />
         {/* Adsterra site tag (Social Bar) */}
         <AdsterraTags />
       </head>
@@ -151,6 +153,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           {children}
           <CookieConsent />
+          <PopunderLoader />
+          <SideRails />
         </NextIntlClientProvider>
         <Analytics />
       </body>
