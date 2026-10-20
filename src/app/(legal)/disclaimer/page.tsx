@@ -5,20 +5,20 @@ import LegalLayout from '@/components/legal/LegalLayout'
 const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
-  title: 'Disclaimer — TikTok Downloader',
+  title: 'Disclaimer',
   description: 'Disclaimer for TikTok Downloader. This tool is independent of TikTok and ByteDance. Read our limitations of liability, user responsibilities, and copyright notice.',
   alternates: { canonical: `${BASE}/disclaimer` },
   robots: { index: true, follow: true },
   openGraph: {
     images: [OG_IMAGE],
-    title: 'Disclaimer — TikTok Downloader',
+    title: 'Disclaimer | TokDown',
     description: 'This service is independent of TikTok and ByteDance. Read our full disclaimer covering liability, user responsibility, and copyright.',
     url: `${BASE}/disclaimer`,
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Disclaimer — TikTok Downloader',
+    title: 'Disclaimer | TokDown',
     description: 'This service is independent of TikTok and ByteDance. Read our full disclaimer.',
   },
 }

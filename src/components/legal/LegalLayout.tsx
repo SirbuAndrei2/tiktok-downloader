@@ -47,7 +47,7 @@ export default function LegalLayout({ title, subtitle, lastUpdated, sections }: 
         <div className="w-full max-w-2xl flex flex-col gap-6">
           {sections.map(({ title: st, content }) => (
             <div key={st} className="faq-item">
-              <h2 className="text-sm font-bold mb-3" style={{ color: 'var(--brand-pink)' }}>
+              <h2 className="text-sm font-bold mb-3" style={{ color: 'var(--lime)' }}>
                 {st}
               </h2>
               <div className="text-xs leading-relaxed space-y-2" style={{ color: 'var(--text-secondary)' }}>

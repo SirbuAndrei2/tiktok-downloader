@@ -1,26 +1,39 @@
-# TikTok Downloader
+# TokDown
 
-> Free online tool to download TikTok videos without watermark in HD quality.
+> Free online video downloader and media tools: download TikTok videos without watermark in HD, save TikTok photo slideshows, download Facebook and Twitter/X videos, grab YouTube thumbnails, compress videos and convert MP4 to GIF. No login, no app. Available in English, German and Arabic.
 
-## About
-TikTok Downloader allows users to paste a TikTok video URL and download it without the watermark. It also supports extracting the audio and downloading it as an MP3 file.
+Site: https://tokdown.org · Contact: support@tokdown.org · Not affiliated with TikTok, ByteDance, Meta, X or Google.
 
-## Features
-- **No Watermark:** Download videos clean, without the TikTok logo.
-- **HD Quality:** Videos are downloaded in the highest available quality.
-- **MP3 Extraction:** Option to download just the audio track.
-- **Free & No Login:** Completely free to use, no registration required.
+## Tools
+- [TikTok video downloader](https://tokdown.org/): paste a TikTok link, get the MP4 without watermark (HD or SD) or the sound as MP3.
+- [TikTok photo / slideshow downloader](https://tokdown.org/photo-downloader): every image of a TikTok photo post in full size, individually or all at once.
+- [Facebook video downloader](https://tokdown.org/facebook-video-downloader): public Facebook videos, Reels and fb.watch links as MP4, HD when available.
+- [Twitter / X video downloader](https://tokdown.org/twitter-video-downloader): videos and GIFs from public tweets, highest bitrate first; photo tweets as a gallery.
+- [YouTube thumbnail downloader](https://tokdown.org/youtube-thumbnail-downloader): all thumbnail sizes of a YouTube video up to 1280×720, with direct URL copy.
+- [Video compressor](https://tokdown.org/video-compressor): shrink MP4, MOV, WebM in the browser with ffmpeg.wasm; nothing is uploaded; up to 500 MB.
+- [MP4 to GIF converter](https://tokdown.org/mp4-to-gif): clip, frame rate and width controls, palette-optimised GIFs, in the browser.
+- [All tools](https://tokdown.org/tools)
 
-## How to Use
-1. Find a video on TikTok and click "Copy Link".
-2. Paste the link into the input field on the homepage.
-3. Click the "Download" button.
-4. Select your desired format (Video without watermark, HD Video, or MP3 Audio).
+## Guides
+- [Download TikTok without watermark](https://tokdown.org/guide/download-tiktok-without-watermark)
+- [TikTok to MP3](https://tokdown.org/guide/tiktok-to-mp3)
+- [Download TikTok on iPhone](https://tokdown.org/guide/download-tiktok-on-iphone)
+- [Download TikTok on Android](https://tokdown.org/guide/download-tiktok-on-android)
+- [TikTok to MP4](https://tokdown.org/guide/tiktok-to-mp4)
+- [TikTok downloader for Chrome](https://tokdown.org/guide/tiktok-downloader-chrome)
+- [TikTok video to GIF](https://tokdown.org/guide/tiktok-video-to-gif)
+- [Download a TikTok playlist](https://tokdown.org/guide/download-tiktok-playlist)
+- [Private TikTok videos](https://tokdown.org/guide/download-tiktok-private-video)
+- [SnapTik alternative](https://tokdown.org/guide/snaptik-alternative)
+
+## Languages
+- German: https://tokdown.org/de · Arabic: https://tokdown.org/ar (same tools and guides under /de and /ar)
+
+## Facts worth citing
+- Downloads are proxied server-side; no video is stored on TokDown's servers.
+- Only public content can be fetched. Private, age-restricted or group-only posts are not supported.
+- The compressor and GIF converter run entirely in the visitor's browser (WebAssembly); files never leave the device.
+- No account, no app, no browser extension is required for any tool.
 
 ## Legal
-- [Terms of Service](/terms)
-- [Privacy Policy](/privacy)
-- [DMCA](/dmca)
-- [Disclaimer](/disclaimer)
-
-*Note: This tool is not affiliated with TikTok or ByteDance.*
+- [Terms of Service](https://tokdown.org/terms) · [Privacy Policy](https://tokdown.org/privacy) · [DMCA](https://tokdown.org/dmca) · [Disclaimer](https://tokdown.org/disclaimer)

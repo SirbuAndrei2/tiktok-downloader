@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import { setRequestLocale } from 'next-intl/server'
 import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
@@ -11,7 +13,7 @@ type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/download-tiktok-private-video'
 
 export const metadata: Metadata = {
-  title: 'Can You Download a Private TikTok Video? — Full Explanation (2026)',
+  title: 'Can You Download a Private TikTok Video?',
   description: 'Can you download private TikTok videos? Full honest explanation of what is possible, what is not, and the only legitimate ways to save TikTok content.',
   alternates: { canonical: `${BASE}${SLUG}` },
   openGraph: {
@@ -72,6 +74,7 @@ const ALTERNATIVES = [
 
 export default async function DownloadPrivateTikTok({ params }: Props) {
   const { locale } = await params
+  setRequestLocale(locale)
   if (locale !== 'en') notFound()
 
   return (
@@ -89,7 +92,7 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: '#ff2d55' }}>Guide · Updated June 2026</p>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Guide · Updated June 2026</p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>
               Can You Download a Private TikTok Video?
             </h1>
@@ -101,21 +104,21 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
           <section className="w-full max-w-2xl mb-10 faq-item" aria-labelledby="answer-h">
             <h2 id="answer-h" className="text-xl font-bold mb-4" style={{ color: 'var(--t1)' }}>The short answer</h2>
             <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--t3)' }}>
-              <strong style={{ color: '#ff2d55' }}>No — private TikTok videos cannot be downloaded</strong> by any third-party tool, including TokDown. TikTok enforces privacy settings server-side: a request for a private video returns an authentication error to anyone who is not the account owner.
+              <strong style={{ color: 'var(--brand)' }}>No — private TikTok videos cannot be downloaded</strong> by any third-party tool, including TokDown. TikTok enforces privacy settings server-side: a request for a private video returns an authentication error to anyone who is not the account owner.
             </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--t3)' }}>
               Any website or app claiming to download private TikTok videos is either not delivering what it promises, or — more dangerously — asking for your TikTok username and password to "log in on your behalf". Never give your TikTok credentials to a third-party tool.
             </p>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="levels-h">
             <h2 id="levels-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>TikTok privacy levels — what can be downloaded</h2>
-            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--line)' }}>
               <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
                 <thead>
-                  <tr style={{ background: 'rgba(255,45,85,0.08)' }}>
+                  <tr style={{ background: 'rgba(139,108,255,0.08)' }}>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Privacy Level</th>
                     <th className="text-center px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Downloadable?</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Notes</th>
@@ -123,10 +126,10 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
                 </thead>
                 <tbody>
                   {PRIVACY_LEVELS.map(({ level, downloadable, note }, i) => (
-                    <tr key={level} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                    <tr key={level} style={{ background: i % 2 === 0 ? 'var(--line)' : 'transparent', borderTop: '1px solid var(--line)' }}>
                       <td className="px-4 py-3 font-medium" style={{ color: 'var(--t2)' }}>{level}</td>
                       <td className="px-4 py-3 text-center">
-                        {downloadable === true ? <span style={{ color: '#4ade80' }}>✓ Yes</span> : downloadable === false ? <span style={{ color: '#ff2d55' }}>✗ No</span> : <span style={{ color: '#ff8c42' }}>⚠ Maybe</span>}
+                        {downloadable === true ? <span style={{ color: 'var(--success)' }}>✓ Yes</span> : downloadable === false ? <span style={{ color: 'var(--brand)' }}>✗ No</span> : <span style={{ color: 'var(--brand-2)' }}>⚠ Maybe</span>}
                       </td>
                       <td className="px-4 py-3 text-xs" style={{ color: 'var(--t3)' }}>{note}</td>
                     </tr>
@@ -136,7 +139,7 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="alternatives-h">
             <h2 id="alternatives-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Legitimate alternatives</h2>
@@ -151,16 +154,16 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12 text-center">
             <p className="text-sm mb-4" style={{ color: 'var(--t3)' }}>Want to download a public TikTok video instead? Free, HD, no watermark.</p>
-            <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, #ff2d55 0%, #ff8c42 100%)' }}>
+            <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
               Download a public TikTok video →
             </Link>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Related guides</h2>
@@ -179,11 +182,14 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
               ))}
             </div>
           </section>
+          <div className="w-full max-w-2xl px-4 pb-12">
+            <AdsterraBanner size="responsive" />
+          </div>
         </main>
 
-        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--t4)' }}>
+        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
-            {[{ href: '/', label: 'Downloader' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
+            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
               <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t4)' }}>{label}</Link>
             ))}
           </nav>

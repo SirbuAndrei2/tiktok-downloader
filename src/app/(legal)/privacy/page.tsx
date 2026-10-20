@@ -5,20 +5,20 @@ import LegalLayout from '@/components/legal/LegalLayout'
 const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — TikTok Downloader',
+  title: 'Privacy Policy',
   description: 'Privacy Policy for TikTok Downloader. We do not store your videos or personal data. Learn exactly what we collect, how we use it, and your GDPR rights.',
   alternates: { canonical: `${BASE}/privacy` },
   robots: { index: true, follow: true },
   openGraph: {
     images: [OG_IMAGE],
-    title: 'Privacy Policy — TikTok Downloader',
+    title: 'Privacy Policy | TokDown',
     description: 'We do not store videos or personal data. Read our full privacy policy, data retention practices, and your rights under GDPR.',
     url: `${BASE}/privacy`,
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Privacy Policy — TikTok Downloader',
+    title: 'Privacy Policy | TokDown',
     description: 'We do not store videos or personal data. Read our full privacy policy and your rights.',
   },
 }

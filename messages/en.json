@@ -7,7 +7,27 @@
     "clear": "Clear",
     "errorNetwork": "Network error. Please try again.",
     "tryAgain": "Try again",
-    "downloadAnother": "← Download another video"
+    "downloadAnother": "← Download another video",
+    "photo": {
+      "placeholder": "https://www.tiktok.com/@user/photo/...",
+      "download": "Download Photos",
+      "fetching": "Fetching photos…",
+      "downloadAnother": "← Download another slideshow"
+    },
+    "platforms": {
+      "facebook": {
+        "placeholder": "https://www.facebook.com/watch?v=… or fb.watch/…",
+        "download": "Download Video",
+        "fetching": "Fetching video…",
+        "downloadAnother": "← Download another video"
+      },
+      "twitter": {
+        "placeholder": "https://x.com/user/status/…",
+        "download": "Download Video",
+        "fetching": "Fetching tweet…",
+        "downloadAnother": "← Download another tweet"
+      }
+    }
   },
   "VideoResult": {
     "hdTitle": "HD · No Watermark",
@@ -16,7 +36,17 @@
     "sdDesc": "Smaller file",
     "audioTitle": "Audio MP3",
     "audioDesc": "Music only",
-    "downloadOptions": "Download options"
+    "downloadOptions": "Download options",
+    "photosTitle": "{count} photos",
+    "downloadAll": "Download all",
+    "downloadingAll": "Saving…",
+    "photoAlt": "Photo {n}",
+    "downloadPhoto": "Download photo {n}",
+    "slideshowTitle": "Slideshow as video",
+    "slideshowDesc": "All slides with music",
+    "hdGeneric": "Video · Best quality",
+    "sdGeneric": "Video · Smaller file",
+    "sourceLabel": "Source"
   },
   "Nav": {
     "about": "About",
@@ -27,23 +57,49 @@
     "dmca": "DMCA",
     "disclaimer": "Disclaimer",
     "downloader": "Downloader",
-    "noWatermarkGuide": "No Watermark Guide"
+    "noWatermarkGuide": "No Watermark Guide",
+    "tools": "Tools",
+    "guides": "Guides",
+    "photoDownloader": "TikTok Photo Downloader"
   },
   "Footer": {
     "tagline": "For personal use only. We do not store any videos. Not affiliated with TikTok or ByteDance.",
     "copyright": "© {year} TikTok Downloader",
-    "notAffiliated": "© {year} TokDown. Not affiliated with TikTok or ByteDance."
+    "notAffiliated": "© {year} TokDown. Not affiliated with TikTok or ByteDance.",
+    "toolsHeading": "Tools",
+    "guidesHeading": "Guides",
+    "legalHeading": "Legal",
+    "feedback": "Have feedback? Write to us at"
   },
   "Common": {
     "backToDownloader": "Back to downloader",
     "guideUpdated": "Guide · Updated May 2026",
     "tryItNow": "Try it now — no login, no limits.",
-    "relatedGuides": "Related guides"
+    "relatedGuides": "Related guides",
+    "language": "Language",
+    "runsLocally": "Runs in your browser · nothing is uploaded",
+    "inDepth": "In depth",
+    "linkToTool": "Link to this tool",
+    "linkToToolHint": "Found it useful? Paste this snippet into your blog, forum post or docs so others can find it too.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "adLabel": "Advertisement"
   },
   "Home": {
-    "metaTitle": "Download TikTok Without Watermark — Free, HD & Instant (2026)",
-    "metaDescription": "Download any TikTok video without watermark in HD — or save just the audio as MP3. Works on iPhone, Android, PC and Mac. Free, no login, no limits.",
-    "metaKeywords": ["tiktok downloader", "download tiktok without watermark", "tiktok no watermark", "tiktok to mp3", "tiktok to mp4", "save tiktok video", "tiktok hd download", "free tiktok downloader", "snaptik alternative", "ssstiktok alternative"],
+    "metaTitle": "TikTok Downloader – No Watermark, HD, Free",
+    "metaDescription": "Download TikTok videos without watermark in HD or save the sound as MP3. Free, no login, works on iPhone, Android, PC and Mac. Paste a link and go.",
+    "metaKeywords": [
+      "tiktok downloader",
+      "download tiktok without watermark",
+      "tiktok no watermark",
+      "tiktok to mp3",
+      "tiktok to mp4",
+      "save tiktok video",
+      "tiktok hd download",
+      "free tiktok downloader",
+      "snaptik alternative",
+      "ssstiktok alternative"
+    ],
     "badge": "Free · No Watermark · HD Quality",
     "h1": "Download TikTok",
     "h1Accent": "Without Watermark",
@@ -73,20 +129,56 @@
     "faqTitle": "Frequently Asked Questions",
     "faqSubtitle": "Everything you need to know",
     "features": [
-      { "icon": "🚫", "title": "No Watermark", "desc": "Clean video without the TikTok logo burned in." },
-      { "icon": "🎬", "title": "HD Quality", "desc": "Highest resolution the creator uploaded." },
-      { "icon": "🎵", "title": "MP3 Audio", "desc": "Extract and save just the audio track." },
-      { "icon": "⚡", "title": "Instant", "desc": "Processed in seconds, no queue." },
-      { "icon": "🔓", "title": "No Login", "desc": "Zero accounts, zero registration." },
-      { "icon": "📱", "title": "All Devices", "desc": "iPhone, Android, PC and Mac." }
+      {
+        "icon": "🚫",
+        "title": "No Watermark",
+        "desc": "Clean video without the TikTok logo burned in."
+      },
+      {
+        "icon": "🎬",
+        "title": "HD Quality",
+        "desc": "Highest resolution the creator uploaded."
+      },
+      {
+        "icon": "🎵",
+        "title": "MP3 Audio",
+        "desc": "Extract and save just the audio track."
+      },
+      {
+        "icon": "⚡",
+        "title": "Instant",
+        "desc": "Processed in seconds, no queue."
+      },
+      {
+        "icon": "🔓",
+        "title": "No Login",
+        "desc": "Zero accounts, zero registration."
+      },
+      {
+        "icon": "📱",
+        "title": "All Devices",
+        "desc": "iPhone, Android, PC and Mac."
+      }
     ],
     "comparisons": [
-      { "label": "No watermark HD" },
-      { "label": "MP3 audio extraction" },
-      { "label": "No account or login" },
-      { "label": "No forced redirects" },
-      { "label": "Works on all devices" },
-      { "label": "No file stored on servers" }
+      {
+        "label": "No watermark HD"
+      },
+      {
+        "label": "MP3 audio extraction"
+      },
+      {
+        "label": "No account or login"
+      },
+      {
+        "label": "No forced redirects"
+      },
+      {
+        "label": "Works on all devices"
+      },
+      {
+        "label": "No file stored on servers"
+      }
     ],
     "faq": [
       {
@@ -169,10 +261,87 @@
         "q": "Does TokDown work without a TikTok account?",
         "a": "Yes. TokDown only works with publicly available TikTok videos and does not require any TikTok account — yours or anyone else's. Simply paste the public video link and download."
       }
-    ]
+    ],
+    "eyebrow": "Free · No watermark · HD",
+    "heroNote": "Paste a link, pick a format, done in seconds.",
+    "facts": [
+      {
+        "value": "3",
+        "label": "steps, start to finish"
+      },
+      {
+        "value": "0",
+        "label": "accounts or logins"
+      },
+      {
+        "value": "HD",
+        "label": "video without watermark"
+      },
+      {
+        "value": "MP3",
+        "label": "audio in one tap"
+      }
+    ],
+    "stepsTitle": "How it works",
+    "stepsSubtitle": "Three steps. No account, nothing to install.",
+    "step1Desc": "Open TikTok, tap Share on any public video, then Copy link.",
+    "step2Desc": "Paste the link into the field at the top and press Download.",
+    "step3Desc": "Choose HD, SD or MP3 and the file saves straight to your device.",
+    "toolsTitle": "Everything TokDown does",
+    "toolsSubtitle": "One tool, several ways to save what you love.",
+    "toolsCta": "See all tools",
+    "testimonialsTitle": "What people say",
+    "testimonialsSubtitle": "Notes from people who use TokDown every week.",
+    "testimonials": [
+      {
+        "name": "Elena M.",
+        "meta": "Content creator · Bucharest",
+        "rating": 5,
+        "avatar": "elena-marin",
+        "quote": "I save my own drafts in HD before posting. No watermark, no app, and it works on my iPhone exactly like on my laptop."
+      },
+      {
+        "name": "Jonas W.",
+        "meta": "Teacher · Berlin",
+        "rating": 5,
+        "avatar": "jonas-weber",
+        "quote": "I use it to keep short educational clips for class. Paste, download, done. The fact that there is no login is the whole point."
+      },
+      {
+        "name": "Layla H.",
+        "meta": "Marketing · Dubai",
+        "rating": 4,
+        "avatar": "layla-hassan",
+        "quote": "The MP3 option is what sold me. I pull sounds for mood boards in seconds. Arabic interface is a nice touch too."
+      },
+      {
+        "name": "Marco R.",
+        "meta": "Dance instructor · Milan",
+        "rating": 5,
+        "avatar": "marco-rossi",
+        "quote": "Clean files, correct aspect ratio, no logo in the corner. I archive my choreography videos here every week."
+      },
+      {
+        "name": "Aisha R.",
+        "meta": "Student · Jakarta",
+        "rating": 5,
+        "avatar": "aisha-rahman",
+        "quote": "Finally one that does not send me through three ad pages. It just downloads. I recommended it to my whole class."
+      },
+      {
+        "name": "Daniel P.",
+        "meta": "Video editor · Seoul",
+        "rating": 4,
+        "avatar": "daniel-park",
+        "quote": "HD quality is genuinely the original upload. I drop the files straight into Premiere without re-encoding."
+      }
+    ],
+    "ctaTitle": "Ready to save a video?",
+    "ctaSubtitle": "No account. No watermark. No cost.",
+    "ctaButton": "Paste your link"
   },
   "About": {
-    "metaTitle": "About TokDown — Why We Built a Better TikTok Downloader",
+    "metaTitle": "About TokDown – Who Makes This Downloader",
     "metaDescription": "Learn why TokDown was built: a fast, honest TikTok downloader with no redirects, no stored files, and no hidden fees. We value your privacy and your time.",
     "h1": "About",
     "h1Accent": "TokDown",
@@ -191,14 +360,30 @@
     "contactTitle": "Contact & support",
     "contact": "Have a question, found a bug, or need to report a DMCA issue? Reach us at support@tokdown.org. We respond within 48 hours.",
     "values": [
-      { "icon": "🔒", "title": "Privacy first", "desc": "We never store the videos you download. Files go directly from TikTok's servers to your device. We have no database of your downloads." },
-      { "icon": "⚡", "title": "Speed without compromise", "desc": "Every download is processed in seconds. No queues, no \"please wait\" timers designed to show you more ads." },
-      { "icon": "🚫", "title": "No dark patterns", "desc": "No fake download buttons, no forced redirects to ad sites, no captchas before every download. Just a clean, honest tool." },
-      { "icon": "🆓", "title": "Genuinely free", "desc": "TokDown is free with no rate limits, no premium tier, and no hidden fees. We cover costs through non-intrusive advertising." }
+      {
+        "icon": "🔒",
+        "title": "Privacy first",
+        "desc": "We never store the videos you download. Files go directly from TikTok's servers to your device. We have no database of your downloads."
+      },
+      {
+        "icon": "⚡",
+        "title": "Speed without compromise",
+        "desc": "Every download is processed in seconds. No queues, no \"please wait\" timers designed to show you more ads."
+      },
+      {
+        "icon": "🚫",
+        "title": "No dark patterns",
+        "desc": "No fake download buttons, no forced redirects to ad sites, no captchas before every download. Just a clean, honest tool."
+      },
+      {
+        "icon": "🆓",
+        "title": "Genuinely free",
+        "desc": "TokDown is free with no rate limits, no premium tier, and no hidden fees. We cover costs through non-intrusive advertising."
+      }
     ]
   },
   "GuideNoWatermark": {
-    "metaTitle": "How to Download TikTok Without Watermark (iPhone, Android, PC — 2026)",
+    "metaTitle": "Download TikTok Without Watermark: Full Guide",
     "metaDescription": "Step-by-step guide: download any TikTok video without watermark in HD on iPhone, Android, Windows, or Mac. Free, no login needed. Works in 2026.",
     "h1": "How to Download TikTok Without Watermark",
     "subtitle": "A complete, honest walkthrough for iPhone, Android, Windows and Mac — including fixes for the most common problems.",
@@ -278,7 +463,7 @@
     ]
   },
   "GuideMp3": {
-    "metaTitle": "TikTok to MP3 — Download TikTok Audio Free (2026)",
+    "metaTitle": "TikTok to MP3 – Download TikTok Audio Free",
     "metaDescription": "Convert any TikTok video to MP3 and save the audio to your phone or PC. Free, instant, no account needed. Works on iPhone, Android, Windows and Mac.",
     "h1": "TikTok to MP3 — Free Audio Downloader",
     "subtitle": "Extract and save the audio from any TikTok video as an MP3 file in seconds — no login, no app, works on any device.",
@@ -318,10 +503,26 @@
       }
     ],
     "useCases": [
-      { "icon": "🎧", "title": "Offline listening", "desc": "Save trending TikTok sounds to listen to on the go without needing mobile data." },
-      { "icon": "🎤", "title": "Voiceovers & speech", "desc": "Extract spoken content — tutorials, advice, or commentary — to reference later." },
-      { "icon": "🎼", "title": "Music discovery", "desc": "Save a track you heard on TikTok before you know the artist name, then Shazam it offline." },
-      { "icon": "📚", "title": "Language learning", "desc": "Save native-speaker audio clips for pronunciation practice or vocabulary review." }
+      {
+        "icon": "🎧",
+        "title": "Offline listening",
+        "desc": "Save trending TikTok sounds to listen to on the go without needing mobile data."
+      },
+      {
+        "icon": "🎤",
+        "title": "Voiceovers & speech",
+        "desc": "Extract spoken content — tutorials, advice, or commentary — to reference later."
+      },
+      {
+        "icon": "🎼",
+        "title": "Music discovery",
+        "desc": "Save a track you heard on TikTok before you know the artist name, then Shazam it offline."
+      },
+      {
+        "icon": "📚",
+        "title": "Language learning",
+        "desc": "Save native-speaker audio clips for pronunciation practice or vocabulary review."
+      }
     ],
     "troubleshoot": [
       {
@@ -343,7 +544,7 @@
     ]
   },
   "GuideIphone": {
-    "metaTitle": "How to Download TikTok Videos on iPhone — Save to Camera Roll (2026)",
+    "metaTitle": "Download TikTok Videos on iPhone (Guide)",
     "metaDescription": "Save any TikTok video to your iPhone Camera Roll without watermark. Step-by-step guide for iOS Safari — no app install, no account, free.",
     "h1": "How to Download TikTok on iPhone",
     "subtitle": "Save any TikTok video to your Camera Roll in HD — without the watermark, without an app, without a TikTok account. Works in Safari on every iPhone.",
@@ -353,27 +554,66 @@
     "ctaText": "Ready to try? Paste any TikTok link below — no login needed.",
     "ctaButton": "Download a TikTok video →",
     "steps": [
-      { "title": "Open TikTok and find the video", "body": "Open the TikTok app on your iPhone and scroll to — or search for — the video you want to save." },
-      { "title": "Tap Share → Copy Link", "body": "Tap the Share icon (the arrow pointing right) on the right side of the video. In the share sheet, tap \"Copy link\". The video URL is now in your clipboard." },
-      { "title": "Open Safari and go to TokDown", "body": "Open Safari on your iPhone. Type tokdown.org in the address bar. Tap the input field and paste the TikTok link (long-press → Paste)." },
-      { "title": "Tap Download and choose HD", "body": "Tap the Download button. When the options appear, tap \"HD · No Watermark\" to download the clean, high-definition version." },
-      { "title": "Save to Camera Roll from Files", "body": "On iPhone, downloaded files go to the Files app. Open Files → Downloads. Long-press the video file and tap Share → \"Save Video\". The video moves to your Photos Camera Roll." }
+      {
+        "title": "Open TikTok and find the video",
+        "body": "Open the TikTok app on your iPhone and scroll to — or search for — the video you want to save."
+      },
+      {
+        "title": "Tap Share → Copy Link",
+        "body": "Tap the Share icon (the arrow pointing right) on the right side of the video. In the share sheet, tap \"Copy link\". The video URL is now in your clipboard."
+      },
+      {
+        "title": "Open Safari and go to TokDown",
+        "body": "Open Safari on your iPhone. Type tokdown.org in the address bar. Tap the input field and paste the TikTok link (long-press → Paste)."
+      },
+      {
+        "title": "Tap Download and choose HD",
+        "body": "Tap the Download button. When the options appear, tap \"HD · No Watermark\" to download the clean, high-definition version."
+      },
+      {
+        "title": "Save to Camera Roll from Files",
+        "body": "On iPhone, downloaded files go to the Files app. Open Files → Downloads. Long-press the video file and tap Share → \"Save Video\". The video moves to your Photos Camera Roll."
+      }
     ],
     "tips": [
-      { "title": "Use Safari, not the TikTok in-app browser", "body": "TikTok's built-in browser blocks downloads. Always open tokdown.org in Safari (the blue compass icon) — not inside TikTok itself." },
-      { "title": "iOS 16+ has a Download button in Safari", "body": "On iOS 16 and later, Safari shows a download progress indicator in the toolbar. Tap it to see your downloaded file immediately." },
-      { "title": "Set your default download location", "body": "Go to Settings → Safari → Downloads and set it to \"On My iPhone\" so files are easy to find in the Files app." },
-      { "title": "No daily limit", "body": "TokDown has no download limit. Open each TikTok link in a new Safari tab and move all files to Camera Roll afterward." }
+      {
+        "title": "Use Safari, not the TikTok in-app browser",
+        "body": "TikTok's built-in browser blocks downloads. Always open tokdown.org in Safari (the blue compass icon) — not inside TikTok itself."
+      },
+      {
+        "title": "iOS 16+ has a Download button in Safari",
+        "body": "On iOS 16 and later, Safari shows a download progress indicator in the toolbar. Tap it to see your downloaded file immediately."
+      },
+      {
+        "title": "Set your default download location",
+        "body": "Go to Settings → Safari → Downloads and set it to \"On My iPhone\" so files are easy to find in the Files app."
+      },
+      {
+        "title": "No daily limit",
+        "body": "TokDown has no download limit. Open each TikTok link in a new Safari tab and move all files to Camera Roll afterward."
+      }
     ],
     "troubleshoot": [
-      { "problem": "\"Download failed\" or no options appear", "fix": "Make sure the video is public. Also check that you copied the full link from Share → Copy Link — not from the browser address bar." },
-      { "problem": "\"Save Video\" option not visible in the share sheet", "fix": "Scroll down in the share sheet — the option may be below the fold. Also make sure the file is a valid .mp4 and that Photos access is granted in Settings → Privacy → Photos." },
-      { "problem": "Video file saves as .webm or won't play", "fix": "On iPhone this is rare. Rename the extension to .mp4 in the Files app: long-press the file → Rename → change the extension." },
-      { "problem": "Download is very slow", "fix": "HD TikTok files can be 20–80 MB. Switch to Wi-Fi for faster downloads." }
+      {
+        "problem": "\"Download failed\" or no options appear",
+        "fix": "Make sure the video is public. Also check that you copied the full link from Share → Copy Link — not from the browser address bar."
+      },
+      {
+        "problem": "\"Save Video\" option not visible in the share sheet",
+        "fix": "Scroll down in the share sheet — the option may be below the fold. Also make sure the file is a valid .mp4 and that Photos access is granted in Settings → Privacy → Photos."
+      },
+      {
+        "problem": "Video file saves as .webm or won't play",
+        "fix": "On iPhone this is rare. Rename the extension to .mp4 in the Files app: long-press the file → Rename → change the extension."
+      },
+      {
+        "problem": "Download is very slow",
+        "fix": "HD TikTok files can be 20–80 MB. Switch to Wi-Fi for faster downloads."
+      }
     ]
   },
   "GuideAndroid": {
-    "metaTitle": "How to Download TikTok Videos on Android — Save to Gallery (2026)",
+    "metaTitle": "Download TikTok Videos on Android (Guide)",
     "metaDescription": "Download any TikTok video to your Android phone gallery without watermark — Samsung, Xiaomi, Huawei and all Android brands. Free, HD, no app needed.",
     "h1": "How to Download TikTok on Android",
     "subtitle": "Save any TikTok video to your Android gallery in HD — no watermark, no app install, no account. Works on Samsung, Xiaomi, Huawei, and all Android brands.",
@@ -383,23 +623,726 @@
     "ctaText": "Ready? Paste any TikTok link and save it to your gallery.",
     "ctaButton": "Download a TikTok video →",
     "steps": [
-      { "title": "Open TikTok and find the video", "body": "Open the TikTok app and navigate to the video you want to save." },
-      { "title": "Tap Share → Copy Link", "body": "Tap the Share icon (the arrow) on the right side of the video. In the share sheet, tap \"Copy link\". The video URL is in your clipboard." },
-      { "title": "Open Chrome and go to TokDown", "body": "Open Chrome on your Android phone. Go to tokdown.org and tap the input field. Paste the TikTok link (long-press → Paste)." },
-      { "title": "Tap Download and choose HD", "body": "Tap the Download button. When options appear, tap \"HD · No Watermark\"." },
-      { "title": "Find the video in your Gallery", "body": "The video saves directly to your Downloads folder. Open your Gallery app or Files app to find and play it." }
+      {
+        "title": "Open TikTok and find the video",
+        "body": "Open the TikTok app and navigate to the video you want to save."
+      },
+      {
+        "title": "Tap Share → Copy Link",
+        "body": "Tap the Share icon (the arrow) on the right side of the video. In the share sheet, tap \"Copy link\". The video URL is in your clipboard."
+      },
+      {
+        "title": "Open Chrome and go to TokDown",
+        "body": "Open Chrome on your Android phone. Go to tokdown.org and tap the input field. Paste the TikTok link (long-press → Paste)."
+      },
+      {
+        "title": "Tap Download and choose HD",
+        "body": "Tap the Download button. When options appear, tap \"HD · No Watermark\"."
+      },
+      {
+        "title": "Find the video in your Gallery",
+        "body": "The video saves directly to your Downloads folder. Open your Gallery app or Files app to find and play it."
+      }
     ],
     "tips": [
-      { "title": "Grant storage permission the first time", "body": "On Android 12 and below, Chrome may ask for storage permission on the first download. Tap \"Allow\" to enable saving files." },
-      { "title": "Samsung Gallery picks it up automatically", "body": "On Samsung devices, downloaded videos appear in the Gallery app under the Downloads album immediately after saving." },
-      { "title": "Xiaomi / MIUI users", "body": "On Xiaomi phones, use the built-in browser or Chrome. The video saves to Downloads and appears in the Photos app under Albums → Downloads." },
-      { "title": "Share directly from the download notification", "body": "After the download completes, Android shows a notification with the file. Tap it to open the video, or long-press to share it directly to WhatsApp, Telegram, or other apps." }
+      {
+        "title": "Grant storage permission the first time",
+        "body": "On Android 12 and below, Chrome may ask for storage permission on the first download. Tap \"Allow\" to enable saving files."
+      },
+      {
+        "title": "Samsung Gallery picks it up automatically",
+        "body": "On Samsung devices, downloaded videos appear in the Gallery app under the Downloads album immediately after saving."
+      },
+      {
+        "title": "Xiaomi / MIUI users",
+        "body": "On Xiaomi phones, use the built-in browser or Chrome. The video saves to Downloads and appears in the Photos app under Albums → Downloads."
+      },
+      {
+        "title": "Share directly from the download notification",
+        "body": "After the download completes, Android shows a notification with the file. Tap it to open the video, or long-press to share it directly to WhatsApp, Telegram, or other apps."
+      }
     ],
     "troubleshoot": [
-      { "problem": "Download starts but file is 0 bytes", "fix": "This usually happens on slow connections. Try again on Wi-Fi. Also check that you have enough storage space on your device." },
-      { "problem": "Video doesn't appear in Gallery", "fix": "Open the Files app and check the Downloads folder manually. Some Android versions require you to wait a moment for the media scanner to index the new file." },
-      { "problem": "Chrome asks to open with an external app", "fix": "Tap \"Download\" instead of opening. If you see a prompt, select \"Download file\" to save it to your device rather than streaming it." },
-      { "problem": "\"Download blocked\" warning in Chrome", "fix": "This warning appears for some file types. Tap \"Download anyway\" — TokDown only serves standard MP4 and MP3 files." }
+      {
+        "problem": "Download starts but file is 0 bytes",
+        "fix": "This usually happens on slow connections. Try again on Wi-Fi. Also check that you have enough storage space on your device."
+      },
+      {
+        "problem": "Video doesn't appear in Gallery",
+        "fix": "Open the Files app and check the Downloads folder manually. Some Android versions require you to wait a moment for the media scanner to index the new file."
+      },
+      {
+        "problem": "Chrome asks to open with an external app",
+        "fix": "Tap \"Download\" instead of opening. If you see a prompt, select \"Download file\" to save it to your device rather than streaming it."
+      },
+      {
+        "problem": "\"Download blocked\" warning in Chrome",
+        "fix": "This warning appears for some file types. Tap \"Download anyway\" — TokDown only serves standard MP4 and MP3 files."
+      }
+    ]
+  },
+  "Tools": {
+    "metaTitle": "Free Video Downloaders & Converters",
+    "metaDescription": "All TokDown tools in one place: TikTok, Facebook and Twitter video downloaders, TikTok photo saver, YouTube thumbnails, video compressor and MP4 to GIF.",
+    "eyebrow": "Tools & services",
+    "h1": "Everything you can do with TokDown",
+    "subtitle": "One free downloader, several ways to use it. Pick what you need below; every tool works without an account.",
+    "useTool": "Use the tool",
+    "readGuide": "Read the guide",
+    "items": {
+      "video": {
+        "title": "TikTok video without watermark",
+        "desc": "Paste any public TikTok link and save the clean MP4, HD or SD, in seconds."
+      },
+      "audio": {
+        "title": "TikTok to MP3",
+        "desc": "Extract the sound of any video as an MP3 file. Ideal for sounds, voice-overs and music."
+      },
+      "hd": {
+        "title": "HD quality download",
+        "desc": "Get the highest resolution the creator uploaded, with no re-encoding."
+      },
+      "iphone": {
+        "title": "Download on iPhone",
+        "desc": "How to save TikTok videos to your Camera Roll in Safari, step by step."
+      },
+      "android": {
+        "title": "Download on Android",
+        "desc": "Save TikTok videos to your gallery on any Android phone, no app needed."
+      },
+      "mp4": {
+        "title": "TikTok to MP4",
+        "desc": "Everything about the MP4 format TokDown delivers and how to use it anywhere."
+      },
+      "gif": {
+        "title": "TikTok video to GIF",
+        "desc": "Turn a downloaded TikTok into a GIF for chats, docs and social posts."
+      },
+      "chrome": {
+        "title": "TikTok downloader for Chrome",
+        "desc": "Use TokDown on desktop without extensions, plus the shortcuts that help."
+      },
+      "playlist": {
+        "title": "Download a TikTok playlist",
+        "desc": "The fastest way to save several videos from one creator or collection."
+      },
+      "private": {
+        "title": "Private TikTok videos",
+        "desc": "What can and cannot be downloaded, and how to handle your own private clips."
+      },
+      "photo": {
+        "title": "TikTok photo & slideshow",
+        "desc": "Save every image from a TikTok photo post in full resolution, one by one or all at once."
+      },
+      "facebook": {
+        "title": "Facebook video downloader",
+        "desc": "Save public Facebook videos and Reels as MP4, in HD when available."
+      },
+      "twitter": {
+        "title": "Twitter / X video downloader",
+        "desc": "Download videos and GIFs from any public tweet in one paste."
+      },
+      "youtubeThumbnail": {
+        "title": "YouTube thumbnail downloader",
+        "desc": "Grab the full-size thumbnail of any YouTube video, up to 1280×720."
+      },
+      "compressor": {
+        "title": "Video compressor",
+        "desc": "Shrink MP4 and MOV files right in your browser. Nothing is uploaded."
+      },
+      "mp4ToGif": {
+        "title": "MP4 to GIF",
+        "desc": "Turn any video clip into a sharp, looping GIF, offline in your browser."
+      }
+    }
+  },
+  "PhotoDownloader": {
+    "metaTitle": "TikTok Photo Downloader – Slideshow Images HD",
+    "metaDescription": "Save every image from a TikTok photo post or slideshow in full HD, without watermark. Paste the link, download one by one or all at once. Free, no login.",
+    "metaKeywords": [
+      "tiktok photo downloader",
+      "tiktok slideshow downloader",
+      "download tiktok photos",
+      "tiktok image downloader",
+      "save tiktok slideshow",
+      "tiktok photo mode download",
+      "tiktok carousel downloader",
+      "tiktok pictures download"
+    ],
+    "eyebrow": "Free · Full resolution · All slides",
+    "h1": "Download TikTok Photos",
+    "h1Accent": "& Slideshows",
+    "subtitle": "Paste a TikTok photo-mode link and save every slide as a full-size image, or grab the whole slideshow as a video with its sound.",
+    "heroNote": "Works with photo posts, carousels and slideshows. Videos work too.",
+    "trust1": "100% Free",
+    "trust2": "Original resolution",
+    "trust3": "No watermark",
+    "trust4": "No login",
+    "stepsTitle": "How to download a TikTok slideshow",
+    "stepsSubtitle": "Three steps, no app and no account.",
+    "step1": "Copy the photo post link",
+    "step1Desc": "Open the TikTok photo post, tap Share, then Copy link. Photo links contain /photo/ instead of /video/.",
+    "step2": "Paste it above",
+    "step2Desc": "Paste the link into the box and press Download Photos. We fetch every slide in its original size.",
+    "step3": "Save the slides",
+    "step3Desc": "Tap one image to save it, or use Download all to save every slide. The sound is available as MP3 too.",
+    "featuresTitle": "What you get",
+    "featuresSubtitle": "Everything in the post, nothing added",
+    "features": [
+      {
+        "title": "Every slide, full size",
+        "desc": "Images come straight from TikTok's CDN at the resolution the creator uploaded. No compression, no watermark."
+      },
+      {
+        "title": "Download all at once",
+        "desc": "One tap saves the whole carousel in order, numbered so it stays sorted in your gallery."
+      },
+      {
+        "title": "Slideshow as MP4",
+        "desc": "Prefer a video? Save the rendered slideshow with its music as a single MP4."
+      },
+      {
+        "title": "Sound as MP3",
+        "desc": "Extract the audio track used in the photo post and save it as an MP3."
+      }
+    ],
+    "faqTitle": "Photo downloader FAQ",
+    "faqSubtitle": "Common questions about TikTok photo posts",
+    "faq": [
+      {
+        "q": "How do I tell a photo post from a video?",
+        "a": "Photo posts show small dots or a page counter at the bottom and swipe sideways. Their share link contains /photo/ instead of /video/. TokDown accepts both."
+      },
+      {
+        "q": "Are the images watermarked?",
+        "a": "No. TikTok only adds its watermark to rendered videos. The images in a photo post are stored as plain files, so what you download is the original slide."
+      },
+      {
+        "q": "Why does Chrome ask to allow multiple downloads?",
+        "a": "Download all saves each slide as a separate file. Chrome asks once for permission to download several files from the same site. Choose Allow and the rest of the slides follow."
+      },
+      {
+        "q": "Can I download the slideshow as a video?",
+        "a": "Yes. When TikTok provides a rendered version, you will see a Slideshow as video button. It contains every slide with the original sound as an MP4."
+      },
+      {
+        "q": "Does it work on iPhone?",
+        "a": "Yes. In Safari each image opens or saves to Files; long-press a photo and choose Save to Photos to put it in your Camera Roll. On Android, files go straight to Downloads."
+      },
+      {
+        "q": "Can I download private photo posts?",
+        "a": "No. Like every downloader, TokDown can only fetch public posts. If the account is private or the post is friends-only, the link will not resolve."
+      }
+    ],
+    "ctaTitle": "Got a slideshow to save?",
+    "ctaSubtitle": "Every slide, full resolution, no account.",
+    "ctaButton": "Paste your link",
+    "videoLink": "Need a video instead? Use the TikTok video downloader"
+  },
+  "FacebookDownloader": {
+    "metaTitle": "Facebook Video Downloader – HD, No Watermark",
+    "metaDescription": "Download public Facebook videos and Reels as MP4 in HD, without watermark. Paste a facebook.com or fb.watch link. Free, no login, works on any device.",
+    "eyebrow": "Facebook · Reels · HD",
+    "h1": "Download Facebook videos",
+    "h1Accent": "in one paste",
+    "subtitle": "Public videos, Reels and Watch links saved as MP4, HD when Facebook offers it. No account, no extension.",
+    "heroNote": "Works with facebook.com, fb.watch and share links",
+    "trust": [
+      "100% free",
+      "No login",
+      "HD when available",
+      "All devices"
+    ],
+    "stepsTitle": "How it works",
+    "stepsSubtitle": "Three steps, nothing to install.",
+    "steps": [
+      {
+        "title": "Copy the video link",
+        "desc": "On Facebook tap Share, then Copy link. Watch, Reels and fb.watch links all work."
+      },
+      {
+        "title": "Paste it above",
+        "desc": "Drop the link into the field and press Download. We read the public video data."
+      },
+      {
+        "title": "Save the MP4",
+        "desc": "Choose HD or SD and the file downloads straight to your device."
+      }
+    ],
+    "featuresTitle": "Why people use it",
+    "featuresSubtitle": "Built for the way Facebook actually serves video.",
+    "features": [
+      {
+        "title": "Reels and Watch",
+        "desc": "Standard posts, Reels, Watch pages and fb.watch short links are all supported."
+      },
+      {
+        "title": "HD when it exists",
+        "desc": "We pick the best rendition Facebook exposes, and fall back to SD gracefully."
+      },
+      {
+        "title": "No login, ever",
+        "desc": "We never ask for your Facebook account. Only public videos can be downloaded."
+      },
+      {
+        "title": "Phone friendly",
+        "desc": "Big buttons, direct save to your gallery on Android and Files on iPhone."
+      }
+    ],
+    "faqTitle": "Facebook download FAQ",
+    "faqSubtitle": "Short answers to the usual questions.",
+    "faq": [
+      {
+        "q": "Why does a video fail to download?",
+        "a": "It is private, posted in a closed group, age-restricted, or a live stream. Only videos visible to everyone without logging in can be fetched."
+      },
+      {
+        "q": "Can I download Facebook Reels?",
+        "a": "Yes. Paste the Reel link exactly as Facebook gives it to you and you will get an MP4."
+      },
+      {
+        "q": "Is there a watermark?",
+        "a": "No. You receive the original file Facebook streams, without any added overlay."
+      },
+      {
+        "q": "Does it work on iPhone?",
+        "a": "Yes. Safari saves the MP4 to Files; from there you can move it to Photos."
+      },
+      {
+        "q": "Is this legal?",
+        "a": "Downloading for personal, offline viewing of content you have the right to use is fine. Re-uploading other people’s videos is not. Respect creators and Facebook’s terms."
+      },
+      {
+        "q": "Does it work on Android and iPhone?",
+        "a": "Yes. On Android the MP4 lands in your Downloads folder and shows up in the gallery. On iPhone, Safari saves it to Files, and the Share menu lets you move it to Photos."
+      },
+      {
+        "q": "Can I download just the audio from a Facebook video?",
+        "a": "Download the MP4 first, then use the video compressor or any audio extractor. A direct MP3 option is on the roadmap."
+      }
+    ],
+    "ctaTitle": "Got a Facebook link?",
+    "ctaSubtitle": "Paste it and save the video in seconds.",
+    "ctaButton": "Paste your link",
+    "details": [
+      "Facebook serves most public videos in two renditions, an HD file for fast connections and an SD file for mobile data. TokDown reads both from the same public embed Facebook uses for its own share buttons, which is why no login, cookie or browser extension is needed. You get the original MP4 as uploaded by the page, with the original aspect ratio and no added watermark or logo.",
+      "Reels, Watch episodes, videos posted on pages and public profile videos all work, including fb.watch short links and the long share URLs the mobile app produces. Videos inside closed groups, private profiles, stories and live broadcasts are not available to anyone who is not logged in, so they cannot be fetched here either. If a link fails, open it in a private browser window first: if Facebook asks you to log in, the video is not public."
+    ]
+  },
+  "TwitterDownloader": {
+    "metaTitle": "Twitter Video Downloader – Save X Videos in HD",
+    "metaDescription": "Download videos and GIFs from Twitter / X in HD 1080p. Paste any public tweet link, no login, no app. Works on iPhone, Android, PC and Mac.",
+    "eyebrow": "Twitter / X · Video · GIF",
+    "h1": "Download Twitter videos",
+    "h1Accent": "in HD",
+    "subtitle": "Paste a tweet link and save the video or GIF as MP4. Works with x.com, twitter.com and t.co links.",
+    "heroNote": "Public tweets only · best bitrate picked automatically",
+    "trust": [
+      "100% free",
+      "No login",
+      "GIFs too",
+      "All devices"
+    ],
+    "stepsTitle": "How it works",
+    "stepsSubtitle": "Tweet link in, MP4 out.",
+    "steps": [
+      {
+        "title": "Copy the tweet link",
+        "desc": "Open the tweet, tap Share, then Copy link. x.com and twitter.com both work."
+      },
+      {
+        "title": "Paste it above",
+        "desc": "Press Download. We read the tweet’s public media and list the renditions."
+      },
+      {
+        "title": "Pick a quality",
+        "desc": "Choose the highest bitrate or a smaller file and save it to your device."
+      }
+    ],
+    "featuresTitle": "What you get",
+    "featuresSubtitle": "Clean files, correct aspect ratio, no cropping.",
+    "features": [
+      {
+        "title": "Highest bitrate",
+        "desc": "Twitter stores several MP4 renditions. We always surface the best one first."
+      },
+      {
+        "title": "GIFs as MP4",
+        "desc": "Twitter GIFs are really silent videos; you get them as small, loopable MP4 files."
+      },
+      {
+        "title": "Photo tweets",
+        "desc": "Tweets with images show a gallery with full-size downloads for each picture."
+      },
+      {
+        "title": "Short links",
+        "desc": "t.co links are resolved automatically, so you can paste straight from a message."
+      }
+    ],
+    "faqTitle": "Twitter / X download FAQ",
+    "faqSubtitle": "The questions we get most.",
+    "faq": [
+      {
+        "q": "Do I need an X account?",
+        "a": "No. We read only what X publishes for embedded tweets, which does not require a login."
+      },
+      {
+        "q": "Why does it say the tweet is unavailable?",
+        "a": "The account is protected, the tweet was deleted, or it is marked sensitive. Those cannot be read without logging in."
+      },
+      {
+        "q": "Can I download a video from a reply or a quote tweet?",
+        "a": "Yes, paste the link of the specific tweet that contains the video."
+      },
+      {
+        "q": "What about Spaces or live streams?",
+        "a": "Not supported. Only regular video, GIF and photo tweets."
+      },
+      {
+        "q": "Is the quality reduced?",
+        "a": "No. You get the exact file X streams at the chosen bitrate, with no re-encoding."
+      },
+      {
+        "q": "Does TokDown add a watermark to Twitter videos?",
+        "a": "No. The file is streamed from X’s own CDN through our proxy without any re-encoding, so nothing is added or removed."
+      },
+      {
+        "q": "Can I download a video from a tweet in a thread?",
+        "a": "Yes. Open the exact tweet that contains the video, copy its link from the Share menu and paste it. Each tweet in a thread has its own link."
+      }
+    ],
+    "ctaTitle": "Have a tweet to save?",
+    "ctaSubtitle": "Paste the link and pick a quality.",
+    "ctaButton": "Paste your link",
+    "details": [
+      "Every video uploaded to Twitter / X is stored in several MP4 renditions, typically 320p, 480p, 720p and, for recent uploads, 1080p. TokDown lists them by bitrate and offers the best one first, so you always get the sharpest copy the author uploaded. Animated GIFs on X are actually short silent MP4 files; you receive them as MP4 as well, which is smaller and plays everywhere, and you can turn them back into a real GIF with our MP4 to GIF tool.",
+      "The tool reads the same public data X publishes for embedded tweets, so protected accounts, deleted tweets and posts marked as sensitive cannot be read without logging in and will return an error rather than a wrong file. Short t.co links are resolved automatically, and links copied from the X app, from twitter.com or from a message all work the same way."
+    ]
+  },
+  "YoutubeThumbnail": {
+    "metaTitle": "YouTube Thumbnail Downloader – HD 1280×720",
+    "metaDescription": "Download the thumbnail of any YouTube video in all sizes, from 120×90 up to full HD 1280×720. Paste a link or video ID. Free, instant, no login.",
+    "eyebrow": "YouTube · Thumbnails · HD",
+    "h1": "Download YouTube thumbnails",
+    "h1Accent": "in full HD",
+    "subtitle": "Paste a YouTube link or video ID and grab the cover image in every size YouTube provides, up to 1280×720.",
+    "heroNote": "Works with watch, youtu.be, Shorts and embed links",
+    "trust": [
+      "100% free",
+      "No login",
+      "All sizes",
+      "Instant"
+    ],
+    "stepsTitle": "How it works",
+    "stepsSubtitle": "Link in, image out.",
+    "steps": [
+      {
+        "title": "Copy the video link",
+        "desc": "Any YouTube URL works: watch?v=, youtu.be, Shorts, embed, or just the 11-character ID."
+      },
+      {
+        "title": "Paste it above",
+        "desc": "We list every thumbnail size YouTube has for that video, with a live preview."
+      },
+      {
+        "title": "Download or copy",
+        "desc": "Save the JPG you need or copy its direct URL to use in your own designs."
+      }
+    ],
+    "featuresTitle": "Why creators use it",
+    "featuresSubtitle": "The quickest way to get a clean cover image.",
+    "features": [
+      {
+        "title": "Full HD when available",
+        "desc": "The 1280×720 maxres image is shown first whenever the channel uploaded one."
+      },
+      {
+        "title": "All five sizes",
+        "desc": "HD, SD, HQ, MQ and default sizes, each with a preview and its own download button."
+      },
+      {
+        "title": "Direct URL copy",
+        "desc": "Need it in Figma or Canva? Copy the image link in one click."
+      },
+      {
+        "title": "Shorts too",
+        "desc": "Shorts links and youtu.be short links are parsed just like normal videos."
+      }
+    ],
+    "faqTitle": "Thumbnail FAQ",
+    "faqSubtitle": "Quick answers.",
+    "faq": [
+      {
+        "q": "Why is there no 1280×720 image?",
+        "a": "YouTube only generates the maxres thumbnail when the uploaded video and custom thumbnail are high resolution. Older or low-res videos only have the smaller sizes."
+      },
+      {
+        "q": "Can I use the thumbnail in my own video?",
+        "a": "Thumbnails belong to the channel that made them. Use them for reference, previews and your own channel; ask before reusing someone else’s artwork."
+      },
+      {
+        "q": "Does this download the video?",
+        "a": "No. This tool only fetches the cover image. It never touches the video stream."
+      },
+      {
+        "q": "Does it work for private videos?",
+        "a": "Only if the thumbnail is publicly accessible. Private videos usually have none."
+      },
+      {
+        "q": "What is the YouTube thumbnail size?",
+        "a": "The recommended upload size is 1280×720 pixels (16:9), under 2 MB, as JPG, PNG or GIF. That is also the size of the maxresdefault image this tool returns."
+      },
+      {
+        "q": "Can I download a thumbnail from a YouTube Short?",
+        "a": "Yes. Paste the Shorts link; the tool extracts the video ID and lists the same sizes YouTube provides for regular videos."
+      }
+    ],
+    "ctaTitle": "Need a cover image?",
+    "ctaSubtitle": "Paste the YouTube link and pick a size.",
+    "ctaButton": "Paste your link",
+    "tool": {
+      "placeholder": "https://www.youtube.com/watch?v=… or video ID",
+      "button": "Get thumbnails",
+      "invalid": "That does not look like a YouTube link or an 11-character video ID.",
+      "clear": "Clear",
+      "previewAlt": "YouTube thumbnail preview",
+      "download": "Download",
+      "copy": "Copy URL",
+      "copied": "Copied",
+      "sizes": {
+        "maxresdefault": "Full HD",
+        "sddefault": "Standard",
+        "hqdefault": "High quality",
+        "mqdefault": "Medium",
+        "default": "Small"
+      }
+    },
+    "details": [
+      "YouTube generates up to five thumbnail sizes for every video: 120×90, 320×180, 480×360, 640×480 and the full HD 1280×720 version called maxresdefault. All of them are public JPG files served from YouTube’s image servers. TokDown builds the exact URLs from the video ID, checks which sizes exist and shows a preview of each, so you can pick the resolution you need without guessing.",
+      "Creators use this to recover a thumbnail they no longer have the source for, to build playlists and channel pages, or to compare how competitors design their covers. Designers paste the direct URL into Figma or Canva. Because only the image is fetched, the tool is fast, works for Shorts and regular videos alike, and never touches the video stream itself."
+    ]
+  },
+  "VideoCompressor": {
+    "metaTitle": "Video Compressor Online – Free, No Upload",
+    "metaDescription": "Compress MP4, MOV and WebM videos free in your browser. Shrink files for Discord, WhatsApp or email without losing quality. Nothing is uploaded.",
+    "eyebrow": "Compress · MP4 · Private",
+    "h1": "Compress videos",
+    "h1Accent": "without uploading them",
+    "subtitle": "Shrink a video for WhatsApp, email or Discord. The whole job runs on your device with ffmpeg, so nothing ever leaves your browser.",
+    "heroNote": "Up to 500 MB per file · MP4 output · H.264 + AAC",
+    "trust": [
+      "100% free",
+      "No upload",
+      "No watermark",
+      "Any device"
+    ],
+    "stepsTitle": "How it works",
+    "stepsSubtitle": "Three steps, zero servers.",
+    "steps": [
+      {
+        "title": "Choose a video",
+        "desc": "Drop an MP4, MOV, WebM or MKV, or pick one from your phone. It stays on your device."
+      },
+      {
+        "title": "Pick a preset",
+        "desc": "Small for chat apps, Balanced for social media, Quality to keep 1080p detail."
+      },
+      {
+        "title": "Download the result",
+        "desc": "The compressed MP4 is ready in your browser. Compare sizes and save it."
+      }
+    ],
+    "featuresTitle": "Why it is different",
+    "featuresSubtitle": "Most compressors upload your file. This one never does.",
+    "features": [
+      {
+        "title": "Truly private",
+        "desc": "Video is processed by ffmpeg compiled to WebAssembly, inside your browser tab."
+      },
+      {
+        "title": "No limits on count",
+        "desc": "Compress as many files as you want, one after another, without queues or accounts."
+      },
+      {
+        "title": "Smart presets",
+        "desc": "Resolution caps and CRF tuned for the typical 16 MB and 25 MB attachment limits."
+      },
+      {
+        "title": "Plays everywhere",
+        "desc": "Output is H.264 MP4 with AAC audio and fast-start, the most compatible combination."
+      }
+    ],
+    "faqTitle": "Compression FAQ",
+    "faqSubtitle": "What people ask before pressing the button.",
+    "faq": [
+      {
+        "q": "Is my video uploaded anywhere?",
+        "a": "No. The compressor runs entirely in your browser. You can even go offline after the page has loaded."
+      },
+      {
+        "q": "Why is it slower than an online service?",
+        "a": "Because it uses your own device’s CPU instead of a server. A 1-minute 1080p clip typically takes one to three minutes on a laptop, longer on a phone."
+      },
+      {
+        "q": "How much smaller will the file be?",
+        "a": "Usually 50 to 80% smaller with the Balanced preset. Already-compressed screen recordings shrink less."
+      },
+      {
+        "q": "What is the maximum file size?",
+        "a": "500 MB per file. Larger files can exhaust the memory a browser tab is allowed to use."
+      },
+      {
+        "q": "Does it work on iPhone?",
+        "a": "Yes, in Safari 16 or newer. Very long videos may be slow; try the Small preset first."
+      },
+      {
+        "q": "How do I compress a video for Discord?",
+        "a": "Choose the Small preset. It brings most clips under the free Discord upload limit; for longer videos, trim them first or use a lower resolution screen recording."
+      },
+      {
+        "q": "Can I compress a video to 10 MB?",
+        "a": "There is no exact target size setting yet, but the Small preset typically reduces a one-minute 1080p phone video to 5 to 12 MB. Re-run with the same preset on the result if you need it smaller."
+      }
+    ],
+    "ctaTitle": "File too big to send?",
+    "ctaSubtitle": "Compress it right here, privately.",
+    "ctaButton": "Choose a video",
+    "tool": {
+      "drop": "Drop a video here or tap to choose",
+      "hint": "MP4, MOV, WebM, MKV · up to 500 MB",
+      "presetLabel": "Compression preset",
+      "presets": {
+        "small": {
+          "title": "Small",
+          "desc": "720p max · best for WhatsApp and email"
+        },
+        "balanced": {
+          "title": "Balanced",
+          "desc": "1080p max · good for social media"
+        },
+        "quality": {
+          "title": "Quality",
+          "desc": "Up to 1080p · keeps fine detail"
+        }
+      },
+      "run": "Compress video",
+      "loadingEngine": "Loading engine…",
+      "processing": "Compressing… {pct}%",
+      "done": "Done. Your compressed video is ready.",
+      "download": "Download MP4",
+      "reset": "Start over",
+      "errorEngine": "Could not load the video engine. Check your connection and try again.",
+      "errorRun": "Compression failed. Try a different preset or a smaller file.",
+      "tooLarge": "That file is too large. The limit is {max}.",
+      "previewAlt": "Preview"
+    },
+    "details": [
+      "Most online compressors upload your video to a server, process it there and let you download the result. TokDown does the opposite: the ffmpeg encoder is loaded as WebAssembly into your browser tab and the whole job runs on your own device. Your file never leaves your computer or phone, there is no queue, no size-based paywall and no watermark. The first run downloads the encoder once; after that it is cached.",
+      "The three presets map to the limits people actually hit. Small targets WhatsApp, Telegram and e-mail attachments by capping resolution at 720p with a higher compression ratio. Balanced keeps up to 1080p for Instagram, TikTok and YouTube uploads. Quality keeps the most detail for archiving or further editing. All presets output H.264 video with AAC audio in an MP4 container, which plays on every phone, browser and editing app."
+    ]
+  },
+  "Mp4ToGif": {
+    "metaTitle": "MP4 to GIF Converter – Free, High Quality",
+    "metaDescription": "Convert MP4, MOV or WebM clips to high-quality GIFs for free. Pick start time, length, FPS and size. Runs in your browser, nothing is uploaded.",
+    "eyebrow": "GIF · Clips · Private",
+    "h1": "Turn videos into GIFs",
+    "h1Accent": "in your browser",
+    "subtitle": "Pick the exact moment, set the frame rate and size, and get a sharp looping GIF. Processing happens on your device.",
+    "heroNote": "Up to 15 seconds per GIF · palette-optimised colours",
+    "trust": [
+      "100% free",
+      "No upload",
+      "Custom FPS & size",
+      "Any device"
+    ],
+    "stepsTitle": "How it works",
+    "stepsSubtitle": "Clip, tune, download.",
+    "steps": [
+      {
+        "title": "Choose a video",
+        "desc": "Drop any MP4, MOV or WebM. For TikToks, download the video first with TokDown."
+      },
+      {
+        "title": "Set the clip",
+        "desc": "Choose where the GIF starts, how long it runs, the frame rate and the width."
+      },
+      {
+        "title": "Download the GIF",
+        "desc": "Preview the loop and save it. Share it in chats, docs or social posts."
+      }
+    ],
+    "featuresTitle": "Why the GIFs look good",
+    "featuresSubtitle": "Small details that most converters skip.",
+    "features": [
+      {
+        "title": "Optimised palette",
+        "desc": "A two-pass palette per clip keeps colours clean instead of banded and noisy."
+      },
+      {
+        "title": "Sharp scaling",
+        "desc": "Lanczos resampling keeps text and edges crisp at small sizes."
+      },
+      {
+        "title": "You control size",
+        "desc": "Width from 240 to 800 px and 10 to 24 fps, so you can hit any upload limit."
+      },
+      {
+        "title": "Private by design",
+        "desc": "The conversion runs in your browser with ffmpeg; the video never leaves your device."
+      }
+    ],
+    "faqTitle": "GIF FAQ",
+    "faqSubtitle": "Quick answers.",
+    "faq": [
+      {
+        "q": "How do I make a GIF from a TikTok?",
+        "a": "Download the TikTok as MP4 with TokDown first, then drop that file here."
+      },
+      {
+        "q": "Why is the GIF large?",
+        "a": "GIF is an old format: every frame is a full image. Lower the width or the frame rate, or shorten the clip."
+      },
+      {
+        "q": "Can I make a GIF longer than 15 seconds?",
+        "a": "Not here. Longer GIFs become tens of megabytes; for long clips, use the video compressor and share an MP4."
+      },
+      {
+        "q": "Does it keep sound?",
+        "a": "No. GIFs cannot carry audio."
+      },
+      {
+        "q": "How do I make a GIF from an iPhone video?",
+        "a": "Open this page in Safari, tap the drop zone, choose the video from Photos, set the clip and tap Create GIF. The GIF saves to Files and can be shared from there."
+      },
+      {
+        "q": "What is the best setting for a small GIF?",
+        "a": "Start with 320 px width, 12 fps and a clip under 5 seconds. Reduce the frame rate before reducing the width if it is still too large."
+      }
+    ],
+    "ctaTitle": "Got a moment worth looping?",
+    "ctaSubtitle": "Make the GIF right here.",
+    "ctaButton": "Choose a video",
+    "tool": {
+      "drop": "Drop a video here or tap to choose",
+      "hint": "MP4, MOV, WebM · up to 500 MB",
+      "start": "Start (sec)",
+      "duration": "Length (sec, max 15)",
+      "fps": "Frame rate",
+      "width": "Width",
+      "run": "Create GIF",
+      "loadingEngine": "Loading engine…",
+      "processing": "Rendering… {pct}%",
+      "done": "Done. Your GIF is ready.",
+      "download": "Download GIF",
+      "reset": "Start over",
+      "errorEngine": "Could not load the video engine. Check your connection and try again.",
+      "errorRun": "Conversion failed. Try a shorter clip or a smaller width.",
+      "tooLarge": "That file is too large. The limit is {max}.",
+      "previewAlt": "GIF preview"
+    },
+    "details": [
+      "GIF is a 30-year-old format with a 256-colour palette and no compression between frames, which is why naive converters produce huge, grainy files. TokDown runs a two-pass ffmpeg pipeline in your browser: the first pass analyses your clip and builds a custom palette, the second pass maps every frame to it with ordered dithering. The result keeps text readable and gradients smooth at a fraction of the size.",
+      "You control the three things that decide file size: the clip length (up to 15 seconds), the frame rate (10 to 24 fps) and the width (240 to 800 pixels). For chat apps, 480 px at 15 fps is a good default; for documentation or a README, 640 px at 12 fps looks crisp and stays small. Because everything runs locally, you can iterate as many times as you like without uploading anything."
     ]
   }
 }

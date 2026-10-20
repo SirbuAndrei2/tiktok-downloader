@@ -24,16 +24,16 @@ export default function CookieConsent() {
     <div
       className="fixed bottom-0 inset-x-0 z-50 p-4 transition-all duration-300"
       style={{
-        background: 'rgba(15, 15, 20, 0.95)',
+        background: 'rgba(19,19,22,0.96)',
         backdropFilter: 'blur(12px)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-        boxShadow: '0 -4px 20px rgba(0,0,0,0.5)',
+        borderTop: '1px solid var(--line-strong)',
+        color: 'var(--t2)',
       }}
     >
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p className="text-gray-300 leading-relaxed text-center sm:text-left">
-          We use cookies and Google AdSense to personalize content, ads, and analyze traffic in compliance with Google&apos;s Privacy &amp; Consent policies.{' '}
-          <Link href="/privacy" className="underline text-pink-400 hover:text-pink-300">
+        <p className="leading-relaxed text-center sm:text-left font-medium">
+          We use cookies and third-party advertising partners to show ads and analyze traffic.{' '}
+          <Link href="/privacy" className="underline font-bold">
             Learn more in our Privacy Policy
           </Link>
           .
@@ -41,11 +41,7 @@ export default function CookieConsent() {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={acceptCookies}
-            className="px-5 py-2 rounded-full font-semibold text-white transition-all transform hover:scale-105 active:scale-95"
-            style={{
-              background: 'linear-gradient(135deg, #ff2d55 0%, #ff8c42 100%)',
-              boxShadow: '0 0 12px rgba(255, 45, 85, 0.4)',
-            }}
+            className="btn-brand h-11 rounded-full px-5 text-sm"
           >
             Accept &amp; Continue
           </button>

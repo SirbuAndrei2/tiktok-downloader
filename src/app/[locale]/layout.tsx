@@ -1,7 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { Analytics } from '@vercel/analytics/next'
@@ -10,10 +11,16 @@ import { OG_IMAGE } from '@/lib/seo'
 
 import CookieConsent from '@/components/CookieConsent'
 import MonetagTags from '@/components/ads/MonetagTags'
+import AdsterraTags from '@/components/ads/AdsterraTags'
 
-const geist = GeistSans
 
 const BASE = 'https://tokdown.org'
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
+export const viewport: Viewport = { themeColor: '#09090B' }
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -122,28 +129,25 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound()
   }
+  // Enables static rendering for every locale (see generateStaticParams).
+  setRequestLocale(locale)
 
   const messages = await getMessages()
 
   const dir = locale === 'ar' ? 'rtl' : 'ltr'
 
   return (
-    <html lang={locale} dir={dir} className={geist.variable}>
+    <html lang={locale} dir={dir} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />
 
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9408608842276737"
-          crossOrigin="anonymous"
-        />
-
         {/* Monetag */}
         <MonetagTags />
+        {/* Adsterra site tag (Social Bar) */}
+        <AdsterraTags />
       </head>
-      <body className="min-h-screen bg-black antialiased">
+      <body className="min-h-screen antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
           <CookieConsent />

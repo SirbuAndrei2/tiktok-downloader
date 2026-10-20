@@ -1,93 +1,50 @@
 import { type NextRequest } from 'next/server'
+import { detectPlatform } from '@/lib/providers/detect'
+import { fetchTikTok } from '@/lib/providers/tiktok'
+import { fetchTwitter } from '@/lib/providers/twitter'
+import { fetchFacebook } from '@/lib/providers/facebook'
+import { fetchInstagram } from '@/lib/providers/instagram'
+import { ProviderError, type MediaResult, type Platform } from '@/lib/providers/types'
 
 export const runtime = 'nodejs'
 
-function isTikTokUrl(url: string): boolean {
-  try {
-    const parsed = new URL(url)
-    return (
-      parsed.hostname.includes('tiktok.com') ||
-      parsed.hostname.includes('vm.tiktok.com') ||
-      parsed.hostname.includes('vt.tiktok.com')
-    )
-  } catch {
-    return false
-  }
+const PROVIDERS: Record<Platform, (url: string) => Promise<MediaResult>> = {
+  tiktok: fetchTikTok,
+  twitter: fetchTwitter,
+  facebook: fetchFacebook,
+  instagram: fetchInstagram,
 }
 
+/**
+ * POST { url } → normalised MediaResult. The platform is detected from the
+ * hostname, so any downloader page accepts any supported link.
+ */
 export async function POST(request: NextRequest) {
   let url: string
   try {
     const body = await request.json()
-    url = (body.url ?? '').trim()
+    url = String(body.url ?? '').trim()
   } catch {
     return Response.json({ error: 'Invalid request body.' }, { status: 400 })
   }
+  if (!url) return Response.json({ error: 'URL is required.' }, { status: 400 })
 
-  if (!url) {
-    return Response.json({ error: 'URL is required.' }, { status: 400 })
+  const platform = detectPlatform(url)
+  if (!platform) {
+    return Response.json({ error: 'Please enter a valid TikTok, Facebook or Twitter/X link.' }, { status: 400 })
   }
 
-  if (!isTikTokUrl(url)) {
-    return Response.json({ error: 'Please enter a valid TikTok URL.' }, { status: 400 })
+  try {
+    const data = await PROVIDERS[platform](url)
+    return Response.json(data)
+  } catch (e) {
+    if (e instanceof ProviderError) {
+      return Response.json({ error: e.message }, { status: e.status, headers: e.retryAfter ? { 'Retry-After': String(e.retryAfter) } : undefined })
+    }
+    const name = e instanceof Error ? e.name : ''
+    if (name === 'TimeoutError' || name === 'AbortError') {
+      return Response.json({ error: 'The source took too long to answer. Please try again.' }, { status: 504 })
+    }
+    return Response.json({ error: 'Could not fetch this link. Try again.' }, { status: 502 })
   }
-
-  const form = new URLSearchParams()
-  form.set('url', url)
-  form.set('hd', '1')
-
-  const tikwmRes = await fetch('https://www.tikwm.com/api/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'User-Agent': 'Mozilla/5.0 (compatible; TikDL/1.0)',
-    },
-    body: form.toString(),
-    signal: AbortSignal.timeout(15_000),
-  })
-
-  if (!tikwmRes.ok) {
-    return Response.json({ error: 'Could not fetch video. Try again.' }, { status: 502 })
-  }
-
-  const json = await tikwmRes.json()
-
-  // TikWM's free tier answers "Free Api Limit: ..." once its quota is used up —
-  // don't show that raw message to visitors.
-  if (typeof json.msg === 'string' && /limit/i.test(json.msg)) {
-    return Response.json(
-      { error: 'Our download service is very busy right now. Please try again in a few minutes.' },
-      { status: 503, headers: { 'Retry-After': '120' } }
-    )
-  }
-
-  if (json.code !== 0 || !json.data) {
-    return Response.json(
-      { error: json.msg ?? 'Video not found. Make sure the video is public.' },
-      { status: 404 }
-    )
-  }
-
-  const d = json.data
-
-  return Response.json({
-    id: d.id,
-    title: d.title ?? '',
-    cover: d.cover ?? '',
-    play: d.play ?? '',
-    hdplay: d.hdplay ?? d.play ?? '',
-    music: d.music ?? '',
-    musicTitle: d.music_info?.title ?? '',
-    author: {
-      nickname: d.author?.nickname ?? 'Unknown',
-      avatar: d.author?.avatar ?? '',
-      uniqueId: d.author?.unique_id ?? '',
-    },
-    stats: {
-      plays: d.play_count ?? 0,
-      likes: d.digg_count ?? 0,
-      comments: d.comment_count ?? 0,
-      shares: d.share_count ?? 0,
-    },
-  })
 }

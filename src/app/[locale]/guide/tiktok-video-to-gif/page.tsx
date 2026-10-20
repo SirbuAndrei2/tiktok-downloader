@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import { setRequestLocale } from 'next-intl/server'
 import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
@@ -11,7 +13,7 @@ type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/tiktok-video-to-gif'
 
 export const metadata: Metadata = {
-  title: 'TikTok to GIF — Convert TikTok Videos to GIF Free (2026)',
+  title: 'TikTok to GIF – Convert TikTok Videos to GIF',
   description: 'How to convert a TikTok video to a GIF — step by step. Download the MP4 with TokDown first, then convert to GIF with free tools. Works on iPhone, Android, PC.',
   alternates: { canonical: `${BASE}${SLUG}` },
   openGraph: {
@@ -85,6 +87,7 @@ const TOOLS = [
 
 export default async function TikTokToGif({ params }: Props) {
   const { locale } = await params
+  setRequestLocale(locale)
   if (locale !== 'en') notFound()
 
   return (
@@ -102,7 +105,7 @@ export default async function TikTokToGif({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: '#ff2d55' }}>Guide · Updated June 2026</p>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Guide · Updated June 2026</p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>
               TikTok to GIF — Free Conversion
             </h1>
@@ -116,7 +119,7 @@ export default async function TikTokToGif({ params }: Props) {
             <ol className="flex flex-col gap-4 list-none p-0 m-0">
               {STEPS.map(({ n, title, body }) => (
                 <li key={n} className="faq-item flex gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black" style={{ background: 'rgba(255,45,85,0.15)', color: '#ff2d55', border: '1px solid rgba(255,45,85,0.3)' }}>{n}</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black" style={{ background: 'rgba(139,108,255,0.15)', color: 'var(--brand)', border: '1px solid rgba(139,108,255,0.3)' }}>{n}</span>
                   <div>
                     <h3 className="text-sm font-bold mb-1" style={{ color: 'var(--t1)' }}>{title}</h3>
                     <p className="text-sm leading-relaxed" style={{ color: 'var(--t3)' }}>{body}</p>
@@ -126,23 +129,23 @@ export default async function TikTokToGif({ params }: Props) {
             </ol>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12 text-center">
             <p className="text-sm mb-4" style={{ color: 'var(--t3)' }}>Step 1 starts here — download the clean TikTok MP4 first.</p>
-            <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, #ff2d55 0%, #ff8c42 100%)' }}>
+            <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
               Download TikTok as MP4 →
             </Link>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="tools-h">
             <h2 id="tools-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Best free TikTok to GIF tools</h2>
-            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--line)' }}>
               <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
                 <thead>
-                  <tr style={{ background: 'rgba(255,45,85,0.08)' }}>
+                  <tr style={{ background: 'rgba(139,108,255,0.08)' }}>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Tool</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Platform</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Pros</th>
@@ -151,8 +154,8 @@ export default async function TikTokToGif({ params }: Props) {
                 </thead>
                 <tbody>
                   {TOOLS.map(({ name, platform, pros, cons }, i) => (
-                    <tr key={name} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td className="px-4 py-3 font-medium" style={{ color: i === 0 ? '#ff2d55' : 'var(--t2)' }}>{name}</td>
+                    <tr key={name} style={{ background: i % 2 === 0 ? 'var(--line)' : 'transparent', borderTop: '1px solid var(--line)' }}>
+                      <td className="px-4 py-3 font-medium" style={{ color: i === 0 ? 'var(--brand)' : 'var(--t2)' }}>{name}</td>
                       <td className="px-4 py-3 text-xs" style={{ color: 'var(--t3)' }}>{platform}</td>
                       <td className="px-4 py-3 text-xs" style={{ color: 'var(--t3)' }}>{pros}</td>
                       <td className="px-4 py-3 text-xs" style={{ color: 'var(--t4)' }}>{cons}</td>
@@ -163,7 +166,7 @@ export default async function TikTokToGif({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Related guides</h2>
@@ -182,11 +185,14 @@ export default async function TikTokToGif({ params }: Props) {
               ))}
             </div>
           </section>
+          <div className="w-full max-w-2xl px-4 pb-12">
+            <AdsterraBanner size="responsive" />
+          </div>
         </main>
 
-        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--t4)' }}>
+        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
-            {[{ href: '/', label: 'Downloader' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
+            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
               <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t4)' }}>{label}</Link>
             ))}
           </nav>

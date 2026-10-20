@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { OG_IMAGE } from '@/lib/seo'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
@@ -10,6 +11,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'GuideMp3' })
   const localePath = locale === 'en' ? '' : `/${locale}`
   const slug = '/guide/tiktok-to-mp3'
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: t('metaDescription'),
     alternates: {
       canonical: `${BASE}${localePath}${slug}`,
-      languages: { 'en': `${BASE}${slug}`, 'de': `${BASE}/de${slug}`, 'ar': `${BASE}/ar${slug}` },
+      languages: { 'en': `${BASE}${slug}`, 'de': `${BASE}/de${slug}`, 'ar': `${BASE}/ar${slug}`, 'x-default': `${BASE}${slug}` },
     },
     openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${slug}` },
   }
@@ -26,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TikTokToMp3({ params }: Props) {
   const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'GuideMp3' })
   const tNav = await getTranslations({ locale, namespace: 'Nav' })
   const tFooter = await getTranslations({ locale, namespace: 'Footer' })
@@ -80,7 +83,7 @@ export default async function TikTokToMp3({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: '#ff2d55' }}>{tCommon('guideUpdated')}</p>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>{tCommon('guideUpdated')}</p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>{t('h1')}</h1>
             <p className="text-sm leading-relaxed max-w-lg mx-auto" style={{ color: 'var(--t3)' }}>{t('subtitle')}</p>
           </header>
@@ -91,7 +94,7 @@ export default async function TikTokToMp3({ params }: Props) {
               {steps.map(({ title, body }, i) => (
                 <li key={i} className="faq-item flex gap-4">
                   <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black"
-                    style={{ background: 'rgba(255,45,85,0.15)', color: '#ff2d55', border: '1px solid rgba(255,45,85,0.3)' }}>
+                    style={{ background: 'rgba(139,108,255,0.15)', color: 'var(--brand)', border: '1px solid rgba(139,108,255,0.3)' }}>
                     {i + 1}
                   </span>
                   <div>
@@ -103,17 +106,17 @@ export default async function TikTokToMp3({ params }: Props) {
             </ol>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12 text-center">
             <p className="text-sm mb-4" style={{ color: 'var(--t3)' }}>{t('ctaText')}</p>
             <Link href={`${localePath}/`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #ff2d55 0%, #ff8c42 100%)' }}>
+              style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
               {t('ctaButton')}
             </Link>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="uses-h">
             <h2 id="uses-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>{t('useCasesTitle')}</h2>
@@ -128,7 +131,7 @@ export default async function TikTokToMp3({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="quality-h">
             <h2 id="quality-h" className="text-xl font-bold mb-4" style={{ color: 'var(--t1)' }}>{t('qualityTitle')}</h2>
@@ -138,7 +141,7 @@ export default async function TikTokToMp3({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="copyright-h">
             <h2 id="copyright-h" className="text-xl font-bold mb-4" style={{ color: 'var(--t1)' }}>{t('copyrightTitle')}</h2>
@@ -148,7 +151,7 @@ export default async function TikTokToMp3({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="trouble-h">
             <h2 id="trouble-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>{t('troubleshootTitle')}</h2>
@@ -177,13 +180,16 @@ export default async function TikTokToMp3({ params }: Props) {
               </Link>
             </div>
           </section>
+          <div className="w-full max-w-2xl px-4 pb-12">
+            <AdsterraBanner size="responsive" />
+          </div>
         </main>
 
-        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--t4)' }}>
+        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
             {[
               { href: `${localePath}/`, label: tNav('downloader') },
-              { href: `${localePath}/about`, label: tNav('about') },
+              { href: `${localePath}/tools`, label: tNav('tools') },              { href: `${localePath}/about`, label: tNav('about') },
               { href: `${localePath}/guide/download-tiktok-without-watermark`, label: tNav('noWatermarkGuide') },
               { href: '/privacy', label: tNav('privacy') },
               { href: '/terms', label: tNav('terms') },

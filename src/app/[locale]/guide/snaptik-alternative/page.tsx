@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import { setRequestLocale } from 'next-intl/server'
 import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
@@ -10,7 +12,7 @@ const BASE = 'https://tokdown.org'
 type Props = { params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
-  title: 'Best SnapTik Alternative 2026 — TokDown vs SnapTik, SSSTikTok & More',
+  title: 'Best SnapTik Alternative 2026 – Compared',
   description: 'Looking for a SnapTik or SSSTikTok alternative? TokDown downloads TikTok videos without watermark, no redirects, no forced ads. Free, instant, all devices.',
   alternates: { canonical: `${BASE}/guide/snaptik-alternative` },
   openGraph: {
@@ -128,6 +130,7 @@ const ALTERNATIVES = [
 
 export default async function SnaptikAlternative({ params }: Props) {
   const { locale } = await params
+  setRequestLocale(locale)
   if (locale !== 'en') notFound()
 
   return (
@@ -149,7 +152,7 @@ export default async function SnaptikAlternative({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: '#ff2d55' }}>Comparison · Updated June 2026</p>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Comparison · Updated June 2026</p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>
               Best SnapTik Alternative in 2026
             </h1>
@@ -174,19 +177,19 @@ export default async function SnaptikAlternative({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           {/* Feature comparison table */}
           <section className="w-full max-w-2xl mb-12" aria-labelledby="compare-h">
             <h2 id="compare-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
               Feature comparison: TokDown vs. SnapTik vs. SSSTikTok
             </h2>
-            <div className="rounded-xl overflow-hidden overflow-x-auto" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="rounded-xl overflow-hidden overflow-x-auto" style={{ border: '1px solid var(--line)' }}>
               <table className="w-full text-sm" style={{ borderCollapse: 'collapse', minWidth: 480 }}>
                 <thead>
-                  <tr style={{ background: 'rgba(255,45,85,0.08)' }}>
+                  <tr style={{ background: 'rgba(139,108,255,0.08)' }}>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)', width: '40%' }}>Feature</th>
-                    <th className="text-center px-3 py-3 font-semibold" style={{ color: '#ff2d55' }}>TokDown</th>
+                    <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--brand)' }}>TokDown</th>
                     <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--t4)' }}>SnapTik</th>
                     <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--t4)' }}>SSSTikTok</th>
                     <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--t4)' }}>Tikup</th>
@@ -194,12 +197,12 @@ export default async function SnaptikAlternative({ params }: Props) {
                 </thead>
                 <tbody>
                   {COMPARISON.map(({ feature, tokdown, snaptik, ssstik, tikup }, i) => (
-                    <tr key={feature} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                    <tr key={feature} style={{ background: i % 2 === 0 ? 'var(--line)' : 'transparent', borderTop: '1px solid var(--line)' }}>
                       <td className="px-4 py-3" style={{ color: 'var(--t3)' }}>{feature}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: tokdown ? '#4ade80' : '#f87171' }}>{tokdown ? '✓' : '✗'}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: snaptik ? '#4ade80' : '#f87171', opacity: 0.7 }}>{snaptik ? '✓' : '✗'}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: ssstik ? '#4ade80' : '#f87171', opacity: 0.7 }}>{ssstik ? '✓' : '✗'}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: tikup ? '#4ade80' : '#f87171', opacity: 0.7 }}>{tikup ? '✓' : '✗'}</td>
+                      <td className="px-3 py-3 text-center" style={{ color: tokdown ? 'var(--success)' : 'var(--danger)' }}>{tokdown ? '✓' : '✗'}</td>
+                      <td className="px-3 py-3 text-center" style={{ color: snaptik ? 'var(--success)' : 'var(--danger)', opacity: 0.7 }}>{snaptik ? '✓' : '✗'}</td>
+                      <td className="px-3 py-3 text-center" style={{ color: ssstik ? 'var(--success)' : 'var(--danger)', opacity: 0.7 }}>{ssstik ? '✓' : '✗'}</td>
+                      <td className="px-3 py-3 text-center" style={{ color: tikup ? 'var(--success)' : 'var(--danger)', opacity: 0.7 }}>{tikup ? '✓' : '✗'}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -207,7 +210,7 @@ export default async function SnaptikAlternative({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           {/* Individual tool breakdowns */}
           <section className="w-full max-w-2xl mb-12" aria-labelledby="tools-h">
@@ -219,20 +222,20 @@ export default async function SnaptikAlternative({ params }: Props) {
                 <div
                   key={name}
                   className="faq-item"
-                  style={highlight ? { borderLeft: '2px solid #ff2d55' } : {}}
+                  style={highlight ? { borderLeft: '2px solid var(--brand)' } : {}}
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <h3 className="text-sm font-bold" style={{ color: highlight ? '#ff2d55' : 'var(--t1)' }}>{name}</h3>
+                    <h3 className="text-sm font-bold" style={{ color: highlight ? 'var(--brand)' : 'var(--t1)' }}>{name}</h3>
                     <span className="text-xs" style={{ color: 'var(--t4)' }}>({url})</span>
                     {highlight && (
-                      <span className="text-xs px-2 py-0.5 rounded-full font-semibold" style={{ background: 'rgba(255,45,85,0.15)', color: '#ff2d55', border: '1px solid rgba(255,45,85,0.3)' }}>
+                      <span className="text-xs px-2 py-0.5 rounded-full font-semibold" style={{ background: 'rgba(139,108,255,0.15)', color: 'var(--brand)', border: '1px solid rgba(139,108,255,0.3)' }}>
                         This site
                       </span>
                     )}
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <p className="text-xs font-semibold mb-1.5" style={{ color: '#4ade80' }}>Pros</p>
+                      <p className="text-xs font-semibold mb-1.5" style={{ color: 'var(--success)' }}>Pros</p>
                       <ul className="flex flex-col gap-1">
                         {pros.map((p) => (
                           <li key={p} className="text-xs" style={{ color: 'var(--t3)' }}>+ {p}</li>
@@ -240,7 +243,7 @@ export default async function SnaptikAlternative({ params }: Props) {
                       </ul>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold mb-1.5" style={{ color: '#f87171' }}>Cons</p>
+                      <p className="text-xs font-semibold mb-1.5" style={{ color: 'var(--danger)' }}>Cons</p>
                       <ul className="flex flex-col gap-1">
                         {cons.map((c) => (
                           <li key={c} className="text-xs" style={{ color: 'var(--t3)' }}>− {c}</li>
@@ -253,7 +256,7 @@ export default async function SnaptikAlternative({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           {/* CTA */}
           <section className="w-full max-w-2xl mb-12 text-center">
@@ -262,13 +265,13 @@ export default async function SnaptikAlternative({ params }: Props) {
             <Link
               href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #ff2d55 0%, #ff8c42 100%)' }}
+              style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}
             >
               Try TokDown free →
             </Link>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
@@ -297,13 +300,16 @@ export default async function SnaptikAlternative({ params }: Props) {
               </Link>
             </div>
           </section>
+          <div className="w-full max-w-2xl px-4 pb-12">
+            <AdsterraBanner size="responsive" />
+          </div>
         </main>
 
-        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--t4)' }}>
+        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
             {[
               { href: '/', label: 'Downloader' },
-              { href: '/about', label: 'About' },
+              { href: '/tools', label: 'All tools' },              { href: '/about', label: 'About' },
               { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' },
               { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' },
               { href: '/privacy', label: 'Privacy' },

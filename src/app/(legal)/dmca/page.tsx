@@ -5,20 +5,20 @@ import LegalLayout from '@/components/legal/LegalLayout'
 const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
-  title: 'DMCA Policy — TikTok Downloader',
+  title: 'DMCA & Copyright Policy',
   description: 'DMCA takedown policy for TikTok Downloader. We respect copyright and respond to valid infringement notices within 48 hours. Learn how to submit a notice.',
   alternates: { canonical: `${BASE}/dmca` },
   robots: { index: true, follow: true },
   openGraph: {
     images: [OG_IMAGE],
-    title: 'DMCA Policy — TikTok Downloader',
+    title: 'DMCA Policy | TokDown',
     description: 'We respect intellectual property rights and respond to valid DMCA takedown notices promptly. Read our full DMCA policy.',
     url: `${BASE}/dmca`,
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'DMCA Policy — TikTok Downloader',
+    title: 'DMCA Policy | TokDown',
     description: 'We respect copyright and respond to valid DMCA notices promptly. Read our policy.',
   },
 }

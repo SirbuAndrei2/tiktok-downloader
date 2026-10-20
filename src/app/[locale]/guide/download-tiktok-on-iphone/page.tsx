@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { OG_IMAGE } from '@/lib/seo'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { Separator } from '@/components/ui/separator'
 
 const BASE = 'https://tokdown.org'
@@ -11,6 +12,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'GuideIphone' })
   const localePath = locale === 'en' ? '' : `/${locale}`
   return {
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: t('metaDescription'),
     alternates: {
       canonical: `${BASE}${localePath}${SLUG}`,
-      languages: { 'en': `${BASE}${SLUG}`, 'de': `${BASE}/de${SLUG}`, 'ar': `${BASE}/ar${SLUG}` },
+      languages: { 'en': `${BASE}${SLUG}`, 'de': `${BASE}/de${SLUG}`, 'ar': `${BASE}/ar${SLUG}`, 'x-default': `${BASE}${SLUG}` },
     },
     openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${SLUG}` },
   }
@@ -26,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DownloadTikTokOnIphone({ params }: Props) {
   const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'GuideIphone' })
   const localePath = locale === 'en' ? '' : `/${locale}`
 
@@ -79,7 +82,7 @@ export default async function DownloadTikTokOnIphone({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: '#ff2d55' }}>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>
               {locale === 'ar' ? 'دليل آيفون · يونيو 2026' : locale === 'de' ? 'iPhone-Anleitung · Juni 2026' : 'iPhone Guide · June 2026'}
             </p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>{t('h1')}</h1>
@@ -91,7 +94,7 @@ export default async function DownloadTikTokOnIphone({ params }: Props) {
             <ol className="flex flex-col gap-4 list-none p-0 m-0">
               {steps.map((step, i) => (
                 <li key={i} className="faq-item flex gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black" style={{ background: 'rgba(255,45,85,0.15)', color: '#ff2d55', border: '1px solid rgba(255,45,85,0.3)' }}>{i + 1}</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black" style={{ background: 'rgba(139,108,255,0.15)', color: 'var(--brand)', border: '1px solid rgba(139,108,255,0.3)' }}>{i + 1}</span>
                   <div>
                     <h3 className="text-sm font-bold mb-1" style={{ color: 'var(--t1)' }}>{step.title}</h3>
                     <p className="text-sm leading-relaxed" style={{ color: 'var(--t3)' }}>{step.body}</p>
@@ -101,30 +104,30 @@ export default async function DownloadTikTokOnIphone({ params }: Props) {
             </ol>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12 text-center">
             <p className="text-sm mb-4" style={{ color: 'var(--t3)' }}>{t('ctaText')}</p>
-            <Link href={`${localePath}/`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, #ff2d55 0%, #ff8c42 100%)' }}>
+            <Link href={`${localePath}/`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
               {t('ctaButton')}
             </Link>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="tips-h">
             <h2 id="tips-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>{t('tipsTitle')}</h2>
             <div className="flex flex-col gap-3">
               {tips.map((tip, i) => (
                 <div key={i} className="faq-item">
-                  <h3 className="text-sm font-bold mb-1.5" style={{ color: '#ff2d55' }}>{tip.title}</h3>
+                  <h3 className="text-sm font-bold mb-1.5" style={{ color: 'var(--brand)' }}>{tip.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--t3)' }}>{tip.body}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="trouble-h">
             <h2 id="trouble-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>{t('troubleshootTitle')}</h2>
@@ -138,7 +141,7 @@ export default async function DownloadTikTokOnIphone({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
@@ -159,11 +162,14 @@ export default async function DownloadTikTokOnIphone({ params }: Props) {
               ))}
             </div>
           </section>
+          <div className="w-full max-w-2xl px-4 pb-12">
+            <AdsterraBanner size="responsive" />
+          </div>
         </main>
 
-        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--t4)' }}>
+        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
-            {[{ href: `${localePath}/`, label: locale === 'ar' ? 'المحمّل' : locale === 'de' ? 'Downloader' : 'Downloader' }, { href: `${localePath}/about`, label: locale === 'ar' ? 'عن التطبيق' : locale === 'de' ? 'Über uns' : 'About' }, { href: '/privacy', label: locale === 'ar' ? 'الخصوصية' : locale === 'de' ? 'Datenschutz' : 'Privacy' }, { href: '/terms', label: locale === 'ar' ? 'الشروط' : locale === 'de' ? 'Nutzungsbedingungen' : 'Terms' }].map(({ href, label }) => (
+            {[{ href: `${localePath}/`, label: locale === 'ar' ? 'المحمّل' : locale === 'de' ? 'Downloader' : 'Downloader' }, { href: `${localePath}/tools`, label: locale === 'ar' ? 'الأدوات' : 'Tools' }, { href: `${localePath}/about`, label: locale === 'ar' ? 'عن التطبيق' : locale === 'de' ? 'Über uns' : 'About' }, { href: '/privacy', label: locale === 'ar' ? 'الخصوصية' : locale === 'de' ? 'Datenschutz' : 'Privacy' }, { href: '/terms', label: locale === 'ar' ? 'الشروط' : locale === 'de' ? 'Nutzungsbedingungen' : 'Terms' }].map(({ href, label }) => (
               <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t4)' }}>{label}</Link>
             ))}
           </nav>

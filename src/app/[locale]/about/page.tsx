@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { OG_IMAGE } from '@/lib/seo'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 
 const BASE = 'https://tokdown.org'
@@ -9,6 +9,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'About' })
   const localePath = locale === 'en' ? '' : `/${locale}`
   return {
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function AboutPage({ params }: Props) {
   const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'About' })
   const tNav = await getTranslations({ locale, namespace: 'Nav' })
   const tFooter = await getTranslations({ locale, namespace: 'Footer' })
@@ -122,7 +124,7 @@ export default async function AboutPage({ params }: Props) {
             </div>
           </section>
 
-          <nav className="w-full max-w-2xl mt-8 pt-6 flex flex-wrap gap-4 justify-center" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+          <nav className="w-full max-w-2xl mt-8 pt-6 flex flex-wrap gap-4 justify-center" style={{ borderTop: '1px solid var(--line)' }}>
             {[
               { href: `${localePath}/`, label: tNav('downloader') },
               { href: `${localePath}/guide/download-tiktok-without-watermark`, label: tNav('downloadGuide') },
@@ -136,7 +138,7 @@ export default async function AboutPage({ params }: Props) {
           </nav>
         </main>
 
-        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--t4)' }}>
+        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <p className="text-xs">{tFooter('notAffiliated', { year: new Date().getFullYear() })}</p>
         </footer>
       </div>

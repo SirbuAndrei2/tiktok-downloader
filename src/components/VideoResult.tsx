@@ -1,21 +1,25 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { Card } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
+import { Download, Film, Heart, Images, LoaderCircle, MessageCircle, Music, Play, Share2, Video } from 'lucide-react'
 
-interface VideoData {
+export interface VideoData {
   id: string; title: string; cover: string; play: string; hdplay: string
+  /** Source network; TikTok is the default for older payloads. */
+  platform?: 'tiktok' | 'facebook' | 'twitter' | 'instagram'
   music: string; musicTitle: string
+  /** Photo/slideshow posts: full-size image URLs in slide order. Empty for videos. */
+  images?: string[]
+  isPhoto?: boolean
   author: { nickname: string; avatar: string; uniqueId: string }
   stats: { plays: number; likes: number; comments: number; shares: number }
 }
 
 function fmt(n: number) {
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M'
-  if (n >= 1_000)     return (n / 1_000).toFixed(1) + 'K'
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M'
+  if (n >= 1_000) return (n / 1_000).toFixed(1).replace(/\.0$/, '') + 'K'
   return String(n)
 }
 
@@ -23,127 +27,202 @@ function proxy(url: string, filename: string, type = 'video') {
   return `/api/proxy?url=${encodeURIComponent(url)}&filename=${encodeURIComponent(filename)}&type=${type}`
 }
 
+/** TikTok serves slides as .jpeg or .webp — keep the real extension so the saved file opens everywhere. */
+function imageExt(url: string) {
+  const m = /\.(jpe?g|png|webp|heic)(?:[?~]|$)/i.exec(url)
+  return m ? m[1].toLowerCase().replace('jpeg', 'jpg') : 'jpg'
+}
+
 export default function VideoResult({ data }: { data: VideoData }) {
   const t = useTranslations('VideoResult')
-  const base = (data.title.slice(0, 40).replace(/[^a-z0-9 ]/gi, '') || 'tiktok')
+  const [savingAll, setSavingAll] = useState(false)
+  const platform = data.platform ?? 'tiktok'
+  const generic = platform !== 'tiktok'
+  const base = (data.title.slice(0, 40).replace(/[^a-z0-9 ]/gi, '') || platform)
     .trim().replace(/\s+/g, '-').toLowerCase()
 
+  const images = data.images ?? []
+  const isPhoto = images.length > 0
+
+  const stats = [
+    { Icon: Play, val: data.stats.plays, label: 'plays' },
+    { Icon: Heart, val: data.stats.likes, label: 'likes' },
+    { Icon: MessageCircle, val: data.stats.comments, label: 'comments' },
+    { Icon: Share2, val: data.stats.shares, label: 'shares' },
+  ].filter((s) => s.val > 0)
+  const handle = data.author.uniqueId || data.author.nickname
+
+  const imageHref = (url: string, i: number) => proxy(url, `${base}-${i + 1}.${imageExt(url)}`, 'image')
+
+  // Browsers allow one download per user gesture, so trigger them one by one with a short gap.
+  // Chrome asks once to allow multiple downloads; Safari saves each file in turn.
+  async function downloadAll() {
+    if (savingAll) return
+    setSavingAll(true)
+    try {
+      for (let i = 0; i < images.length; i++) {
+        const a = document.createElement('a')
+        a.href = imageHref(images[i], i)
+        a.download = ''
+        a.rel = 'noopener'
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+        await new Promise((r) => setTimeout(r, 700))
+      }
+    } finally {
+      setSavingAll(false)
+    }
+  }
+
   return (
-    <Card className="overflow-hidden glass border-0 p-0" role="region" aria-label={t('downloadOptions')}>
-
-      {/* ── Top: thumbnail + info ─────────────────────────────── */}
-      <div className="flex gap-4 p-5">
-
-        {/* Thumbnail */}
-        <div
-          className="relative flex-shrink-0 rounded-xl overflow-hidden"
-          style={{ width: 108, height: 148, background: 'var(--s3)' }}
-        >
-          {data.cover
-            ? <Image src={data.cover} alt={data.title || 'thumbnail'} fill sizes="108px" className="object-cover" unoptimized />
-            : <div className="w-full h-full flex items-center justify-center" style={{ color: 'var(--s4)' }}><TkIcon /></div>
-          }
-          <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.25)' }}>
-            <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)' }}>
-              <svg width="11" height="11" viewBox="0 0 12 12" fill="white"><path d="M2 1.5l8 4.5-8 4.5V1.5z"/></svg>
+    <section className="cut-card overflow-hidden text-left rtl:text-right" aria-label={t('downloadOptions')}>
+      {/* ── Preview ───────────────────────────────────────────── */}
+      <div className="flex gap-4 p-4">
+        <div className="relative shrink-0 overflow-hidden rounded-xl" style={{ width: 96, height: 128, background: 'var(--surface-2)', border: '1px solid var(--line-strong)' }}>
+          {data.cover || images[0] ? (
+            <Image src={data.cover || images[0]} alt="" fill sizes="96px" className="object-cover" unoptimized />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center" style={{ color: 'var(--t4)' }}>
+              {isPhoto ? <Images className="size-7" aria-hidden /> : <Video className="size-7" aria-hidden />}
             </div>
-          </div>
+          )}
+          {isPhoto && (
+            <span className="absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-semibold rtl:left-auto rtl:right-1.5" style={{ background: 'var(--ink)', color: '#fff' }}>
+              <Images className="size-3" aria-hidden />
+              {images.length}
+            </span>
+          )}
         </div>
 
-        {/* Info */}
-        <div className="flex flex-col gap-2 flex-1 min-w-0">
-
-          {/* Author */}
+        <div className="flex min-w-0 flex-1 flex-col gap-2">
           <div className="flex items-center gap-2">
             {data.author.avatar && (
-              <div className="relative w-7 h-7 rounded-full overflow-hidden flex-shrink-0" style={{ outline: '1px solid oklch(0.22 0.012 265)' }}>
-                <Image src={data.author.avatar} alt={data.author.nickname} fill className="object-cover" unoptimized />
-              </div>
+              <span className="relative size-7 shrink-0 overflow-hidden rounded-full" style={{ outline: '1px solid var(--line-strong)' }}>
+                <Image src={data.author.avatar} alt="" fill sizes="28px" className="object-cover" unoptimized />
+              </span>
             )}
-            <span className="text-xs font-semibold truncate text-gradient">
-              @{data.author.uniqueId || data.author.nickname}
+            <span className="truncate text-sm font-semibold" style={{ color: 'var(--lime)' }}>
+              {handle ? `${data.author.uniqueId ? '@' : ''}${handle}` : t('sourceLabel')}
             </span>
           </div>
 
-          {/* Title */}
           {data.title && (
-            <p className="text-xs leading-relaxed line-clamp-3" style={{ color: 'oklch(0.65 0.01 265)' }}>
-              {data.title}
-            </p>
+            <p className="line-clamp-2 text-sm leading-relaxed" style={{ color: 'var(--t3)' }}>{data.title}</p>
           )}
 
-          {/* Stats */}
-          <div className="flex flex-wrap gap-1.5 mt-auto">
-            {[
-              { icon: '▶', val: data.stats.plays,    label: 'plays' },
-              { icon: '♥', val: data.stats.likes,    label: 'likes' },
-              { icon: '💬', val: data.stats.comments, label: 'comments' },
-              { icon: '↗', val: data.stats.shares,   label: 'shares' },
-            ].map(({ icon, val, label }) => (
-              <span key={label} className="stat-pill" aria-label={`${fmt(val)} ${label}`}>
-                <span aria-hidden="true">{icon}</span> {fmt(val)}
-              </span>
+          <ul className="mt-auto flex flex-wrap gap-1.5 p-0 m-0 list-none">
+            {stats.map(({ Icon, val, label }) => (
+              <li key={label} className="stat-pill" aria-label={`${fmt(val)} ${label}`}>
+                <Icon className="size-3.5" aria-hidden />
+                {fmt(val)}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
 
-      <Separator style={{ background: 'oklch(0.2 0.01 265)' }} />
+      {isPhoto ? (
+        <>
+          {/* ── Photo gallery ─────────────────────────────────── */}
+          <div className="border-t p-3" style={{ borderColor: 'var(--line)' }}>
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <h3 className="m-0 text-base font-semibold" style={{ color: 'var(--t1)' }}>
+                {t('photosTitle', { count: images.length })}
+              </h3>
+              <button
+                type="button"
+                onClick={downloadAll}
+                disabled={savingAll}
+                className="dl-btn dl-btn-primary h-10 gap-2 rounded-lg px-3.5 py-0 text-sm"
+              >
+                {savingAll ? <LoaderCircle className="spin size-4" aria-hidden /> : <Download className="size-4" aria-hidden />}
+                <span className="font-bold">{savingAll ? t('downloadingAll') : t('downloadAll')}</span>
+              </button>
+            </div>
 
-      {/* ── Download buttons ──────────────────────────────────── */}
-      <div className="p-4 flex flex-col sm:flex-row gap-2.5">
+            <ul className="m-0 grid list-none grid-cols-3 gap-2 p-0 sm:grid-cols-4">
+              {images.map((src, i) => (
+                <li key={src} className="group relative aspect-[3/4] overflow-hidden rounded-xl" style={{ background: 'var(--s3)' }}>
+                  <Image src={src} alt={t('photoAlt', { n: i + 1 })} fill sizes="(max-width: 640px) 33vw, 160px" className="object-cover" unoptimized />
+                  <a
+                    href={imageHref(src, i)}
+                    download
+                    className="absolute inset-0 flex items-end justify-between p-2 no-underline"
+                    style={{ background: 'linear-gradient(to top, rgba(18,26,58,0.75), transparent 55%)', color: '#fff' }}
+                    aria-label={t('downloadPhoto', { n: i + 1 })}
+                  >
+                    <span className="text-xs font-semibold">{i + 1}</span>
+                    <span className="inline-flex size-8 items-center justify-center rounded-full transition-transform group-hover:scale-110" style={{ background: 'var(--cobalt)' }}>
+                      <Download className="size-4" aria-hidden />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <a href={proxy(data.hdplay || data.play, `${base}-hd.mp4`)} download className="dl-btn dl-btn-primary">
-          <span className="flex-shrink-0 opacity-80"><VideoIcon /></span>
-          <span className="flex flex-col min-w-0">
-            <span className="font-bold text-xs truncate">{t('hdTitle')}</span>
-            <span className="text-[10px] opacity-60">{t('hdDesc')}</span>
-          </span>
-          <span className="ml-auto opacity-50 flex-shrink-0"><DlIcon /></span>
-        </a>
-
-        <a href={proxy(data.play, `${base}-sd.mp4`)} download className="dl-btn dl-btn-secondary">
-          <span className="flex-shrink-0 opacity-70"><VideoIcon /></span>
-          <span className="flex flex-col min-w-0">
-            <span className="font-semibold text-xs truncate">{t('sdTitle')}</span>
-            <span className="text-[10px] opacity-50">{t('sdDesc')}</span>
-          </span>
-          <span className="ml-auto opacity-40 flex-shrink-0"><DlIcon /></span>
-        </a>
-
-        {data.music && (
-          <a href={proxy(data.music, `${base}.mp3`, 'audio')} download className="dl-btn dl-btn-secondary">
-            <span className="flex-shrink-0 opacity-70"><MusicIcon /></span>
-            <span className="flex flex-col min-w-0">
-              <span className="font-semibold text-xs truncate">{t('audioTitle')}</span>
-              <span className="text-[10px] opacity-50">{t('audioDesc')}</span>
+          {/* ── Slideshow video + sound ───────────────────────── */}
+          {(data.play || data.music) && (
+            <div className="grid gap-3 p-3 sm:grid-cols-2" style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+              {data.play && (
+                <a href={proxy(data.hdplay || data.play, `${base}-slideshow.mp4`)} download className="dl-btn dl-btn-secondary">
+                  <Film className="size-5 shrink-0 opacity-80" aria-hidden />
+                  <span className="flex min-w-0 flex-col">
+                    <span className="truncate text-sm font-semibold">{t('slideshowTitle')}</span>
+                    <span className="text-xs" style={{ color: 'var(--t4)' }}>{t('slideshowDesc')} · MP4</span>
+                  </span>
+                  <Download className="ms-auto size-4 shrink-0 opacity-60" aria-hidden />
+                </a>
+              )}
+              {data.music && (
+                <a href={proxy(data.music, `${base}.mp3`, 'audio')} download className="dl-btn dl-btn-secondary">
+                  <Music className="size-5 shrink-0 opacity-80" aria-hidden />
+                  <span className="flex min-w-0 flex-col">
+                    <span className="truncate text-sm font-semibold">{t('audioTitle')}</span>
+                    <span className="text-xs" style={{ color: 'var(--t4)' }}>{t('audioDesc')} · MP3</span>
+                  </span>
+                  <Download className="ms-auto size-4 shrink-0 opacity-60" aria-hidden />
+                </a>
+              )}
+            </div>
+          )}
+        </>
+      ) : (
+        /* ── Video downloads ─────────────────────────────────── */
+        <div className="grid gap-3 p-3 sm:grid-cols-2" style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+          <a href={proxy(data.hdplay || data.play, `${base}-hd.mp4`)} download className="dl-btn dl-btn-primary sm:col-span-2">
+            <Film className="size-5 shrink-0" aria-hidden />
+            <span className="flex min-w-0 flex-col">
+              <span className="truncate text-sm font-bold">{generic ? t('hdGeneric') : t('hdTitle')}</span>
+              <span className="text-xs opacity-75">{t('hdDesc')} · MP4</span>
             </span>
-            <span className="ml-auto opacity-40 flex-shrink-0"><DlIcon /></span>
+            <Download className="ms-auto size-4 shrink-0 opacity-70" aria-hidden />
           </a>
-        )}
-      </div>
 
-      {/* Format badges */}
-      <div className="px-4 pb-4 flex gap-2 flex-wrap">
-        <Badge variant="secondary" className="text-[10px] px-2 py-0.5" style={{ background: 'var(--s3)', color: 'oklch(0.55 0.015 265)', border: '1px solid oklch(0.22 0.012 265)' }}>MP4</Badge>
-        <Badge variant="secondary" className="text-[10px] px-2 py-0.5" style={{ background: 'var(--s3)', color: 'oklch(0.55 0.015 265)', border: '1px solid oklch(0.22 0.012 265)' }}>MP3</Badge>
-        <Badge variant="secondary" className="text-[10px] px-2 py-0.5" style={{ background: 'var(--s3)', color: 'oklch(0.55 0.015 265)', border: '1px solid oklch(0.22 0.012 265)' }}>No Watermark</Badge>
-        <Badge variant="secondary" className="text-[10px] px-2 py-0.5" style={{ background: 'var(--s3)', color: 'oklch(0.55 0.015 265)', border: '1px solid oklch(0.22 0.012 265)' }}>HD</Badge>
-      </div>
-    </Card>
+          {data.play && data.play !== data.hdplay && (
+          <a href={proxy(data.play, `${base}-sd.mp4`)} download className="dl-btn dl-btn-secondary">
+            <Video className="size-5 shrink-0 opacity-80" aria-hidden />
+            <span className="flex min-w-0 flex-col">
+              <span className="truncate text-sm font-semibold">{generic ? t('sdGeneric') : t('sdTitle')}</span>
+              <span className="text-xs" style={{ color: 'var(--t4)' }}>{t('sdDesc')} · MP4</span>
+            </span>
+            <Download className="ms-auto size-4 shrink-0 opacity-60" aria-hidden />
+          </a>
+          )}
+
+          {data.music && (
+            <a href={proxy(data.music, `${base}.mp3`, 'audio')} download className="dl-btn dl-btn-secondary">
+              <Music className="size-5 shrink-0 opacity-80" aria-hidden />
+              <span className="flex min-w-0 flex-col">
+                <span className="truncate text-sm font-semibold">{t('audioTitle')}</span>
+                <span className="text-xs" style={{ color: 'var(--t4)' }}>{t('audioDesc')} · MP3</span>
+              </span>
+              <Download className="ms-auto size-4 shrink-0 opacity-60" aria-hidden />
+            </a>
+          )}
+        </div>
+      )}
+    </section>
   )
-}
-
-/* Icons */
-function TkIcon() {
-  return <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.18 8.18 0 004.78 1.54V7.11a4.85 4.85 0 01-1.01-.42z"/></svg>
-}
-function VideoIcon() {
-  return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-}
-function MusicIcon() {
-  return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-}
-function DlIcon() {
-  return <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
 }

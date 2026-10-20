@@ -5,20 +5,20 @@ import LegalLayout from '@/components/legal/LegalLayout'
 const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — TikTok Downloader',
+  title: 'Terms of Service',
   description: 'Terms of Service for TikTok Downloader. By using this free TikTok video downloader you agree to use it for personal, lawful purposes only. Read the full terms.',
   alternates: { canonical: `${BASE}/terms` },
   robots: { index: true, follow: true },
   openGraph: {
     images: [OG_IMAGE],
-    title: 'Terms of Service — TikTok Downloader',
+    title: 'Terms of Service | TokDown',
     description: 'Read the full terms and conditions for using TikTok Downloader — a free tool for personal, lawful video downloads.',
     url: `${BASE}/terms`,
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Terms of Service — TikTok Downloader',
+    title: 'Terms of Service | TokDown',
     description: 'Read the full terms for using TikTok Downloader — personal, lawful use only.',
   },
 }

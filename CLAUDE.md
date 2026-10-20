@@ -7,72 +7,106 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start dev server at localhost:3000
-npm run build    # Production build
-npm run start    # Start production server
-npm run lint     # Run ESLint (no separate test suite exists)
+npm install        # node_modules is not checked in; AGENTS.md's node_modules/next/dist/docs only exists after this
+npm run dev        # Dev server at localhost:3000
+npm run build      # Production build — also the only type check (there is no tsc script)
+npm run lint       # ESLint flat config (eslint-config-next core-web-vitals + typescript)
+npm run build:cf   # OpenNext Cloudflare build → .open-next/
+npm run deploy     # build:cf + wrangler deploy to Cloudflare Workers
 ```
+
+There is no test framework and no test suite.
 
 ## Architecture
 
-This is a Next.js 16 (App Router) TikTok video downloader. It is **stateless** — no database, no auth, no session storage. All downloads are proxied server-side.
+Next.js 16 (App Router) TikTok video downloader, deployed on Cloudflare Workers via OpenNext (`wrangler.jsonc`, `open-next.config.ts`). It is **stateless** — no database, no auth, no sessions. All downloads are proxied server-side.
 
 ### Request Flow
 
-1. User submits a TikTok URL in `src/components/Downloader.tsx` (client component)
-2. `POST /api/download` validates the URL, calls the TikWM API, and returns video metadata (title, cover, HD/SD play URLs, audio URL, author, stats)
-3. `GET /api/proxy?url=<cdn-url>&filename=<name>&type=video|audio` proxies the actual file download — only URLs from an explicit allowlist of TikTok/TikWM CDN hostnames are permitted; `type` controls `Content-Type` (defaults to `video/mp4`)
-4. `src/components/VideoResult.tsx` renders the result with download buttons that trigger the proxy
+1. A `Downloader` instance (client component; `platform` prop only changes copy and the input id) posts `{ url }` to `POST /api/download`
+2. `src/app/api/download/route.ts` detects the network from the hostname (`src/lib/providers/detect.ts`) and dispatches to a provider in `src/lib/providers/`, all returning the same `MediaResult` shape (`types.ts`):
+   - `tiktok.ts` — TikWM API (`hd=1`); photo/slideshow posts come back with `images[]` → `isPhoto`
+   - `twitter.ts` — public syndication endpoint `cdn.syndication.twimg.com/tweet-result` with the react-tweet token derivation; no API key. Picks the highest-bitrate MP4, photo tweets become an image gallery, `t.co` links are resolved
+   - `facebook.ts` — login-free video plugin embed (`facebook.com/plugins/video.php`) which inlines `hd_src`/`sd_src`; title/cover scraped from the watch page as best effort. Private, group, age-gated and live videos fail with a 404 message
+   - `instagram.ts` — best effort only (embed + og: tags). Instagram login-walls data-centre IPs, so it answers 503 most of the time. **Wired into the API but no page links to it**; it needs a real upstream (e.g. a self-hosted Cobalt instance) before an `/instagram-reels-downloader` page is published
+   Provider errors are `ProviderError(message, status, retryAfter?)`; TikWM's "Free Api Limit" becomes a 503 with `Retry-After`
+3. `src/components/VideoResult.tsx` renders the result: video → HD/SD buttons (SD hidden when identical to HD) + MP3 when the source has a separate track; photos → gallery with per-image and sequential "Download all"; stats pills only when non-zero
+4. `GET /api/proxy?url=<cdn-url>&filename=<name>&type=video|audio|image` streams the file. Only `https:` URLs whose hostname ends with an entry of `ALLOWED_SUFFIXES` (TikTok CDNs, `twimg.com`, `fbcdn.net`, `cdninstagram.com`, `ytimg.com`) are allowed, and the `Referer` is chosen per host (`refererFor`)
 
-Both API routes declare `export const runtime = 'nodejs'`.
+Both API routes declare `export const runtime = 'nodejs'`. TikWM's free tier has a daily quota that appears to be per egress IP, which Cloudflare Workers share — the same request can succeed locally while production gets "Free Api Limit".
 
-### Directory Layout
+### Tool pages
 
-- `src/app/` — App Router pages and API routes
-- `src/app/api/download/` — TikWM API wrapper
-- `src/app/api/proxy/` — CDN proxy with hostname allowlist
-- `src/app/[locale]/guide/` — guide pages. Translated ones (watermark, mp3, iPhone, Android) render for every locale; English-only ones (mp4, SnapTik alternative, Chrome, GIF, playlist, private video) call `notFound()` when `locale !== 'en'`. English-only guides must live here too — a root `src/app/guide/` route gets rewritten by the i18n middleware to `/en/guide/...` and 404s, and has no `<html>` layout
-- `src/lib/seo.ts` — `BASE` and `OG_IMAGE`; every page that sets its own `openGraph` must include `images: [OG_IMAGE]` (metadata merges shallowly, so the layout's image is lost otherwise). The image is the static `public/og-image.png` (1200×630)
-- `src/components/` — React components
-- `src/components/ui/` — shadcn/ui primitives (badge, button, card, dialog, input, separator, tooltip)
-- `src/components/ads/` — Ad network components (Google AdSense `AdUnit` + Monetag `MonetagTags`)
-- `src/lib/utils.ts` — `cn()` helper (clsx + tailwind-merge)
+Every tool page lives under `src/app/[locale]/<slug>/page.tsx`, is translated (EN/DE/AR), and is a thin wrapper around `src/components/ToolPageLayout.tsx` (hero with the tool inside a border-beam card, trust pills, 3 steps, 4 feature cards, FAQ accordion, CTA, header/footer, JSON-LD). Each page's message namespace must provide the keys listed in that file's doc comment, plus `tool.*` strings for its interactive component where applicable:
+
+| Slug | Namespace | Tool component |
+|---|---|---|
+| `/photo-downloader` | `PhotoDownloader` | `Downloader variant="photo"` (own page layout, predates ToolPageLayout) |
+| `/facebook-video-downloader` | `FacebookDownloader` | `Downloader platform="facebook"` |
+| `/twitter-video-downloader` | `TwitterDownloader` | `Downloader platform="twitter"` |
+| `/youtube-thumbnail-downloader` | `YoutubeThumbnail` | `tools/YoutubeThumbnail` — pure URL parsing, images from `i.ytimg.com` via the proxy; no API quota |
+| `/video-compressor` | `VideoCompressor` | `tools/MediaConverter mode="compress"` |
+| `/mp4-to-gif` | `Mp4ToGif` | `tools/MediaConverter mode="gif"` |
+
+`MediaConverter` runs ffmpeg.wasm **in the browser** (`@ffmpeg/ffmpeg` + `@ffmpeg/util`; the single-thread core and the class worker are fetched from unpkg at runtime, so no COOP/COEP headers are needed and nothing is uploaded). 500 MB input cap, 15 s GIF cap.
+
+Adding a tool page: create the page + namespace in all three message files, add it to `TOOL_PAGES` in `src/lib/nav.ts` (drives the footer), to `TOOLS` in `tools/page.tsx`, to `Tools.items.<key>` messages, to `CONTENT_ROUTES` in `sitemap.ts`, and optionally to the home `toolsPreview`.
+
+### Layouts and routing
+
+- `src/app/layout.tsx` (root) returns `children` only — no `<html>`, no CSS. The real document shell (`<html lang dir>`, `globals.css`, Geist font, JSON-LD, Monetag script, cookie banner, Vercel Analytics) lives in `src/app/[locale]/layout.tsx`. It exports `generateStaticParams` for the three locales and calls `setRequestLocale`, and **every page under `[locale]` calls `setRequestLocale(locale)`** right after awaiting `params` — that is what lets Next prerender all locale pages statically (served from Cloudflare assets, no Worker render on each hit). Do not read `headers()`/`cookies()` in those pages or they fall back to dynamic rendering
+- Legal pages (`/privacy`, `/terms`, `/dmca`, `/disclaimer`) live in the `src/app/(legal)/` route group, outside `[locale]`, and are excluded from the i18n middleware matcher. `(legal)/layout.tsx` is their own document shell (English header/footer, `globals.css`, no ads, no cookie banner); it uses `getTranslations({ locale: 'en' })` for the shared labels
+- Any other new page must live under `src/app/[locale]/`. A page placed at e.g. `src/app/guide/foo/` gets rewritten by the middleware to `/en/guide/foo` and 404s
+- `src/app/[locale]/tools/` — translated "Tools & services" index (`Tools` namespace); English-only guides are listed only when `locale === 'en'`. See **Tool pages** above for the individual tool routes
+- `src/app/[locale]/photo-downloader/` — translated TikTok photo/slideshow downloader (`PhotoDownloader` namespace); same `Downloader` component with `variant="photo"`, listed on `/tools` via the `tool` field of its `TOOLS` entry
+- `src/app/[locale]/guide/`: translated guides (watermark, mp3, iPhone, Android) render for every locale via `getTranslations`; English-only guides (mp4, SnapTik alternative, Chrome, GIF, playlist, private video) must call `notFound()` when `locale !== 'en'`
+
+### Internationalisation (next-intl)
+
+- Routing: `src/i18n/routing.ts` — locales `['en', 'de', 'ar']`, `localePrefix: 'as-needed'` (English at `/`, German at `/de`, Arabic at `/ar` with `dir="rtl"`)
+- Middleware: `src/middleware.ts` — Edge middleware required by OpenNext; wraps next-intl and also sets the security headers (HSTS, nosniff, referrer, frame, permissions) because `next.config` `headers()` are not applied on the Cloudflare runtime. Matcher excludes `api`, `_next`, files with a dot, and the four legal slugs
+- Messages: `messages/{en,de,ar}.json`, one top-level namespace per page/component (`Downloader`, `VideoResult`, `Nav`, `Footer`, `Common`, `Home`, `About`, `Tools`, `PhotoDownloader`, `Guide*`). Arrays (FAQ, steps, features) are read with `t.raw('key')`
+- Server components use `getTranslations({ locale, namespace })`; client components use `useTranslations(namespace)`
+- Adding a locale: extend `routing.locales`, add `messages/<locale>.json`, add it to the `hreflang` alternates in `[locale]/layout.tsx`, every page's `generateMetadata`, and `sitemap.ts`
+- Adding a translated guide: add its namespace to all three message files, or it will throw at render for the missing locales
+
+### SEO conventions
+
+- Titles: every `metaTitle` must stay ≤ 50 characters because the locale layout appends ` | TokDown` (≤ 60 total); never put `| TokDown` in a message string. Descriptions 120–155 characters. Lead with the phrase people type (`Facebook video downloader`, `MP4 to GIF converter`, `video compressor online`), then the differentiators (`no watermark`, `HD`, `free`, `no login`, `no upload`). Google autocomplete for each tool's seed phrase is the keyword source of record; re-check it when rewriting metadata
+- Tool pages carry a `details` array (2 paragraphs) and 6–7 FAQs per language so they clear the ~800-word service-page threshold, plus a "Link to this tool" snippet box (`LinkToTool`) as a backlink prompt
+- `public/llms.txt` lists every tool and guide with one-line descriptions for AI search engines; `public/manifest.json` is a full PWA manifest with 192/512 PNG icons, shortcuts and an Android **share target** (`/?url=`), which `Downloader` reads on mount and auto-submits
+
+- `src/lib/seo.ts` exports `BASE` (`https://tokdown.org`) and `OG_IMAGE`. Next merges metadata shallowly, so **every page that sets its own `openGraph` must include `images: [OG_IMAGE]`** or the layout's image is lost. The image is the static `public/og-image.png` (1200×630)
+- Pages build canonical/hreflang URLs with `localePath = locale === 'en' ? '' : '/' + locale`. Locale roots have no trailing slash (`/de`, not `/de/` — the latter 308-redirects and a redirecting canonical is ignored)
+- `src/app/sitemap.ts` has three arrays that must be kept in sync when adding pages: `CONTENT_ROUTES` (translated, incl. `/tools`, `/photo-downloader` and the tool pages; emitted for `/`, `/de`, `/ar` with `alternates.languages` hreflang entries), `NEW_GUIDE_ROUTES` (English-only guides; emitted once), `LEGAL_ROUTES` (root legal pages). `robots.ts` disallows `/api/`
+- Each page carries its own JSON-LD (`Article`/`HowTo`/`FAQPage`/`BreadcrumbList`) inline via `dangerouslySetInnerHTML`
+
+### Ads
+
+- There is no Google AdSense (removed 2026-10-20). Two networks run: **Adsterra** (`ads/AdsterraTags.tsx` = the `/1/` site-wide Social Bar tag, once per page from the locale layout; `ads/AdsterraNative.tsx` = the `/21/` Native Banner zone rendered into `#container-<zone>` inside a labelled `.ad-slot` with reserved height, **one instance per page** because the container id must be unique: home between features and steps, tool pages after the steps; `ads/AdsterraBanner.tsx` = iframe banner zones 300×250 and 728×90 rendered via `srcDoc` because Adsterra's banner script uses `document.write`: the 300×250 sits under every download result inside `Downloader`, the `responsive` variant (728×90 ≥768px, 300×250 below, only one mounted) sits at the end of every guide) and **Monetag** (one popunder zone). Do not add a second popunder network; if the Adsterra `/1/` tag turns out to be a popunder in the dashboard, disable one of the two
+- `src/components/ads/MonetagTags.tsx` injects a single Monetag popunder zone (245447) via inline DOM code rather than JSX on purpose: React 19 dedupes same-src async scripts, and the tag binds click handlers document-wide (including download buttons), so it must load exactly once per page. It used to load three zones plus a vignette interstitial; those were removed on 2026-10-20 because each zone fires its own popunder. Do not add zones back without a deliberate decision
+- `public/sw.js` is Monetag's service worker (not registered anywhere in `src`)
+- `CookieConsent.tsx` only sets a `localStorage` flag; it does not gate ad loading
 
 ### Styling
 
-Tailwind CSS v4 with PostCSS. The design uses:
-- **Only dark mode** — no light mode toggle
-- Custom oklch-based design tokens defined in `src/app/globals.css`: surface colors (`s0`–`s4`), text hierarchy (`t1`–`t4`), brand colors (pink `#ff2d55`, orange `#ff8c42`, cyan `#00e5ff`, purple `#c084fc`)
-- Utility classes: `glass` (glassmorphism), `btn-brand` (gradient button), `gradient-text`, `dl-btn`
+Tailwind CSS v4 via PostCSS, **dark theme only** ("Signal": near-black surfaces, 1px hairline borders, one electric-lime accent, teal/violet glow only in the hero). Fonts come from the `geist` package in `[locale]/layout.tsx`: Geist Sans (`--font-geist-sans`, everything) and Geist Mono (`--font-geist-mono`, eyebrows, labels, numerals via `.mono`). Arabic falls back to system fonts via `[dir="rtl"]`.
 
-### Internationalisation (i18n)
+`src/app/globals.css` is the single token source: `--bg`, `--bg-2`, `--surface`, `--surface-2/3`, text `--t1`–`--t4` (all ≥ 4.5:1), `--lime` / `--lime-dim` / `--lime-fg`, `--teal`, `--violet`, `--danger`, `--line` / `--line-strong`. shadcn semantic tokens map onto these. The long alias block (`--ink`, `--peach`, `--sky`, `--cobalt`, `--s0`–`--s4`, `--brand`, …) exists only so the guide pages and `photo-downloader` keep working — use the new names in new code and never hardcode hex in components. Use the lime accent sparingly: primary CTA, focus ring, icons, one highlighted card.
 
-The site uses `next-intl` with App Router. All content pages live under `src/app/[locale]/`. Legal pages (`/privacy`, `/terms`, `/dmca`, `/disclaimer`) are excluded from locale routing and stay at the root — they render English content for all visitors.
+Utility classes: `card` (+ `card--hover`, `card--float`, `card--lime`), `pill` (+ `pill--lime`, `pill--teal`), `eyebrow`, `mono`, `gradient-text`, `numeral`, `blob` (+ `--peach`/`--sky`/`--violet`, `--animate` — soft glow washes), `grid-bg`, `band`, `btn-brand` (lime), `btn-ghost`, `link-ink`, `dl-btn*`, `icon-tile`, `step-num`, `stat-pill`, `shimmer`, `fade-up`. Older names (`cut-card*`, `sticker*`, `tape`, `torn-*`, `highlight`, `btn-apricot`) are mapped to the same look. Icons come from `lucide-react` — no emoji as icons.
 
-- Locale routing config: [src/i18n/routing.ts](src/i18n/routing.ts) — locales `['en', 'de', 'ar']`, prefix `as-needed` (English at `/`, German at `/de`, Arabic at `/ar`, RTL)
-- Translations: [messages/en.json](messages/en.json), [messages/de.json](messages/de.json), [messages/ar.json](messages/ar.json)
-- Middleware: [src/middleware.ts](src/middleware.ts) — Edge Middleware for i18n routing (required by OpenNext Cloudflare)
-- Server components use `getTranslations({ locale, namespace })`, client components use `useTranslations(namespace)`
-- Adding a new locale: add it to `routing.locales`, create `messages/<locale>.json`, add to `hreflang` alternates in `[locale]/layout.tsx` and `sitemap.ts`
-- Translation arrays (FAQ, features, steps) are stored as JSON arrays in messages files and accessed via `t.raw('key')`
+UI primitives in `src/components/ui/`: shadcn (`base-nova` style, Base UI underneath): badge, button, card, dialog, input, separator, tooltip, accordion, avatar; Magic UI `marquee`, `blur-fade`, `border-beam` (need `motion`), installed from their registries with `npx shadcn add <url>`. Add more the same way rather than hand-writing primitives. Magic UI marquee keyframes live in the `@theme inline` block at the end of `globals.css`.
 
-### UI Components
+Shared chrome: `SiteHeader` (sticky glass bar, locale switcher, takes translated labels as props), `SiteFooter` (three link columns as props), `CtaBand`, `Testimonials` (two `Marquee` rows; data from `Home.testimonials` in the message files, avatars are CC0 DiceBear SVGs in `public/avatars/`), `Logo`. `cn()` lives in `src/lib/utils.ts`.
 
-`src/components/ui/` contains shadcn/ui primitives. The project also depends on `@base-ui/react` (headless primitives from the Base UI library) alongside shadcn. Use shadcn components for new UI work unless a Base UI primitive is already in use for that pattern.
+## Key Constraints
 
-### Sitemap Route Categories
-
-`src/app/sitemap.ts` has three distinct arrays — keep them in sync when adding pages:
-- `CONTENT_ROUTES` — translated pages; emitted once per locale (`/`, `/de`, `/ar` — locale roots without trailing slash, since `/de/` 308-redirects)
-- `NEW_GUIDE_ROUTES` — English-only guides; emitted once, no locale variant
-- `LEGAL_ROUTES` — root legal pages; English-only, no locale variant
-
-### Key Constraints
-
-- **No environment variables** — the TikWM API endpoint and all CDN allowlist entries are hardcoded. The production domain (`tokdown.org`) and ad publisher IDs are also hardcoded in source.
-- **No testing framework** — there are no unit or integration tests.
-- Deployed on Cloudflare Workers via OpenNext (`npm run deploy`, config in `wrangler.jsonc`); `@vercel/analytics` is still wired into the locale layout.
-- TikWM free tier has a daily request quota (it appears to be per egress IP, which Cloudflare Workers share — the same request succeeds from a local machine while production gets "Free Api Limit"), so `/api/download` maps TikWM's "Free Api Limit" reply to a friendly 503.
-- When adding new CDN hosts for proxied downloads, update the allowlist in `src/app/api/proxy/route.ts`.
-- When adding new image domains, update `remotePatterns` in `next.config.ts`.
-- `src/app/sitemap.ts` and `src/app/robots.ts` are code-generated — update them if adding new public routes.
+- **No required environment variables.** The TikWM endpoint, CDN allowlist, production domain (`tokdown.org`), Google Search Console token, and the Monetag zone ID are hardcoded in source. The only env read is an optional `NEXT_PUBLIC_SITE_URL` fallback for `metadataBase` in the root layout
+- New CDN hosts for proxied downloads go in `ALLOWED_SUFFIXES` (and `refererFor`) in `src/app/api/proxy/route.ts`; new image hosts go in `images.remotePatterns` in `next.config.ts`
+- Facebook/Twitter scraping has no SLA: the upstream HTML/JSON shapes can change without notice. When a provider starts failing, check the regexes in `src/lib/providers/*.ts` first
+- `sitemap.ts` and `robots.ts` are code-generated — update them when adding public routes
+- **Workers CPU budget is the hard constraint.** The account runs on the Workers Free plan (10 ms CPU per request); a full SSR of a page costs 300–950 ms CPU and produced `Error 1102` in production on 2026-10-20. Therefore `open-next.config.ts` uses the **static-assets incremental cache**: every page is prerendered at build time and `opennextjs-cloudflare deploy` copies `.open-next/cache` into `assets/cdn-cgi/_next_cache`, so the Worker only serves cached HTML/RSC. Keep every page statically renderable (no `headers()`/`cookies()`, `setRequestLocale` on each page), keep `motion`/framer out of server components (BlurFade and BorderBeam are CSS-only on purpose), and keep API routes cheap. Upgrading to Workers Paid raises the limit to 30 s and is the right move once ads pay for it
+- `@vercel/analytics` is still mounted in the locale layout even though hosting is Cloudflare
+- SEO audits: the `claude-seo` plugin is installed at user scope (`/seo audit <url>`, `/seo page <url>`). Its fetchers refuse localhost unless `CLAUDE_SEO_LOCAL_TARGETS=localhost:<port>` is set; the last audit lives in `tokdown.org-audit/`
+- `ui-ux-pro-max-skill/` and `claude-seo/` are separately cloned Claude Code plugin repos that live inside this folder. Both are gitignored and excluded in `eslint.config.mjs` and `tsconfig.json`; keep those exclusions (and add any future clone the same way) or `lint`/`build` pick up their files

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import { setRequestLocale } from 'next-intl/server'
 import { OG_IMAGE } from '@/lib/seo'
 import Link from 'next/link'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
@@ -10,7 +12,7 @@ const BASE = 'https://tokdown.org'
 type Props = { params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
-  title: 'TikTok to MP4 — Download TikTok as MP4 Free, No Watermark (2026)',
+  title: 'TikTok to MP4 – Download as MP4, No Watermark',
   description: 'Convert any TikTok video to MP4 format instantly — HD quality, no watermark, no login. Free online tool that works on iPhone, Android, PC and Mac.',
   alternates: { canonical: `${BASE}/guide/tiktok-to-mp4` },
   openGraph: {
@@ -130,6 +132,7 @@ const USE_CASES = [
 
 export default async function TikTokToMp4({ params }: Props) {
   const { locale } = await params
+  setRequestLocale(locale)
   if (locale !== 'en') notFound()
 
   return (
@@ -151,7 +154,7 @@ export default async function TikTokToMp4({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: '#ff2d55' }}>Guide · Updated June 2026</p>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Guide · Updated June 2026</p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>
               TikTok to MP4 — Download Without Watermark
             </h1>
@@ -169,7 +172,7 @@ export default async function TikTokToMp4({ params }: Props) {
                 <li key={n} className="faq-item flex gap-4">
                   <span
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black"
-                    style={{ background: 'rgba(255,45,85,0.15)', color: '#ff2d55', border: '1px solid rgba(255,45,85,0.3)' }}
+                    style={{ background: 'rgba(139,108,255,0.15)', color: 'var(--brand)', border: '1px solid rgba(139,108,255,0.3)' }}
                   >
                     {n}
                   </span>
@@ -182,29 +185,29 @@ export default async function TikTokToMp4({ params }: Props) {
             </ol>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12 text-center">
             <p className="text-sm mb-4" style={{ color: 'var(--t3)' }}>Try it now — paste any TikTok link and get your MP4.</p>
             <Link
               href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #ff2d55 0%, #ff8c42 100%)' }}
+              style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}
             >
               Download a TikTok video →
             </Link>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="quality-h">
             <h2 id="quality-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
               Download quality comparison
             </h2>
-            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--line)' }}>
               <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
                 <thead>
-                  <tr style={{ background: 'rgba(255,45,85,0.08)' }}>
+                  <tr style={{ background: 'rgba(139,108,255,0.08)' }}>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Format</th>
                     <th className="text-center px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>Resolution</th>
                     <th className="text-center px-4 py-3 font-semibold" style={{ color: 'var(--t2)' }}>File Size</th>
@@ -213,8 +216,8 @@ export default async function TikTokToMp4({ params }: Props) {
                 </thead>
                 <tbody>
                   {QUALITY_INFO.map(({ label, resolution, size, best }, i) => (
-                    <tr key={label} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td className="px-4 py-3 font-medium" style={{ color: i === 0 ? '#ff2d55' : 'var(--t2)' }}>{label}</td>
+                    <tr key={label} style={{ background: i % 2 === 0 ? 'var(--line)' : 'transparent', borderTop: '1px solid var(--line)' }}>
+                      <td className="px-4 py-3 font-medium" style={{ color: i === 0 ? 'var(--brand)' : 'var(--t2)' }}>{label}</td>
                       <td className="px-4 py-3 text-center" style={{ color: 'var(--t3)' }}>{resolution}</td>
                       <td className="px-4 py-3 text-center" style={{ color: 'var(--t3)' }}>{size}</td>
                       <td className="px-4 py-3" style={{ color: 'var(--t3)' }}>{best}</td>
@@ -225,7 +228,7 @@ export default async function TikTokToMp4({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="uses-h">
             <h2 id="uses-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
@@ -242,7 +245,7 @@ export default async function TikTokToMp4({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="format-h">
             <h2 id="format-h" className="text-xl font-bold mb-4" style={{ color: 'var(--t1)' }}>
@@ -258,7 +261,7 @@ export default async function TikTokToMp4({ params }: Props) {
             </div>
           </section>
 
-          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'rgba(255,255,255,0.07)' }} />
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
@@ -287,13 +290,16 @@ export default async function TikTokToMp4({ params }: Props) {
               </Link>
             </div>
           </section>
+          <div className="w-full max-w-2xl px-4 pb-12">
+            <AdsterraBanner size="responsive" />
+          </div>
         </main>
 
-        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'var(--t4)' }}>
+        <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
             {[
               { href: '/', label: 'Downloader' },
-              { href: '/about', label: 'About' },
+              { href: '/tools', label: 'All tools' },              { href: '/about', label: 'About' },
               { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' },
               { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' },
               { href: '/privacy', label: 'Privacy' },

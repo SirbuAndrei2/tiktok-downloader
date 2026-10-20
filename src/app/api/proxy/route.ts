@@ -3,13 +3,31 @@ import { type NextRequest } from 'next/server'
 export const runtime = 'nodejs'
 
 const ALLOWED_SUFFIXES = [
+  // TikTok
   'tiktokcdn.com',
   'tiktokcdn-us.com',
   'tiktokcdn-eu.com',
   'tiktok.com',
   'tikwm.com',
   'muscdn.com',
+  // Twitter / X
+  'twimg.com',
+  // Facebook / Instagram (shared CDN)
+  'fbcdn.net',
+  'cdninstagram.com',
+  // YouTube thumbnails
+  'ytimg.com',
+  'img.youtube.com',
 ]
+
+/** Some CDNs check the Referer; send the one that matches the host. */
+function refererFor(hostname: string): string {
+  if (hostname.endsWith('twimg.com')) return 'https://x.com/'
+  if (hostname.endsWith('fbcdn.net')) return 'https://www.facebook.com/'
+  if (hostname.endsWith('cdninstagram.com')) return 'https://www.instagram.com/'
+  if (hostname.endsWith('ytimg.com') || hostname.endsWith('youtube.com')) return 'https://www.youtube.com/'
+  return 'https://www.tiktok.com/'
+}
 
 function isAllowedUrl(raw: string): boolean {
   try {
@@ -36,7 +54,7 @@ export async function GET(request: NextRequest) {
 
   const upstream = await fetch(videoUrl, {
     headers: {
-      'Referer': 'https://www.tiktok.com/',
+      'Referer': refererFor(new URL(videoUrl).hostname),
       'User-Agent': 'Mozilla/5.0 (compatible; TikDL/1.0)',
     },
     signal: AbortSignal.timeout(30_000),
@@ -46,7 +64,11 @@ export async function GET(request: NextRequest) {
     return new Response('Failed to fetch media', { status: 502 })
   }
 
-  const contentType = type === 'audio' ? 'audio/mpeg' : 'video/mp4'
+  const upstreamType = upstream.headers.get('content-type') ?? ''
+  const contentType =
+    type === 'audio' ? 'audio/mpeg'
+    : type === 'image' ? (upstreamType.startsWith('image/') ? upstreamType : 'image/jpeg')
+    : 'video/mp4'
   const safeFilename = filename.replace(/[^a-z0-9_\-\.]/gi, '_')
 
   return new Response(upstream.body, {

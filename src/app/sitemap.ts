@@ -7,7 +7,14 @@ const GUIDE_DATE_NEW = new Date('2026-06-01')
 
 const CONTENT_ROUTES = [
   { path: '/',      priority: 1.0, changeFrequency: 'daily'   as const },
+  { path: '/photo-downloader', priority: 0.9, changeFrequency: 'weekly'  as const },
   { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/tools', priority: 0.9, changeFrequency: 'monthly' as const },
+  { path: '/facebook-video-downloader',  priority: 0.9, changeFrequency: 'weekly'  as const },
+  { path: '/twitter-video-downloader',   priority: 0.9, changeFrequency: 'weekly'  as const },
+  { path: '/youtube-thumbnail-downloader', priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/video-compressor',           priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/mp4-to-gif',                 priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/guide/download-tiktok-without-watermark', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/guide/tiktok-to-mp3',                     priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/guide/download-tiktok-on-iphone',         priority: 0.9, changeFrequency: 'monthly' as const },
@@ -34,11 +41,20 @@ const LEGAL_ROUTES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const contentDate = new Date()
 
+  // hreflang in the sitemap mirrors the <link rel="alternate"> tags on each page
+  const languages = (path: string) => ({
+    en: `${BASE}${path}`,
+    de: `${BASE}/de${path === '/' ? '' : path}`,
+    ar: `${BASE}/ar${path === '/' ? '' : path}`,
+    'x-default': `${BASE}${path}`,
+  })
+
   const enRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
     url: `${BASE}${path}`,
     lastModified: path === '/' ? contentDate : GUIDE_DATE,
     changeFrequency,
     priority,
+    alternates: { languages: languages(path) },
   }))
 
   const deRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
@@ -46,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: path === '/' ? contentDate : GUIDE_DATE,
     changeFrequency,
     priority: priority * 0.95,
+    alternates: { languages: languages(path) },
   }))
 
   const arRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
@@ -53,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: path === '/' ? contentDate : GUIDE_DATE,
     changeFrequency,
     priority: priority * 0.95,
+    alternates: { languages: languages(path) },
   }))
 
   const newGuideRoutes = NEW_GUIDE_ROUTES.map(({ path, priority, date }) => ({

@@ -1,23 +1,17 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { useTranslations } from 'next-intl'
+import { AlertCircle, ClipboardPaste, Download, Link2, LoaderCircle, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Card } from '@/components/ui/card'
-import VideoResult from './VideoResult'
+import VideoResult, { type VideoData } from './VideoResult'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 
-interface VideoData {
-  id: string
-  title: string
-  cover: string
-  play: string
-  hdplay: string
-  music: string
-  musicTitle: string
-  author: { nickname: string; avatar: string; uniqueId: string }
-  stats: { plays: number; likes: number; comments: number; shares: number }
-}
+/** `photo` tunes the copy for the slideshow downloader page; the API and result card are shared. */
+type Variant = 'video' | 'photo'
+/** Which network the page is about — only changes copy and the input id; the API detects the platform from the URL. */
+type Platform = 'tiktok' | 'facebook' | 'twitter'
 
 type State =
   | { status: 'idle' }
@@ -25,24 +19,51 @@ type State =
   | { status: 'success'; data: VideoData }
   | { status: 'error'; message: string }
 
-export default function Downloader() {
+const subscribeNoop = () => () => {}
+const getCanPaste = () => typeof navigator.clipboard?.readText === 'function'
+
+export default function Downloader({ variant = 'video', platform = 'tiktok' }: { variant?: Variant; platform?: Platform }) {
   const t = useTranslations('Downloader')
+  const v = (key: string) => (platform !== 'tiktok' ? t(`platforms.${platform}.${key}`) : variant === 'photo' ? t(`photo.${key}`) : t(key))
+  const inputId = platform === 'tiktok' ? 'tiktok-url' : `${platform}-url`
   const [url, setUrl] = useState('')
   const [state, setState] = useState<State>({ status: 'idle' })
   const inputRef = useRef<HTMLInputElement>(null)
+  const resultRef = useRef<HTMLDivElement>(null)
+
+  // Clipboard read is not available everywhere (Firefox, insecure contexts) — only offer it when it is.
+  // Server snapshot is `false` so SSR and the first client render match.
+  const canPaste = useSyncExternalStore(subscribeNoop, getCanPaste, () => false)
+
+  // Bring the result into view on small screens without fighting reduced-motion users.
+  useEffect(() => {
+    if (state.status !== 'success' || !resultRef.current) return
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    resultRef.current.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' })
+  }, [state.status])
 
   async function handlePaste() {
     try {
-      const text = await navigator.clipboard.readText()
-      setUrl(text.trim())
+      const text = (await navigator.clipboard.readText()).trim()
+      if (text) setUrl(text)
       inputRef.current?.focus()
-    } catch { /* clipboard denied */ }
+    } catch {
+      /* clipboard permission denied */
+    }
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    const trimmed = url.trim()
-    if (!trimmed) return
+    await submit(url)
+  }
+
+  async function submit(raw: string, fillInput = false) {
+    const trimmed = raw.trim()
+    if (!trimmed) {
+      inputRef.current?.focus()
+      return
+    }
+    if (fillInput) setUrl(trimmed)
     setState({ status: 'loading' })
     try {
       const res = await fetch('/api/download', {
@@ -51,153 +72,140 @@ export default function Downloader() {
         body: JSON.stringify({ url: trimmed }),
       })
       const json = await res.json()
-      if (!res.ok) { setState({ status: 'error', message: json.error ?? t('errorNetwork') }); return }
+      if (!res.ok) {
+        setState({ status: 'error', message: json.error ?? t('errorNetwork') })
+        return
+      }
       setState({ status: 'success', data: json })
     } catch {
       setState({ status: 'error', message: t('errorNetwork') })
     }
   }
 
+  // Android share target (manifest.json) and the WebSite SearchAction land here with ?url= or ?text=.
+  // Runs once on mount; the work is deferred a tick so no state is set synchronously inside the effect.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const shared = params.get('url') || params.get('text') || params.get('title') || ''
+    const match = /https?:\/\/\S+/.exec(shared)
+    if (!match) return
+    const link = match[0]
+    window.history.replaceState(null, '', window.location.pathname)
+    const id = window.setTimeout(() => { void submit(link, true) }, 0)
+    return () => window.clearTimeout(id)
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- run once on mount
+  }, [])
+
   function reset() {
     setUrl('')
     setState({ status: 'idle' })
-    setTimeout(() => inputRef.current?.focus(), 50)
+    requestAnimationFrame(() => inputRef.current?.focus())
   }
 
   const isLoading = state.status === 'loading'
 
   return (
-    <div className="flex flex-col gap-4 w-full">
-      {/* Input card */}
-      <Card className="p-5 flex flex-col gap-4 glass border-0 shadow-none">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <div className="flex w-full flex-col gap-4">
+      {/* ── Input ─────────────────────────────────────────────── */}
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:flex-row" aria-busy={isLoading}>
+        <label htmlFor={inputId} className="sr-only">{v('placeholder')}</label>
 
-          {/* URL row */}
-          <div className="flex gap-2">
-            <div className="relative flex-1">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'oklch(0.45 0.015 265)' }}>
-                <LinkIcon />
-              </span>
-              <Input
-                ref={inputRef}
-                type="url"
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                placeholder={t('placeholder')}
-                className="pl-9 pr-9 h-11 text-sm glow-border"
-                style={{ background: 'var(--s2)', borderColor: 'oklch(0.22 0.012 265)', color: '#fff' }}
+        <div className="relative flex-1">
+          <Link2 aria-hidden className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 rtl:left-auto rtl:right-4" style={{ color: 'var(--t4)' }} />
+          <Input
+            ref={inputRef}
+            id={inputId}
+            name="url"
+            type="url"
+            inputMode="url"
+            enterKeyHint="go"
+            required
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder={v('placeholder')}
+            className="h-14 rounded-2xl border pl-11 pr-24 text-base shadow-none focus-visible:border-[var(--lime)] focus-visible:ring-0 rtl:pl-24 rtl:pr-11 md:text-base"
+            style={{ color: 'var(--t1)', borderColor: 'var(--line-strong)', background: 'var(--bg)' }}
+            disabled={isLoading}
+            autoComplete="off"
+            spellCheck={false}
+          />
+
+          <div className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center rtl:left-2 rtl:right-auto">
+            {url ? (
+              <button
+                type="button"
+                onClick={() => { setUrl(''); inputRef.current?.focus() }}
+                className="inline-flex size-10 items-center justify-center rounded-lg transition-colors hover:bg-white/10"
+                style={{ color: 'var(--t3)' }}
+                aria-label={t('clear')}
+              >
+                <X className="size-4" aria-hidden />
+              </button>
+            ) : canPaste ? (
+              <button
+                type="button"
+                onClick={handlePaste}
                 disabled={isLoading}
-                autoComplete="off"
-                spellCheck={false}
-              />
-              {url && (
-                <button
-                  type="button"
-                  onClick={() => setUrl('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors"
-                  style={{ color: 'oklch(0.45 0.015 265)' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'oklch(0.45 0.015 265)')}
-                  aria-label={t('clear')}
-                >
-                  <XIcon />
-                </button>
-              )}
-            </div>
-
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={handlePaste}
-              disabled={isLoading}
-              className="h-11 px-4 gap-1.5 btn-ghost border-0 text-sm"
-            >
-              <ClipboardIcon />
-              <span className="hidden sm:inline">{t('paste')}</span>
-            </Button>
+                className="btn-ghost inline-flex h-10 items-center gap-1.5 rounded-lg px-3 text-xs font-semibold"
+              >
+                <ClipboardPaste className="size-4" aria-hidden />
+                {t('paste')}
+              </button>
+            ) : null}
           </div>
+        </div>
 
-          {/* Submit */}
-          <Button
-            type="submit"
-            disabled={isLoading || !url.trim()}
-            className="h-12 text-sm font-bold gap-2 btn-brand border-0 rounded-xl"
-          >
-            {isLoading ? (
-              <>
-                <svg className="spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="3" strokeDasharray="31.4" strokeDashoffset="10" strokeLinecap="round" />
-                </svg>
-                {t('fetching')}
-              </>
-            ) : (
-              <>
-                <DownArrowIcon />
-                {t('download')}
-              </>
-            )}
-          </Button>
-        </form>
+        <Button type="submit" disabled={isLoading} className="btn-brand h-14 rounded-2xl px-6 text-base sm:min-w-44">
+          {isLoading ? (
+            <>
+              <LoaderCircle className="spin size-5" aria-hidden />
+              {v('fetching')}
+            </>
+          ) : (
+            <>
+              <Download className="size-5" aria-hidden />
+              {v('download')}
+            </>
+          )}
+        </Button>
+      </form>
 
-        {/* Skeleton loader */}
+      {/* ── Status region ─────────────────────────────────────── */}
+      <div aria-live="polite" className="flex flex-col gap-4">
         {isLoading && (
-          <div className="flex gap-4 pt-1 fade-up" aria-live="polite">
-            <div className="shimmer flex-shrink-0" style={{ width: 108, height: 148 }} />
-            <div className="flex flex-col gap-2.5 flex-1 pt-1">
+          <div className="cut-card fade-up flex gap-4 p-4">
+            <div className="shimmer shrink-0" style={{ width: 96, height: 128, borderRadius: 12 }} />
+            <div className="flex flex-1 flex-col gap-3 pt-1">
+              <div className="shimmer h-3 w-1/3" />
               <div className="shimmer h-3 w-3/4" />
-              <div className="shimmer h-3 w-1/2" />
               <div className="shimmer h-3 w-2/3" />
-              <div className="mt-auto shimmer h-3 w-1/3" />
+              <div className="shimmer mt-auto h-10 w-full" />
             </div>
           </div>
         )}
-      </Card>
 
-      {/* Error */}
-      {state.status === 'error' && (
-        <div
-          role="alert"
-          className="fade-up glass rounded-2xl p-4 flex items-start gap-3"
-          style={{ borderColor: 'rgba(255,45,85,0.3)', border: '1px solid rgba(255,45,85,0.3)' }}
-        >
-          <span className="flex-shrink-0 mt-0.5" style={{ color: '#ff6b6b' }}><AlertIcon /></span>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium" style={{ color: '#ffaaaa' }}>{state.message}</p>
-            <button onClick={reset} className="mt-1 text-xs underline" style={{ color: 'rgba(255,100,100,0.6)' }}>
-              {t('tryAgain')}
+        {state.status === 'error' && (
+          <div role="alert" className="cut-card cut-card--pink fade-up flex items-start gap-3 p-4">
+            <AlertCircle className="mt-0.5 size-5 shrink-0" style={{ color: 'var(--destructive)' }} aria-hidden />
+            <div className="flex min-w-0 flex-1 flex-col gap-2">
+              <p className="text-sm font-medium" style={{ color: 'var(--t1)' }}>{state.message}</p>
+              <button onClick={reset} className="btn-ghost inline-flex h-10 w-fit items-center rounded-lg px-3 text-xs font-semibold">
+                {t('tryAgain')}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {state.status === 'success' && (
+          <div ref={resultRef} className="fade-up flex flex-col gap-4 scroll-mt-20">
+            <VideoResult data={state.data} />
+            <AdsterraBanner size="300x250" lazy={false} />
+            <button onClick={reset} className="btn-ghost inline-flex h-12 items-center justify-center rounded-full px-5 text-sm">
+              {v('downloadAnother')}
             </button>
           </div>
-        </div>
-      )}
-
-      {/* Result */}
-      {state.status === 'success' && (
-        <div className="flex flex-col gap-4 fade-up">
-          <VideoResult data={state.data} />
-          <button
-            onClick={reset}
-            className="text-xs text-center transition-colors"
-            style={{ color: 'oklch(0.45 0.015 265)' }}
-            onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
-            onMouseLeave={e => (e.currentTarget.style.color = 'oklch(0.45 0.015 265)')}
-          >
-            {t('downloadAnother')}
-          </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
-
-/* Icons */
-function LinkIcon() {
-  return (
-    <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
-    </svg>
-  )
-}
-function XIcon() { return (<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>) }
-function ClipboardIcon() { return (<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>) }
-function DownArrowIcon() { return (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>) }
-function AlertIcon() { return (<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>) }

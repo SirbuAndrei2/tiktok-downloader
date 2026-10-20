@@ -1,18 +1,14 @@
-const VIGNETTE_SRC = `(function(s){s.dataset.zone='10919813',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
-
-// The three tag.min.js zones share one src, and React 19 dedupes same-src async
-// scripts to a single tag — so they must be DOM-injected, not rendered as JSX.
-// They bind to clicks document-wide (download buttons included), so loading them
-// once per page is both sufficient and required — twice fires duplicate popunders.
-const TAG_ZONES_SRC = `(function(d){['245447','233102','273072'].forEach(function(z){var s=d.createElement('script');s.src='https://quge5.com/88/tag.min.js';s.async=true;s.dataset.zone=z;s.setAttribute('data-cfasync','false');(d.body||d.documentElement).appendChild(s)})})(document)`
+// Monetag popunder — ONE zone only. Three zones of the same tag.min.js used to be
+// loaded here (245447, 233102, 273072) plus a full-screen vignette; each extra zone
+// fires its own popunder, so visitors were hit several times per visit. Removed on
+// 2026-10-20 to make the site less hostile. The zone IDs above are kept in this
+// comment in case one needs to be restored in the Monetag dashboard.
+//
+// Injected via DOM rather than JSX on purpose: React 19 dedupes same-src async
+// scripts, and the tag binds click handlers document-wide (download buttons
+// included), so it must load exactly once per page.
+const TAG_ZONE_SRC = `(function(d){var s=d.createElement('script');s.src='https://quge5.com/88/tag.min.js';s.async=true;s.dataset.zone='245447';s.setAttribute('data-cfasync','false');(d.body||d.documentElement).appendChild(s)})(document)`
 
 export default function MonetagTags() {
-  return (
-    <>
-      {/* Monetag vignette / interstitial */}
-      <script data-cfasync="false" dangerouslySetInnerHTML={{ __html: VIGNETTE_SRC }} />
-      {/* Monetag popunder / in-page push zones */}
-      <script data-cfasync="false" dangerouslySetInnerHTML={{ __html: TAG_ZONES_SRC }} />
-    </>
-  )
+  return <script data-cfasync="false" dangerouslySetInnerHTML={{ __html: TAG_ZONE_SRC }} />
 }
