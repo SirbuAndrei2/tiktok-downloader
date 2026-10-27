@@ -2,19 +2,21 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { CONSENT_KEY, grantAnalyticsConsent } from '@/components/GoogleAnalytics'
 
 export default function CookieConsent() {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    const consent = localStorage.getItem('tokdown_cookie_consent')
+    const consent = localStorage.getItem(CONSENT_KEY)
     if (!consent) {
       setShow(true)
     }
   }, [])
 
   const acceptCookies = () => {
-    localStorage.setItem('tokdown_cookie_consent', 'accepted')
+    localStorage.setItem(CONSENT_KEY, 'accepted')
+    grantAnalyticsConsent()
     setShow(false)
   }
 

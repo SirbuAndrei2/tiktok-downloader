@@ -6,6 +6,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import CloudflareAnalytics from '@/components/CloudflareAnalytics'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import '../globals.css'
 import { OG_IMAGE } from '@/lib/seo'
 
@@ -157,6 +158,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <SideRails />
         </NextIntlClientProvider>
         <CloudflareAnalytics />
+        <GoogleAnalytics />
       </body>
     </html>
   )
