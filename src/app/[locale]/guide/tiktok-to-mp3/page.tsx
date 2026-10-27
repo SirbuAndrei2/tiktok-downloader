@@ -31,7 +31,6 @@ export default async function TikTokToMp3({ params }: Props) {
   const useCases = t.raw('useCases') as { icon: string; title: string; desc: string }[]
   const troubleshoot = t.raw('troubleshoot') as { problem: string; fix: string }[]
 
-  const slug = '/guide/tiktok-to-mp3'
   const dates = pageDates('/guide/tiktok-to-mp3')
   const jsonLd = [
     article({ locale, path: '/guide/tiktok-to-mp3', headline: t('h1'), description: t('metaDescription'), datePublished: dates.published, dateModified: dates.modified }),

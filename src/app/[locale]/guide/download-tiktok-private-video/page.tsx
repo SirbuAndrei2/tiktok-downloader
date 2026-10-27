@@ -85,7 +85,7 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
               <strong style={{ color: 'var(--brand)' }}>No — private TikTok videos cannot be downloaded</strong> by any third-party tool, including TokDown. TikTok enforces privacy settings server-side: a request for a private video returns an authentication error to anyone who is not the account owner.
             </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--t3)' }}>
-              Any website or app claiming to download private TikTok videos is either not delivering what it promises, or — more dangerously — asking for your TikTok username and password to "log in on your behalf". Never give your TikTok credentials to a third-party tool.
+              Any website or app claiming to download private TikTok videos is either not delivering what it promises, or — more dangerously — asking for your TikTok username and password to &quot;log in on your behalf&quot;. Never give your TikTok credentials to a third-party tool.
             </p>
           </section>
 

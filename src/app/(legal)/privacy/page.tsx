@@ -48,13 +48,13 @@ export default function PrivacyPage() {
           content: (
             <>
               <p>
-                This Privacy Policy applies to the TikTok Downloader web service ("Service", "we", "us", "our").
+                This Privacy Policy applies to the TikTok Downloader web service (&quot;Service&quot;, &quot;we&quot;, &quot;us&quot;, &quot;our&quot;).
                 By using the Service you agree to the practices described below.
               </p>
               <p>
                 <strong style={{ color: 'white' }}>We do not store, cache, or retain any video files, audio files,
                 or media content</strong> processed through this Service. All downloads are streamed directly from
-                TikTok's content delivery network to your device. No copy is saved on our servers.
+                TikTok&apos;s content delivery network to your device. No copy is saved on our servers.
               </p>
             </>
           ),
@@ -193,7 +193,7 @@ export default function PrivacyPage() {
           title: '8. Changes to This Policy',
           content: (
             <p>
-              We may update this Privacy Policy from time to time. The "Last updated" date at the top of
+              We may update this Privacy Policy from time to time. The &quot;Last updated&quot; date at the top of
               this page will reflect any changes. Continued use of the Service after changes constitutes
               acceptance of the updated policy.
             </p>

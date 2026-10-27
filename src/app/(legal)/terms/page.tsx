@@ -6,7 +6,7 @@ const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms of Service for TikTok Downloader. By using this free TikTok video downloader you agree to use it for personal, lawful purposes only. Read the full terms.',
+  description: 'TokDown terms of service: by using these free download and media tools you agree to use them for personal, lawful purposes only. Read the full terms.',
   alternates: { canonical: `${BASE}/terms` },
   robots: { index: true, follow: true },
   openGraph: {
@@ -47,7 +47,7 @@ export default function TermsPage() {
           title: '1. Acceptance of Terms',
           content: (
             <p>
-              By accessing or using TikTok Downloader ("Service"), you agree to be bound by these Terms
+              By accessing or using TikTok Downloader (&quot;Service&quot;), you agree to be bound by these Terms
               of Service. If you do not agree to these terms, you must immediately stop using the Service.
               We reserve the right to modify these terms at any time. Continued use of the Service after
               any modification constitutes your acceptance of the new terms.
@@ -66,7 +66,7 @@ export default function TermsPage() {
               </p>
               <p>
                 <strong style={{ color: 'white' }}>We do not store any video or audio files on our servers.</strong>{' '}
-                Media is streamed from the source platform's servers through our server to the user's device in a single pass and is never written to disk.
+                Media is streamed from the source platform&apos;s servers through our server to the user&apos;s device in a single pass and is never written to disk.
               </p>
             </>
           ),
@@ -93,7 +93,7 @@ export default function TermsPage() {
             <>
               <p>You agree that you will <strong style={{ color: 'white' }}>not</strong>:</p>
               <ul className="list-disc pl-4 space-y-1">
-                <li>Download, reproduce, or distribute copyrighted content without the rights holder's permission.</li>
+                <li>Download, reproduce, or distribute copyrighted content without the rights holder&apos;s permission.</li>
                 <li>Use the Service for any commercial purpose, including reselling downloaded content.</li>
                 <li>Use the Service to harass, defame, or infringe upon the rights of any third party.</li>
                 <li>Attempt to circumvent, disable, or interfere with any security features of the Service.</li>
@@ -129,7 +129,7 @@ export default function TermsPage() {
             <p>
               This Service is an independent tool and is <strong style={{ color: 'white' }}>not
               affiliated with, endorsed by, or connected to TikTok, TikTok Ltd, or ByteDance Ltd</strong>{' '}
-              in any way. "TikTok" is a trademark of ByteDance Ltd. Use of the trademark in
+              in any way. &quot;TikTok&quot; is a trademark of ByteDance Ltd. Use of the trademark in
               this context is solely for descriptive identification purposes.
             </p>
           ),
@@ -138,7 +138,7 @@ export default function TermsPage() {
           title: '7. Disclaimer of Warranties',
           content: (
             <p>
-              THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND,
+              THE SERVICE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND,
               EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
               FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE
               WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
@@ -165,7 +165,7 @@ export default function TermsPage() {
             <p>
               You agree to indemnify, defend, and hold harmless TikTok Downloader and its operators
               from and against any claims, liabilities, damages, judgments, awards, losses, costs,
-              or expenses (including reasonable attorney's fees) arising out of or relating to your
+              or expenses (including reasonable attorney&apos;s fees) arising out of or relating to your
               violation of these Terms or your use of the Service, including any content you download
               through the Service.
             </p>
@@ -187,7 +187,7 @@ export default function TermsPage() {
             <p>
               These Terms shall be governed by and construed in accordance with applicable law.
               Any disputes arising under or in connection with these Terms shall be subject to
-              the exclusive jurisdiction of the competent courts of the operator's jurisdiction.
+              the exclusive jurisdiction of the competent courts of the operator&apos;s jurisdiction.
             </p>
           ),
         },

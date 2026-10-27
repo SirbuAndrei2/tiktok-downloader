@@ -86,7 +86,7 @@ export default async function DownloadTikTokPlaylist({ params }: Props) {
               TikTok playlists do not have a standalone URL that third-party tools can use to extract all videos at once. Each video in a playlist is an independent URL. This means <strong style={{ color: 'var(--t2)' }}>every downloader — paid or free — downloads TikTok videos one at a time</strong>.
             </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--t3)' }}>
-              Sites that claim "playlist batch download" either process one video at a time behind the scenes, require you to paste all links manually anyway, or use browser automation scripts that frequently break and violate TikTok's terms of service.
+              Sites that claim &quot;playlist batch download&quot; either process one video at a time behind the scenes, require you to paste all links manually anyway, or use browser automation scripts that frequently break and violate TikTok&apos;s terms of service.
             </p>
           </section>
 

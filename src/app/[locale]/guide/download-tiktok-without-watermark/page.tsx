@@ -31,7 +31,6 @@ export default async function DownloadGuide({ params }: Props) {
   const platforms = t.raw('platforms') as { platform: string; tip: string }[]
   const troubleshoot = t.raw('troubleshoot') as { problem: string; fix: string }[]
 
-  const slug = '/guide/download-tiktok-without-watermark'
   const dates = pageDates('/guide/download-tiktok-without-watermark')
   const jsonLd = [
     article({ locale, path: '/guide/download-tiktok-without-watermark', headline: t('h1'), description: t('metaDescription'), datePublished: dates.published, dateModified: dates.modified }),

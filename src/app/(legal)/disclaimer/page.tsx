@@ -50,8 +50,8 @@ export default function DisclaimerPage() {
               TikTok Downloader is an <strong style={{ color: 'white' }}>independent, privately operated
               web service</strong> and has absolutely no affiliation, association, authorization,
               endorsement, or connection with TikTok, TikTok Ltd, ByteDance Ltd, or any of their
-              subsidiaries or affiliates. "TikTok" is a registered trademark of ByteDance Ltd.
-              Any reference to "TikTok" on this site is solely for descriptive purposes to identify
+              subsidiaries or affiliates. &quot;TikTok&quot; is a registered trademark of ByteDance Ltd.
+              Any reference to &quot;TikTok&quot; on this site is solely for descriptive purposes to identify
               the platform whose publicly accessible content this tool is designed to work with.
             </p>
           ),
@@ -68,7 +68,7 @@ export default function DisclaimerPage() {
               <p>
                 The Service functions as a technical intermediary: it retrieves publicly accessible
                 metadata and media URLs from the source platform, and streams that content from the
-                platform's servers through our server to the user's device at the user's request.
+                platform&apos;s servers through our server to the user&apos;s device at the user&apos;s request.
                 No copy of any video or audio file is saved on our servers at any point.
               </p>
             </>
@@ -85,7 +85,7 @@ export default function DisclaimerPage() {
               <ul className="list-disc pl-4 space-y-1">
                 <li>Ensuring you have the legal right to download any content you retrieve through this Service.</li>
                 <li>How you use, store, share, or distribute any downloaded content.</li>
-                <li>Compliance with TikTok's Terms of Service and Community Guidelines.</li>
+                <li>Compliance with TikTok&apos;s Terms of Service and Community Guidelines.</li>
                 <li>Compliance with all applicable copyright laws in your jurisdiction.</li>
                 <li>Obtaining permission from the original content creator before downloading their work.</li>
                 <li>Any legal claims, damages, or liabilities that may arise from your use of downloaded content.</li>
@@ -114,10 +114,10 @@ export default function DisclaimerPage() {
           title: '5. Service Availability',
           content: (
             <p>
-              This Service depends on the continued public accessibility of TikTok's API and content
+              This Service depends on the continued public accessibility of TikTok&apos;s API and content
               delivery infrastructure. We make no guarantee that the Service will function at all
               times, or that it will continue to work if TikTok modifies its platform. The Service
-              is provided "as is" with no uptime guarantee. We reserve the right to discontinue
+              is provided &quot;as is&quot; with no uptime guarantee. We reserve the right to discontinue
               the Service at any time without prior notice.
             </p>
           ),
@@ -126,7 +126,7 @@ export default function DisclaimerPage() {
           title: '6. No Warranties',
           content: (
             <p>
-              THIS SERVICE IS PROVIDED "AS IS" WITHOUT ANY WARRANTIES OF ANY KIND, EXPRESS OR
+              THIS SERVICE IS PROVIDED &quot;AS IS&quot; WITHOUT ANY WARRANTIES OF ANY KIND, EXPRESS OR
               IMPLIED. WE MAKE NO REPRESENTATIONS OR WARRANTIES REGARDING THE ACCURACY,
               COMPLETENESS, RELIABILITY, OR SUITABILITY OF THE SERVICE FOR ANY PURPOSE.
               YOUR USE OF THE SERVICE IS ENTIRELY AT YOUR OWN RISK.
@@ -161,7 +161,7 @@ export default function DisclaimerPage() {
           content: (
             <p>
               We reserve the right to update this Disclaimer at any time. Changes take effect
-              immediately upon posting to this page. The "Last updated" date reflects the most
+              immediately upon posting to this page. The &quot;Last updated&quot; date reflects the most
               recent revision. Continued use of the Service constitutes acceptance of the
               current Disclaimer.
             </p>
