@@ -717,7 +717,11 @@
         "title": "SnapTik-Alternative",
         "desc": "Worauf du bei jedem TikTok-Downloader achten solltest und was TokDown kann und nicht kann."
       }
-    }
+    },
+    "intro": [
+      "Die Downloader holen einen öffentlichen Beitrag über seinen Link: TikTok-Videos, Sounds und Foto-Diashows, Videos und GIFs von X (Twitter) sowie öffentliche Facebook-Videos. Sie funktionieren nur mit öffentlichen Inhalten und hängen davon ab, was jede Plattform nicht eingeloggten Besuchern ausliefert. Ein privater, gelöschter oder altersbeschränkter Beitrag liefert deshalb eine klare Fehlermeldung statt einer Datei.",
+      "Die Konverter arbeiten umgekehrt. Der Video-Kompressor und der MP4-zu-GIF-Konverter laufen komplett in deinem Browser mit WebAssembly, die gewählte Datei verlässt dein Gerät also nie, und das YouTube-Thumbnail-Tool liest nur die öffentlichen Bilddateien, die YouTube für jedes Video bereitstellt. Für gerätespezifische Schritte, etwa das Speichern in der iPhone-Kamerarolle, helfen die Anleitungen."
+    ]
   },
   "PhotoDownloader": {
     "metaTitle": "TikTok Fotos herunterladen ohne Wasserzeichen",

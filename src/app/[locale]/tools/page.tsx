@@ -84,6 +84,11 @@ export default async function ToolsPage({ params }: Props) {
               <BlurFade><span className="pill pill--lime">{t('eyebrow')}</span></BlurFade>
               <BlurFade delay={0.08}><h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl">{t('h1')}</h1></BlurFade>
               <BlurFade delay={0.16}><p className="mt-5 max-w-2xl text-lg leading-relaxed" style={{ color: 'var(--t3)' }}>{t('subtitle')}</p></BlurFade>
+              <div className="mt-6 flex max-w-2xl flex-col gap-4">
+                {(t.raw('intro') as string[]).map((para) => (
+                  <p key={para.slice(0, 40)} className="m-0 text-base leading-relaxed" style={{ color: 'var(--t2)' }}>{para}</p>
+                ))}
+              </div>
             </div>
           </section>
 

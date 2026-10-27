@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Link as LocaleLink } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import Logo from '@/components/Logo'
 
@@ -43,10 +42,11 @@ export default function SiteHeader({ locale, localePath, labels, path = '/' }: P
           {LOCALES.map((l) => {
             const active = l.code === locale
             return (
-              <LocaleLink
+              <Link
                 key={l.code}
-                href={path}
-                locale={l.code}
+                // Canonical URL of this page in that locale (English has no /en prefix,
+                // which would 307-redirect), so the switcher never links to a redirect.
+                href={l.code === 'en' ? path : `/${l.code}${path === '/' ? '' : path}`}
                 lang={l.code}
                 hrefLang={l.code}
                 title={l.name}
@@ -55,7 +55,7 @@ export default function SiteHeader({ locale, localePath, labels, path = '/' }: P
                 style={active ? { color: 'var(--lime-fg)', background: 'var(--lime)' } : { color: 'var(--t3)' }}
               >
                 {l.label}
-              </LocaleLink>
+              </Link>
             )
           })}
         </nav>

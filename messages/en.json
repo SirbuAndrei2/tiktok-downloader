@@ -719,7 +719,11 @@
         "title": "SnapTik alternative",
         "desc": "What to check in any TikTok downloader, and exactly what TokDown does and does not do."
       }
-    }
+    },
+    "intro": [
+      "Downloaders fetch a public post from its link: TikTok videos, sounds and photo slideshows, X (Twitter) videos and GIFs, and public Facebook videos. They only work for public content and depend on what each platform serves to visitors who are not logged in, so a private, deleted or age-restricted post returns a clear error instead of a file.",
+      "The converters work the other way round. The video compressor and the MP4 to GIF converter run entirely in your browser with WebAssembly, so the file you choose never leaves your device, and the YouTube thumbnail tool only reads the public image files YouTube publishes for every video. Use the guides when you need device-specific steps, such as saving to the iPhone Camera Roll."
+    ]
   },
   "PhotoDownloader": {
     "metaTitle": "TikTok Slideshow & Photo Downloader, No Watermark",
