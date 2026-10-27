@@ -47,3 +47,4 @@ next-env.d.ts
 /calctidy/
 # SEO audit output (claude-seo), regenerated per audit
 /tokdown.org-audit/
+/.ui-ux-pro-max-skill/
