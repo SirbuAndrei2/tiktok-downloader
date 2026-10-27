@@ -3,19 +3,21 @@
 import { useEffect } from 'react'
 
 /**
- * Monetag popunder, loaded lazily. The tag binds a document-wide click handler,
- * so instead of loading it on every page load (which hijacked the first click
- * on Paste / Download) it is injected only after the visitor has received a
- * download result (`tokdown:result` event from Downloader), once per browser
- * session. Pages without a downloader never load it. Frequency per 24h is
- * additionally capped in the Monetag dashboard.
+ * Adsterra Popunder (dashboard unit Popunder_1, id 31828936; the only unit left once
+ * /22/ banners, /21/ native and /14/ Social Bar are accounted for). The script binds a
+ * document-wide click handler, so loading it on page load hijacked the first
+ * click on Paste / Download. It is injected only after the visitor has received
+ * a download result (`tokdown:result` event from Downloader), once per browser
+ * session. Pages without a downloader never load it.
+ *
+ * To load it on every page instead (maximum revenue, worse UX), render
+ * <script data-cfasync="false" src={SRC} /> in the locale layout and drop this component.
  */
-const ZONE = '245447'
-const SRC = 'https://quge5.com/88/tag.min.js'
+const SRC = 'https://abscloud.org/1/3009c7abc63085b40060631065b8690e'
 const SESSION_KEY = 'tokdown_pu'
 export const RESULT_EVENT = 'tokdown:result'
 
-export default function PopunderLoader() {
+export default function AdsterraPopunder() {
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') return
     let shown = false
@@ -24,11 +26,10 @@ export default function PopunderLoader() {
 
     const load = () => {
       try { sessionStorage.setItem(SESSION_KEY, '1') } catch { /* ignore */ }
-      if (document.querySelector(`script[data-zone="${ZONE}"]`)) return
+      if (document.querySelector(`script[src="${SRC}"]`)) return
       const s = document.createElement('script')
       s.src = SRC
       s.async = true
-      s.dataset.zone = ZONE
       s.setAttribute('data-cfasync', 'false')
       ;(document.body || document.documentElement).appendChild(s)
     }

@@ -1,0 +1,8 @@
+{
+  // Separate Worker so the main Worker keeps serving only tokdown.org. Deploy: npx wrangler deploy -c www-redirect/wrangler.jsonc
+  "name": "tokdown-www-redirect",
+  "main": "index.js",
+  "compatibility_date": "2026-08-20",
+  "routes": [{ "pattern": "www.tokdown.org", "custom_domain": true }],
+  "workers_dev": false
+}

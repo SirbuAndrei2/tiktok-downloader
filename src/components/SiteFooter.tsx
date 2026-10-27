@@ -8,9 +8,13 @@ interface Props {
   copyright: string
   feedback: string
   columns: { heading: string; links: LinkItem[] }[]
+  /** Adsterra smart link, labelled "Sponsored". Off on the ad-free legal pages. */
+  sponsored?: boolean
 }
 
-export default function SiteFooter({ tagline, copyright, feedback, columns }: Props) {
+const SMART_LINK = 'https://araplhn.org/4/94149869a124fba970663a0e963f16ad'
+
+export default function SiteFooter({ tagline, copyright, feedback, columns, sponsored = true }: Props) {
   return (
     <footer className="relative z-10 w-full" style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-2)' }}>
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 md:grid-cols-12">
@@ -38,7 +42,12 @@ export default function SiteFooter({ tagline, copyright, feedback, columns }: Pr
         ))}
       </div>
       <div style={{ borderTop: '1px solid var(--line)' }}>
-        <p className="mono mx-auto max-w-6xl px-5 py-5 text-xs" style={{ color: 'var(--t4)' }}>{copyright}</p>
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-5">
+          <p className="mono m-0 text-xs" style={{ color: 'var(--t4)' }}>{copyright}</p>
+          {sponsored && (
+            <a href={SMART_LINK} target="_blank" rel="sponsored nofollow noopener" className="mono text-xs transition-colors hover:text-white" style={{ color: 'var(--t4)' }}>Sponsored</a>
+          )}
+        </div>
       </div>
     </footer>
   )

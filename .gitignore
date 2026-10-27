@@ -44,3 +44,6 @@ next-env.d.ts
 # nested design-reference repo (installed globally as a Claude plugin, not part of the site)
 /ui-ux-pro-max-skill/
 /claude-seo/
+/calctidy/
+# SEO audit output (claude-seo), regenerated per audit
+/tokdown.org-audit/

@@ -5,14 +5,14 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
-import { Analytics } from '@vercel/analytics/next'
+import CloudflareAnalytics from '@/components/CloudflareAnalytics'
 import '../globals.css'
 import { OG_IMAGE } from '@/lib/seo'
 
 import CookieConsent from '@/components/CookieConsent'
-import PopunderLoader from '@/components/ads/PopunderLoader'
 import SideRails from '@/components/ads/SideRails'
 import AdsterraTags from '@/components/ads/AdsterraTags'
+import AdsterraPopunder from '@/components/ads/AdsterraPopunder'
 
 
 const BASE = 'https://tokdown.org'
@@ -146,17 +146,17 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />
 
-        {/* Adsterra site tag (Social Bar) */}
+        {/* Adsterra Social Bar */}
         <AdsterraTags />
       </head>
       <body className="min-h-screen antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
           <CookieConsent />
-          <PopunderLoader />
+          <AdsterraPopunder />
           <SideRails />
         </NextIntlClientProvider>
-        <Analytics />
+        <CloudflareAnalytics />
       </body>
     </html>
   )

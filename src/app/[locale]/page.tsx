@@ -10,6 +10,7 @@ import Testimonials, { type Testimonial } from '@/components/Testimonials'
 import CtaBand from '@/components/CtaBand'
 import { buildFooterColumns } from '@/lib/nav'
 import AdsterraNative from '@/components/ads/AdsterraNative'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
@@ -213,6 +214,10 @@ export default async function Page({ params }: Props) {
             </div>
           </section>
 
+          <div className="w-full max-w-6xl px-5 pb-10">
+            <AdsterraBanner size="responsive" lazy={false} />
+          </div>
+
           {/* ── Facts strip ────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5" aria-label="Facts">
             <BlurFade inView>
@@ -273,6 +278,10 @@ export default async function Page({ params }: Props) {
               ))}
             </ol>
           </section>
+
+          <div className="w-full max-w-6xl px-5 pt-16">
+            <AdsterraBanner size="inline" />
+          </div>
 
           {/* ── Tools ──────────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pt-24" aria-labelledby="tools-h">
@@ -336,6 +345,10 @@ export default async function Page({ params }: Props) {
               </BlurFade>
             </div>
           </section>
+
+          <div className="w-full max-w-6xl px-5 pt-16 md:hidden">
+            <AdsterraBanner size="300x250" only="mobile" />
+          </div>
 
           {/* ── FAQ ────────────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pb-24 pt-24" aria-labelledby="faq-h">

@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // nested design-reference repo, not part of the site
     "ui-ux-pro-max-skill/**",
     "claude-seo/**",
+    "calctidy/**",
+    "tokdown.org-audit/**",
   ]),
 ]);
 

@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { buildFooterColumns } from '@/lib/nav'
 import LinkToTool from '@/components/LinkToTool'
 import AdsterraNative from '@/components/ads/AdsterraNative'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 
 const BASE = 'https://tokdown.org'
 
@@ -138,6 +139,11 @@ export default async function ToolPageLayout({ locale, namespace, slug, tool, an
             </div>
           </section>
 
+          {/* Under the hero: 728×90 on desktop, 300×250 on phones (phones get no side rails) */}
+          <div className="w-full max-w-6xl px-5">
+            <AdsterraBanner size="responsive" lazy={false} />
+          </div>
+
           {/* ── Steps ──────────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pt-8" aria-labelledby="steps-h">
             <SectionIntro id="steps-h" eyebrow="01 — 03" title={t('stepsTitle')} subtitle={t('stepsSubtitle')} />
@@ -177,6 +183,10 @@ export default async function ToolPageLayout({ locale, namespace, slug, tool, an
             </section>
           )}
 
+          <div className="w-full max-w-6xl px-5 pt-16">
+            <AdsterraBanner size="inline" />
+          </div>
+
           {/* ── Features ───────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pt-24" aria-labelledby="features-h">
             <SectionIntro id="features-h" eyebrow={tNav('tools')} title={t('featuresTitle')} subtitle={t('featuresSubtitle')} />
@@ -191,6 +201,11 @@ export default async function ToolPageLayout({ locale, namespace, slug, tool, an
               ))}
             </div>
           </section>
+
+          {/* Phones only: one more unit before the FAQ, where desktop has the side rails */}
+          <div className="w-full max-w-6xl px-5 pt-16 md:hidden">
+            <AdsterraBanner size="300x250" only="mobile" />
+          </div>
 
           {/* ── FAQ ────────────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pb-24 pt-24" aria-labelledby="faq-h">

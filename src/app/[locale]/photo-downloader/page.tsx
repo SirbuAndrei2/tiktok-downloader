@@ -7,6 +7,7 @@ import Downloader from '@/components/Downloader'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import AdsterraNative from '@/components/ads/AdsterraNative'
+import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import CtaBand from '@/components/CtaBand'
 import { buildFooterColumns } from '@/lib/nav'
 import { BlurFade } from '@/components/ui/blur-fade'
@@ -206,6 +207,10 @@ export default async function PhotoDownloaderPage({ params }: Props) {
               </ul>
             </div>
           </section>
+
+          <div className="w-full max-w-6xl px-5 pt-16">
+            <AdsterraBanner size="inline" />
+          </div>
 
           {/* ── FAQ ────────────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pb-24 pt-20" aria-labelledby="faq-h">

@@ -37,6 +37,7 @@ export default async function LegalLayout({ children }: { children: React.ReactN
           <SiteHeader locale="en" localePath="" labels={{ tools: tNav('tools'), guides: tNav('guides'), about: tNav('about'), language: tCommon('language') }} />
           <main className="relative z-10 flex w-full flex-1 flex-col items-center">{children}</main>
           <SiteFooter
+            sponsored={false}
             tagline={tFooter('tagline')}
             copyright={tFooter('notAffiliated', { year: new Date().getFullYear() })}
             feedback={tFooter('feedback')}
