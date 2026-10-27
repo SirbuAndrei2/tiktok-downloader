@@ -341,7 +341,7 @@
   },
   "GuideNoWatermark": {
     "metaTitle": "Download TikTok Without Watermark: Full Guide",
-    "metaDescription": "Step-by-step guide: download any TikTok video without watermark in HD on iPhone, Android, Windows, or Mac. Free, no login needed. Works in 2026.",
+    "metaDescription": "Step-by-step guide: download any TikTok video without watermark in HD on iPhone, Android, Windows or Mac, why the watermark exists and how to fix errors.",
     "h1": "How to Download TikTok Without Watermark",
     "subtitle": "A complete, honest walkthrough for iPhone, Android, Windows and Mac — including fixes for the most common problems.",
     "stepsTitle": "Step-by-step instructions",
@@ -420,7 +420,7 @@
     ]
   },
   "GuideMp3": {
-    "metaTitle": "TikTok to MP3 – Download TikTok Audio Free",
+    "metaTitle": "TikTok to MP3 Converter – Download Sounds Free",
     "metaDescription": "Convert any TikTok video to MP3 and save the audio to your phone or PC. Free, instant, no account needed. Works on iPhone, Android, Windows and Mac.",
     "h1": "TikTok to MP3 — Free Audio Downloader",
     "subtitle": "Extract and save the audio from any TikTok video as an MP3 file in seconds — no login, no app, works on any device.",
@@ -501,7 +501,7 @@
     ]
   },
   "GuideIphone": {
-    "metaTitle": "Download TikTok Videos on iPhone (Guide)",
+    "metaTitle": "Download TikTok on iPhone – Save to Camera Roll",
     "metaDescription": "Save any TikTok video to your iPhone Camera Roll without watermark. Step-by-step guide for iOS Safari — no app install, no account, free.",
     "h1": "How to Download TikTok on iPhone",
     "subtitle": "Save any TikTok video to your Camera Roll in HD — without the watermark, without an app, without a TikTok account. Works in Safari on every iPhone.",
@@ -570,7 +570,7 @@
     ]
   },
   "GuideAndroid": {
-    "metaTitle": "Download TikTok Videos on Android (Guide)",
+    "metaTitle": "Download TikTok on Android – Save to Gallery",
     "metaDescription": "Download any TikTok video to your Android phone gallery without watermark — Samsung, Xiaomi, Huawei and all Android brands. Free, HD, no app needed.",
     "h1": "How to Download TikTok on Android",
     "subtitle": "Save any TikTok video to your Android gallery in HD — no watermark, no app install, no account. Works on Samsung, Xiaomi, Huawei, and all Android brands.",
@@ -722,8 +722,8 @@
     }
   },
   "PhotoDownloader": {
-    "metaTitle": "TikTok Photo Downloader – Slideshow Images HD",
-    "metaDescription": "Save every image from a TikTok photo post or slideshow in full HD, without watermark. Paste the link, download one by one or all at once. Free, no login.",
+    "metaTitle": "TikTok Slideshow & Photo Downloader, No Watermark",
+    "metaDescription": "Download TikTok slideshows and photo posts without watermark: every image in full HD, one by one or all at once, plus the sound as MP3. Free, no login.",
     "metaKeywords": [
       "tiktok photo downloader",
       "tiktok slideshow downloader",
@@ -802,7 +802,13 @@
     "ctaTitle": "Got a slideshow to save?",
     "ctaSubtitle": "Every slide, full resolution, no account.",
     "ctaButton": "Paste your link",
-    "videoLink": "Need a video instead? Use the TikTok video downloader"
+    "videoLink": "Need a video instead? Use the TikTok video downloader",
+    "detailsTitle": "How TikTok slideshows are stored",
+    "detailsSubtitle": "Why the images carry no watermark, and what to do when a post will not load.",
+    "details": [
+      "A TikTok photo post, also called a slideshow or carousel, is not a video. TikTok stores each slide as a separate image file plus one audio track that plays underneath. The watermark you see on saved TikToks is burned into rendered videos only, so the slide images themselves are clean: TokDown hands you those original files, numbered in the order the creator set, instead of screenshots or a re-encoded copy.",
+      "The usual reasons a slideshow fails are the same as for videos: the account is private, the post is friends-only or was deleted, or the TikTok service we rely on is busy and asks you to try again in a few minutes. If you want the slideshow as one clip for WhatsApp or Instagram, use the video version when TikTok offers it, then shrink it with the video compressor if the file is too large."
+    ]
   },
   "FacebookDownloader": {
     "metaTitle": "Facebook Video Downloader – HD, No Watermark",
@@ -892,14 +898,16 @@
     "details": [
       "Facebook serves most public videos in two renditions, an HD file for fast connections and an SD file for mobile data. TokDown reads both from the same public embed Facebook uses for its own share buttons, which is why no login, cookie or browser extension is needed. You get the original MP4 as uploaded by the page, with the original aspect ratio and no added watermark or logo.",
       "Reels, Watch episodes, videos posted on pages and public profile videos all work, including fb.watch short links and the long share URLs the mobile app produces. Videos inside closed groups, private profiles, stories and live broadcasts are not available to anyone who is not logged in, so they cannot be fetched here either. If a link fails, open it in a private browser window first: if Facebook asks you to log in, the video is not public."
-    ]
+    ],
+    "detailsTitle": "How Facebook serves video",
+    "detailsSubtitle": "Why no login is needed, and which videos are out of reach."
   },
   "TwitterDownloader": {
-    "metaTitle": "Twitter Video Downloader – Save X Videos in HD",
-    "metaDescription": "Download videos and GIFs from Twitter / X in HD 1080p. Paste any public tweet link, no login, no app. Works on iPhone, Android, PC and Mac.",
+    "metaTitle": "Twitter Video Downloader – X Videos & GIFs in HD",
+    "metaDescription": "Download videos and GIFs from Twitter / X in HD up to 1080p. Paste a public tweet link and get the MP4: no login, no app. Works on iPhone, Android and PC.",
     "eyebrow": "Twitter / X · Video · GIF",
     "h1": "Download Twitter videos",
-    "h1Accent": "in HD",
+    "h1Accent": "& GIFs in HD",
     "subtitle": "Paste a tweet link and save the video or GIF as MP4. Works with x.com, twitter.com and t.co links.",
     "heroNote": "Public tweets only · best bitrate picked automatically",
     "trust": [
@@ -964,6 +972,10 @@
         "a": "Not supported. Only regular video, GIF and photo tweets."
       },
       {
+        "q": "How do I download a GIF from Twitter / X?",
+        "a": "Paste the link of the tweet with the GIF. X stores GIFs as short silent MP4 files, so you get an MP4 that plays everywhere. If you need a real .gif file, open it in the MP4 to GIF converter (tokdown.org/mp4-to-gif)."
+      },
+      {
         "q": "Is the quality reduced?",
         "a": "No. You get the exact file X streams at the chosen bitrate, with no re-encoding."
       },
@@ -982,11 +994,13 @@
     "details": [
       "Every video uploaded to Twitter / X is stored in several MP4 renditions, typically 320p, 480p, 720p and, for recent uploads, 1080p. TokDown lists them by bitrate and offers the best one first, so you always get the sharpest copy the author uploaded. Animated GIFs on X are actually short silent MP4 files; you receive them as MP4 as well, which is smaller and plays everywhere, and you can turn them back into a real GIF with our MP4 to GIF tool.",
       "The tool reads the same public data X publishes for embedded tweets, so protected accounts, deleted tweets and posts marked as sensitive cannot be read without logging in and will return an error rather than a wrong file. Short t.co links are resolved automatically, and links copied from the X app, from twitter.com or from a message all work the same way."
-    ]
+    ],
+    "detailsTitle": "How X stores videos and GIFs",
+    "detailsSubtitle": "Renditions, bitrates, and what cannot be read without a login."
   },
   "YoutubeThumbnail": {
-    "metaTitle": "YouTube Thumbnail Downloader – HD 1280×720",
-    "metaDescription": "Download the thumbnail of any YouTube video in all sizes, from 120×90 up to full HD 1280×720. Paste a link or video ID. Free, instant, no login.",
+    "metaTitle": "YouTube Thumbnail Downloader – HD, Shorts Too",
+    "metaDescription": "Download the thumbnail of any YouTube video or Short in every size, from 120×90 up to HD 1280×720. Paste a link or video ID. Free, instant, no login.",
     "eyebrow": "YouTube · Thumbnails · HD",
     "h1": "Download YouTube thumbnails",
     "h1Accent": "in full HD",
@@ -1085,14 +1099,16 @@
     "details": [
       "YouTube generates up to five thumbnail sizes for every video: 120×90, 320×180, 480×360, 640×480 and the full HD 1280×720 version called maxresdefault. All of them are public JPG files served from YouTube’s image servers. TokDown builds the exact URLs from the video ID, checks which sizes exist and shows a preview of each, so you can pick the resolution you need without guessing.",
       "Creators use this to recover a thumbnail they no longer have the source for, to build playlists and channel pages, or to compare how competitors design their covers. Designers paste the direct URL into Figma or Canva. Because only the image is fetched, the tool is fast, works for Shorts and regular videos alike, and never touches the video stream itself."
-    ]
+    ],
+    "detailsTitle": "YouTube thumbnail sizes explained",
+    "detailsSubtitle": "Five public sizes per video, and when the HD one is missing."
   },
   "VideoCompressor": {
     "metaTitle": "Video Compressor Online – Free, No Upload",
-    "metaDescription": "Compress MP4, MOV and WebM videos free in your browser. Shrink files for Discord, WhatsApp or email without losing quality. Nothing is uploaded.",
+    "metaDescription": "Compress MP4, MOV and WebM videos free in your browser. Shrink files for Discord, WhatsApp or email without a visible quality drop. Nothing is uploaded.",
     "eyebrow": "Compress · MP4 · Private",
-    "h1": "Compress videos",
-    "h1Accent": "without uploading them",
+    "h1": "Video compressor",
+    "h1Accent": "without uploading",
     "subtitle": "Shrink a video for WhatsApp, email or Discord. The whole job runs on your device with ffmpeg, so nothing ever leaves your browser.",
     "heroNote": "Up to 500 MB per file · MP4 output · H.264 + AAC",
     "trust": [
@@ -1204,13 +1220,15 @@
     "details": [
       "Most online compressors upload your video to a server, process it there and let you download the result. TokDown does the opposite: the ffmpeg encoder is loaded as WebAssembly into your browser tab and the whole job runs on your own device. Your file never leaves your computer or phone, there is no queue, no size-based paywall and no watermark. The first run downloads the encoder once; after that it is cached.",
       "The three presets map to the limits people actually hit. Small targets WhatsApp, Telegram and e-mail attachments by capping resolution at 720p with a higher compression ratio. Balanced keeps up to 1080p for Instagram, TikTok and YouTube uploads. Quality keeps the most detail for archiving or further editing. All presets output H.264 video with AAC audio in an MP4 container, which plays on every phone, browser and editing app."
-    ]
+    ],
+    "detailsTitle": "Why nothing is uploaded",
+    "detailsSubtitle": "The encoder runs in your tab; the presets match common upload limits."
   },
   "Mp4ToGif": {
     "metaTitle": "MP4 to GIF Converter – Free, High Quality",
     "metaDescription": "Convert MP4, MOV or WebM clips to high-quality GIFs for free. Pick start time, length, FPS and size. Runs in your browser, nothing is uploaded.",
     "eyebrow": "GIF · Clips · Private",
-    "h1": "Turn videos into GIFs",
+    "h1": "MP4 to GIF converter",
     "h1Accent": "in your browser",
     "subtitle": "Pick the exact moment, set the frame rate and size, and get a sharp looping GIF. Processing happens on your device.",
     "heroNote": "Up to 15 seconds per GIF · palette-optimised colours",
@@ -1308,7 +1326,9 @@
     "details": [
       "GIF is a 30-year-old format with a 256-colour palette and no compression between frames, which is why naive converters produce huge, grainy files. TokDown runs a two-pass ffmpeg pipeline in your browser: the first pass analyses your clip and builds a custom palette, the second pass maps every frame to it with ordered dithering. The result keeps text readable and gradients smooth at a fraction of the size.",
       "You control the three things that decide file size: the clip length (up to 15 seconds), the frame rate (10 to 24 fps) and the width (240 to 800 pixels). For chat apps, 480 px at 15 fps is a good default; for documentation or a README, 640 px at 12 fps looks crisp and stays small. Because everything runs locally, you can iterate as many times as you like without uploading anything."
-    ]
+    ],
+    "detailsTitle": "How to get a small, sharp GIF",
+    "detailsSubtitle": "A custom palette per clip, and the three settings that decide file size."
   },
   "GuideHub": {
     "metaTitle": "TikTok Download Guides – iPhone, Android, MP3",

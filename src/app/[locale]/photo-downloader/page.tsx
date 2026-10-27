@@ -11,7 +11,7 @@ import SiteFooter from '@/components/SiteFooter'
 import AdsterraNative from '@/components/ads/AdsterraNative'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import CtaBand from '@/components/CtaBand'
-import { buildFooterColumns } from '@/lib/nav'
+import { buildFooterColumns, relatedLinks } from '@/lib/nav'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
@@ -51,6 +51,8 @@ export default async function PhotoDownloaderPage({ params }: Props) {
   const localePath = isDefault ? '' : `/${locale}`
 
   const faq = t.raw('faq') as { q: string; a: string }[]
+  const details = t.raw('details') as string[]
+  const related = relatedLinks(SLUG, locale, localePath, tTools)
   const features = t.raw('features') as { title: string; desc: string }[]
   const steps = [
     { title: t('step1'), desc: t('step1Desc') },
@@ -167,6 +169,28 @@ export default async function PhotoDownloaderPage({ params }: Props) {
                   )
                 })}
               </ul>
+            </div>
+          </section>
+
+          {/* ── In depth: how slideshows work, limits, related tools ── */}
+          <section className="w-full max-w-6xl px-5 pt-24" aria-labelledby="depth-h">
+            <div className="grid gap-10 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <SectionIntro id="depth-h" eyebrow={tCommon('inDepth')} title={t('detailsTitle')} subtitle={t('detailsSubtitle')} />
+              </div>
+              <div className="flex flex-col gap-5 lg:col-span-8">
+                {details.map((para) => (
+                  <p key={para.slice(0, 40)} className="m-0 text-base leading-relaxed sm:text-[17px]" style={{ color: 'var(--t2)' }}>{para}</p>
+                ))}
+                <nav aria-label={tCommon('related')} className="flex flex-col gap-3">
+                  <span className="eyebrow">{tCommon('related')}</span>
+                  <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
+                    {related.map(({ href, label }) => (
+                      <li key={href}><Link href={href} className="pill no-underline">{label}</Link></li>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
             </div>
           </section>
 

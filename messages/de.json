@@ -91,8 +91,8 @@
     "related": "Passende Tools & Anleitungen"
   },
   "Home": {
-    "metaTitle": "TikTok Downloader – Ohne Wasserzeichen, HD",
-    "metaDescription": "TikTok-Videos ohne Wasserzeichen in HD herunterladen oder den Ton als MP3 speichern. Kostenlos, ohne Login, auf iPhone, Android, PC und Mac.",
+    "metaTitle": "TikTok Video herunterladen ohne Wasserzeichen",
+    "metaDescription": "TikTok Video herunterladen ohne Wasserzeichen: kostenlos in HD oder als MP3, ohne Login und ohne App. Funktioniert auf iPhone, Android, PC und Mac.",
     "metaKeywords": [
       "tiktok downloader",
       "tiktok video herunterladen",
@@ -105,7 +105,7 @@
     ],
     "badge": "Kostenlos · Kein Wasserzeichen · HD-Qualität",
     "h1": "TikTok herunterladen",
-    "h1Accent": "Ohne Wasserzeichen",
+    "h1Accent": "ohne Wasserzeichen",
     "subtitle": "Kostenlos, HD-Qualität, kein Login — funktioniert auf iPhone, Android, PC und Mac. Auch Audio als MP3 extrahieren.",
     "step1": "TikTok-Link kopieren",
     "step2": "Einfügen & Herunterladen",
@@ -297,7 +297,7 @@
   },
   "About": {
     "metaTitle": "Über TokDown – Wer diesen Downloader baut",
-    "metaDescription": "So funktioniert TokDown: woher Downloads kommen, was nie gespeichert wird, wie Werbung die Seite finanziert und wie du uns erreichst. Kostenlos, ohne Konto.",
+    "metaDescription": "So funktioniert TokDown: woher Downloads kommen, was nie gespeichert wird, wie Werbung die Seite finanziert und wie du uns erreichst. Ohne Konto.",
     "h1": "Über",
     "h1Accent": "TokDown",
     "subtitle": "TokDown ist eine kleine Sammlung kostenloser Download- und Medien-Tools. Diese Seite erklärt, wie sie funktioniert, was sie nicht tut und wie sie finanziert wird.",
@@ -418,9 +418,9 @@
     ]
   },
   "GuideMp3": {
-    "metaTitle": "TikTok zu MP3 – Audio kostenlos herunterladen",
+    "metaTitle": "TikTok Sound herunterladen – als MP3, kostenlos",
     "metaDescription": "Den Ton eines TikTok-Videos als MP3 speichern: Link einfügen, Audio wählen, fertig. Kostenlos, ohne App, auf iPhone, Android, PC und Mac.",
-    "h1": "TikTok zu MP3 — Kostenloser Audio-Downloader",
+    "h1": "TikTok Sound als MP3 herunterladen",
     "subtitle": "Extrahiere und speichere den Ton aus jedem TikTok-Video als MP3-Datei in Sekunden — kein Login, keine App, funktioniert auf jedem Gerät.",
     "stepsTitle": "TikTok-Audio als MP3 herunterladen",
     "ctaText": "Jetzt ausprobieren — füge einen TikTok-Link ein und lade den Ton herunter.",
@@ -499,7 +499,7 @@
     ]
   },
   "GuideIphone": {
-    "metaTitle": "TikTok-Videos auf dem iPhone herunterladen",
+    "metaTitle": "TikTok Video herunterladen auf dem iPhone",
     "metaDescription": "TikTok-Videos ohne Wasserzeichen auf dem iPhone speichern: Schritt für Schritt in Safari, direkt in die Fotos-App. Kostenlos, ohne App.",
     "h1": "TikTok auf iPhone herunterladen",
     "subtitle": "Speichere beliebige TikTok-Videos in HD in der Kamerarolle — ohne Wasserzeichen, ohne App, ohne TikTok-Konto. Funktioniert in Safari auf jedem iPhone.",
@@ -568,8 +568,8 @@
     ]
   },
   "GuideAndroid": {
-    "metaTitle": "TikTok-Videos auf Android herunterladen",
-    "metaDescription": "TikTok-Videos ohne Wasserzeichen auf Android in die Galerie speichern: Schritt für Schritt, ohne App, kostenlos.",
+    "metaTitle": "TikTok Video herunterladen auf Android",
+    "metaDescription": "TikTok Video herunterladen auf Android: ohne Wasserzeichen direkt in die Galerie, für Samsung, Xiaomi, Pixel & Co. Schritt für Schritt und ohne App.",
     "h1": "TikTok auf Android herunterladen",
     "subtitle": "Speichere beliebige TikTok-Videos in HD in deiner Galerie — kein Wasserzeichen, keine App, kein Konto. Funktioniert auf Samsung, Xiaomi, Huawei und allen Android-Geräten.",
     "stepsTitle": "Schritt für Schritt: TikTok in Android-Galerie speichern",
@@ -720,8 +720,8 @@
     }
   },
   "PhotoDownloader": {
-    "metaTitle": "TikTok Foto-Downloader – Slideshow-Bilder HD",
-    "metaDescription": "Alle Bilder eines TikTok-Fotobeitrags oder einer Slideshow in HD ohne Wasserzeichen speichern. Link einfügen, einzeln oder alle laden. Kostenlos.",
+    "metaTitle": "TikTok Fotos herunterladen ohne Wasserzeichen",
+    "metaDescription": "TikTok Fotos und Diashows ohne Wasserzeichen herunterladen: jedes Bild in voller Auflösung, einzeln oder alle auf einmal, dazu der Sound als MP3, gratis.",
     "metaKeywords": [
       "tiktok foto downloader",
       "tiktok slideshow herunterladen",
@@ -798,14 +798,20 @@
     "ctaTitle": "Eine Slideshow zum Speichern?",
     "ctaSubtitle": "Jedes Bild, volle Auflösung, kein Konto.",
     "ctaButton": "Link einfügen",
-    "videoLink": "Du brauchst ein Video? Zum TikTok-Video-Downloader"
+    "videoLink": "Du brauchst ein Video? Zum TikTok-Video-Downloader",
+    "detailsTitle": "So speichert TikTok Diashows",
+    "detailsSubtitle": "Warum die Bilder kein Wasserzeichen tragen und was hilft, wenn ein Beitrag nicht lädt.",
+    "details": [
+      "Ein TikTok-Fotobeitrag, auch Diashow oder Karussell genannt, ist kein Video. TikTok speichert jede Folie als eigene Bilddatei dazu eine Tonspur, die darunter läuft. Das Wasserzeichen, das du von gespeicherten TikToks kennst, wird nur in gerenderte Videos eingebrannt, die Bilder selbst sind also sauber: TokDown gibt dir genau diese Originaldateien, nummeriert in der Reihenfolge des Erstellers, statt Screenshots oder einer neu kodierten Kopie.",
+      "Wenn eine Diashow nicht lädt, sind die Gründe dieselben wie bei Videos: Das Konto ist privat, der Beitrag nur für Freunde sichtbar oder gelöscht, oder der TikTok-Dienst im Hintergrund ist ausgelastet und bittet dich, es in ein paar Minuten erneut zu versuchen. Willst du die Diashow als einen Clip für WhatsApp oder Instagram, nimm die Videoversion, wenn TikTok sie anbietet, und verkleinere sie bei Bedarf mit dem Video-Kompressor."
+    ]
   },
   "FacebookDownloader": {
-    "metaTitle": "Facebook Video Downloader – HD, kostenlos",
+    "metaTitle": "Facebook Video herunterladen – online, kostenlos",
     "metaDescription": "Öffentliche Facebook-Videos und Reels als MP4 in HD herunterladen, ohne Wasserzeichen. facebook.com- oder fb.watch-Link einfügen. Kostenlos, ohne Login.",
     "eyebrow": "Facebook · Reels · HD",
     "h1": "Facebook-Videos herunterladen",
-    "h1Accent": "mit einem Einfügen",
+    "h1Accent": "online und kostenlos",
     "subtitle": "Öffentliche Videos, Reels und Watch-Links als MP4 gespeichert, in HD, wenn Facebook es anbietet. Kein Konto, keine Erweiterung.",
     "heroNote": "Funktioniert mit facebook.com, fb.watch und Teilen-Links",
     "trust": [
@@ -888,14 +894,16 @@
     "details": [
       "Facebook liefert die meisten öffentlichen Videos in zwei Versionen aus: eine HD-Datei für schnelle Verbindungen und eine SD-Datei für mobile Daten. TokDown liest beide aus demselben öffentlichen Embed, das Facebook für seine eigenen Teilen-Buttons nutzt, deshalb ist kein Login, kein Cookie und keine Erweiterung nötig. Du bekommst das Original-MP4, wie es die Seite hochgeladen hat, mit originalem Seitenverhältnis und ohne Wasserzeichen.",
       "Reels, Watch-Folgen, Videos von Seiten und öffentliche Profilvideos funktionieren, auch fb.watch-Kurzlinks und die langen Teilen-URLs der App. Videos in geschlossenen Gruppen, privaten Profilen, Stories und Livestreams sind für niemanden ohne Login sichtbar und können daher auch hier nicht geladen werden. Schlägt ein Link fehl, öffne ihn zuerst in einem privaten Fenster: Fragt Facebook nach einem Login, ist das Video nicht öffentlich."
-    ]
+    ],
+    "detailsTitle": "Wie Facebook Videos ausliefert",
+    "detailsSubtitle": "Warum kein Login nötig ist und welche Videos nicht erreichbar sind."
   },
   "TwitterDownloader": {
-    "metaTitle": "Twitter Video Downloader – X-Videos in HD",
-    "metaDescription": "Videos und GIFs von Twitter / X in HD herunterladen. Öffentlichen Tweet-Link einfügen, kein Login, keine App. Für iPhone, Android, PC und Mac.",
+    "metaTitle": "Twitter Video herunterladen – kostenlos, in HD",
+    "metaDescription": "Twitter Video herunterladen, kostenlos und in HD bis 1080p: öffentlichen X-Link einfügen, MP4 speichern, auch GIFs. Kein Login, keine App, jedes Gerät.",
     "eyebrow": "Twitter / X · Video · GIF",
     "h1": "Twitter-Videos herunterladen",
-    "h1Accent": "in HD",
+    "h1Accent": "und GIFs in HD",
     "subtitle": "Tweet-Link einfügen und das Video oder GIF als MP4 speichern. Funktioniert mit x.com, twitter.com und t.co.",
     "heroNote": "Nur öffentliche Tweets · beste Bitrate wird automatisch gewählt",
     "trust": [
@@ -960,6 +968,10 @@
         "a": "Nicht unterstützt. Nur normale Video-, GIF- und Foto-Tweets."
       },
       {
+        "q": "Wie lade ich ein GIF von Twitter / X herunter?",
+        "a": "Füge den Link des Tweets mit dem GIF ein. X speichert GIFs als kurze, stumme MP4-Dateien, du bekommst also ein MP4, das überall läuft. Brauchst du eine echte .gif-Datei, öffne es im MP4-zu-GIF-Konverter (tokdown.org/de/mp4-to-gif)."
+      },
+      {
         "q": "Wird die Qualität reduziert?",
         "a": "Nein. Du erhältst genau die Datei, die X in der gewählten Bitrate streamt, ohne Neukodierung."
       },
@@ -978,10 +990,12 @@
     "details": [
       "Jedes bei Twitter / X hochgeladene Video liegt in mehreren MP4-Versionen vor, meist 320p, 480p, 720p und bei neueren Uploads 1080p. TokDown listet sie nach Bitrate und bietet die beste zuerst an, du bekommst also immer die schärfste Kopie. Animierte GIFs auf X sind in Wahrheit kurze stumme MP4-Dateien; du erhältst sie ebenfalls als MP4, kleiner und überall abspielbar, und kannst sie mit unserem MP4-zu-GIF-Tool wieder in ein echtes GIF verwandeln.",
       "Das Tool liest dieselben öffentlichen Daten, die X für eingebettete Tweets veröffentlicht. Geschützte Konten, gelöschte Tweets und als sensibel markierte Beiträge lassen sich ohne Login nicht lesen und liefern eine klare Fehlermeldung statt einer falschen Datei. Kurze t.co-Links werden automatisch aufgelöst; Links aus der X-App, von twitter.com oder aus einer Nachricht funktionieren gleich."
-    ]
+    ],
+    "detailsTitle": "Wie X Videos und GIFs speichert",
+    "detailsSubtitle": "Auflösungen, Bitraten und was ohne Login nicht lesbar ist."
   },
   "YoutubeThumbnail": {
-    "metaTitle": "YouTube Thumbnail Downloader – HD 1280×720",
+    "metaTitle": "YouTube Thumbnail herunterladen – HD 1280×720",
     "metaDescription": "Das Thumbnail jedes YouTube-Videos in allen Größen herunterladen, bis Full HD 1280×720. Link oder Video-ID einfügen. Kostenlos, sofort, kein Login.",
     "eyebrow": "YouTube · Thumbnails · HD",
     "h1": "YouTube-Thumbnails herunterladen",
@@ -1081,14 +1095,16 @@
     "details": [
       "YouTube erzeugt für jedes Video bis zu fünf Thumbnail-Größen: 120×90, 320×180, 480×360, 640×480 und die Full-HD-Version 1280×720 namens maxresdefault. Alle sind öffentliche JPG-Dateien auf YouTubes Bildservern. TokDown baut die exakten URLs aus der Video-ID, prüft, welche Größen existieren, und zeigt jede als Vorschau, damit du die passende Auflösung ohne Raten wählst.",
       "Creator nutzen das, um ein Thumbnail zurückzuholen, dessen Quelldatei fehlt, für Playlists und Kanalseiten oder um Cover der Konkurrenz zu vergleichen. Designer fügen die direkte URL in Figma oder Canva ein. Da nur das Bild geholt wird, ist das Tool schnell, funktioniert für Shorts wie für normale Videos und rührt den Videostream nie an."
-    ]
+    ],
+    "detailsTitle": "YouTube-Thumbnail-Größen erklärt",
+    "detailsSubtitle": "Fünf öffentliche Größen pro Video und wann die HD-Version fehlt."
   },
   "VideoCompressor": {
     "metaTitle": "Video komprimieren online – kostenlos, ohne Upload",
-    "metaDescription": "MP4-, MOV- und WebM-Videos kostenlos im Browser komprimieren. Dateien für Discord, WhatsApp oder E-Mail verkleinern. Nichts wird hochgeladen.",
+    "metaDescription": "Video komprimieren online und kostenlos, ohne Anmeldung: MP4, MOV und WebM im Browser verkleinern, für Discord, WhatsApp oder E-Mail. Kein Upload.",
     "eyebrow": "Komprimieren · MP4 · Privat",
-    "h1": "Videos komprimieren",
-    "h1Accent": "ohne sie hochzuladen",
+    "h1": "Video komprimieren",
+    "h1Accent": "ohne Upload",
     "subtitle": "Ein Video für WhatsApp, E-Mail oder Discord verkleinern. Alles läuft mit ffmpeg auf deinem Gerät, nichts verlässt deinen Browser.",
     "heroNote": "Bis 500 MB pro Datei · MP4-Ausgabe · H.264 + AAC",
     "trust": [
@@ -1200,14 +1216,16 @@
     "details": [
       "Die meisten Online-Kompressoren laden dein Video auf einen Server, verarbeiten es dort und lassen dich das Ergebnis herunterladen. TokDown macht das Gegenteil: Der ffmpeg-Encoder wird als WebAssembly in deinen Browser-Tab geladen, und die gesamte Arbeit läuft auf deinem Gerät. Deine Datei verlässt nie deinen Computer oder dein Handy, es gibt keine Warteschlange, keine Bezahlschranke nach Dateigröße und kein Wasserzeichen. Beim ersten Lauf wird der Encoder einmal geladen, danach ist er im Cache.",
       "Die drei Presets entsprechen den Limits, die man wirklich trifft. Klein zielt auf WhatsApp, Telegram und E-Mail-Anhänge, indem es die Auflösung bei 720p deckelt und stärker komprimiert. Ausgewogen behält bis zu 1080p für Instagram, TikTok und YouTube. Qualität bewahrt die meisten Details für Archiv oder Nachbearbeitung. Alle Presets erzeugen H.264-Video mit AAC-Ton im MP4-Container, das auf jedem Handy, Browser und Schnittprogramm läuft."
-    ]
+    ],
+    "detailsTitle": "Warum nichts hochgeladen wird",
+    "detailsSubtitle": "Der Encoder läuft in deinem Tab; die Presets passen zu gängigen Upload-Limits."
   },
   "Mp4ToGif": {
-    "metaTitle": "MP4 zu GIF Converter – kostenlos, hohe Qualität",
-    "metaDescription": "MP4-, MOV- oder WebM-Clips kostenlos in hochwertige GIFs umwandeln. Startzeit, Länge, FPS und Größe wählen. Läuft im Browser, nichts wird hochgeladen.",
+    "metaTitle": "MP4 in GIF umwandeln – online & kostenlos",
+    "metaDescription": "MP4 in GIF umwandeln, online und kostenlos: Startzeit, Länge, FPS und Breite wählen, hochwertige GIFs aus MP4, MOV oder WebM. Nichts wird hochgeladen.",
     "eyebrow": "GIF · Clips · Privat",
-    "h1": "Videos in GIFs verwandeln",
-    "h1Accent": "in deinem Browser",
+    "h1": "MP4 in GIF umwandeln",
+    "h1Accent": "direkt im Browser",
     "subtitle": "Den genauen Moment wählen, Bildrate und Größe einstellen und ein scharfes GIF im Loop erhalten. Die Verarbeitung läuft auf deinem Gerät.",
     "heroNote": "Bis 15 Sekunden pro GIF · palettenoptimierte Farben",
     "trust": [
@@ -1304,7 +1322,9 @@
     "details": [
       "GIF ist ein 30 Jahre altes Format mit 256-Farben-Palette und ohne Kompression zwischen den Frames, weshalb naive Converter riesige, körnige Dateien erzeugen. TokDown fährt eine zweistufige ffmpeg-Pipeline im Browser: Der erste Durchlauf analysiert den Clip und baut eine eigene Palette, der zweite ordnet jeden Frame mit geordnetem Dithering zu. Das Ergebnis hält Text lesbar und Verläufe glatt, bei einem Bruchteil der Größe.",
       "Du steuerst die drei Dinge, die die Dateigröße bestimmen: Cliplänge (bis 15 Sekunden), Bildrate (10 bis 24 fps) und Breite (240 bis 800 Pixel). Für Chat-Apps sind 480 px bei 15 fps ein guter Standard; für Doku oder README wirken 640 px bei 12 fps scharf und bleiben klein. Da alles lokal läuft, kannst du beliebig oft nachjustieren, ohne etwas hochzuladen."
-    ]
+    ],
+    "detailsTitle": "So wird ein GIF klein und scharf",
+    "detailsSubtitle": "Eine eigene Palette pro Clip und die drei Einstellungen, die die Größe bestimmen."
   },
   "GuideHub": {
     "metaTitle": "TikTok herunterladen: Anleitungen für alle Geräte",
