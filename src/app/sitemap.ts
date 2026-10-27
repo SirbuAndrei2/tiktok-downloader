@@ -1,91 +1,52 @@
 import type { MetadataRoute } from 'next'
+import { BASE, hreflang, localeUrl } from '@/lib/seo'
+import { pageDates } from '@/lib/content-dates'
 
-const BASE = 'https://tokdown.org'
-const LEGAL_DATE = new Date('2026-04-24')
-const GUIDE_DATE = new Date('2026-05-01')
-const GUIDE_DATE_NEW = new Date('2026-06-01')
-
+// Translated pages: emitted for /, /de and /ar with hreflang alternates that
+// mirror the <link rel="alternate"> tags on each page.
 const CONTENT_ROUTES = [
-  { path: '/',      priority: 1.0, changeFrequency: 'daily'   as const },
-  { path: '/photo-downloader', priority: 0.9, changeFrequency: 'weekly'  as const },
-  { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/tools', priority: 0.9, changeFrequency: 'monthly' as const },
-  { path: '/facebook-video-downloader',  priority: 0.9, changeFrequency: 'weekly'  as const },
-  { path: '/twitter-video-downloader',   priority: 0.9, changeFrequency: 'weekly'  as const },
-  { path: '/youtube-thumbnail-downloader', priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/video-compressor',           priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/mp4-to-gif',                 priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/guide/download-tiktok-without-watermark', priority: 0.9, changeFrequency: 'monthly' as const },
-  { path: '/guide/tiktok-to-mp3',                     priority: 0.9, changeFrequency: 'monthly' as const },
-  { path: '/guide/download-tiktok-on-iphone',         priority: 0.9, changeFrequency: 'monthly' as const },
-  { path: '/guide/download-tiktok-on-android',        priority: 0.9, changeFrequency: 'monthly' as const },
+  '/',
+  '/tools',
+  '/guide',
+  '/photo-downloader',
+  '/facebook-video-downloader',
+  '/twitter-video-downloader',
+  '/youtube-thumbnail-downloader',
+  '/video-compressor',
+  '/mp4-to-gif',
+  '/guide/download-tiktok-without-watermark',
+  '/guide/tiktok-to-mp3',
+  '/guide/download-tiktok-on-iphone',
+  '/guide/download-tiktok-on-android',
+  '/about',
 ]
 
-// English-only guides under [locale]/guide that 404 for /de and /ar
+// English-only guides under [locale]/guide that 404 for /de and /ar (keep in sync with EN_GUIDES in lib/nav.ts)
 const NEW_GUIDE_ROUTES = [
-  { path: '/guide/tiktok-to-mp4',                    priority: 0.9,  date: GUIDE_DATE_NEW },
-  { path: '/guide/snaptik-alternative',              priority: 0.8,  date: GUIDE_DATE_NEW },
-  { path: '/guide/tiktok-downloader-chrome',         priority: 0.85, date: GUIDE_DATE_NEW },
-  { path: '/guide/download-tiktok-private-video',    priority: 0.85, date: GUIDE_DATE_NEW },
-  { path: '/guide/tiktok-video-to-gif',              priority: 0.8,  date: GUIDE_DATE_NEW },
-  { path: '/guide/download-tiktok-playlist',         priority: 0.8,  date: GUIDE_DATE_NEW },
+  '/guide/is-it-legal-to-download-tiktok-videos',
+  '/guide/tiktok-to-mp4',
+  '/guide/snaptik-alternative',
+  '/guide/tiktok-downloader-chrome',
+  '/guide/download-tiktok-private-video',
+  '/guide/tiktok-video-to-gif',
+  '/guide/download-tiktok-playlist',
 ]
 
-const LEGAL_ROUTES = [
-  { path: '/privacy',    priority: 0.3, changeFrequency: 'yearly' as const },
-  { path: '/terms',      priority: 0.3, changeFrequency: 'yearly' as const },
-  { path: '/dmca',       priority: 0.3, changeFrequency: 'yearly' as const },
-  { path: '/disclaimer', priority: 0.3, changeFrequency: 'yearly' as const },
-]
+const LEGAL_ROUTES = ['/privacy', '/terms', '/dmca', '/disclaimer']
 
+// lastmod comes from lib/content-dates.ts (real edit dates). changefreq and
+// priority are omitted: Google ignores both.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const contentDate = new Date()
-
-  // hreflang in the sitemap mirrors the <link rel="alternate"> tags on each page
-  const languages = (path: string) => ({
-    en: `${BASE}${path}`,
-    de: `${BASE}/de${path === '/' ? '' : path}`,
-    ar: `${BASE}/ar${path === '/' ? '' : path}`,
-    'x-default': `${BASE}${path}`,
-  })
-
-  const enRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
+  const translated = CONTENT_ROUTES.flatMap((path) =>
+    (['en', 'de', 'ar'] as const).map((locale) => ({
+      url: localeUrl(locale, path),
+      lastModified: new Date(pageDates(path).modified),
+      alternates: { languages: hreflang(path) },
+    })),
+  )
+  const english = [...NEW_GUIDE_ROUTES, ...LEGAL_ROUTES].map((path) => ({
     url: `${BASE}${path}`,
-    lastModified: path === '/' ? contentDate : GUIDE_DATE,
-    changeFrequency,
-    priority,
-    alternates: { languages: languages(path) },
+    lastModified: new Date(pageDates(path).modified),
   }))
-
-  const deRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
-    url: `${BASE}/de${path === '/' ? '' : path}`,
-    lastModified: path === '/' ? contentDate : GUIDE_DATE,
-    changeFrequency,
-    priority: priority * 0.95,
-    alternates: { languages: languages(path) },
-  }))
-
-  const arRoutes = CONTENT_ROUTES.map(({ path, priority, changeFrequency }) => ({
-    url: `${BASE}/ar${path === '/' ? '' : path}`,
-    lastModified: path === '/' ? contentDate : GUIDE_DATE,
-    changeFrequency,
-    priority: priority * 0.95,
-    alternates: { languages: languages(path) },
-  }))
-
-  const newGuideRoutes = NEW_GUIDE_ROUTES.map(({ path, priority, date }) => ({
-    url: `${BASE}${path}`,
-    lastModified: date,
-    changeFrequency: 'monthly' as const,
-    priority,
-  }))
-
-  const legalRoutes = LEGAL_ROUTES.map(({ path, priority, changeFrequency }) => ({
-    url: `${BASE}${path}`,
-    lastModified: LEGAL_DATE,
-    changeFrequency,
-    priority,
-  }))
-
-  return [...enRoutes, ...deRoutes, ...arRoutes, ...newGuideRoutes, ...legalRoutes]
+  return [...translated, ...english]
 }

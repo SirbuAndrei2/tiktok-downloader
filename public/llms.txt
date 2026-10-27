@@ -15,22 +15,26 @@ Site: https://tokdown.org · Contact: support@tokdown.org · Not affiliated with
 - [All tools](https://tokdown.org/tools)
 
 ## Guides
+- [All guides](https://tokdown.org/guide): index of every guide below.
 - [Download TikTok without watermark](https://tokdown.org/guide/download-tiktok-without-watermark)
 - [TikTok to MP3](https://tokdown.org/guide/tiktok-to-mp3)
 - [Download TikTok on iPhone](https://tokdown.org/guide/download-tiktok-on-iphone)
 - [Download TikTok on Android](https://tokdown.org/guide/download-tiktok-on-android)
 - [TikTok to MP4](https://tokdown.org/guide/tiktok-to-mp4)
 - [TikTok downloader for Chrome](https://tokdown.org/guide/tiktok-downloader-chrome)
-- [TikTok video to GIF](https://tokdown.org/guide/tiktok-video-to-gif)
+- [TikTok video to GIF](https://tokdown.org/guide/tiktok-video-to-gif): download the MP4, then convert it in the browser with the MP4 to GIF tool.
 - [Download a TikTok playlist](https://tokdown.org/guide/download-tiktok-playlist)
 - [Private TikTok videos](https://tokdown.org/guide/download-tiktok-private-video)
-- [SnapTik alternative](https://tokdown.org/guide/snaptik-alternative)
+- [SnapTik alternative](https://tokdown.org/guide/snaptik-alternative): what to check in any TikTok downloader, and what TokDown does and does not do.
+- [Is it legal to download TikTok videos?](https://tokdown.org/guide/is-it-legal-to-download-tiktok-videos): copyright law (US, EU, Germany, UK) and TikTok's terms, with sources.
 
 ## Languages
-- German: https://tokdown.org/de · Arabic: https://tokdown.org/ar (same tools and guides under /de and /ar)
+- German: https://tokdown.org/de · Arabic: https://tokdown.org/ar. All tools, /tools, /guide, /about and the four guides watermark, MP3, iPhone and Android exist in German and Arabic; the other guides are English only.
 
 ## Facts worth citing
-- Downloads are proxied server-side; no video is stored on TokDown's servers.
+- Downloads are streamed through TokDown's server in a single pass; no video is stored.
+- TikTok media comes from a third-party API (TikWM) with TikTok's public page as fallback; when that API is busy, users are asked to retry. X videos come from the public embed data. Facebook is often blocked for data-centre servers.
+- The site is free and funded by Adsterra ads (banners, a social bar, and a pop-under that opens only after a download result).
 - Only public content can be fetched. Private, age-restricted or group-only posts are not supported.
 - The compressor and GIF converter run entirely in the visitor's browser (WebAssembly); files never leave the device.
 - No account, no app, no browser extension is required for any tool.

@@ -1,99 +1,76 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { article, breadcrumbs, faqPage } from '@/lib/schema'
+import { pageDates } from '@/lib/content-dates'
+import JsonLd from '@/components/JsonLd'
+import GuideFaq from '@/components/GuideFaq'
 import Link from 'next/link'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
-const BASE = 'https://tokdown.org'
-
 // English-only guide: no /de or /ar translation exists, so those URLs must 404.
 type Props = { params: Promise<{ locale: string }> }
+const SLUG = '/guide/snaptik-alternative'
 
-export const metadata: Metadata = {
-  title: 'Best SnapTik Alternative 2026 – Compared',
-  description: 'Looking for a SnapTik or SSSTikTok alternative? TokDown downloads TikTok videos without watermark, no redirects, no forced ads. Free, instant, all devices.',
-  alternates: { canonical: `${BASE}/guide/snaptik-alternative` },
-  openGraph: {
-    images: [OG_IMAGE],
-    title: 'Best SnapTik Alternative 2026 — TokDown vs SnapTik, SSSTikTok & More',
-    description: 'Compare TokDown against SnapTik, SSSTikTok, and Tikup. No forced redirects, clean HD downloads, no account needed. See which TikTok downloader is best for you.',
-    url: `${BASE}/guide/snaptik-alternative`,
-  },
-}
+export const metadata: Metadata = pageMetadata({
+  locale: 'en',
+  path: SLUG,
+  title: 'SnapTik & SSSTik Alternative: Honest Guide',
+  description: 'Looking for a SnapTik or SSSTik alternative? What TokDown does and does not do, how its ads work, and a checklist for choosing any TikTok downloader.',
+  translated: false,
+  ogType: 'article',
+})
 
+// Rendered visibly by <GuideFaq> and mirrored in FAQPage JSON-LD.
+const FAQ = [
+  { q: 'What is a good SnapTik alternative?', a: 'Any web downloader that gives you a real download button, never asks for your TikTok password and does not require an app or extension. TokDown fits that list: paste a public TikTok link and save the MP4 or the MP3, with no account. It shows ads to stay free, including one pop-under after a download result.' },
+  { q: 'Is TokDown better than SnapTik?', a: 'We have not run a dated, measured test of other downloaders, so we do not claim that. What we can state is how TokDown works: no account, files streamed through our server without being stored, and TikTok downloads that depend on a third-party API which is sometimes busy. Compare that with what you see on other sites today.' },
+  { q: 'What is the difference between SnapTik, SSSTik and TokDown?', a: 'All three are web tools that fetch a public TikTok and offer the file without the watermark. TokDown also covers TikTok photo slideshows, X (Twitter) videos and YouTube thumbnails, and it has a video compressor and an MP4 to GIF converter that run in your browser without uploading anything.' },
+  { q: 'Can I download TikTok without SnapTik?', a: 'Yes. Several web downloaders do the same job, TokDown among them. If you only need your own videos, TikTok can also save a copy from the app when downloads are allowed in your settings, but that copy carries the watermark.' },
+  { q: 'Is there a TikTok downloader with no ads?', a: 'Free web downloaders are almost always paid for by ads, and TokDown is no exception: it shows banners, a social bar and one pop-under that opens only after a download result appears. The ads are never placed on top of the real download buttons.' },
+]
+
+const dates = pageDates(SLUG)
 const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Best SnapTik Alternative in 2026 — TokDown vs. SnapTik, SSSTikTok, Tikup',
-    description: 'Detailed comparison of the best TikTok downloader alternatives to SnapTik in 2026 — features, speed, ad experience, and privacy.',
-    url: `${BASE}/guide/snaptik-alternative`,
-    datePublished: '2026-06-01',
-    dateModified: '2026-06-01',
-    author: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    publisher: {
-      '@type': 'Organization',
-      name: 'TokDown',
-      url: BASE,
-      logo: { '@type': 'ImageObject', url: `${BASE}/icon.png` },
-    },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/guide/snaptik-alternative` },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'What is the best SnapTik alternative?', acceptedAnswer: { '@type': 'Answer', text: 'TokDown is a clean SnapTik alternative: no forced redirects, no pop-up ads, HD downloads without watermark, and MP3 audio extraction. It works on iPhone, Android, PC and Mac without an account.' } },
-      { '@type': 'Question', name: 'Is TokDown better than SnapTik?', acceptedAnswer: { '@type': 'Answer', text: 'TokDown differs from SnapTik in key areas: no forced redirect ads before downloading, no account required, and no data stored on servers. If you are looking for a cleaner download experience, TokDown is a strong alternative.' } },
-      { '@type': 'Question', name: 'What is the difference between SnapTik, SSSTikTok and TokDown?', acceptedAnswer: { '@type': 'Answer', text: 'All three download TikTok videos without watermark. SnapTik and SSSTikTok are older, higher-traffic tools but use aggressive ad redirects. TokDown prioritises a faster, cleaner experience with no forced interstitials.' } },
-      { '@type': 'Question', name: 'Can I download TikTok without SnapTik?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. TokDown, SSSTikTok, Tikup, and musicaldown.com are all alternatives to SnapTik that download TikTok videos without watermark. TokDown requires no account and has no forced ad redirects.' } },
-      { '@type': 'Question', name: 'Is there a TikTok downloader with no ads?', acceptedAnswer: { '@type': 'Answer', text: 'TokDown minimises aggressive ad formats — no forced interstitials, no pop-ups that block the download flow. Standard banner ads help keep the service free, but they never interrupt your download.' } },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: `${BASE}/guide` },
-      { '@type': 'ListItem', position: 3, name: 'SnapTik Alternative', item: `${BASE}/guide/snaptik-alternative` },
-    ],
-  },
+  article({ locale: 'en', path: SLUG, headline: 'SnapTik Alternative: An Honest Guide', description: 'What to look for in a SnapTik or SSSTik alternative, and exactly what TokDown does and does not do.', datePublished: dates.published, dateModified: dates.modified }),
+  faqPage(FAQ),
+  breadcrumbs('en', [{ name: 'Guides', path: '/guide' }, { name: 'SnapTik Alternative', path: SLUG }]),
 ]
 
-const COMPARISON = [
-  { feature: 'No watermark HD download', tokdown: true, snaptik: true, ssstik: true, tikup: true },
-  { feature: 'MP3 audio extraction', tokdown: true, snaptik: true, ssstik: true, tikup: true },
-  { feature: 'No account or login', tokdown: true, snaptik: true, ssstik: true, tikup: false },
-  { feature: 'No forced ad redirects', tokdown: true, snaptik: false, ssstik: false, tikup: false },
-  { feature: 'No pop-up ads', tokdown: true, snaptik: false, ssstik: false, tikup: false },
-  { feature: 'No video stored on servers', tokdown: true, snaptik: false, ssstik: false, tikup: true },
-  { feature: 'Works in all browsers', tokdown: true, snaptik: true, ssstik: true, tikup: true },
-  { feature: 'HD + SD quality options', tokdown: true, snaptik: true, ssstik: true, tikup: true },
+// What TokDown itself does, stated plainly. Other sites are not scored: we have no dated test of them.
+const FACTS = [
+  { feature: 'TikTok video without watermark (MP4)', value: 'Yes, when the upstream API answers; otherwise a watermarked fallback is labelled as such' },
+  { feature: 'TikTok sound as MP3', value: 'Yes' },
+  { feature: 'TikTok photo slideshows', value: 'Yes, every image in full size' },
+  { feature: 'Private or friends-only videos', value: 'No (nobody can fetch them without the owner\'s login)' },
+  { feature: 'Bulk / whole-profile download', value: 'No, one link at a time' },
+  { feature: 'Account, app or extension needed', value: 'No' },
+  { feature: 'Videos stored on our servers', value: 'No, streamed through in one pass' },
+  { feature: 'Ads', value: 'Yes: banners, a social bar and one pop-under after a download result' },
 ]
 
-const WHY_SWITCH = [
+const CHECKLIST = [
   {
-    icon: '🚫',
-    title: 'Tired of ad redirects?',
-    desc: 'SnapTik and SSSTikTok route you through one or more advertising redirect pages before every download. TokDown delivers your file without any forced interstitials.',
+    icon: '🔘',
+    title: 'One real download button',
+    desc: 'The file button should appear only after you paste a link. Large "Download" buttons that show up before that are usually ads.',
   },
   {
     icon: '🔒',
-    title: 'Privacy-conscious?',
-    desc: 'TokDown does not store any video files on its servers. The video is streamed from TikTok\'s CDN through our server to your device without being saved. Your TikTok URL is not logged.',
+    title: 'Never your TikTok password',
+    desc: 'Public videos need no login. A downloader that asks for your TikTok username and password is a phishing risk, whatever it promises.',
   },
   {
-    icon: '⚡',
-    title: 'Want faster downloads?',
-    desc: 'Fewer redirect steps mean faster time-to-file. Paste the link, press Download, get your MP4 — that\'s it.',
+    icon: '🧩',
+    title: 'No APK or extension required',
+    desc: 'A website works on every phone and computer. Sideloaded APKs and browser extensions get far more access to your device than a web page.',
   },
   {
-    icon: '📱',
-    title: 'Mobile-friendly?',
-    desc: 'TokDown is optimised for Safari on iPhone and Chrome on Android — the download flow works cleanly on small screens without pop-ups covering the interface.',
+    icon: '📋',
+    title: 'Clear about ads and limits',
+    desc: 'Free tools are paid for by ads and depend on upstream services. A trustworthy site says which ads it runs and shows a clear error when a video cannot be fetched.',
   },
 ]
 
@@ -102,29 +79,22 @@ const ALTERNATIVES = [
     name: 'TokDown',
     url: 'tokdown.org',
     highlight: true,
-    pros: ['No forced redirects', 'No pop-ups', 'No server storage', 'HD + MP3'],
-    cons: ['Newer domain, lower brand recognition'],
+    pros: ['No account, app or extension', 'MP4, MP3 and photo slideshows', 'Also X videos, YouTube thumbnails, compressor, GIF maker'],
+    cons: ['Shows ads, including a pop-under after a result', 'TikTok API is sometimes busy (retry later)', 'No private videos or bulk download'],
   },
   {
     name: 'SnapTik',
     url: 'snaptik.app',
     highlight: false,
-    pros: ['High traffic, proven reliability', 'HD + SD + MP3'],
-    cons: ['Forced ad redirects before download', 'Pop-up ads on mobile'],
+    pros: ['Long-running, widely used web downloader'],
+    cons: ['Not tested by us: check its current ads and permissions'],
   },
   {
-    name: 'SSSTikTok',
+    name: 'SSSTik',
     url: 'ssstik.io',
     highlight: false,
-    pros: ['Very high traffic', 'HD + MP3 + GIF', 'Multi-language support'],
-    cons: ['Heavy ad load', 'Forced interstitial redirects'],
-  },
-  {
-    name: 'Tikup',
-    url: 'tikup.me',
-    highlight: false,
-    pros: ['Fast download speed', 'Clean-ish UI'],
-    cons: ['Requires account for some features', 'Fewer quality options'],
+    pros: ['Long-running web downloader for TikTok videos'],
+    cons: ['Not tested by us: check its current ads and permissions'],
   },
 ]
 
@@ -135,9 +105,7 @@ export default async function SnaptikAlternative({ params }: Props) {
 
   return (
     <>
-      {jsonLd.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={jsonLd} />
 
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
@@ -152,22 +120,22 @@ export default async function SnaptikAlternative({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Comparison · Updated June 2026</p>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Guide · Updated October 2026</p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>
-              Best SnapTik Alternative in 2026
+              SnapTik Alternative: An Honest Guide
             </h1>
             <p className="text-sm leading-relaxed max-w-lg mx-auto" style={{ color: 'var(--t3)' }}>
-              Comparing TokDown against SnapTik, SSSTikTok, and Tikup — so you can pick the right TikTok downloader for your needs.
+              What to look for in a SnapTik or SSSTik alternative, and exactly what TokDown does and does not do, ads included.
             </p>
           </header>
 
           {/* Why switch section */}
           <section className="w-full max-w-2xl mb-12" aria-labelledby="why-h">
             <h2 id="why-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
-              Why people look for a SnapTik alternative
+              What to check in any TikTok downloader
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {WHY_SWITCH.map(({ icon, title, desc }) => (
+              {CHECKLIST.map(({ icon, title, desc }) => (
                 <div key={title} className="feature-card">
                   <span className="text-2xl mb-3 block" aria-hidden>{icon}</span>
                   <h3 className="text-sm font-bold mb-1.5" style={{ color: 'var(--t1)' }}>{title}</h3>
@@ -179,35 +147,32 @@ export default async function SnaptikAlternative({ params }: Props) {
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
-          {/* Feature comparison table */}
+          {/* What TokDown does (no scores for other sites: we have no dated test of them) */}
           <section className="w-full max-w-2xl mb-12" aria-labelledby="compare-h">
             <h2 id="compare-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
-              Feature comparison: TokDown vs. SnapTik vs. SSSTikTok
+              What TokDown does and does not do
             </h2>
             <div className="rounded-xl overflow-hidden overflow-x-auto" style={{ border: '1px solid var(--line)' }}>
-              <table className="w-full text-sm" style={{ borderCollapse: 'collapse', minWidth: 480 }}>
+              <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
                 <thead>
                   <tr style={{ background: 'rgba(139,108,255,0.08)' }}>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--t2)', width: '40%' }}>Feature</th>
-                    <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--brand)' }}>TokDown</th>
-                    <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--t4)' }}>SnapTik</th>
-                    <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--t4)' }}>SSSTikTok</th>
-                    <th className="text-center px-3 py-3 font-semibold" style={{ color: 'var(--t4)' }}>Tikup</th>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: 'var(--brand)' }}>TokDown</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map(({ feature, tokdown, snaptik, ssstik, tikup }, i) => (
+                  {FACTS.map(({ feature, value }, i) => (
                     <tr key={feature} style={{ background: i % 2 === 0 ? 'var(--line)' : 'transparent', borderTop: '1px solid var(--line)' }}>
                       <td className="px-4 py-3" style={{ color: 'var(--t3)' }}>{feature}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: tokdown ? 'var(--success)' : 'var(--danger)' }}>{tokdown ? '✓' : '✗'}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: snaptik ? 'var(--success)' : 'var(--danger)', opacity: 0.7 }}>{snaptik ? '✓' : '✗'}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: ssstik ? 'var(--success)' : 'var(--danger)', opacity: 0.7 }}>{ssstik ? '✓' : '✗'}</td>
-                      <td className="px-3 py-3 text-center" style={{ color: tikup ? 'var(--success)' : 'var(--danger)', opacity: 0.7 }}>{tikup ? '✓' : '✗'}</td>
+                      <td className="px-4 py-3" style={{ color: 'var(--t2)' }}>{value}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+            <p className="text-xs mt-3" style={{ color: 'var(--t4)' }}>
+              We do not score other downloaders: their ads and features change often and we have not run a dated test. Check any site, including this one, before you rely on it.
+            </p>
           </section>
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
@@ -215,7 +180,7 @@ export default async function SnaptikAlternative({ params }: Props) {
           {/* Individual tool breakdowns */}
           <section className="w-full max-w-2xl mb-12" aria-labelledby="tools-h">
             <h2 id="tools-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
-              Each tool at a glance
+              Popular options at a glance
             </h2>
             <div className="flex flex-col gap-3">
               {ALTERNATIVES.map(({ name, url, highlight, pros, cons }) => (
@@ -260,8 +225,8 @@ export default async function SnaptikAlternative({ params }: Props) {
 
           {/* CTA */}
           <section className="w-full max-w-2xl mb-12 text-center">
-            <p className="text-sm mb-2" style={{ color: 'var(--t2)' }}>Try TokDown — no redirects, no pop-ups, no account.</p>
-            <p className="text-xs mb-5" style={{ color: 'var(--t4)' }}>Paste any TikTok link below to download it in HD without watermark.</p>
+            <p className="text-sm mb-2" style={{ color: 'var(--t2)' }}>Try TokDown — free, no account, no app.</p>
+            <p className="text-xs mb-5" style={{ color: 'var(--t4)' }}>Paste any public TikTok link to save the video or its sound.</p>
             <Link
               href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90"
@@ -270,6 +235,10 @@ export default async function SnaptikAlternative({ params }: Props) {
               Try TokDown free →
             </Link>
           </section>
+
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
+
+          <GuideFaq title="Frequently asked questions" faq={FAQ} />
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
@@ -309,7 +278,7 @@ export default async function SnaptikAlternative({ params }: Props) {
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
             {[
               { href: '/', label: 'Downloader' },
-              { href: '/tools', label: 'All tools' },              { href: '/about', label: 'About' },
+              { href: '/tools', label: 'All tools' }, { href: '/guide', label: 'All guides' },              { href: '/about', label: 'About' },
               { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' },
               { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' },
               { href: '/privacy', label: 'Privacy' },

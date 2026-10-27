@@ -1,67 +1,47 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { article, breadcrumbs, faqPage } from '@/lib/schema'
+import { pageDates } from '@/lib/content-dates'
+import JsonLd from '@/components/JsonLd'
+import GuideFaq from '@/components/GuideFaq'
 import Link from 'next/link'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
-const BASE = 'https://tokdown.org'
-
 // English-only guide: no /de or /ar translation exists, so those URLs must 404.
 type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/download-tiktok-private-video'
 
-export const metadata: Metadata = {
-  title: 'Can You Download a Private TikTok Video?',
-  description: 'Can you download private TikTok videos? Full honest explanation of what is possible, what is not, and the only legitimate ways to save TikTok content.',
-  alternates: { canonical: `${BASE}${SLUG}` },
-  openGraph: {
-    images: [OG_IMAGE],
-    title: 'Can You Download a Private TikTok Video? — Full Explanation (2026)',
-    description: 'The truth about downloading private TikTok videos — what works, what does not, and how to download public TikTok videos for free in HD.',
-    url: `${BASE}${SLUG}`,
-  },
-}
+export const metadata: Metadata = pageMetadata({
+  locale: 'en',
+  path: SLUG,
+  title: 'Can You Download Private TikTok Videos?',
+  description: 'Can you download private TikTok videos? An honest explanation of what is possible, what is not, and the only legitimate ways to save private TikTok clips.',
+  translated: false,
+  ogType: 'article',
+})
 
+// Rendered visibly by <GuideFaq> and mirrored in FAQPage JSON-LD.
+const FAQ = [
+  { q: 'Can you download a private TikTok video?', a: 'No. Private TikTok videos require login authentication that only the account owner can provide. No third-party downloader, including TokDown, can access private videos. Any tool claiming to do so is either lying or attempting to steal your TikTok credentials.' },
+  { q: 'Why can\'t I download a private TikTok?', a: 'TikTok enforces privacy settings server-side. A private video\'s URL returns an authentication error to anyone who is not the account owner or an approved follower. There is no technical workaround.' },
+  { q: 'Can I download my own private TikTok video?', a: 'Yes — from within the TikTok app itself. Open TikTok, go to the private video, tap the three dots (⋯), and tap "Save video". TikTok will save it to your Camera Roll with its standard watermark.' },
+  { q: 'Can I download a friends-only TikTok?', a: 'Not with TokDown or any other web downloader: friends-only videos are not public, so they can only be fetched while logged in as an approved friend. If the creator allows downloads, use the Save video option inside the TikTok app; otherwise ask the creator for the file.' },
+  { q: 'What types of TikTok videos can be downloaded?', a: 'Only public TikTok videos where the creator has not disabled the download option can be downloaded with TokDown. If a video is public but still fails, the creator has turned off downloads in their TikTok privacy settings.' },
+]
+
+const dates = pageDates(SLUG)
 const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Can You Download a Private TikTok Video? — Full Explanation (2026)',
-    description: 'An honest guide explaining whether private TikTok videos can be downloaded and what alternatives exist.',
-    url: `${BASE}${SLUG}`,
-    datePublished: '2026-06-01',
-    dateModified: '2026-06-10',
-    author: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    publisher: { '@type': 'Organization', name: 'TokDown', url: BASE, logo: { '@type': 'ImageObject', url: `${BASE}/icon.png` } },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}${SLUG}` },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Can you download a private TikTok video?', acceptedAnswer: { '@type': 'Answer', text: 'No. Private TikTok videos require login authentication that only the account owner can provide. No third-party downloader, including TokDown, can access private videos. Any tool claiming to do so is either lying or attempting to steal your TikTok credentials.' } },
-      { '@type': 'Question', name: 'Why can\'t I download a private TikTok?', acceptedAnswer: { '@type': 'Answer', text: 'TikTok enforces privacy settings server-side. A private video\'s URL returns an authentication error to anyone who is not the account owner or an approved follower. There is no technical workaround.' } },
-      { '@type': 'Question', name: 'Can I download my own private TikTok video?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — from within the TikTok app itself. Open TikTok, go to the private video, tap the three dots (⋯), and tap "Save video". TikTok will save it to your Camera Roll with its standard watermark.' } },
-      { '@type': 'Question', name: 'Can I download a friends-only TikTok?', acceptedAnswer: { '@type': 'Answer', text: 'If you are listed as a friend of the account, you can view the video. If downloading is enabled by the creator, TokDown can download it using the share link. If the creator has disabled downloads, no tool can override this.' } },
-      { '@type': 'Question', name: 'What types of TikTok videos can be downloaded?', acceptedAnswer: { '@type': 'Answer', text: 'Only public TikTok videos where the creator has not disabled the download option can be downloaded with TokDown. If a video is public but still fails, the creator has turned off downloads in their TikTok privacy settings.' } },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: `${BASE}/guide` },
-      { '@type': 'ListItem', position: 3, name: 'Download Private TikTok', item: `${BASE}${SLUG}` },
-    ],
-  },
+  article({ locale: 'en', path: SLUG, headline: 'Can You Download a Private TikTok Video? — Full Explanation (2026)', description: 'An honest guide explaining whether private TikTok videos can be downloaded and what alternatives exist.', datePublished: dates.published, dateModified: dates.modified }),
+  faqPage(FAQ),
+  breadcrumbs('en', [{ name: 'Guides', path: '/guide' }, { name: 'Private TikTok Videos', path: SLUG }]),
 ]
 
 const PRIVACY_LEVELS = [
-  { level: 'Public', downloadable: true, note: 'Anyone can download if creator allows it' },
-  { level: 'Friends Only', downloadable: null, note: 'Downloadable only if you are a friend AND creator allows it' },
+  { level: 'Public', downloadable: true, note: 'Web downloaders such as TokDown can fetch it from the public link' },
+  { level: 'Friends Only', downloadable: null, note: 'Only inside the TikTok app, as an approved friend, if the creator allows saving' },
   { level: 'Private', downloadable: false, note: 'Cannot be downloaded by any third-party tool' },
 ]
 
@@ -79,9 +59,7 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
 
   return (
     <>
-      {jsonLd.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={jsonLd} />
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
           <div className="w-full max-w-2xl mb-8">
@@ -165,6 +143,10 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
+          <GuideFaq title="Frequently asked questions" faq={FAQ} />
+
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
+
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Related guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -189,7 +171,7 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
 
         <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
-            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
+            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/guide', label: 'All guides' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
               <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t4)' }}>{label}</Link>
             ))}
           </nav>

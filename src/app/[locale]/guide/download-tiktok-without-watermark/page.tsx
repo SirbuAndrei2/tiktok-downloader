@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { article, breadcrumbs } from '@/lib/schema'
+import { pageDates } from '@/lib/content-dates'
+import JsonLd from '@/components/JsonLd'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { Separator } from '@/components/ui/separator'
 
-const BASE = 'https://tokdown.org'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -13,17 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'GuideNoWatermark' })
-  const localePath = locale === 'en' ? '' : `/${locale}`
-  const slug = '/guide/download-tiktok-without-watermark'
-  return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
-    alternates: {
-      canonical: `${BASE}${localePath}${slug}`,
-      languages: { 'en': `${BASE}${slug}`, 'de': `${BASE}/de${slug}`, 'ar': `${BASE}/ar${slug}`, 'x-default': `${BASE}${slug}` },
-    },
-    openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${slug}` },
-  }
+  return pageMetadata({ locale, path: '/guide/download-tiktok-without-watermark', title: t('metaTitle'), description: t('metaDescription'), ogType: 'article' })
 }
 
 export default async function DownloadGuide({ params }: Props) {
@@ -40,43 +32,21 @@ export default async function DownloadGuide({ params }: Props) {
   const troubleshoot = t.raw('troubleshoot') as { problem: string; fix: string }[]
 
   const slug = '/guide/download-tiktok-without-watermark'
+  const dates = pageDates('/guide/download-tiktok-without-watermark')
   const jsonLd = [
-    {
-      '@context': 'https://schema.org', '@type': 'Article',
-      headline: t('h1'),
-      description: t('metaDescription'),
-      url: `${BASE}${localePath}${slug}`,
-      datePublished: '2025-04-01', dateModified: '2026-05-01',
-      author: { '@type': 'Organization', name: 'TokDown', url: BASE },
-      publisher: { '@type': 'Organization', name: 'TokDown', url: BASE, logo: { '@type': 'ImageObject', url: `${BASE}/icon.png` } },
-    },
-    {
-      '@context': 'https://schema.org', '@type': 'HowTo',
-      name: t('h1'), totalTime: 'PT1M',
-      tool: [{ '@type': 'HowToTool', name: 'TokDown (tokdown.org)' }],
-      step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })),
-    },
-    {
-      '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}${localePath}/` },
-        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${BASE}${localePath}/guide` },
-        { '@type': 'ListItem', position: 3, name: t('h1'), item: `${BASE}${localePath}${slug}` },
-      ],
-    },
+    article({ locale, path: '/guide/download-tiktok-without-watermark', headline: t('h1'), description: t('metaDescription'), datePublished: dates.published, dateModified: dates.modified }),
+    breadcrumbs(locale, [{ name: tNav('guides'), path: '/guide' }, { name: t('h1'), path: '/guide/download-tiktok-without-watermark' }]),
   ]
 
   return (
     <>
-      {jsonLd.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={jsonLd} />
 
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
 
           <div className="w-full max-w-2xl mb-8">
-            <Link href={`${localePath}/`} className="inline-flex items-center gap-2 text-xs font-medium" style={{ color: 'var(--t4)' }}>
+            <Link href={localePath || '/'} className="inline-flex items-center gap-2 text-xs font-medium" style={{ color: 'var(--t4)' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M19 12H5M12 5l-7 7 7 7" /></svg>
               {tCommon('backToDownloader')}
             </Link>
@@ -110,7 +80,7 @@ export default async function DownloadGuide({ params }: Props) {
 
           <section className="w-full max-w-2xl mb-12 text-center">
             <p className="text-sm mb-4" style={{ color: 'var(--t3)' }}>{t('ctaText')}</p>
-            <Link href={`${localePath}/`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90"
+            <Link href={localePath || '/'} className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
               {t('ctaButton')}
             </Link>
@@ -184,7 +154,8 @@ export default async function DownloadGuide({ params }: Props) {
         <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
             {[
-              { href: `${localePath}/`, label: tNav('downloader') },
+              { href: localePath || '/', label: tNav('downloader') },
+              { href: `${localePath}/guide`, label: tNav('allGuides') },
               { href: `${localePath}/tools`, label: tNav('tools') },              { href: `${localePath}/about`, label: tNav('about') },
               { href: `${localePath}/guide/tiktok-to-mp3`, label: tNav('mp3Guide') },
               { href: '/privacy', label: tNav('privacy') },

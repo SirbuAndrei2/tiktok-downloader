@@ -1,88 +1,56 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { article, breadcrumbs, faqPage } from '@/lib/schema'
+import { pageDates } from '@/lib/content-dates'
+import JsonLd from '@/components/JsonLd'
+import GuideFaq from '@/components/GuideFaq'
 import Link from 'next/link'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
-const BASE = 'https://tokdown.org'
-
 // English-only guide: no /de or /ar translation exists, so those URLs must 404.
 type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/tiktok-video-to-gif'
 
-export const metadata: Metadata = {
-  title: 'TikTok to GIF – Convert TikTok Videos to GIF',
-  description: 'How to convert a TikTok video to a GIF — step by step. Download the MP4 with TokDown first, then convert to GIF with free tools. Works on iPhone, Android, PC.',
-  alternates: { canonical: `${BASE}${SLUG}` },
-  openGraph: {
-    images: [OG_IMAGE],
-    title: 'TikTok to GIF — Convert TikTok Videos to GIF Free (2026)',
-    description: 'Step-by-step guide to turning any TikTok video into a GIF. Download the video first, then use a free GIF converter. Works on all devices.',
-    url: `${BASE}${SLUG}`,
-  },
-}
+export const metadata: Metadata = pageMetadata({
+  locale: 'en',
+  path: SLUG,
+  title: 'TikTok to GIF Converter – Free, No Upload',
+  description: 'Turn a TikTok into a GIF in two steps: download the clean MP4, then convert it with the in-browser MP4 to GIF converter. Free, and nothing is uploaded.',
+  translated: false,
+  ogType: 'article',
+})
 
+// Rendered visibly by <GuideFaq> and mirrored in FAQPage JSON-LD.
+const FAQ = [
+  { q: 'Can I convert TikTok to GIF directly?', a: 'Not in one click: a TikTok link gives you a video. Download the MP4 with TokDown, then open it in the MP4 to GIF converter at tokdown.org/mp4-to-gif. Both steps run in your browser and take about a minute.' },
+  { q: 'What is the best free TikTok to GIF converter?', a: 'If privacy matters, use a converter that runs in your browser, such as TokDown\'s MP4 to GIF tool: the video never leaves your device. Ezgif offers more editing options but uploads your file to its server, and GIPHY is handy when you want a hosted link to share.' },
+  { q: 'Why is my TikTok GIF low quality or huge?', a: 'GIF is limited to 256 colours and has no audio, and every frame is stored almost in full. Start from the HD MP4, keep the clip to 3–6 seconds, and use 12–15 fps at 480 px wide. TokDown builds a custom palette for each clip, which keeps text and gradients clean at a smaller size.' },
+  { q: 'Can I make a GIF from TikTok on iPhone?', a: 'Yes. Download the MP4 in Safari, then open tokdown.org/mp4-to-gif in Safari, pick the file from the Files app and convert it. The GIF is saved to Files, from where you can share it or save it to Photos.' },
+]
+
+const dates = pageDates(SLUG)
 const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'How to Convert a TikTok Video to GIF (2026)',
-    description: 'A two-step guide to turning any TikTok video into a GIF: download the MP4 with TokDown, then convert it to GIF using a free tool.',
-    url: `${BASE}${SLUG}`,
-    datePublished: '2026-06-01',
-    dateModified: '2026-06-10',
-    author: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    publisher: { '@type': 'Organization', name: 'TokDown', url: BASE, logo: { '@type': 'ImageObject', url: `${BASE}/icon.png` } },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}${SLUG}` },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: 'How to convert a TikTok video to GIF',
-    totalTime: 'PT3M',
-    step: [
-      { '@type': 'HowToStep', position: 1, name: 'Download the TikTok video as MP4', text: 'Copy the TikTok link, paste it into TokDown, and download the HD MP4 version without watermark.' },
-      { '@type': 'HowToStep', position: 2, name: 'Open a free GIF converter', text: 'Use a free online tool such as Ezgif.com or GIPHY to convert your MP4 to GIF.' },
-      { '@type': 'HowToStep', position: 3, name: 'Upload the MP4 and set options', text: 'Upload the downloaded MP4 file. Set the start time, end time (GIFs work best at 3–6 seconds), and frame rate.' },
-      { '@type': 'HowToStep', position: 4, name: 'Generate and download the GIF', text: 'Click Convert and download the resulting GIF file. It is ready to share on any platform.' },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Can I convert TikTok to GIF directly?', acceptedAnswer: { '@type': 'Answer', text: 'TokDown does not output GIF files directly — it downloads MP4. To get a GIF, download the MP4 first and then use a free online converter like Ezgif.com. The two-step process takes about 2 minutes total.' } },
-      { '@type': 'Question', name: 'What is the best free TikTok to GIF converter?', acceptedAnswer: { '@type': 'Answer', text: 'Ezgif.com is the most reliable free option — it supports MP4 uploads, lets you trim the clip, control frame rate, and resize before converting. GIPHY also supports MP4 uploads and hosts the GIF for sharing.' } },
-      { '@type': 'Question', name: 'Why is my TikTok GIF low quality?', acceptedAnswer: { '@type': 'Answer', text: 'GIFs are inherently lower quality than MP4 because they are limited to 256 colors and no audio. For best results: use the HD MP4 from TokDown as the source, keep the GIF under 6 seconds, and set a frame rate of 15–20fps. Longer GIFs will also be very large in file size.' } },
-      { '@type': 'Question', name: 'Can I make a GIF from TikTok on iPhone?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Download the TikTok MP4 using TokDown in Safari on iPhone, then use the Shortcuts app or a GIF-maker app to convert it. Alternatively, upload the MP4 to Ezgif.com in Mobile Safari and convert it in-browser — no app download needed.' } },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: `${BASE}/guide` },
-      { '@type': 'ListItem', position: 3, name: 'TikTok to GIF', item: `${BASE}${SLUG}` },
-    ],
-  },
+  article({ locale: 'en', path: SLUG, headline: 'How to Convert a TikTok Video to GIF', description: 'A two-step guide to turning any TikTok video into a GIF: download the MP4 with TokDown, then convert it in the browser with the MP4 to GIF converter.', datePublished: dates.published, dateModified: dates.modified }),
+  faqPage(FAQ),
+  breadcrumbs('en', [{ name: 'Guides', path: '/guide' }, { name: 'TikTok to GIF', path: SLUG }]),
 ]
 
 const STEPS = [
-  { n: 1, title: 'Download the TikTok video as MP4', body: 'Copy the TikTok share link, paste it into TokDown, and click "HD · No Watermark" to download the clean MP4. This is your GIF source file — HD gives you the best output.' },
-  { n: 2, title: 'Open Ezgif.com in your browser', body: 'Go to ezgif.com/video-to-gif in any browser. This free tool requires no account, has no watermark on output, and works on all devices.' },
-  { n: 3, title: 'Upload the MP4 and trim the clip', body: 'Click "Choose File" and select your downloaded TikTok MP4. Set the start and end time to isolate the clip you want — GIFs work best at 3–6 seconds. Longer clips result in massive file sizes.' },
-  { n: 4, title: 'Set frame rate and size', body: 'A frame rate of 15fps is a good balance between smoothness and file size. You can also resize the GIF (320px wide is standard for messaging apps). Click "Convert to GIF".' },
-  { n: 5, title: 'Download and share the GIF', body: 'Click the "Save" button to download the GIF. It is ready to share on Twitter, Discord, Reddit, WhatsApp (as a video/GIF), or anywhere else that accepts GIFs.' },
+  { n: 1, title: 'Download the TikTok video as MP4', body: 'Copy the TikTok share link, paste it into TokDown and download the HD MP4. This is your GIF source file, and a sharper source gives a sharper GIF.' },
+  { n: 2, title: 'Open the MP4 to GIF converter', body: 'Go to tokdown.org/mp4-to-gif and choose the MP4 you just saved. The converter runs in your browser with WebAssembly, so the video is never uploaded anywhere.' },
+  { n: 3, title: 'Pick the part you want', body: 'Set the start time and the length. A GIF can be up to 15 seconds long, but 3–6 seconds is the sweet spot: long GIFs get very large very quickly.' },
+  { n: 4, title: 'Choose frame rate and width', body: '15 fps at 480 px wide is a good default for chats and Discord. For a README or a slide, 12 fps at 640 px stays crisp and small.' },
+  { n: 5, title: 'Convert and save the GIF', body: 'Press Convert. The converter analyses the clip, builds a colour palette for it and renders the GIF; then save it and share it anywhere that accepts GIFs.' },
 ]
 
 const TOOLS = [
-  { name: 'Ezgif.com', platform: 'Web (all devices)', pros: 'Free, no watermark, trim + resize controls', cons: 'Upload limit 100MB' },
-  { name: 'GIPHY', platform: 'Web + iOS/Android app', pros: 'Hosts GIF for easy sharing link', cons: 'GIF is public on GIPHY by default' },
-  { name: 'CapCut', platform: 'iOS + Android', pros: 'Edit first, then export as GIF', cons: 'App install required' },
-  { name: 'Shortcuts (iPhone)', platform: 'iOS only', pros: 'Fully offline, saves to Photos', cons: 'Requires setup of a shortcut workflow' },
+  { name: 'TokDown MP4 to GIF', platform: 'Web (all devices)', pros: 'Runs in your browser, nothing uploaded, palette-optimised output', cons: 'Up to 15 seconds per GIF' },
+  { name: 'Ezgif', platform: 'Web', pros: 'Many editing options (crop, speed, effects)', cons: 'Your file is uploaded to their server' },
+  { name: 'GIPHY', platform: 'Web + iOS/Android app', pros: 'Hosts the GIF and gives you a link to share', cons: 'GIFs are public by default' },
+  { name: 'Shortcuts (iPhone)', platform: 'iOS only', pros: 'Works offline, saves to Photos', cons: 'You have to build or install a shortcut first' },
 ]
 
 export default async function TikTokToGif({ params }: Props) {
@@ -92,9 +60,7 @@ export default async function TikTokToGif({ params }: Props) {
 
   return (
     <>
-      {jsonLd.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={jsonLd} />
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
           <div className="w-full max-w-2xl mb-8">
@@ -105,12 +71,12 @@ export default async function TikTokToGif({ params }: Props) {
           </div>
 
           <header className="w-full max-w-2xl mb-10 text-center">
-            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Guide · Updated June 2026</p>
+            <p className="text-xs font-semibold mb-3 tracking-widest uppercase" style={{ color: 'var(--brand)' }}>Guide · Updated October 2026</p>
             <h1 className="text-3xl sm:text-4xl font-black mb-4 leading-tight" style={{ color: 'var(--t1)' }}>
-              TikTok to GIF — Free Conversion
+              TikTok to GIF Converter: Free, No Upload
             </h1>
             <p className="text-sm leading-relaxed max-w-lg mx-auto" style={{ color: 'var(--t3)' }}>
-              Convert any TikTok video into a shareable GIF in two steps — download the clean MP4 first, then convert it with a free tool. No watermark, no account needed.
+              Convert any TikTok video into a shareable GIF in two steps: download the clean MP4, then turn it into a GIF with the in-browser MP4 to GIF converter. No watermark, no upload, no account.
             </p>
           </header>
 
@@ -136,12 +102,16 @@ export default async function TikTokToGif({ params }: Props) {
             <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
               Download TikTok as MP4 →
             </Link>
+            <p className="text-sm mt-6 mb-4" style={{ color: 'var(--t3)' }}>Already have the MP4? Go straight to step 2.</p>
+            <Link href="/mp4-to-gif" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
+              Open the MP4 to GIF converter →
+            </Link>
           </section>
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="tools-h">
-            <h2 id="tools-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Best free TikTok to GIF tools</h2>
+            <h2 id="tools-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Ways to turn a TikTok into a GIF</h2>
             <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--line)' }}>
               <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
                 <thead>
@@ -168,6 +138,10 @@ export default async function TikTokToGif({ params }: Props) {
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
+          <GuideFaq title="Frequently asked questions" faq={FAQ} />
+
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
+
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Related guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -175,7 +149,7 @@ export default async function TikTokToGif({ params }: Props) {
                 { href: '/guide/tiktok-to-mp4', icon: '🎬', title: 'TikTok to MP4', desc: 'Download TikTok videos as MP4 files in HD quality.' },
                 { href: '/guide/tiktok-to-mp3', icon: '🎵', title: 'TikTok to MP3', desc: 'Extract the audio from any TikTok video as an MP3.' },
                 { href: '/guide/download-tiktok-without-watermark', icon: '🚫', title: 'No Watermark Guide', desc: 'Full guide for all devices including PC and Mac.' },
-                { href: '/guide/tiktok-downloader-chrome', icon: '🌐', title: 'Download in Chrome', desc: 'How to download TikTok videos in Google Chrome.' },
+                { href: '/video-compressor', icon: '🗜️', title: 'Video compressor', desc: 'Shrink the MP4 for Discord or WhatsApp, in your browser.' },
               ].map(({ href, icon, title, desc }) => (
                 <Link key={href} href={href} className="feature-card no-underline" style={{ display: 'block' }}>
                   <span className="text-2xl mb-3 block" aria-hidden>{icon}</span>
@@ -192,7 +166,7 @@ export default async function TikTokToGif({ params }: Props) {
 
         <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
-            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
+            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/guide', label: 'All guides' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
               <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t4)' }}>{label}</Link>
             ))}
           </nav>

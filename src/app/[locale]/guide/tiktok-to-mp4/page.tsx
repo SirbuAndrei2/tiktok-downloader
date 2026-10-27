@@ -1,79 +1,42 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { article, breadcrumbs, faqPage } from '@/lib/schema'
+import { pageDates } from '@/lib/content-dates'
+import JsonLd from '@/components/JsonLd'
+import GuideFaq from '@/components/GuideFaq'
 import Link from 'next/link'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
-const BASE = 'https://tokdown.org'
-
 // English-only guide: no /de or /ar translation exists, so those URLs must 404.
 type Props = { params: Promise<{ locale: string }> }
+const SLUG = '/guide/tiktok-to-mp4'
 
-export const metadata: Metadata = {
-  title: 'TikTok to MP4 – Download as MP4, No Watermark',
-  description: 'Convert any TikTok video to MP4 format instantly — HD quality, no watermark, no login. Free online tool that works on iPhone, Android, PC and Mac.',
-  alternates: { canonical: `${BASE}/guide/tiktok-to-mp4` },
-  openGraph: {
-    images: [OG_IMAGE],
-    title: 'TikTok to MP4 — Download TikTok as MP4 Free, No Watermark (2026)',
-    description: 'Save any TikTok video as an MP4 file in HD without the watermark. Works on every device, free, no account needed.',
-    url: `${BASE}/guide/tiktok-to-mp4`,
-  },
-}
+export const metadata: Metadata = pageMetadata({
+  locale: 'en',
+  path: SLUG,
+  title: 'TikTok to MP4 Converter – HD Files Explained',
+  description: 'Save a TikTok as an MP4 file in HD: how TikTok to MP4 conversion works, which resolution you get, and how to play or edit the file on any device.',
+  translated: false,
+  ogType: 'article',
+})
 
+// Rendered visibly by <GuideFaq> and mirrored in FAQPage JSON-LD.
+const FAQ = [
+  { q: 'What format does TikTok download in?', a: 'TokDown downloads TikTok videos as MP4 files. MP4 is the most widely compatible video format and plays on all devices, media players, and editing software.' },
+  { q: 'Is TikTok MP4 or MOV?', a: 'TikTok videos are stored and delivered as MP4 files internally. When you use TokDown, the downloaded file is an MP4 (.mp4) — compatible with every device and video editor.' },
+  { q: 'What quality is the TikTok MP4 download?', a: 'TokDown offers two quality options: HD (the highest resolution the creator uploaded, typically 1080p at 30fps) and SD (lower resolution for smaller file sizes). Both are watermark-free.' },
+  { q: 'Can I edit a downloaded TikTok MP4?', a: 'Yes. The downloaded MP4 is a standard video file that works in any video editing software — CapCut, iMovie, DaVinci Resolve, Adobe Premiere, and more.' },
+  { q: 'Which codec does the MP4 use?', a: 'TikTok serves H.264 (AVC) video with AAC audio in an MP4 container for the files TokDown offers, which plays in every current browser, phone and editor. If an old player refuses the file, it is usually an incomplete download: check the file size and download it again.' },
+]
+
+const dates = pageDates(SLUG)
 const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'How to Download TikTok Videos as MP4 — Free, No Watermark (2026)',
-    description: 'How to save any TikTok video as an MP4 file in HD quality without the watermark using TokDown.',
-    url: `${BASE}/guide/tiktok-to-mp4`,
-    datePublished: '2026-06-01',
-    dateModified: '2026-06-01',
-    author: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    publisher: {
-      '@type': 'Organization',
-      name: 'TokDown',
-      url: BASE,
-      logo: { '@type': 'ImageObject', url: `${BASE}/icon.png` },
-    },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/guide/tiktok-to-mp4` },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: 'How to convert TikTok to MP4',
-    description: 'Download any public TikTok video as an MP4 file in HD without the watermark using TokDown — free, no account.',
-    totalTime: 'PT1M',
-    tool: [{ '@type': 'HowToTool', name: 'TokDown (tokdown.org)' }],
-    step: [
-      { '@type': 'HowToStep', position: 1, name: 'Copy the TikTok link', text: 'Open TikTok, find the video, tap the Share icon, and tap "Copy link".' },
-      { '@type': 'HowToStep', position: 2, name: 'Paste into TokDown', text: 'Open tokdown.org in any browser, paste the link into the input field, and tap or click Download.' },
-      { '@type': 'HowToStep', position: 3, name: 'Choose HD MP4', text: 'Select "HD · No Watermark" or "SD · No Watermark" to download the video as an MP4 file to your device.' },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'What format does TikTok download in?', acceptedAnswer: { '@type': 'Answer', text: 'TokDown downloads TikTok videos as MP4 files. MP4 is the most widely compatible video format and plays on all devices, media players, and editing software.' } },
-      { '@type': 'Question', name: 'Is TikTok MP4 or MOV?', acceptedAnswer: { '@type': 'Answer', text: 'TikTok videos are stored and delivered as MP4 files internally. When you use TokDown, the downloaded file is an MP4 (.mp4) — compatible with every device and video editor.' } },
-      { '@type': 'Question', name: 'What quality is the TikTok MP4 download?', acceptedAnswer: { '@type': 'Answer', text: 'TokDown offers two quality options: HD (the highest resolution the creator uploaded, typically 1080p at 30fps) and SD (lower resolution for smaller file sizes). Both are watermark-free.' } },
-      { '@type': 'Question', name: 'Can I edit a downloaded TikTok MP4?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The downloaded MP4 is a standard video file that works in any video editing software — CapCut, iMovie, DaVinci Resolve, Adobe Premiere, and more.' } },
-      { '@type': 'Question', name: 'Why does my TikTok download as .webm instead of .mp4?', acceptedAnswer: { '@type': 'Answer', text: 'Some Chromium-based browsers save videos as .webm. The content is identical — just rename the file extension from .webm to .mp4 and it will play in any player.' } },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: `${BASE}/guide` },
-      { '@type': 'ListItem', position: 3, name: 'TikTok to MP4', item: `${BASE}/guide/tiktok-to-mp4` },
-    ],
-  },
+  article({ locale: 'en', path: SLUG, headline: 'How to Download TikTok Videos as MP4 — Free, No Watermark (2026)', description: 'How to save any TikTok video as an MP4 file in HD quality without the watermark using TokDown.', datePublished: dates.published, dateModified: dates.modified }),
+  faqPage(FAQ),
+  breadcrumbs('en', [{ name: 'Guides', path: '/guide' }, { name: 'TikTok to MP4', path: SLUG }]),
 ]
 
 const STEPS = [
@@ -137,9 +100,7 @@ export default async function TikTokToMp4({ params }: Props) {
 
   return (
     <>
-      {jsonLd.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={jsonLd} />
 
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
@@ -159,7 +120,7 @@ export default async function TikTokToMp4({ params }: Props) {
               TikTok to MP4 — Download Without Watermark
             </h1>
             <p className="text-sm leading-relaxed max-w-lg mx-auto" style={{ color: 'var(--t3)' }}>
-              Convert any TikTok video to a standard MP4 file in HD. No watermark, no login, no limits. The downloaded file plays on every device and works in any video editor.
+              Convert any TikTok video to a standard MP4 file in HD. No watermark, no login, no app. The downloaded file plays on every device and works in any video editor.
             </p>
           </header>
 
@@ -263,6 +224,10 @@ export default async function TikTokToMp4({ params }: Props) {
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
+          <GuideFaq title="Frequently asked questions" faq={FAQ} />
+
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
+
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>
               Related guides
@@ -299,7 +264,7 @@ export default async function TikTokToMp4({ params }: Props) {
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
             {[
               { href: '/', label: 'Downloader' },
-              { href: '/tools', label: 'All tools' },              { href: '/about', label: 'About' },
+              { href: '/tools', label: 'All tools' }, { href: '/guide', label: 'All guides' },              { href: '/about', label: 'About' },
               { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' },
               { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' },
               { href: '/privacy', label: 'Privacy' },

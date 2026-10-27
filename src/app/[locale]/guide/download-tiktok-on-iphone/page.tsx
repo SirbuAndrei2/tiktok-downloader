@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { article, breadcrumbs } from '@/lib/schema'
+import { pageDates } from '@/lib/content-dates'
+import JsonLd from '@/components/JsonLd'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { Separator } from '@/components/ui/separator'
 
-const BASE = 'https://tokdown.org'
-const SLUG = '/guide/download-tiktok-on-iphone'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -14,68 +15,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'GuideIphone' })
-  const localePath = locale === 'en' ? '' : `/${locale}`
-  return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
-    alternates: {
-      canonical: `${BASE}${localePath}${SLUG}`,
-      languages: { 'en': `${BASE}${SLUG}`, 'de': `${BASE}/de${SLUG}`, 'ar': `${BASE}/ar${SLUG}`, 'x-default': `${BASE}${SLUG}` },
-    },
-    openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${SLUG}` },
-  }
+  return pageMetadata({ locale, path: '/guide/download-tiktok-on-iphone', title: t('metaTitle'), description: t('metaDescription'), ogType: 'article' })
 }
 
 export default async function DownloadTikTokOnIphone({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'GuideIphone' })
+  const tNav = await getTranslations({ locale, namespace: 'Nav' })
   const localePath = locale === 'en' ? '' : `/${locale}`
 
   const steps = t.raw('steps') as { title: string; body: string }[]
   const tips = t.raw('tips') as { title: string; body: string }[]
   const troubleshoot = t.raw('troubleshoot') as { problem: string; fix: string }[]
 
+  const dates = pageDates('/guide/download-tiktok-on-iphone')
   const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: t('metaTitle'),
-      description: t('metaDescription'),
-      url: `${BASE}${localePath}${SLUG}`,
-      datePublished: '2026-06-01',
-      dateModified: '2026-06-10',
-      author: { '@type': 'Organization', name: 'TokDown', url: BASE },
-      publisher: { '@type': 'Organization', name: 'TokDown', url: BASE, logo: { '@type': 'ImageObject', url: `${BASE}/icon.png` } },
-      inLanguage: locale,
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: t('h1'),
-      totalTime: 'PT1M',
-      tool: [{ '@type': 'HowToTool', name: 'iPhone with Safari' }, { '@type': 'HowToTool', name: 'TokDown (tokdown.org)' }],
-      step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'TokDown', item: `${BASE}${localePath}/` },
-        { '@type': 'ListItem', position: 2, name: t('h1'), item: `${BASE}${localePath}${SLUG}` },
-      ],
-    },
+    article({ locale, path: '/guide/download-tiktok-on-iphone', headline: t('h1'), description: t('metaDescription'), datePublished: dates.published, dateModified: dates.modified }),
+    breadcrumbs(locale, [{ name: tNav('guides'), path: '/guide' }, { name: t('h1'), path: '/guide/download-tiktok-on-iphone' }]),
   ]
 
   return (
     <>
-      {jsonLd.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={jsonLd} />
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
           <div className="w-full max-w-2xl mb-8">
-            <Link href={`${localePath}/`} className="inline-flex items-center gap-2 text-xs font-medium" style={{ color: 'var(--t4)' }}>
+            <Link href={localePath || '/'} className="inline-flex items-center gap-2 text-xs font-medium" style={{ color: 'var(--t4)' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M19 12H5M12 5l-7 7 7 7" /></svg>
               {locale === 'ar' ? 'العودة إلى المحمّل' : locale === 'de' ? 'Zurück zum Downloader' : 'Back to downloader'}
             </Link>
@@ -108,7 +74,7 @@ export default async function DownloadTikTokOnIphone({ params }: Props) {
 
           <section className="w-full max-w-2xl mb-12 text-center">
             <p className="text-sm mb-4" style={{ color: 'var(--t3)' }}>{t('ctaText')}</p>
-            <Link href={`${localePath}/`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
+            <Link href={localePath || '/'} className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%)' }}>
               {t('ctaButton')}
             </Link>
           </section>
@@ -169,7 +135,7 @@ export default async function DownloadTikTokOnIphone({ params }: Props) {
 
         <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
-            {[{ href: `${localePath}/`, label: locale === 'ar' ? 'المحمّل' : locale === 'de' ? 'Downloader' : 'Downloader' }, { href: `${localePath}/tools`, label: locale === 'ar' ? 'الأدوات' : 'Tools' }, { href: `${localePath}/about`, label: locale === 'ar' ? 'عن التطبيق' : locale === 'de' ? 'Über uns' : 'About' }, { href: '/privacy', label: locale === 'ar' ? 'الخصوصية' : locale === 'de' ? 'Datenschutz' : 'Privacy' }, { href: '/terms', label: locale === 'ar' ? 'الشروط' : locale === 'de' ? 'Nutzungsbedingungen' : 'Terms' }].map(({ href, label }) => (
+            {[{ href: localePath || '/', label: locale === 'ar' ? 'المحمّل' : locale === 'de' ? 'Downloader' : 'Downloader' }, { href: `${localePath}/tools`, label: locale === 'ar' ? 'الأدوات' : 'Tools' }, { href: `${localePath}/guide`, label: tNav('allGuides') }, { href: `${localePath}/about`, label: locale === 'ar' ? 'عن التطبيق' : locale === 'de' ? 'Über uns' : 'About' }, { href: '/privacy', label: locale === 'ar' ? 'الخصوصية' : locale === 'de' ? 'Datenschutz' : 'Privacy' }, { href: '/terms', label: locale === 'ar' ? 'الشروط' : locale === 'de' ? 'Nutzungsbedingungen' : 'Terms' }].map(({ href, label }) => (
               <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t4)' }}>{label}</Link>
             ))}
           </nav>

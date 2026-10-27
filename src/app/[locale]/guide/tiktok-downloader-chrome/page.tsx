@@ -1,75 +1,42 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { article, breadcrumbs, faqPage } from '@/lib/schema'
+import { pageDates } from '@/lib/content-dates'
+import JsonLd from '@/components/JsonLd'
+import GuideFaq from '@/components/GuideFaq'
 import Link from 'next/link'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { notFound } from 'next/navigation'
 import { Separator } from '@/components/ui/separator'
 
-const BASE = 'https://tokdown.org'
-
 // English-only guide: no /de or /ar translation exists, so those URLs must 404.
 type Props = { params: Promise<{ locale: string }> }
 const SLUG = '/guide/tiktok-downloader-chrome'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  locale: 'en',
+  path: SLUG,
   title: 'TikTok Downloader for Chrome – No Extension',
-  description: 'How to download TikTok videos in Google Chrome — no extension needed. Use TokDown directly in Chrome on Windows, Mac, or Android. Free, HD, no watermark.',
-  alternates: { canonical: `${BASE}${SLUG}` },
-  openGraph: {
-    images: [OG_IMAGE],
-    title: 'TikTok Downloader for Chrome — Download TikTok Videos in Chrome (2026)',
-    description: 'Download any TikTok video in Chrome without an extension. Free, HD, no watermark. Works on Windows, Mac, and Android Chrome.',
-    url: `${BASE}${SLUG}`,
-  },
-}
+  description: 'Download TikTok videos in Google Chrome without installing an extension: paste the link, save the MP4, and see why web tools beat risky Chrome add-ons.',
+  translated: false,
+  ogType: 'article',
+})
 
+// Rendered visibly by <GuideFaq> and mirrored in FAQPage JSON-LD.
+const FAQ = [
+  { q: 'Do I need a Chrome extension to download TikTok?', a: 'No. TokDown is a web app that works directly in Chrome without any extension or plugin. Just open tokdown.org, paste the link, and download.' },
+  { q: 'Where does Chrome save downloaded TikTok videos?', a: 'Chrome saves downloads to your default Downloads folder (C:\\Users\\YourName\\Downloads on Windows, ~/Downloads on Mac). You can change this in Chrome Settings → Downloads.' },
+  { q: 'Is a TikTok downloader Chrome extension safe?', a: 'Some are, but an extension can usually read and change the pages you visit, so a badly made one, or one that is later sold to a new owner, can inject ads or track you. A website needs no permissions at all: paste the link in a normal tab and Chrome saves the MP4 like any other download.' },
+  { q: 'Does TokDown work on Chrome for Android?', a: 'Yes. Open tokdown.org in Chrome on Android, paste the TikTok link, and tap Download. The video saves to your Downloads folder and is accessible from your Gallery app.' },
+  { q: 'Is there a TikTok Chrome extension?', a: 'There are third-party TikTok downloader extensions, but most require broad browser permissions and pose privacy risks. TokDown requires no extension — it is a website, so it cannot access your browser data or other tabs.' },
+]
+
+const dates = pageDates(SLUG)
 const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'How to Download TikTok Videos in Google Chrome (2026)',
-    description: 'Step-by-step guide to downloading TikTok videos in Chrome — no extension required, HD quality, no watermark.',
-    url: `${BASE}${SLUG}`,
-    datePublished: '2026-06-01',
-    dateModified: '2026-06-10',
-    author: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    publisher: { '@type': 'Organization', name: 'TokDown', url: BASE, logo: { '@type': 'ImageObject', url: `${BASE}/icon.png` } },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}${SLUG}` },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: 'How to download TikTok videos in Google Chrome',
-    totalTime: 'PT1M',
-    tool: [{ '@type': 'HowToTool', name: 'Google Chrome browser' }, { '@type': 'HowToTool', name: 'TokDown (tokdown.org)' }],
-    step: [
-      { '@type': 'HowToStep', position: 1, name: 'Copy the TikTok link', text: 'Open TikTok and tap the Share icon on the video. Tap "Copy link".' },
-      { '@type': 'HowToStep', position: 2, name: 'Open TokDown in Chrome', text: 'Open a new Chrome tab and navigate to tokdown.org.' },
-      { '@type': 'HowToStep', position: 3, name: 'Paste and download', text: 'Paste the TikTok link into the input field and press Download.' },
-      { '@type': 'HowToStep', position: 4, name: 'Choose quality and save', text: 'Select "HD · No Watermark" and Chrome will save the MP4 to your Downloads folder.' },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Do I need a Chrome extension to download TikTok?', acceptedAnswer: { '@type': 'Answer', text: 'No. TokDown is a web app that works directly in Chrome without any extension or plugin. Just open tokdown.org, paste the link, and download.' } },
-      { '@type': 'Question', name: 'Where does Chrome save downloaded TikTok videos?', acceptedAnswer: { '@type': 'Answer', text: 'Chrome saves downloads to your default Downloads folder (C:\\Users\\YourName\\Downloads on Windows, ~/Downloads on Mac). You can change this in Chrome Settings → Downloads.' } },
-      { '@type': 'Question', name: 'Why does Chrome save the video as .webm instead of .mp4?', acceptedAnswer: { '@type': 'Answer', text: 'Some Chromium versions save video files with a .webm extension even when the content is MP4. Simply rename the file extension from .webm to .mp4 — it will play normally in any media player.' } },
-      { '@type': 'Question', name: 'Does TokDown work on Chrome for Android?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Open tokdown.org in Chrome on Android, paste the TikTok link, and tap Download. The video saves to your Downloads folder and is accessible from your Gallery app.' } },
-      { '@type': 'Question', name: 'Is there a TikTok Chrome extension?', acceptedAnswer: { '@type': 'Answer', text: 'There are third-party TikTok downloader extensions, but most require broad browser permissions and pose privacy risks. TokDown requires no extension — it is a website, so it cannot access your browser data or other tabs.' } },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: `${BASE}/guide` },
-      { '@type': 'ListItem', position: 3, name: 'TikTok Downloader Chrome', item: `${BASE}${SLUG}` },
-    ],
-  },
+  article({ locale: 'en', path: SLUG, headline: 'How to Download TikTok Videos in Google Chrome (2026)', description: 'Step-by-step guide to downloading TikTok videos in Chrome — no extension required, HD quality, no watermark.', datePublished: dates.published, dateModified: dates.modified }),
+  faqPage(FAQ),
+  breadcrumbs('en', [{ name: 'Guides', path: '/guide' }, { name: 'TikTok Downloader for Chrome', path: SLUG }]),
 ]
 
 const STEPS = [
@@ -84,7 +51,7 @@ const TIPS = [
   { title: 'No extension needed — ever', body: 'TokDown is a website, not a browser extension. Extensions require broad permissions ("read and change all your data on websites you visit"). TokDown has no such access — it only runs on its own page.' },
   { title: 'Change Chrome\'s default download folder', body: 'Go to Chrome Settings → Downloads → Change the location. Set it to your Desktop or a dedicated Videos folder so downloaded TikToks are easy to find.' },
   { title: 'Chrome on Android saves to Downloads', body: 'On Android Chrome, files save to the device\'s Downloads folder. Open the Files app or your Gallery app to find and play the video after downloading.' },
-  { title: '.webm vs .mp4 in Chrome', body: 'Older Chromium versions may label the file as .webm even though it is an MP4 container. Rename the extension to .mp4 and it plays correctly in VLC, Windows Media Player, or any other video player.' },
+  { title: 'Choose where Chrome saves files', body: 'Chrome → Settings → Downloads → turn on "Ask where to save each file before downloading" if you want to file TikToks straight into a folder instead of Downloads.' },
 ]
 
 export default async function TikTokDownloaderChrome({ params }: Props) {
@@ -94,9 +61,7 @@ export default async function TikTokDownloaderChrome({ params }: Props) {
 
   return (
     <>
-      {jsonLd.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={jsonLd} />
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
           <div className="w-full max-w-2xl mb-8">
@@ -156,6 +121,10 @@ export default async function TikTokDownloaderChrome({ params }: Props) {
 
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
+          <GuideFaq title="Frequently asked questions" faq={FAQ} />
+
+          <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
+
           <section className="w-full max-w-2xl mb-4" aria-labelledby="related-h">
             <h2 id="related-h" className="text-xl font-bold mb-6" style={{ color: 'var(--t1)' }}>Related guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -180,7 +149,7 @@ export default async function TikTokDownloaderChrome({ params }: Props) {
 
         <footer className="relative z-10 border-t text-center py-6 px-4" style={{ borderColor: 'var(--line)', color: 'var(--t4)' }}>
           <nav className="flex flex-wrap justify-center gap-5 mb-3">
-            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
+            {[{ href: '/', label: 'Downloader' }, { href: '/tools', label: 'All tools' }, { href: '/guide', label: 'All guides' }, { href: '/about', label: 'About' }, { href: '/guide/download-tiktok-without-watermark', label: 'No Watermark Guide' }, { href: '/guide/tiktok-to-mp3', label: 'TikTok to MP3' }, { href: '/privacy', label: 'Privacy' }, { href: '/terms', label: 'Terms' }].map(({ href, label }) => (
               <Link key={href} href={href} className="text-xs hover:underline" style={{ color: 'var(--t4)' }}>{label}</Link>
             ))}
           </nav>
