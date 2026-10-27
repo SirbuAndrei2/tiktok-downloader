@@ -66,7 +66,7 @@ export default function TermsPage() {
               </p>
               <p>
                 <strong style={{ color: 'white' }}>We do not store any video or audio files on our servers.</strong>{' '}
-                All media is streamed directly from TikTok's infrastructure to the user's device.
+                Media is streamed from the source platform's servers through our server to the user's device in a single pass and is never written to disk.
               </p>
             </>
           ),

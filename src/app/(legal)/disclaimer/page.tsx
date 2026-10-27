@@ -6,7 +6,7 @@ const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
   title: 'Disclaimer',
-  description: 'Disclaimer for TikTok Downloader. This tool is independent of TikTok and ByteDance. Read our limitations of liability, user responsibilities, and copyright notice.',
+  description: 'TokDown disclaimer: independent of TikTok, ByteDance, Meta, X and Google. Limits of liability, user responsibilities and copyright notice.',
   alternates: { canonical: `${BASE}/disclaimer` },
   robots: { index: true, follow: true },
   openGraph: {
@@ -67,8 +67,8 @@ export default function DisclaimerPage() {
               </p>
               <p>
                 The Service functions as a technical intermediary: it retrieves publicly accessible
-                metadata and direct media URLs from TikTok's own servers, and streams that content
-                directly from TikTok's infrastructure to the user's device at the user's request.
+                metadata and media URLs from the source platform, and streams that content from the
+                platform's servers through our server to the user's device at the user's request.
                 No copy of any video or audio file is saved on our servers at any point.
               </p>
             </>

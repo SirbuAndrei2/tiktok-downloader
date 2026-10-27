@@ -6,7 +6,7 @@ const BASE = 'https://tokdown.org'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for TikTok Downloader. We do not store your videos or personal data. Learn exactly what we collect, how we use it, and your GDPR rights.',
+  description: 'TokDown privacy policy: we do not store your videos. What we log, which ad and analytics partners we use (Adsterra, Google Analytics) and your GDPR rights.',
   alternates: { canonical: `${BASE}/privacy` },
   robots: { index: true, follow: true },
   openGraph: {
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
               <p className="mt-2"><strong style={{ color: 'white' }}>Data collected automatically:</strong></p>
               <ul className="list-disc pl-4 space-y-1">
                 <li><strong style={{ color: 'white' }}>Server logs</strong> — standard web server logs may include your IP address, browser user-agent, referrer URL, and timestamp. Logs are retained for up to 30 days for security and abuse prevention, then automatically deleted.</li>
-                <li><strong style={{ color: 'white' }}>Cookies</strong> — we do not set first-party cookies. Third-party advertising partners (Google AdSense) may set cookies on your device as described in Section 5.</li>
+                <li><strong style={{ color: 'white' }}>Cookies and similar storage</strong> — Google Analytics 4 may set first-party cookies to measure visits (in the EEA, the UK and Switzerland only after you accept), the cookie banner stores your choice in your browser&apos;s local storage, and our advertising partner Adsterra may set its own cookies or identifiers, as described in Section 5.</li>
               </ul>
             </>
           ),
@@ -102,11 +102,29 @@ export default function PrivacyPage() {
           ),
         },
         {
-          title: '5. Third-Party Advertising & Cookies (Google AdSense)',
+          title: '5. Advertising, Analytics & Cookies',
           content: (
             <>
               <p>
-                This Service uses Google AdSense to serve advertisements. Google AdSense is operated by Google LLC and is subject to Google&apos;s Privacy Policy at{' '}
+                <strong style={{ color: 'white' }}>Advertising (Adsterra).</strong> The Service is funded by ads served by Adsterra: display banners,
+                a native ad unit, a &quot;social bar&quot; and a pop-under that is loaded only after a download result is shown. Adsterra and the
+                advertisers it works with may set cookies or similar identifiers and receive your IP address and browser details in order to
+                deliver, limit and measure ads. Their processing is governed by the{' '}
+                <a
+                  href="https://adsterra.com/privacy-policy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                  style={{ color: 'var(--brand-pink)' }}
+                >
+                  Adsterra Privacy Policy
+                </a>.
+              </p>
+              <p>
+                <strong style={{ color: 'white' }}>Analytics (Google Analytics 4).</strong> We use Google Analytics 4, operated by Google LLC, to
+                count visits and see which tools are used. Google Consent Mode v2 is enabled: in the EEA, the United Kingdom and Switzerland,
+                analytics and advertising storage is denied by default and Google receives only cookieless pings until you click
+                &quot;Accept&quot; in the cookie banner. Google&apos;s processing is described at{' '}
                 <a
                   href="https://policies.google.com/privacy"
                   target="_blank"
@@ -118,36 +136,27 @@ export default function PrivacyPage() {
                 </a>.
               </p>
               <p>
-                <strong style={{ color: 'white' }}>Google AdSense Disclosures &amp; Cookie Policy:</strong>
-              </p>
-              <ul className="list-disc pl-4 space-y-1">
-                <li>Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to this website or other websites on the Internet.</li>
-                <li>Google&apos;s use of advertising cookies enables it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.</li>
-                <li>
-                  Users may opt out of personalized advertising by visiting Google Ads Settings at{' '}
-                  <a
-                    href="https://adssettings.google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                    style={{ color: 'var(--brand-pink)' }}
-                  >
-                    adssettings.google.com
-                  </a>
-                  . Alternatively, users can opt out of a third-party vendor&apos;s use of cookies for personalized advertising by visiting{' '}
-                  <a
-                    href="https://www.aboutads.info/choices/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                    style={{ color: 'var(--brand-pink)' }}
-                  >
-                    www.aboutads.info/choices/
-                  </a>.
-                </li>
-              </ul>
-              <p className="mt-2">
-                We also comply with Google&apos;s EU User Consent policy and the IAB Transparency and Consent Framework (TCF) where applicable.
+                <strong style={{ color: 'white' }}>Your choices.</strong> You can block or delete cookies in your browser settings at any time, use a
+                content blocker, or opt out of interest-based advertising from participating vendors at{' '}
+                <a
+                  href="https://www.aboutads.info/choices/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                  style={{ color: 'var(--brand-pink)' }}
+                >
+                  www.aboutads.info/choices/
+                </a>
+                {' '}and{' '}
+                <a
+                  href="https://www.youronlinechoices.eu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                  style={{ color: 'var(--brand-pink)' }}
+                >
+                  www.youronlinechoices.eu
+                </a>.
               </p>
             </>
           ),

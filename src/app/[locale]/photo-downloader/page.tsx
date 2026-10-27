@@ -42,7 +42,7 @@ function SectionIntro({ id, eyebrow, title, subtitle }: { id: string; eyebrow: s
     <BlurFade inView className="mb-10 flex flex-col gap-4">
       <span className="eyebrow">{eyebrow}</span>
       <h2 id={id} className="text-4xl sm:text-5xl lg:text-6xl">{title}</h2>
-      <p className="max-w-xl text-base font-medium sm:text-lg" style={{ color: 'var(--muted)' }}>{subtitle}</p>
+      <p className="max-w-xl text-base font-medium sm:text-lg" style={{ color: 'var(--t3)' }}>{subtitle}</p>
     </BlurFade>
   )
 }
@@ -134,7 +134,7 @@ export default async function PhotoDownloaderPage({ params }: Props) {
                   </h1>
                 </BlurFade>
                 <BlurFade delay={0.2}>
-                  <p className="max-w-lg text-lg font-medium leading-relaxed" style={{ color: 'var(--muted)' }}>{t('subtitle')}</p>
+                  <p className="max-w-lg text-lg font-medium leading-relaxed" style={{ color: 'var(--t3)' }}>{t('subtitle')}</p>
                 </BlurFade>
                 <BlurFade delay={0.28}>
                   <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
@@ -160,7 +160,7 @@ export default async function PhotoDownloaderPage({ params }: Props) {
                     <Downloader variant="photo" />
                   </div>
                 </BlurFade>
-                <p className="mt-5 text-center text-sm font-semibold" style={{ color: 'var(--muted)' }}>{t('heroNote')}</p>
+                <p className="mt-5 text-center text-sm font-semibold" style={{ color: 'var(--t3)' }}>{t('heroNote')}</p>
               </div>
             </div>
           </section>
@@ -175,7 +175,7 @@ export default async function PhotoDownloaderPage({ params }: Props) {
                   <li className="cut-card cut-card--hover relative flex w-full flex-col gap-4 p-7" style={{ background: i === 1 ? 'var(--sky)' : 'var(--white)' }}>
                     <span className="numeral">0{i + 1}</span>
                     <h3 className="text-2xl sm:text-3xl">{s.title}</h3>
-                    <p className="text-sm font-medium leading-relaxed sm:text-base" style={{ color: 'var(--muted)' }}>{s.desc}</p>
+                    <p className="text-sm font-medium leading-relaxed sm:text-base" style={{ color: 'var(--t3)' }}>{s.desc}</p>
                   </li>
                 </BlurFade>
               ))}
@@ -199,7 +199,7 @@ export default async function PhotoDownloaderPage({ params }: Props) {
                       <li className={`card card--hover flex w-full flex-col gap-4 p-6 ${i === 0 ? 'card--lime' : ''}`}>
                         <span className="icon-tile"><Icon className="size-5" aria-hidden /></span>
                         <span className="text-lg font-semibold tracking-tight">{title}</span>
-                        <span className="text-sm font-medium leading-relaxed" style={{ color: 'var(--muted)' }}>{desc}</span>
+                        <span className="text-sm font-medium leading-relaxed" style={{ color: 'var(--t3)' }}>{desc}</span>
                       </li>
                     </BlurFade>
                   )
@@ -225,7 +225,7 @@ export default async function PhotoDownloaderPage({ params }: Props) {
                       <AccordionTrigger className="items-center py-4 text-left hover:no-underline">
                         <h3 className="m-0 pr-4 text-lg sm:text-xl">{q}</h3>
                       </AccordionTrigger>
-                      <AccordionContent className="pb-5 text-sm font-medium leading-relaxed sm:text-base" style={{ color: 'var(--muted)' }}>
+                      <AccordionContent className="pb-5 text-sm font-medium leading-relaxed sm:text-base" style={{ color: 'var(--t3)' }}>
                         {a}
                       </AccordionContent>
                     </AccordionItem>

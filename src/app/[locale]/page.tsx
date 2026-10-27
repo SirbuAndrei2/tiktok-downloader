@@ -6,7 +6,6 @@ import { ArrowRight, AtSign, Ban, Check, Clapperboard, Film, ImageDown, Images, 
 import Downloader from '@/components/Downloader'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
-import Testimonials, { type Testimonial } from '@/components/Testimonials'
 import CtaBand from '@/components/CtaBand'
 import { buildFooterColumns } from '@/lib/nav'
 import AdsterraNative from '@/components/ads/AdsterraNative'
@@ -66,7 +65,7 @@ const COMPARISONS = [
   { tokdown: true, others: true },
   { tokdown: true, others: false },
   { tokdown: true, others: true },
-  { tokdown: true, others: false },
+  { tokdown: true, others: true },
 ]
 
 function YesNo({ yes }: { yes: boolean }) {
@@ -105,7 +104,6 @@ export default async function Page({ params }: Props) {
   const comparisons = t.raw('comparisons') as { label: string }[]
   const faq = t.raw('faq') as { q: string; a: string }[]
   const facts = t.raw('facts') as { value: string; label: string }[]
-  const testimonials = t.raw('testimonials') as Testimonial[]
   const steps = [
     { title: t('step1'), desc: t('step1Desc') },
     { title: t('step2'), desc: t('step2Desc') },
@@ -305,14 +303,6 @@ export default async function Page({ params }: Props) {
                 </BlurFade>
               ))}
             </div>
-          </section>
-
-          {/* ── Testimonials ───────────────────────────────────── */}
-          <section className="relative mt-24 w-full overflow-hidden py-20" style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }} aria-labelledby="voices-h">
-            <div className="mx-auto w-full max-w-6xl px-5">
-              <SectionIntro id="voices-h" eyebrow="★ ★ ★ ★ ★" title={t('testimonialsTitle')} subtitle={t('testimonialsSubtitle')} align="center" />
-            </div>
-            <Testimonials items={testimonials} />
           </section>
 
           {/* ── Why TokDown ────────────────────────────────────── */}

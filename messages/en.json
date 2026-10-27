@@ -68,7 +68,7 @@
   "Footer": {
     "tagline": "For personal use only. We do not store any videos. Not affiliated with TikTok or ByteDance.",
     "copyright": "© {year} TikTok Downloader",
-    "notAffiliated": "© {year} TokDown. Not affiliated with TikTok or ByteDance.",
+    "notAffiliated": "© {year} TokDown. Not affiliated with TikTok, ByteDance, Meta, X or Google.",
     "toolsHeading": "Tools",
     "guidesHeading": "Guides",
     "legalHeading": "Legal",
@@ -77,7 +77,7 @@
   "Common": {
     "backToDownloader": "Back to downloader",
     "guideUpdated": "Guide · Updated May 2026",
-    "tryItNow": "Try it now — no login, no limits.",
+    "tryItNow": "Try it now — no login, no sign-up.",
     "relatedGuides": "Related guides",
     "language": "Language",
     "runsLocally": "Runs in your browser · nothing is uploaded",
@@ -107,8 +107,6 @@
     "h1": "Download TikTok",
     "h1Accent": "Without Watermark",
     "subtitle": "Free, HD quality, no login — works on iPhone, Android, PC and Mac. Also extract audio as MP3.",
-    "introParagraph": "TokDown lets you download any TikTok video without watermark in HD quality — straight to your phone or PC. Paste any public TikTok link, pick MP4 or MP3, and save it in seconds. No app, no login, no limits. Works on iPhone, Android, Windows and Mac.",
-    "introStrong": "download any TikTok video without watermark",
     "step1": "Copy TikTok link",
     "step2": "Paste & Download",
     "step3": "Save HD video",
@@ -119,7 +117,7 @@
     "featuresTitle": "Everything you need",
     "featuresSubtitle": "Free tools, zero compromise",
     "whyTitle": "Why TokDown?",
-    "whySubtitle": "Most TikTok downloaders redirect you through ad pages or ask you to log in. TokDown does neither.",
+    "whySubtitle": "Most TikTok downloaders stop at the video. TokDown also saves photo posts, X and Facebook clips, and runs a compressor and GIF maker in your browser.",
     "whyTableFeature": "Feature",
     "whyTableTokDown": "TokDown",
     "whyTableOthers": "Others",
@@ -174,7 +172,7 @@
         "label": "No account or login"
       },
       {
-        "label": "No forced redirects"
+        "label": "Compressor & GIF maker, no upload"
       },
       {
         "label": "Works on all devices"
@@ -190,7 +188,7 @@
       },
       {
         "q": "Is TokDown free to use?",
-        "a": "Yes — completely free with no registration, no account, and no download limits. We have no hidden fees or premium plans."
+        "a": "Yes. There is no registration, no account and no premium plan. The site is paid for by ads. When the upstream TikTok service is busy you may be asked to retry in a few minutes."
       },
       {
         "q": "Can I download TikTok audio as MP3?",
@@ -230,7 +228,7 @@
       },
       {
         "q": "Can I download TikTok slideshows or photo posts?",
-        "a": "TikTok slideshows (image-based posts) work differently from videos. Support for them depends on the post type. Video posts always work; image slideshows may vary."
+        "a": "Yes. Paste the link of a photo post or slideshow into the TikTok photo downloader (tokdown.org/photo-downloader) and save every image in full size, one by one or all at once, plus the sound as MP3."
       },
       {
         "q": "Is it safe to download TikTok videos?",
@@ -254,7 +252,7 @@
       },
       {
         "q": "Is downloading TikTok videos legal?",
-        "a": "Downloading TikTok videos for personal, non-commercial use is generally legal in most countries. What is not permitted — and can expose you to legal risk — is re-uploading, redistributing, or monetising someone else's content without their explicit permission. TokDown is intended for personal use only."
+        "a": "It depends on your country and on what you do with the file. Many countries allow a private copy for personal viewing, but TikTok's terms restrict downloading outside its own features, and re-uploading, redistributing or monetising someone else's video without permission is copyright infringement almost everywhere. Use TokDown for personal use and for your own content."
       },
       {
         "q": "Can I download TikTok Live streams?",
@@ -293,80 +291,34 @@
     "toolsTitle": "Everything TokDown does",
     "toolsSubtitle": "One tool, several ways to save what you love.",
     "toolsCta": "See all tools",
-    "testimonialsTitle": "What people say",
-    "testimonialsSubtitle": "Notes from people who use TokDown every week.",
-    "testimonials": [
-      {
-        "name": "Elena M.",
-        "meta": "Content creator · Bucharest",
-        "rating": 5,
-        "avatar": "elena-marin",
-        "quote": "I save my own drafts in HD before posting. No watermark, no app, and it works on my iPhone exactly like on my laptop."
-      },
-      {
-        "name": "Jonas W.",
-        "meta": "Teacher · Berlin",
-        "rating": 5,
-        "avatar": "jonas-weber",
-        "quote": "I use it to keep short educational clips for class. Paste, download, done. The fact that there is no login is the whole point."
-      },
-      {
-        "name": "Layla H.",
-        "meta": "Marketing · Dubai",
-        "rating": 4,
-        "avatar": "layla-hassan",
-        "quote": "The MP3 option is what sold me. I pull sounds for mood boards in seconds. Arabic interface is a nice touch too."
-      },
-      {
-        "name": "Marco R.",
-        "meta": "Dance instructor · Milan",
-        "rating": 5,
-        "avatar": "marco-rossi",
-        "quote": "Clean files, correct aspect ratio, no logo in the corner. I archive my choreography videos here every week."
-      },
-      {
-        "name": "Aisha R.",
-        "meta": "Student · Jakarta",
-        "rating": 5,
-        "avatar": "aisha-rahman",
-        "quote": "Finally one that does not send me through three ad pages. It just downloads. I recommended it to my whole class."
-      },
-      {
-        "name": "Daniel P.",
-        "meta": "Video editor · Seoul",
-        "rating": 4,
-        "avatar": "daniel-park",
-        "quote": "HD quality is genuinely the original upload. I drop the files straight into Premiere without re-encoding."
-      }
-    ],
     "ctaTitle": "Ready to save a video?",
     "ctaSubtitle": "No account. No watermark. No cost.",
     "ctaButton": "Paste your link"
   },
   "About": {
     "metaTitle": "About TokDown – Who Makes This Downloader",
-    "metaDescription": "Learn why TokDown was built: a fast, honest TikTok downloader with no redirects, no stored files, and no hidden fees. We value your privacy and your time.",
+    "metaDescription": "How TokDown works: where downloads come from, what is never stored, how ads pay for the site and how to reach us. Free tools, no account needed.",
     "h1": "About",
     "h1Accent": "TokDown",
-    "subtitle": "We built TokDown because we were tired of TikTok downloaders that waste your time with fake buttons, forced redirects, and privacy nightmares.",
+    "subtitle": "TokDown is a small set of free download and media tools. This page explains how it works, what it does not do, and how it is paid for.",
     "storyTitle": "Our story",
     "story1": "Most \"free\" TikTok downloaders have the same playbook: bury the real download button under three fake ones, redirect you through ad domains, make you solve captchas, and — some of them — even ask for your TikTok username and password. We think that is unacceptable.",
     "story2": "TokDown was built to be the tool we wished existed: fast, clean, and honest. You paste a link. You get your video. That's it.",
     "story3": "We do not store any video files on our servers. When you hit download, the file is streamed from TikTok's CDN through our server to your device without ever being saved. We keep no record of what you downloaded; standard server logs are deleted automatically after 30 days.",
     "valuesTitle": "What we stand for",
     "howTitle": "How TokDown works",
-    "how1": "When you paste a TikTok URL, TokDown resolves the video ID and fetches the available download links from TikTok's public API. We return direct links to the original video file — in the highest quality the creator uploaded — without re-encoding or compressing anything.",
+    "how1": "When you paste a link, TokDown detects the platform and asks a public source for the media: for TikTok a third-party API (TikWM), with TikTok's public video page as a fallback; for X the public data used for embedded tweets; for Facebook the public video embed. You get the file the platform serves, without re-encoding.",
     "how2": "The \"no watermark\" version is the original file as uploaded by the creator before TikTok's app overlays the logo. Both versions exist on TikTok's CDN; TokDown simply surfaces the right one.",
-    "how3": "No video data passes through our servers. Your download is a direct connection between your device and TikTok's content delivery network.",
+    "how3": "The file is streamed through our server to your device in a single pass, because platform CDNs refuse direct browser downloads; nothing is written to disk. The video compressor and the MP4 to GIF converter work differently: they run entirely in your browser and your file is never uploaded.",
     "legalTitle": "Important legal note",
     "legal": "TokDown is intended for personal, non-commercial use only. Always respect the rights of TikTok creators — downloading a video does not transfer copyright. Do not redistribute, re-upload, or monetise downloaded content without explicit permission from the original creator. TokDown is not affiliated with, endorsed by, or connected to TikTok or ByteDance in any way.",
     "contactTitle": "Contact & support",
-    "contact": "Have a question, found a bug, or need to report a DMCA issue? Reach us at support@tokdown.org. We respond within 48 hours.",
+    "contact": "Questions, bug reports or a copyright notice? Write to support@tokdown.org. Copyright notices follow the process described on our DMCA page.",
     "values": [
       {
         "icon": "🔒",
         "title": "Privacy first",
-        "desc": "We never store the videos you download. Files go directly from TikTok's servers to your device. We have no database of your downloads."
+        "desc": "We never store the videos you download: files are streamed through our server without being saved, and we keep no database of your downloads."
       },
       {
         "icon": "⚡",
@@ -375,13 +327,13 @@
       },
       {
         "icon": "🚫",
-        "title": "No dark patterns",
-        "desc": "No fake download buttons, no forced redirects to ad sites, no captchas before every download. Just a clean, honest tool."
+        "title": "Honest about ads",
+        "desc": "No fake download buttons and no captchas. The site is paid for by ads: banners, a social bar and one pop-under that opens only after a download result is shown, never in place of the real button."
       },
       {
         "icon": "🆓",
         "title": "Genuinely free",
-        "desc": "TokDown is free with no rate limits, no premium tier, and no hidden fees. We cover costs through non-intrusive advertising."
+        "desc": "No premium tier and no hidden fees. Upstream services can limit busy periods; when that happens you get a clear message and a retry time instead of a fake button."
       }
     ]
   },
@@ -391,7 +343,7 @@
     "h1": "How to Download TikTok Without Watermark",
     "subtitle": "A complete, honest walkthrough for iPhone, Android, Windows and Mac — including fixes for the most common problems.",
     "stepsTitle": "Step-by-step instructions",
-    "ctaText": "Ready? Try it now — no login, no limits.",
+    "ctaText": "Ready? Try it now — no login, no sign-up.",
     "ctaButton": "Download a TikTok video →",
     "platformsTitle": "Saving to your device — by platform",
     "troubleshootTitle": "Troubleshooting common problems",
@@ -399,7 +351,7 @@
     "why1": "When you save a video using TikTok's built-in \"Save video\" button, TikTok overlays a watermark — your username and the TikTok logo — before saving it to your camera roll. This is intentional: it drives people who see the video elsewhere back to TikTok.",
     "why2": "The original video file (without watermark) is still hosted on TikTok's CDN. TokDown fetches that original file directly, bypassing the watermark entirely. The process is the same technical mechanism that TikTok's own embedding feature uses.",
     "legalTitle": "Is it legal?",
-    "legal": "Downloading TikTok videos for personal, non-commercial use is generally accepted. It is similar to taking a screenshot. What is not allowed — and can get you in legal trouble — is redistributing, re-uploading, or monetising downloaded videos without the creator's explicit permission. Always credit the original creator and respect their copyright.",
+    "legal": "Saving a public TikTok for private viewing is tolerated in many countries (for example as a private copy), but TikTok's terms restrict downloading outside its own features, and the rules differ by country. What is clearly not allowed is redistributing, re-uploading or monetising downloaded videos without the creator's explicit permission. Always credit the original creator and respect their copyright.",
     "problemLabel": "Problem:",
     "fixLabel": "Fix:",
     "relatedGuide1Title": "How to Convert TikTok to MP3",
@@ -460,8 +412,8 @@
         "fix": "The creator has turned off downloads in their TikTok account settings. TokDown cannot override this restriction, as it is enforced server-side by TikTok."
       },
       {
-        "problem": "File saves as .webm instead of .mp4",
-        "fix": "This happens in some Chromium-based browsers. Rename the extension from .webm to .mp4 — the file will play normally. Or try downloading in Safari."
+        "problem": "The file won't play after downloading",
+        "fix": "The download most likely stopped early. Check the file size (an HD TikTok is usually several MB, not a few KB) and download it again on a stable connection. TokDown always delivers MP4 (H.264), which plays in every current player."
       }
     ]
   },
@@ -537,8 +489,8 @@
         "fix": "Some TikTok videos are silent (original creator did not use audio). Confirm the video has audio before downloading. Also check your device volume."
       },
       {
-        "problem": "File saves as .m4a instead of .mp3",
-        "fix": "This happens in Safari on iPhone. The audio is the same quality — just rename the extension to .mp3 and it will work in any player."
+        "problem": "The MP3 file won't open",
+        "fix": "Check that the download finished: a TikTok sound is usually a few hundred KB to a few MB, so a tiny file means the connection dropped. On iPhone, open it from Files → Downloads; the Music app cannot import files directly."
       },
       {
         "problem": "Audio cuts off early",
@@ -584,16 +536,16 @@
         "body": "TikTok's built-in browser blocks downloads. Always open tokdown.org in Safari (the blue compass icon) — not inside TikTok itself."
       },
       {
-        "title": "iOS 16+ has a Download button in Safari",
-        "body": "On iOS 16 and later, Safari shows a download progress indicator in the toolbar. Tap it to see your downloaded file immediately."
+        "title": "Safari has its own download manager",
+        "body": "Since iOS 13, Safari shows a downloads button (a circled arrow) in the address bar while a file is downloading. Tap it to open the file as soon as it finishes."
       },
       {
         "title": "Set your default download location",
         "body": "Go to Settings → Safari → Downloads and set it to \"On My iPhone\" so files are easy to find in the Files app."
       },
       {
-        "title": "No daily limit",
-        "body": "TokDown has no download limit. Open each TikTok link in a new Safari tab and move all files to Camera Roll afterward."
+        "title": "Saving several videos",
+        "body": "Open each TikTok link in a new Safari tab, download them one after another, then move them to Camera Roll in one go. If downloads start failing after a burst, wait a few minutes: the upstream TikTok service limits busy periods."
       }
     ],
     "troubleshoot": [
@@ -606,8 +558,8 @@
         "fix": "Scroll down in the share sheet — the option may be below the fold. Also make sure the file is a valid .mp4 and that Photos access is granted in Settings → Privacy → Photos."
       },
       {
-        "problem": "Video file saves as .webm or won't play",
-        "fix": "On iPhone this is rare. Rename the extension to .mp4 in the Files app: long-press the file → Rename → change the extension."
+        "problem": "The video won't play or shows a blank preview",
+        "fix": "The download probably stopped early. Check the file size in the Files app (a full HD TikTok is usually several MB) and download it again on Wi-Fi."
       },
       {
         "problem": "Download is very slow",
