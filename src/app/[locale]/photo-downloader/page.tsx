@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { breadcrumbs, faqPage, webApplication } from '@/lib/schema'
+import JsonLd from '@/components/JsonLd'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import { ArrowRight, Check, Film, Images, LayoutGrid, Music, type LucideIcon } from 'lucide-react'
@@ -13,7 +15,6 @@ import { buildFooterColumns } from '@/lib/nav'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
-const BASE = 'https://tokdown.org'
 const SLUG = '/photo-downloader'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -22,17 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'PhotoDownloader' })
-  const localePath = locale === 'en' ? '' : `/${locale}`
-  return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
-    keywords: t.raw('metaKeywords') as string[],
-    alternates: {
-      canonical: `${BASE}${localePath}${SLUG}`,
-      languages: { 'en': `${BASE}${SLUG}`, 'de': `${BASE}/de${SLUG}`, 'ar': `${BASE}/ar${SLUG}`, 'x-default': `${BASE}${SLUG}` },
-    },
-    openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${SLUG}` },
-  }
+  return pageMetadata({ locale, path: SLUG, title: t('metaTitle'), description: t('metaDescription'), keywords: t.raw('metaKeywords') as string[] })
 }
 
 const FEATURE_ICONS: LucideIcon[] = [Images, LayoutGrid, Film, Music]
@@ -58,8 +49,6 @@ export default async function PhotoDownloaderPage({ params }: Props) {
 
   const isDefault = locale === 'en'
   const localePath = isDefault ? '' : `/${locale}`
-  const pageUrl = `${BASE}${localePath}${SLUG}`
-  const homeUrl = localePath ? `${BASE}${localePath}` : `${BASE}/`
 
   const faq = t.raw('faq') as { q: string; a: string }[]
   const features = t.raw('features') as { title: string; desc: string }[]
@@ -70,43 +59,16 @@ export default async function PhotoDownloaderPage({ params }: Props) {
   ]
   const trust = [t('trust1'), t('trust2'), t('trust3'), t('trust4')]
 
+  const appName = t('metaTitle').split(/ [–—|] /)[0]
   const schemas = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'TokDown — TikTok Photo Downloader',
-      url: pageUrl,
-      description: 'Free online tool to download TikTok photo posts and slideshows: every slide in full resolution, the slideshow as MP4, and the sound as MP3.',
-      applicationCategory: 'UtilitiesApplication',
-      operatingSystem: 'Any',
-      browserRequirements: 'Requires JavaScript',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      creator: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: t('stepsTitle'),
-      totalTime: 'PT1M',
-      step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.desc })),
-    },
-    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'TokDown', item: homeUrl },
-        { '@type': 'ListItem', position: 2, name: t('h1'), item: pageUrl },
-      ],
-    },
+    webApplication({ locale, path: SLUG, name: appName, description: t('metaDescription'), features: trust }),
+    faqPage(faq),
+    breadcrumbs(locale, [{ name: tNav('tools'), path: '/tools' }, { name: appName, path: SLUG }]),
   ]
-
 
   return (
     <>
-      {schemas.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={schemas} />
 
       <div className="relative flex min-h-screen w-full flex-col overflow-x-clip">
         <SiteHeader
@@ -147,7 +109,7 @@ export default async function PhotoDownloaderPage({ params }: Props) {
                   </ul>
                 </BlurFade>
                 <BlurFade delay={0.34}>
-                  <Link href={`${localePath}/`} className="link-ink inline-flex items-center gap-2 text-sm font-bold">
+                  <Link href={localePath || '/'} className="link-ink inline-flex items-center gap-2 text-sm font-bold">
                     {t('videoLink')} <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
                   </Link>
                 </BlurFade>

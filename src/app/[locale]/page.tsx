@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import { OG_IMAGE } from '@/lib/seo'
+import { pageMetadata } from '@/lib/seo'
+import { faqPage, webApplication } from '@/lib/schema'
+import JsonLd from '@/components/JsonLd'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import { ArrowRight, AtSign, Ban, Check, Clapperboard, Film, ImageDown, Images, LockOpen, Minimize2, Music, Smartphone, X, Zap, type LucideIcon } from 'lucide-react'
@@ -7,14 +9,12 @@ import Downloader from '@/components/Downloader'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import CtaBand from '@/components/CtaBand'
-import { buildFooterColumns } from '@/lib/nav'
+import { EN_GUIDES, buildFooterColumns } from '@/lib/nav'
 import AdsterraNative from '@/components/ads/AdsterraNative'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-
-const BASE = 'https://tokdown.org'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -22,37 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'Home' })
-  const isDefault = locale === 'en'
-  const localePath = isDefault ? '' : `/${locale}`
-
-  return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
-    keywords: t.raw('metaKeywords') as string[],
-    alternates: {
-      // No trailing slash on locale roots: /de/ 308-redirects to /de, and a
-      // canonical that redirects is ignored by Google.
-      canonical: localePath ? `${BASE}${localePath}` : `${BASE}/`,
-      languages: { 'en': `${BASE}/`, 'de': `${BASE}/de`, 'ar': `${BASE}/ar`, 'x-default': `${BASE}/` },
-    },
-    openGraph: {
-      images: [OG_IMAGE],
-      title: t('metaTitle'),
-      description: t('metaDescription'),
-      url: localePath ? `${BASE}${localePath}` : `${BASE}/`,
-    },
-  }
+  return pageMetadata({ locale, path: '/', title: t('metaTitle'), description: t('metaDescription'), brandInTitle: true, keywords: t.raw('metaKeywords') as string[] })
 }
-
-// English-only guides (no /de or /ar version) — linked from the English home so they are not orphaned
-const EN_ONLY_GUIDES = [
-  { href: '/guide/tiktok-to-mp4', label: 'TikTok to MP4' },
-  { href: '/guide/snaptik-alternative', label: 'SnapTik alternative' },
-  { href: '/guide/tiktok-downloader-chrome', label: 'TikTok downloader for Chrome' },
-  { href: '/guide/tiktok-video-to-gif', label: 'TikTok video to GIF' },
-  { href: '/guide/download-tiktok-playlist', label: 'Download a TikTok playlist' },
-  { href: '/guide/download-tiktok-private-video', label: 'Private TikTok videos' },
-]
 
 // Same order as Home.features in the message files (icons live here — no emoji as icons)
 const FEATURE_ICONS: LucideIcon[] = [Ban, Film, Music, Zap, LockOpen, Smartphone]
@@ -114,7 +85,6 @@ export default async function Page({ params }: Props) {
 
   const isDefault = locale === 'en'
   const localePath = isDefault ? '' : `/${locale}`
-  const homeUrl = localePath ? `${BASE}${localePath}` : `${BASE}/`
 
   const toolsPreview = [
     { Icon: Film, title: tTools('items.video.title'), desc: tTools('items.video.desc'), href: '#tiktok-url' },
@@ -128,35 +98,13 @@ export default async function Page({ params }: Props) {
   ]
 
   const schemas = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'TokDown — TikTok Video Downloader',
-      url: homeUrl,
-      description: 'Free online tool to download TikTok videos without watermark in HD quality, or extract audio as MP3.',
-      applicationCategory: 'UtilitiesApplication',
-      operatingSystem: 'Any',
-      browserRequirements: 'Requires JavaScript',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      creator: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: t('h1') + ' ' + t('h1Accent'),
-      totalTime: 'PT1M',
-      step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.desc })),
-    },
-    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
-    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'TokDown', item: homeUrl }] },
+    webApplication({ locale, path: '/', name: t('metaTitle').split(/ [–—|] /)[0], description: t('metaDescription'), features: trust }),
+    faqPage(faq),
   ]
-
 
   return (
     <>
-      {schemas.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={schemas} />
 
       <div className="relative flex min-h-screen w-full flex-col overflow-x-clip">
         <SiteHeader
@@ -347,8 +295,8 @@ export default async function Page({ params }: Props) {
                 <SectionIntro id="faq-h" eyebrow="FAQ" title={t('faqTitle')} subtitle={t('faqSubtitle')} />
                 {isDefault && (
                   <nav className="flex flex-wrap gap-2" aria-label="More guides">
-                    {EN_ONLY_GUIDES.map(({ href, label }) => (
-                      <Link key={href} href={href} className="pill no-underline">{label}</Link>
+                    {EN_GUIDES.map(({ key, path }) => (
+                      <Link key={path} href={path} className="pill no-underline">{tTools(`items.${key}.title`)}</Link>
                     ))}
                   </nav>
                 )}

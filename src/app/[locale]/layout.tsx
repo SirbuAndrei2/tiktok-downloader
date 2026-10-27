@@ -8,15 +8,15 @@ import { routing } from '@/i18n/routing'
 import CloudflareAnalytics from '@/components/CloudflareAnalytics'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import '../globals.css'
-import { OG_IMAGE } from '@/lib/seo'
+import { BASE, OG_IMAGE } from '@/lib/seo'
+import { siteGraph } from '@/lib/schema'
+import JsonLd from '@/components/JsonLd'
 
 import CookieConsent from '@/components/CookieConsent'
 import SideRails from '@/components/ads/SideRails'
 import AdsterraTags from '@/components/ads/AdsterraTags'
 import AdsterraPopunder from '@/components/ads/AdsterraPopunder'
 
-
-const BASE = 'https://tokdown.org'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -66,7 +66,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@tokdownorg',
     images: [OG_IMAGE.url],
     title: 'TokDown — Download TikTok Without Watermark, Free & HD',
     description: 'Save any TikTok video without watermark in HD, or extract audio as MP3. Free, instant, works on any device.',
@@ -79,48 +78,9 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   manifest: '/manifest.json',
-  alternates: {
-    canonical: BASE,
-    languages: {
-      'en': BASE,
-      'de': `${BASE}/de`,
-      'ar': `${BASE}/ar`,
-    },
-  },
+  // No layout-level canonical/hreflang: every page sets its own via pageMetadata(),
+  // so a page that forgets cannot silently inherit the home canonical.
   verification: { google: 'xnV1VhvvNYeWQ0Z4MLJ-EXoqJnNYQ1lssV64wTaiti0' },
-}
-
-const jsonLdSite = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'TokDown',
-  alternateName: 'TikTok Downloader',
-  url: BASE,
-  description: 'Free online TikTok downloader — save videos without watermark in HD or extract audio as MP3. Works on iPhone, Android, PC and Mac.',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${BASE}/?url={search_term_string}` },
-    'query-input': 'required name=search_term_string',
-  },
-}
-
-const jsonLdOrg = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'TokDown',
-  alternateName: 'TikTok Downloader',
-  url: BASE,
-  logo: `${BASE}/icon.png`,
-  sameAs: [
-    'https://twitter.com/tokdownorg',
-    'https://www.reddit.com/r/tokdown',
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'customer support',
-    email: 'support@tokdown.org',
-    availableLanguage: ['English', 'German', 'Arabic'],
-  },
 }
 
 type Props = {
@@ -144,8 +104,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={dir} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }} />
+        <JsonLd data={siteGraph()} />
 
         {/* Adsterra Social Bar */}
         <AdsterraTags />

@@ -63,7 +63,8 @@
     "noWatermarkGuide": "Anleitung ohne Wasserzeichen",
     "tools": "Tools",
     "guides": "Anleitungen",
-    "photoDownloader": "TikTok Foto-Downloader"
+    "photoDownloader": "TikTok Foto-Downloader",
+    "allGuides": "Alle Anleitungen"
   },
   "Footer": {
     "tagline": "Nur für den persönlichen Gebrauch. Wir speichern keine Videos. Nicht mit TikTok oder ByteDance verbunden.",
@@ -86,7 +87,8 @@
     "linkToToolHint": "Nützlich gefunden? Füge diesen Schnipsel in deinen Blog, ein Forum oder deine Doku ein, damit andere es auch finden.",
     "copy": "Kopieren",
     "copied": "Kopiert",
-    "adLabel": "Anzeige"
+    "adLabel": "Anzeige",
+    "related": "Passende Tools & Anleitungen"
   },
   "Home": {
     "metaTitle": "TikTok Downloader – Ohne Wasserzeichen, HD",
@@ -669,7 +671,7 @@
       },
       "gif": {
         "title": "TikTok-Video zu GIF",
-        "desc": "Mache aus einem heruntergeladenen TikTok ein GIF für Chats, Dokumente und Posts."
+        "desc": "Ein heruntergeladenes TikTok mit dem Browser-Konverter Schritt für Schritt in ein GIF verwandeln."
       },
       "chrome": {
         "title": "TikTok-Downloader für Chrome",
@@ -706,6 +708,14 @@
       "mp4ToGif": {
         "title": "MP4 zu GIF",
         "desc": "Jeden Videoclip in ein scharfes, loopendes GIF verwandeln, offline im Browser."
+      },
+      "legal": {
+        "title": "Ist TikTok-Download legal?",
+        "desc": "Was Urheberrecht und TikToks Nutzungsbedingungen zum Speichern von Videos sagen, nach Ländern, mit Quellen."
+      },
+      "snaptik": {
+        "title": "SnapTik-Alternative",
+        "desc": "Worauf du bei jedem TikTok-Downloader achten solltest und was TokDown kann und nicht kann."
       }
     }
   },
@@ -1295,5 +1305,19 @@
       "GIF ist ein 30 Jahre altes Format mit 256-Farben-Palette und ohne Kompression zwischen den Frames, weshalb naive Converter riesige, körnige Dateien erzeugen. TokDown fährt eine zweistufige ffmpeg-Pipeline im Browser: Der erste Durchlauf analysiert den Clip und baut eine eigene Palette, der zweite ordnet jeden Frame mit geordnetem Dithering zu. Das Ergebnis hält Text lesbar und Verläufe glatt, bei einem Bruchteil der Größe.",
       "Du steuerst die drei Dinge, die die Dateigröße bestimmen: Cliplänge (bis 15 Sekunden), Bildrate (10 bis 24 fps) und Breite (240 bis 800 Pixel). Für Chat-Apps sind 480 px bei 15 fps ein guter Standard; für Doku oder README wirken 640 px bei 12 fps scharf und bleiben klein. Da alles lokal läuft, kannst du beliebig oft nachjustieren, ohne etwas hochzuladen."
     ]
+  },
+  "GuideHub": {
+    "metaTitle": "TikTok herunterladen: Anleitungen für alle Geräte",
+    "metaDescription": "Schritt-für-Schritt-Anleitungen: TikTok-Videos, Sounds und Diashows auf iPhone, Android und PC speichern, ohne Wasserzeichen, mit ehrlichen Antworten.",
+    "eyebrow": "Anleitungen",
+    "h1": "Anleitungen zum TikTok-Download",
+    "subtitle": "Schritt-für-Schritt-Hilfe für jedes Gerät und jedes Format, geschrieben aus der Funktionsweise der Tools.",
+    "intro": [
+      "Die meisten TikTok-Fragen hängen an drei Dingen: welches Gerät du nutzt, welches Format du brauchst und ob der Beitrag öffentlich ist. Starte mit der Anleitung für dein Gerät, wenn ein Download nicht dort landet, wo du ihn erwartest, mit der MP3-Anleitung, wenn du nur den Sound willst, und mit der Wasserzeichen-Anleitung, wenn du wissen willst, warum In-App-Speicherungen ein Logo tragen.",
+      "Jede Anleitung nennt die genauen Schritte, die Fehlermeldungen, die auftauchen können, und was sie bedeuten. Wo etwas nicht geht, etwa private Videos oder ein ganzes Profil mit einem Klick, sagt die Anleitung das offen, statt dich zu einem Tool zu schicken, das dein Passwort will."
+    ],
+    "translatedTitle": "Hier starten",
+    "englishTitle": "Weitere Anleitungen (Englisch)",
+    "englishNote": "Diese Anleitungen gibt es bisher nur auf Englisch."
   }
 }

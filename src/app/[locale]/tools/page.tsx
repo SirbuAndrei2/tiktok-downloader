@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import { OG_IMAGE } from '@/lib/seo'
+import { BASE, pageMetadata } from '@/lib/seo'
+import { breadcrumbs, itemList } from '@/lib/schema'
+import JsonLd from '@/components/JsonLd'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
-import { ArrowRight, AtSign, Clapperboard, Film, Globe, ImageDown, ImagePlay, Images, ListVideo, Lock, Minimize2, Music, Smartphone, Sparkles, TabletSmartphone, type LucideIcon } from 'lucide-react'
+import { ArrowLeftRight, ArrowRight, AtSign, Clapperboard, Film, Globe, ImageDown, ImagePlay, Images, ListVideo, Lock, Minimize2, Music, Scale, Smartphone, Sparkles, TabletSmartphone, type LucideIcon } from 'lucide-react'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import CtaBand from '@/components/CtaBand'
@@ -10,7 +12,6 @@ import AdsterraNative from '@/components/ads/AdsterraNative'
 import { buildFooterColumns } from '@/lib/nav'
 import { BlurFade } from '@/components/ui/blur-fade'
 
-const BASE = 'https://tokdown.org'
 const SLUG = '/tools'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -19,19 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'Tools' })
-  const localePath = locale === 'en' ? '' : `/${locale}`
-  return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
-    alternates: {
-      canonical: `${BASE}${localePath}${SLUG}`,
-      languages: { 'en': `${BASE}${SLUG}`, 'de': `${BASE}/de${SLUG}`, 'ar': `${BASE}/ar${SLUG}`, 'x-default': `${BASE}${SLUG}` },
-    },
-    openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}${SLUG}` },
-  }
+  return pageMetadata({ locale, path: SLUG, title: t('metaTitle'), description: t('metaDescription') })
 }
 
-type ToolKey = 'video' | 'photo' | 'facebook' | 'twitter' | 'youtubeThumbnail' | 'compressor' | 'mp4ToGif' | 'audio' | 'hd' | 'iphone' | 'android' | 'mp4' | 'gif' | 'chrome' | 'playlist' | 'private'
+type ToolKey = 'video' | 'photo' | 'facebook' | 'twitter' | 'youtubeThumbnail' | 'compressor' | 'mp4ToGif' | 'audio' | 'hd' | 'iphone' | 'android' | 'mp4' | 'gif' | 'chrome' | 'playlist' | 'private' | 'legal' | 'snaptik'
 
 // `tool` = a translated tool page (every locale); `guide` = translated guide (every locale);
 // `enGuide` = English-only guide (hidden on /de, /ar); none = the home downloader itself.
@@ -52,6 +44,8 @@ const TOOLS: { key: ToolKey; Icon: LucideIcon; tool?: string; guide?: string; en
   { key: 'chrome', Icon: Globe, enGuide: '/guide/tiktok-downloader-chrome' },
   { key: 'playlist', Icon: ListVideo, enGuide: '/guide/download-tiktok-playlist' },
   { key: 'private', Icon: Lock, enGuide: '/guide/download-tiktok-private-video' },
+  { key: 'legal', Icon: Scale, enGuide: '/guide/is-it-legal-to-download-tiktok-videos' },
+  { key: 'snaptik', Icon: ArrowLeftRight, enGuide: '/guide/snaptik-alternative' },
 ]
 
 export default async function ToolsPage({ params }: Props) {
@@ -68,22 +62,17 @@ export default async function ToolsPage({ params }: Props) {
   const homeTool = `${localePath}/#tiktok-url`
   const tools = TOOLS.filter((tool) => isDefault || !tool.enGuide)
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: t('h1'),
-    itemListElement: tools.map((tool, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
+  const schema = [
+    itemList(t('h1'), tools.map((tool) => ({
       name: t(`items.${tool.key}.title`),
-      url: `${BASE}${tool.tool ? `${localePath}${tool.tool}` : tool.guide ? `${localePath}${tool.guide}` : tool.enGuide ?? `${localePath}/`}`,
-    })),
-  }
-
+      url: `${BASE}${tool.tool ? `${localePath}${tool.tool}` : tool.guide ? `${localePath}${tool.guide}` : tool.enGuide ?? (localePath || '/')}`,
+    }))),
+    breadcrumbs(locale, [{ name: tNav('tools'), path: SLUG }]),
+  ]
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <JsonLd data={schema} />
       <div className="relative flex min-h-screen w-full flex-col">
         <SiteHeader path="/tools" locale={locale} localePath={localePath} labels={{ tools: tNav('tools'), guides: tNav('guides'), about: tNav('about'), language: tCommon('language') }} />
 

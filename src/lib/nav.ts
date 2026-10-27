@@ -17,6 +17,54 @@ export const TOOL_PAGES = [
 
 export type ToolPageKey = (typeof TOOL_PAGES)[number]['key']
 
+/** Guides translated into every locale (key = Tools.items.<key>). */
+export const TRANSLATED_GUIDES = [
+  { key: 'hd', path: '/guide/download-tiktok-without-watermark' },
+  { key: 'audio', path: '/guide/tiktok-to-mp3' },
+  { key: 'iphone', path: '/guide/download-tiktok-on-iphone' },
+  { key: 'android', path: '/guide/download-tiktok-on-android' },
+] as const
+
+/** English-only guides: they 404 under /de and /ar, so links to them never carry a locale prefix. */
+export const EN_GUIDES = [
+  { key: 'legal', path: '/guide/is-it-legal-to-download-tiktok-videos' },
+  { key: 'mp4', path: '/guide/tiktok-to-mp4' },
+  { key: 'gif', path: '/guide/tiktok-video-to-gif' },
+  { key: 'chrome', path: '/guide/tiktok-downloader-chrome' },
+  { key: 'playlist', path: '/guide/download-tiktok-playlist' },
+  { key: 'private', path: '/guide/download-tiktok-private-video' },
+  { key: 'snaptik', path: '/guide/snaptik-alternative' },
+] as const
+
+type LinkKey = ToolPageKey | (typeof TRANSLATED_GUIDES)[number]['key'] | (typeof EN_GUIDES)[number]['key']
+
+const ALL_LINKS: { key: LinkKey; path: string; en?: true }[] = [
+  ...TOOL_PAGES.map((p) => ({ key: p.key, path: p.path })),
+  ...TRANSLATED_GUIDES.map((g) => ({ key: g.key, path: g.path })),
+  ...EN_GUIDES.map((g) => ({ key: g.key, path: g.path, en: true as const })),
+]
+
+/** Contextual "related" links per page (tool pages and the photo downloader). */
+const RELATED: Record<string, LinkKey[]> = {
+  '/photo-downloader': ['video', 'audio', 'hd', 'mp4ToGif'],
+  '/facebook-video-downloader': ['compressor', 'mp4ToGif', 'twitter', 'legal'],
+  '/twitter-video-downloader': ['mp4ToGif', 'compressor', 'facebook', 'youtubeThumbnail'],
+  '/youtube-thumbnail-downloader': ['twitter', 'compressor', 'video'],
+  '/video-compressor': ['mp4ToGif', 'twitter', 'video', 'iphone'],
+  '/mp4-to-gif': ['compressor', 'gif', 'twitter', 'video'],
+}
+
+/** Related links for `slug`, with locale-aware hrefs; English-only guides are dropped outside /en. */
+export function relatedLinks(slug: string, locale: string, localePath: string, tTools: T) {
+  return (RELATED[slug] ?? [])
+    .map((key) => ALL_LINKS.find((l) => l.key === key)!)
+    .filter((l) => locale === 'en' || !l.en)
+    .map((l) => ({
+      href: l.en ? l.path : l.path === '/' ? localePath || '/' : `${localePath}${l.path}`,
+      label: tTools(`items.${l.key}.title`),
+    }))
+}
+
 export function buildFooterColumns(localePath: string, tNav: T, tFooter: T, tTools: T) {
   return [
     {
@@ -29,6 +77,7 @@ export function buildFooterColumns(localePath: string, tNav: T, tFooter: T, tToo
     {
       heading: tFooter('guidesHeading'),
       links: [
+        { href: `${localePath}/guide`, label: tNav('allGuides') },
         { href: `${localePath}/guide/download-tiktok-without-watermark`, label: tNav('downloadGuide') },
         { href: `${localePath}/guide/tiktok-to-mp3`, label: tNav('mp3Guide') },
         { href: `${localePath}/guide/download-tiktok-on-iphone`, label: tTools('items.iphone.title') },

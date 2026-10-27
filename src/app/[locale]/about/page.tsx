@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { OG_IMAGE } from '@/lib/seo'
+import { localeUrl, pageMetadata } from '@/lib/seo'
+import { ORG_ID, WEBSITE_ID, breadcrumbs } from '@/lib/schema'
+import JsonLd from '@/components/JsonLd'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
-
-const BASE = 'https://tokdown.org'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -11,16 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'About' })
-  const localePath = locale === 'en' ? '' : `/${locale}`
-  return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
-    alternates: {
-      canonical: `${BASE}${localePath}/about`,
-      languages: { 'en': `${BASE}/about`, 'de': `${BASE}/de/about` },
-    },
-    openGraph: { images: [OG_IMAGE], title: t('metaTitle'), description: t('metaDescription'), url: `${BASE}${localePath}/about` },
-  }
+  return pageMetadata({ locale, path: '/about', title: t('metaTitle'), description: t('metaDescription') })
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -34,31 +25,29 @@ export default async function AboutPage({ params }: Props) {
 
   const values = t.raw('values') as { icon: string; title: string; desc: string }[]
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'AboutPage',
-    name: 'About TokDown',
-    url: `${BASE}${localePath}/about`,
-    description: t('metaDescription'),
-    publisher: {
-      '@type': 'Organization',
-      name: 'TokDown',
-      url: BASE,
-      logo: `${BASE}/icon.png`,
-      sameAs: ['https://twitter.com/tokdownorg'],
-      contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'support@tokdown.org' },
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: `${t('h1')} ${t('h1Accent')}`,
+      url: localeUrl(locale, '/about'),
+      inLanguage: locale,
+      description: t('metaDescription'),
+      isPartOf: { '@id': WEBSITE_ID },
+      about: { '@id': ORG_ID },
     },
-  }
+    breadcrumbs(locale, [{ name: `${t('h1')} ${t('h1Accent')}`, path: '/about' }]),
+  ]
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={jsonLd} />
 
       <div className="relative flex flex-col min-h-screen w-full">
         <main className="relative z-10 flex flex-col items-center w-full px-4 py-12">
 
           <div className="w-full max-w-2xl mb-8">
-            <Link href={`${localePath}/`} className="inline-flex items-center gap-2 text-xs font-medium transition-colors" style={{ color: 'var(--t4)' }}>
+            <Link href={localePath || '/'} className="inline-flex items-center gap-2 text-xs font-medium transition-colors" style={{ color: 'var(--t4)' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M19 12H5M12 5l-7 7 7 7" /></svg>
               {tCommon('backToDownloader')}
             </Link>
@@ -126,7 +115,7 @@ export default async function AboutPage({ params }: Props) {
 
           <nav className="w-full max-w-2xl mt-8 pt-6 flex flex-wrap gap-4 justify-center" style={{ borderTop: '1px solid var(--line)' }}>
             {[
-              { href: `${localePath}/`, label: tNav('downloader') },
+              { href: localePath || '/', label: tNav('downloader') },
               { href: `${localePath}/guide/download-tiktok-without-watermark`, label: tNav('downloadGuide') },
               { href: `${localePath}/guide/tiktok-to-mp3`, label: tNav('mp3Guide') },
               { href: '/privacy', label: tNav('privacy') },

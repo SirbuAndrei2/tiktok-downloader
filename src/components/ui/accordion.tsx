@@ -45,14 +45,19 @@ function AccordionTrigger({
   )
 }
 
+// Closed panels stay in the server HTML as hidden="until-found": answers are
+// crawlable/indexable (FAQPage schema must match visible text) and browser
+// find-in-page opens them. Pass hiddenUntilFound={false} to unmount instead.
 function AccordionContent({
   className,
   children,
+  hiddenUntilFound = true,
   ...props
 }: AccordionPrimitive.Panel.Props) {
   return (
     <AccordionPrimitive.Panel
       data-slot="accordion-content"
+      hiddenUntilFound={hiddenUntilFound}
       className="overflow-hidden text-sm data-open:animate-accordion-down data-closed:animate-accordion-up"
       {...props}
     >

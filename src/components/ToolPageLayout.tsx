@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Link from 'next/link'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Check } from 'lucide-react'
 import SiteHeader from '@/components/SiteHeader'
@@ -7,12 +8,13 @@ import CtaBand from '@/components/CtaBand'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { buildFooterColumns } from '@/lib/nav'
+import { buildFooterColumns, relatedLinks } from '@/lib/nav'
+import { localeUrl } from '@/lib/seo'
+import { breadcrumbs, faqPage, webApplication } from '@/lib/schema'
+import JsonLd from '@/components/JsonLd'
 import LinkToTool from '@/components/LinkToTool'
 import AdsterraNative from '@/components/ads/AdsterraNative'
 import AdsterraBanner from '@/components/ads/AdsterraBanner'
-
-const BASE = 'https://tokdown.org'
 
 /**
  * Shared shell for every tool page: hero with the tool, trust pills, 3 steps,
@@ -21,7 +23,8 @@ const BASE = 'https://tokdown.org'
  * extra section. Message namespace must provide: eyebrow, h1, h1Accent,
  * subtitle, heroNote, trust[], stepsTitle, stepsSubtitle, steps[{title,desc}],
  * featuresTitle, featuresSubtitle, features[{title,desc}], faqTitle,
- * faqSubtitle, faq[{q,a}], ctaTitle, ctaSubtitle, ctaButton, metaDescription.
+ * faqSubtitle, faq[{q,a}], ctaTitle, ctaSubtitle, ctaButton, metaTitle, metaDescription;
+ * optional details[] + detailsTitle/detailsSubtitle for the "In depth" block.
  */
 interface Props {
   locale: string
@@ -34,6 +37,8 @@ interface Props {
   extra?: ReactNode
   /** Whether the tool runs fully in the browser (adds the privacy pill). */
   local?: boolean
+  /** schema.org applicationCategory: downloaders are multimedia, converters/thumbnail tool utilities. */
+  category?: 'MultimediaApplication' | 'UtilitiesApplication'
 }
 
 function SectionIntro({ id, eyebrow, title, subtitle, align = 'left' }: { id: string; eyebrow: string; title: string; subtitle: string; align?: 'left' | 'center' }) {
@@ -47,7 +52,7 @@ function SectionIntro({ id, eyebrow, title, subtitle, align = 'left' }: { id: st
   )
 }
 
-export default async function ToolPageLayout({ locale, namespace, slug, tool, anchor = '#tool', extra, local = false }: Props) {
+export default async function ToolPageLayout({ locale, namespace, slug, tool, anchor = '#tool', extra, local = false, category = 'MultimediaApplication' }: Props) {
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace })
   const tNav = await getTranslations({ locale, namespace: 'Nav' })
@@ -56,36 +61,25 @@ export default async function ToolPageLayout({ locale, namespace, slug, tool, an
   const tTools = await getTranslations({ locale, namespace: 'Tools' })
 
   const localePath = locale === 'en' ? '' : `/${locale}`
-  const pageUrl = `${BASE}${localePath}${slug}`
+  const pageUrl = localeUrl(locale, slug)
   const trust = t.raw('trust') as string[]
   const steps = t.raw('steps') as { title: string; desc: string }[]
   const features = t.raw('features') as { title: string; desc: string }[]
   const faq = t.raw('faq') as { q: string; a: string }[]
   const details = (t.has('details') ? (t.raw('details') as string[]) : [])
 
+  // App name = the head term from the meta title ("Video Compressor Online – …" → "Video Compressor Online").
+  const appName = t('metaTitle').split(/ [–—|] /)[0]
   const schemas = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: `${t('h1')} ${t('h1Accent')} — TokDown`,
-      url: pageUrl,
-      description: t('metaDescription'),
-      applicationCategory: 'UtilitiesApplication',
-      operatingSystem: 'Any',
-      browserRequirements: 'Requires JavaScript',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      creator: { '@type': 'Organization', name: 'TokDown', url: BASE },
-    },
-    { '@context': 'https://schema.org', '@type': 'HowTo', name: `${t('h1')} ${t('h1Accent')}`, totalTime: 'PT1M', step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.desc })) },
-    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
-    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'TokDown', item: `${BASE}${localePath || '/'}` }, { '@type': 'ListItem', position: 2, name: tNav('tools'), item: `${BASE}${localePath}/tools` }, { '@type': 'ListItem', position: 3, name: `${t('h1')} ${t('h1Accent')}`, item: pageUrl }] },
+    webApplication({ locale, path: slug, name: appName, description: t('metaDescription'), category, features: trust }),
+    faqPage(faq),
+    breadcrumbs(locale, [{ name: tNav('tools'), path: '/tools' }, { name: appName, path: slug }]),
   ]
+  const related = relatedLinks(slug, locale, localePath, tTools)
 
   return (
     <>
-      {schemas.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
+      <JsonLd data={schemas} />
       <div className="relative flex min-h-screen w-full flex-col overflow-x-clip">
         <SiteHeader path={slug} locale={locale} localePath={localePath} labels={{ tools: tNav('tools'), guides: tNav('guides'), about: tNav('about'), language: tCommon('language') }} />
 
@@ -171,12 +165,22 @@ export default async function ToolPageLayout({ locale, namespace, slug, tool, an
             <section className="w-full max-w-6xl px-5 pt-24" aria-labelledby="depth-h">
               <div className="grid gap-10 lg:grid-cols-12">
                 <div className="lg:col-span-4">
-                  <SectionIntro id="depth-h" eyebrow={tCommon('inDepth')} title={`${t('h1')} ${t('h1Accent')}`} subtitle={t('subtitle')} />
+                  <SectionIntro id="depth-h" eyebrow={tCommon('inDepth')} title={t.has('detailsTitle') ? t('detailsTitle') : `${t('h1')} ${t('h1Accent')}`} subtitle={t.has('detailsSubtitle') ? t('detailsSubtitle') : t('subtitle')} />
                 </div>
                 <div className="flex flex-col gap-5 lg:col-span-8">
                   {details.map((para) => (
                     <p key={para.slice(0, 40)} className="m-0 text-base leading-relaxed sm:text-[17px]" style={{ color: 'var(--t2)' }}>{para}</p>
                   ))}
+                  {related.length > 0 && (
+                    <nav aria-label={tCommon('related')} className="flex flex-col gap-3">
+                      <span className="eyebrow">{tCommon('related')}</span>
+                      <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
+                        {related.map(({ href, label }) => (
+                          <li key={href}><Link href={href} className="pill no-underline">{label}</Link></li>
+                        ))}
+                      </ul>
+                    </nav>
+                  )}
                   <LinkToTool url={pageUrl} title={`${t('h1')} ${t('h1Accent')} – TokDown`} heading={tCommon('linkToTool')} hint={tCommon('linkToToolHint')} copyLabel={tCommon('copy')} copiedLabel={tCommon('copied')} />
                 </div>
               </div>

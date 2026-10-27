@@ -63,7 +63,8 @@
     "noWatermarkGuide": "No Watermark Guide",
     "tools": "Tools",
     "guides": "Guides",
-    "photoDownloader": "TikTok Photo Downloader"
+    "photoDownloader": "TikTok Photo Downloader",
+    "allGuides": "All guides"
   },
   "Footer": {
     "tagline": "For personal use only. We do not store any videos. Not affiliated with TikTok or ByteDance.",
@@ -86,7 +87,8 @@
     "linkToToolHint": "Found it useful? Paste this snippet into your blog, forum post or docs so others can find it too.",
     "copy": "Copy",
     "copied": "Copied",
-    "adLabel": "Advertisement"
+    "adLabel": "Advertisement",
+    "related": "Related tools & guides"
   },
   "Home": {
     "metaTitle": "TikTok Downloader – No Watermark, HD, Free",
@@ -671,7 +673,7 @@
       },
       "gif": {
         "title": "TikTok video to GIF",
-        "desc": "Turn a downloaded TikTok into a GIF for chats, docs and social posts."
+        "desc": "Turn a downloaded TikTok into a GIF with the in-browser converter, step by step."
       },
       "chrome": {
         "title": "TikTok downloader for Chrome",
@@ -708,6 +710,14 @@
       "mp4ToGif": {
         "title": "MP4 to GIF",
         "desc": "Turn any video clip into a sharp, looping GIF, offline in your browser."
+      },
+      "legal": {
+        "title": "Is it legal to download TikToks?",
+        "desc": "What copyright law and TikTok’s own terms say about saving videos, country by country, with sources."
+      },
+      "snaptik": {
+        "title": "SnapTik alternative",
+        "desc": "What to check in any TikTok downloader, and exactly what TokDown does and does not do."
       }
     }
   },
@@ -1299,5 +1309,19 @@
       "GIF is a 30-year-old format with a 256-colour palette and no compression between frames, which is why naive converters produce huge, grainy files. TokDown runs a two-pass ffmpeg pipeline in your browser: the first pass analyses your clip and builds a custom palette, the second pass maps every frame to it with ordered dithering. The result keeps text readable and gradients smooth at a fraction of the size.",
       "You control the three things that decide file size: the clip length (up to 15 seconds), the frame rate (10 to 24 fps) and the width (240 to 800 pixels). For chat apps, 480 px at 15 fps is a good default; for documentation or a README, 640 px at 12 fps looks crisp and stays small. Because everything runs locally, you can iterate as many times as you like without uploading anything."
     ]
+  },
+  "GuideHub": {
+    "metaTitle": "TikTok Download Guides – iPhone, Android, MP3",
+    "metaDescription": "Step-by-step guides to save TikTok videos, sounds and slideshows on iPhone, Android and PC, plus honest answers on watermarks, private videos and the law.",
+    "eyebrow": "Guides",
+    "h1": "TikTok download guides",
+    "subtitle": "Step-by-step help for every device and format, written from how the tools actually work.",
+    "intro": [
+      "Most TikTok questions come down to three things: which device you are on, which format you need, and whether the post is public. Start with the device guides if a download does not land where you expect, with the MP3 guide if you only want the sound, and with the watermark guide if you want to understand why in-app saves carry a logo.",
+      "Each guide lists the exact taps, the errors you may see and what they mean. Where something cannot be done, such as downloading a private video or a whole profile in one click, the guide says so plainly instead of sending you to a tool that asks for your password."
+    ],
+    "translatedTitle": "Start here",
+    "englishTitle": "More guides",
+    "englishNote": ""
   }
 }

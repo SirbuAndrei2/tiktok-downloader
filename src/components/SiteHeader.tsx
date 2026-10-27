@@ -20,7 +20,7 @@ interface Props {
 export default function SiteHeader({ locale, localePath, labels, path = '/' }: Props) {
   const nav = [
     { href: `${localePath}/tools`, label: labels.tools },
-    { href: `${localePath}/guide/download-tiktok-without-watermark`, label: labels.guides },
+    { href: `${localePath}/guide`, label: labels.guides },
     { href: `${localePath}/about`, label: labels.about },
   ]
   return (
