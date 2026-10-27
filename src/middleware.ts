@@ -7,5 +7,5 @@ export default createMiddleware(routing)
 
 export const config = {
   // Exclude API routes, Next.js internals, static files, and legal pages (English-only)
-  matcher: ['/((?!api|_next|_vercel|.*\\..*|privacy|terms|dmca|disclaimer).*)'],
+  matcher: ['/((?!api|_next|.*\\..*|privacy|terms|dmca|disclaimer).*)'],
 }

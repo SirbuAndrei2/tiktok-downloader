@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // OpenNext / wrangler build output
+    ".open-next/**",
+    ".wrangler/**",
     // nested design-reference repo, not part of the site
     "ui-ux-pro-max-skill/**",
     "claude-seo/**",
