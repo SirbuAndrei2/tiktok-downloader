@@ -73,7 +73,8 @@
     "toolsHeading": "Tools",
     "guidesHeading": "Guides",
     "legalHeading": "Legal",
-    "feedback": "Have feedback? Write to us at"
+    "feedback": "Have feedback? Write to us at",
+    "sponsored": "Sponsored"
   },
   "Common": {
     "backToDownloader": "Back to downloader",
@@ -567,6 +568,25 @@
         "problem": "Download is very slow",
         "fix": "HD TikTok files can be 20–80 MB. Switch to Wi-Fi for faster downloads."
       }
+    ],
+    "eyebrow": "iPhone Guide · June 2026",
+    "related": [
+      {
+        "title": "Download on Android",
+        "desc": "Save TikTok videos to your Android gallery."
+      },
+      {
+        "title": "No Watermark Guide",
+        "desc": "Full guide for all devices."
+      },
+      {
+        "title": "TikTok to MP3",
+        "desc": "Extract audio from any TikTok video."
+      },
+      {
+        "title": "TikTok to MP4",
+        "desc": "Download TikTok as an MP4 file."
+      }
     ]
   },
   "GuideAndroid": {
@@ -635,6 +655,25 @@
       {
         "problem": "\"Download blocked\" warning in Chrome",
         "fix": "This warning appears for some file types. Tap \"Download anyway\" — TokDown only serves standard MP4 and MP3 files."
+      }
+    ],
+    "eyebrow": "Android Guide · June 2026",
+    "related": [
+      {
+        "title": "Download on iPhone",
+        "desc": "Save TikTok videos to your iPhone Camera Roll."
+      },
+      {
+        "title": "No Watermark Guide",
+        "desc": "Full guide for all devices."
+      },
+      {
+        "title": "TikTok to MP3",
+        "desc": "Extract audio from any TikTok video."
+      },
+      {
+        "title": "TikTok to MP4",
+        "desc": "Download TikTok as an MP4 file."
       }
     ]
   },
@@ -718,6 +757,22 @@
       "snaptik": {
         "title": "SnapTik alternative",
         "desc": "What to check in any TikTok downloader, and exactly what TokDown does and does not do."
+      },
+      "pc": {
+        "title": "Download on PC & Mac",
+        "desc": "Save TikTok videos on Windows, MacBook or Chromebook in any browser, no app needed."
+      },
+      "slideshow": {
+        "title": "Download a TikTok slideshow",
+        "desc": "Keep every photo, the sound, or the whole slideshow as a video."
+      },
+      "noSave": {
+        "title": "No “Save video” option?",
+        "desc": "Why the button disappears on some TikToks and what you can do about it."
+      },
+      "draft": {
+        "title": "Save a TikTok draft",
+        "desc": "Get a draft into your camera roll or gallery without posting it publicly."
       }
     },
     "intro": [
@@ -1347,5 +1402,415 @@
     "translatedTitle": "Start here",
     "englishTitle": "More guides",
     "englishNote": ""
+  },
+  "GuidePc": {
+    "metaTitle": "How to Download TikTok Videos on PC and Mac",
+    "metaDescription": "Download TikTok videos on a Windows PC, laptop or Mac without an app or extension: copy the link, paste it into TokDown and save the MP4, no watermark.",
+    "eyebrow": "PC & Mac guide · October 2026",
+    "h1": "How to Download TikTok Videos on PC and Mac",
+    "subtitle": "Save TikTok videos to a Windows PC, laptop or MacBook from any browser: no app, no extension, no account and no watermark on the file.",
+    "answerTitle": "The short answer",
+    "answer": "Open the video on tiktok.com, copy the address from the browser bar (or use Share → Copy link), paste it into TokDown and click Download. The MP4 lands in your Downloads folder. You do not need the TikTok app for Windows, an Android emulator such as BlueStacks, or a browser extension.",
+    "stepsTitle": "Step by step: save a TikTok video on your computer",
+    "steps": [
+      {
+        "title": "Open the video on tiktok.com",
+        "body": "In Chrome, Edge, Firefox or Safari, go to tiktok.com and click the video. The address bar changes to a link like tiktok.com/@name/video/123…: that is the link you need."
+      },
+      {
+        "title": "Copy the link",
+        "body": "Click the address bar and press Ctrl+C on Windows or Cmd+C on Mac, or click Share → Copy link next to the video. Links copied in the phone app (vm.tiktok.com/…) work too, for example if you send them to yourself."
+      },
+      {
+        "title": "Paste it into TokDown",
+        "body": "Open tokdown.org in a new tab (Ctrl+T or Cmd+T), click the box and paste with Ctrl+V or Cmd+V, or click Paste. Then click Download Video."
+      },
+      {
+        "title": "Pick a format",
+        "body": "Click HD · No Watermark for the best quality, SD for a smaller file, or Audio MP3 for just the sound. If the no-watermark service is busy, you may get the original TikTok file with its watermark instead, with a note saying so."
+      },
+      {
+        "title": "Find the file",
+        "body": "Windows: the Downloads folder (C:\\Users\\YourName\\Downloads), or press Ctrl+J in Chrome or Edge. Mac: Downloads in Finder, or the download arrow in Safari’s toolbar. Double-click to play it."
+      }
+    ],
+    "ctaText": "Link copied? Paste it on the home page and pick HD.",
+    "ctaButton": "Open the TikTok downloader",
+    "sections": [
+      {
+        "title": "Do you need the TikTok app on your computer?",
+        "paragraphs": [
+          "No. Many “download TikTok on PC” results explain how to install the TikTok app from the Microsoft Store, or how to run the Android app on a Mac through an emulator such as BlueStacks. Neither is needed to save a video: the TikTok website plays every public video in the browser, and its link is all a downloader needs.",
+          "TikTok’s own download option, where the creator allows it, gives you a file with the TikTok logo and the creator’s username burned in. A web downloader gives you the file as it was uploaded, which is why it looks cleaner when you edit or crop it."
+        ]
+      },
+      {
+        "title": "Windows or Mac: what changes",
+        "paragraphs": [
+          "Only the shortcuts (Ctrl on Windows, Cmd on Mac) and where files go. The first time, Safari may ask whether to allow downloads from tokdown.org: click Allow. Chrome and Edge show finished files in a small downloads panel at the top right.",
+          "The MP4 uses H.264 video and AAC audio, which every current player and editor opens: Photos, Clipchamp and VLC on Windows, QuickTime and iMovie on Mac, and Premiere Pro, DaVinci Resolve or CapCut on both. No conversion is needed."
+        ]
+      }
+    ],
+    "tipsTitle": "Tips for saving several videos on a computer",
+    "tips": [
+      {
+        "title": "Keep TokDown in its own tab",
+        "body": "Copy a link in the TikTok tab, switch with Ctrl+Tab, paste, download, then click “Download another video”. It is the fastest manual routine; there is no one-click download of a whole profile."
+      },
+      {
+        "title": "Choose where files go",
+        "body": "Chrome and Edge: Settings → Downloads → “Ask where to save each file”. Safari: Settings → General → File download location. A dedicated TikTok folder keeps Downloads tidy."
+      },
+      {
+        "title": "Rename as you go",
+        "body": "Files are named after the video, so long captions make long file names. Rename them right away if you are collecting clips for a project."
+      },
+      {
+        "title": "Slideshows download as images",
+        "body": "Photo posts save as separate images. Chrome asks once to allow multiple downloads from the site: click Allow and the remaining slides follow."
+      }
+    ],
+    "troubleshootTitle": "Troubleshooting on PC and Mac",
+    "troubleshoot": [
+      {
+        "problem": "The link is not accepted",
+        "fix": "Check that you copied a video link (it contains /video/ or /photo/, or starts with vm.tiktok.com or vt.tiktok.com), not a profile or search page. Links to private, friends-only or deleted videos also fail."
+      },
+      {
+        "problem": "The video opens in a tab instead of downloading",
+        "fix": "Right-click the download button and choose “Save link as…” in Chrome, Edge or Firefox, or “Download Linked File” in Safari."
+      },
+      {
+        "problem": "“Service busy” or only a watermarked version",
+        "fix": "The free service that fetches clean files has a daily limit. Wait a few minutes and try again; nothing is wrong with your computer."
+      }
+    ],
+    "faqTitle": "PC and Mac FAQ",
+    "faq": [
+      {
+        "q": "Can I download TikTok videos on PC without an app?",
+        "a": "Yes. Copy the video link from tiktok.com, paste it into TokDown in any browser and click Download. Nothing needs to be installed on Windows or macOS."
+      },
+      {
+        "q": "Can I download TikTok videos on a MacBook without BlueStacks?",
+        "a": "Yes. An emulator is only needed to run the Android app. To save a video, the TikTok website and a browser are enough, on a MacBook Air, MacBook Pro or any other Mac."
+      },
+      {
+        "q": "Does it work on a Chromebook or Linux?",
+        "a": "Yes. TokDown runs in any modern browser, so Chromebooks and Linux laptops work the same way and files go to the Downloads folder."
+      },
+      {
+        "q": "Do I need to install anything? Is it safe?",
+        "a": "No installation and no extension. TokDown is a website, so it cannot read your other tabs or browser data. It is funded by ads: after your first download result, one ad window may open in the background, which you can simply close."
+      },
+      {
+        "q": "Can I download many TikToks at once on PC?",
+        "a": "No. TokDown saves one video per link. Be careful with tools that promise whole-profile downloads in exchange for your TikTok login: never give a website your password."
+      },
+      {
+        "q": "Is it legal to download TikTok videos on a computer?",
+        "a": "The device makes no difference. A private copy for your own use is usually fine depending on your country; reposting or using someone else’s video commercially without permission is not, and TikTok’s terms restrict outside download tools."
+      }
+    ]
+  },
+  "GuideSlideshow": {
+    "metaTitle": "How to Download a TikTok Slideshow with Sound",
+    "metaDescription": "Save a TikTok slideshow three ways: every photo in full size without watermark, the sound as MP3, or the whole slideshow as a video. No app, no login.",
+    "eyebrow": "Slideshow guide · October 2026",
+    "h1": "How to Download a TikTok Slideshow",
+    "subtitle": "TikTok photo posts are not videos, so saving them works differently. Here is how to keep the photos, the music, or the whole slideshow.",
+    "answerTitle": "The short answer",
+    "answer": "Copy the post’s link (Share → Copy link), paste it into TokDown’s photo downloader and press Download Photos. You get every slide as a full-size image without watermark, a Download all button and the sound as an MP3. When TikTok also provides a rendered version, a “Slideshow as video” button saves it as one MP4 with the music.",
+    "stepsTitle": "Step by step: download a TikTok slideshow",
+    "steps": [
+      {
+        "title": "Check that it is a photo post",
+        "body": "Photo posts swipe sideways and show dots or a counter such as 1/8 at the bottom. Their link contains /photo/ instead of /video/."
+      },
+      {
+        "title": "Copy the link",
+        "body": "Tap Share (the arrow), then Copy link. On a computer, copy the address from the browser bar."
+      },
+      {
+        "title": "Paste it into the photo downloader",
+        "body": "Open tokdown.org/photo-downloader, paste the link and tap Download Photos. The video downloader on the home page accepts photo links too."
+      },
+      {
+        "title": "Save the slides",
+        "body": "Tap an image to save that slide, or Download all to save every slide in order, numbered so they stay sorted. Chrome asks once to allow multiple downloads: tap Allow."
+      },
+      {
+        "title": "Save the sound or the video version",
+        "body": "Tap Audio MP3 for the music. If a “Slideshow as video” button appears, it gives you one MP4 with every slide and the sound."
+      }
+    ],
+    "ctaText": "Have a slideshow link? Paste it into the photo downloader.",
+    "ctaButton": "Open the photo downloader",
+    "sections": [
+      {
+        "title": "Photos, sound or video: which one do you need?",
+        "paragraphs": [
+          "Pick the photos when you want to print, edit or share a single image: they are the original files, with no watermark and no extra compression. Pick the MP3 when you only want the music or voice-over. Pick the video version when you want the slideshow exactly as it plays on TikTok, for example to send it in a chat app.",
+          "The video version only appears when TikTok has rendered one for the post. If it is missing, rebuild it from the images and the MP3 in any editor such as CapCut, iMovie or Clipchamp: add the slides in order, add the audio, and give each slide two or three seconds."
+        ]
+      },
+      {
+        "title": "Why slideshows trip up other downloaders",
+        "paragraphs": [
+          "A slideshow is a set of images plus one audio track that TikTok plays together. Downloaders built only for videos look for a video file, find none, and fail or return just the first image. TokDown reads the image list itself, which is also why the slides carry no watermark: TikTok burns its logo only into rendered videos."
+        ]
+      }
+    ],
+    "tipsTitle": "Tips for phones and computers",
+    "tips": [
+      {
+        "title": "iPhone: save to Photos",
+        "body": "In Safari an image may open in a new tab or go to Files. Press and hold the image and choose Save to Photos to put it in your Camera Roll."
+      },
+      {
+        "title": "Android: look in Downloads",
+        "body": "Images go to the Downloads folder and appear in Google Photos or your Gallery under Downloads after a moment."
+      },
+      {
+        "title": "Keep the order",
+        "body": "Use Download all rather than saving slides one by one: the files are numbered in the order the creator set."
+      },
+      {
+        "title": "Credit the creator",
+        "body": "If you share a slide with the creator’s permission, tag the original account. The images carry no watermark, so the credit is up to you."
+      }
+    ],
+    "troubleshootTitle": "Troubleshooting",
+    "troubleshoot": [
+      {
+        "problem": "Only the first image downloads",
+        "fix": "Your browser blocked the extra downloads. Look for a blocked-download icon in the address bar, allow multiple downloads for tokdown.org and press Download all again."
+      },
+      {
+        "problem": "No “Slideshow as video” button",
+        "fix": "TikTok did not provide a rendered video for this post. Save the images and the MP3 and combine them in an editor, as described above."
+      },
+      {
+        "problem": "The MP3 button is missing",
+        "fix": "Some posts have no separate sound file available, or no sound at all. The images still download normally."
+      },
+      {
+        "problem": "“Post not found”",
+        "fix": "The account may be private, the post friends-only, or it was deleted. Only public posts can be fetched."
+      }
+    ],
+    "faqTitle": "Slideshow FAQ",
+    "faq": [
+      {
+        "q": "Can you download a TikTok slideshow as a video?",
+        "a": "Yes, when TikTok provides a rendered version: TokDown then shows a “Slideshow as video” button that saves one MP4 with the music. Otherwise save the photos and the MP3 and combine them in a video editor."
+      },
+      {
+        "q": "How do I download TikTok slideshow pictures without watermark?",
+        "a": "Every slide downloads as the original image file. TikTok adds its watermark only to rendered videos, so the images are clean."
+      },
+      {
+        "q": "Can I save a TikTok slideshow with the sound?",
+        "a": "Yes. The sound is offered as a separate MP3 next to the images, and it is part of the video version when one is available."
+      },
+      {
+        "q": "Does TikTok’s own Save button work for slideshows?",
+        "a": "Depending on the app version and the creator’s download setting, TikTok may let you save a photo or a video version with its logo. A downloader gives you every slide at once, without the logo."
+      },
+      {
+        "q": "Does it work on PC and Mac?",
+        "a": "Yes. Paste the link in any browser and use Download all; the images land in your Downloads folder."
+      },
+      {
+        "q": "Can I download slideshows from private accounts?",
+        "a": "No. Like every downloader, TokDown can only fetch public posts."
+      }
+    ]
+  },
+  "GuideNoSave": {
+    "metaTitle": "TikTok Save Video Option Missing? Why & Fixes",
+    "metaDescription": "No Save video button on TikTok? Why it disappears (creator settings, private or under-16 accounts), how to turn it on for your videos and what else to do.",
+    "eyebrow": "Help · October 2026",
+    "h1": "No “Save Video” Option on TikTok? Here’s Why",
+    "subtitle": "The Save video button disappears for a few specific reasons. Find yours, fix it on your own videos, and see your options for someone else’s.",
+    "answerTitle": "The short answer",
+    "answer": "TikTok hides or greys out Save video when the creator has turned video downloads off, when the account is private, or when the creator is under 16, whose downloads are always off. For your own videos, switch it on in Settings and privacy → Privacy → Downloads. For someone else’s video, ask the creator or keep it in your Favorites.",
+    "stepsTitle": "What to do when Save video is missing",
+    "steps": [
+      {
+        "title": "Find out why",
+        "body": "Open the creator’s profile. A lock icon or “This account is private” means a private account. If the profile is public and Save video is missing or greyed out, the creator has turned downloads off or is under 16."
+      },
+      {
+        "title": "Your own video? Turn downloads on",
+        "body": "Go to Profile → menu (☰) → Settings and privacy → Privacy → Downloads and switch it on. It needs a public account and an age of 16 or over, and it applies to all your videos, past and future."
+      },
+      {
+        "title": "Keep it in Favorites",
+        "body": "Tap the bookmark icon to add the video to the Favorites tab on your profile. It is not an offline copy, but it is always allowed and keeps the video with its creator."
+      },
+      {
+        "title": "Ask the creator",
+        "body": "A comment or message asking for the file, or for permission to save it, is the cleanest route, and the only one if you want to reuse it. Keep the reply as proof of permission."
+      },
+      {
+        "title": "A private copy of a public video",
+        "body": "A web downloader such as TokDown reads the same public file your browser plays, so it can fetch a public video even when the button is off. Whether that is fine depends on your country’s private-copy rules and TikTok’s terms, which restrict outside download tools. Keep such a copy to yourself, never repost it, and leave young creators’ videos alone."
+      }
+    ],
+    "ctaText": "Saving a public video for yourself only? Paste its link.",
+    "ctaButton": "Open the downloader",
+    "sections": [
+      {
+        "title": "The reasons the button disappears",
+        "paragraphs": [
+          "The creator turned downloads off. Every creator aged 16 or over decides whether other people may download their videos. When the setting is off, TikTok hides or greys out Save video for everyone else, on old and new posts alike.",
+          "The account is private. Private accounts cannot turn downloads on at all, so their videos never show the option, not even to approved followers.",
+          "The creator is under 16. TikTok switches downloads off for these accounts and does not let them turn it on. For 16- and 17-year-olds the setting starts off and can be switched on.",
+          "The problem is on your side. If Save video is missing on every video, including from large public accounts, update the TikTok app, restart it and check that you are logged in."
+        ]
+      },
+      {
+        "title": "Screen recording is not a loophole",
+        "paragraphs": [
+          "Recording your screen works on any phone, but you also capture captions, buttons and notifications, and the quality drops to your screen’s resolution. It does not change the rules either: the same copyright and private-copy limits apply to a recording as to a download."
+        ]
+      }
+    ],
+    "tipsTitle": "",
+    "tips": [],
+    "troubleshootTitle": "",
+    "troubleshoot": [],
+    "faqTitle": "Save video FAQ",
+    "faq": [
+      {
+        "q": "Why can’t I save some TikTok videos?",
+        "a": "Because the creator has turned downloads off, the account is private, or the creator is under 16. In each case TikTok removes or greys out the Save video option for other users."
+      },
+      {
+        "q": "How do I turn on downloads for my TikTok videos?",
+        "a": "Profile → menu (☰) → Settings and privacy → Privacy → Downloads. Your account must be public and you must be 16 or older; the setting applies to all your posts."
+      },
+      {
+        "q": "Can I download a TikTok when the creator turned downloads off?",
+        "a": "Technically a web downloader can fetch any public video. The creator has signalled that they do not want copies passed around, so keep it strictly for private viewing, never repost it, and skip it entirely for young creators. TikTok’s terms also restrict outside download tools."
+      },
+      {
+        "q": "Does turning off downloads delete copies people already saved?",
+        "a": "No. According to TikTok, copies saved while downloads were on stay on other people’s devices. Turning the setting off only stops new downloads."
+      },
+      {
+        "q": "Can I save a video from a private account?",
+        "a": "No, not with TikTok’s button and not with any web tool. Ask the person to send you the file."
+      }
+    ]
+  },
+  "GuideDraft": {
+    "metaTitle": "How to Save a TikTok Draft to Your Camera Roll",
+    "metaDescription": "Save a TikTok draft to your camera roll or gallery without anyone seeing it: the Only me trick, the Save to device switch, and a backup before a new phone.",
+    "eyebrow": "Drafts guide · October 2026",
+    "h1": "How to Save a TikTok Draft to Your Camera Roll",
+    "subtitle": "Drafts live only inside the TikTok app on your phone. Here is how to get one into your camera roll or gallery without anyone else seeing it.",
+    "answerTitle": "The short answer",
+    "answer": "Most app versions have no “export draft” button. The dependable way: open the draft, tap Next, set Who can watch to Only me, switch on Save to device, and post. Nobody else sees the post, and a copy lands in your camera roll. You can delete the private post afterwards; the saved copy stays. Menu names vary a little between app versions.",
+    "stepsTitle": "Step by step: save a draft without posting it publicly",
+    "steps": [
+      {
+        "title": "Open your drafts",
+        "body": "Go to your Profile and tap Drafts, the first tile in your video grid. Tap the draft you want to keep."
+      },
+      {
+        "title": "Go to the post screen",
+        "body": "Tap Next. Do not change the video; you only use the post screen to export it."
+      },
+      {
+        "title": "Set Who can watch to Only me",
+        "body": "Tap the visibility setting (“Everyone can view this post”) and choose Only me. The post will not show up for followers or on the For You page."
+      },
+      {
+        "title": "Switch on Save to device",
+        "body": "Open More options and turn on Save to device. On some versions the switch sits directly on the post screen."
+      },
+      {
+        "title": "Post, then check your gallery",
+        "body": "Tap Post. When the upload finishes, the video is in your Photos app or Gallery. Keep or delete the private post: deleting it does not delete the saved copy."
+      }
+    ],
+    "ctaText": "Want to save someone else’s public TikTok instead? Paste its link into the downloader.",
+    "ctaButton": "Open the downloader",
+    "sections": [
+      {
+        "title": "Why you should back up drafts",
+        "paragraphs": [
+          "Drafts are stored on your phone inside the TikTok app, not in your TikTok account. Deleting the app, clearing its storage or switching to a new phone deletes them, and logging in again does not bring them back. If a draft matters, export it before any of those happen."
+        ]
+      },
+      {
+        "title": "Other ways, and their downsides",
+        "paragraphs": [
+          "Screen recording keeps everything private and needs no posting, but the copy includes whatever is on screen and only reaches your screen’s resolution. Start the recording, play the draft full screen in the editor preview, and trim the start and end afterwards.",
+          "Some app versions offer a save option directly in the drafts screen or the editor. If you see one, use it: it is the quickest. It is not available on every version or in every region, which is why the Only me method above is the dependable one."
+        ]
+      }
+    ],
+    "tipsTitle": "Tips",
+    "tips": [
+      {
+        "title": "Watermark-free copy",
+        "body": "The Save to device copy is made on your phone from your own edit, so it is usually without the TikTok logo. Saving the posted video later from its Share menu adds the logo and your username."
+      },
+      {
+        "title": "Publishing later",
+        "body": "If you decide to publish the video after all, open the private post, tap ⋯ → Privacy settings and set it to Everyone instead of uploading the file again."
+      },
+      {
+        "title": "Getting a new phone",
+        "body": "Export every draft you want to keep with the steps above, then move the files with iCloud Photos, Google Photos or a cable. TikTok has no draft transfer."
+      }
+    ],
+    "troubleshootTitle": "Troubleshooting",
+    "troubleshoot": [
+      {
+        "problem": "The Save to device switch is missing",
+        "fix": "Update TikTok. If it is still missing, post as Only me anyway, then open the post, tap Share or ⋯ and choose Save video; that copy may carry the watermark."
+      },
+      {
+        "problem": "The video did not appear in my gallery",
+        "fix": "Check that TikTok may save to your photos. iPhone: Settings → TikTok → Photos. Android: Settings → Apps → TikTok → Permissions → Photos and videos."
+      },
+      {
+        "problem": "Can TokDown download my draft?",
+        "fix": "No, and no other web tool can either. A draft never leaves your phone, and an Only me post is private, so neither has a public link to fetch."
+      }
+    ],
+    "faqTitle": "Drafts FAQ",
+    "faq": [
+      {
+        "q": "Can you save a TikTok draft without posting it?",
+        "a": "On most app versions there is no direct button. Screen recording works without posting; otherwise post it as Only me with Save to device on, which nobody else can see."
+      },
+      {
+        "q": "Will my followers see an Only me post?",
+        "a": "No. An Only me post is visible to you alone. It does not appear in followers’ feeds or on the For You page."
+      },
+      {
+        "q": "Do TikTok drafts transfer to a new phone?",
+        "a": "No. Drafts are stored on the device, not in your account, so export the ones you want to keep before you switch."
+      },
+      {
+        "q": "Does deleting the private post delete the saved video?",
+        "a": "No. The copy in your camera roll or gallery is a separate file and stays when you delete the post."
+      },
+      {
+        "q": "Are TikTok drafts saved in the cloud?",
+        "a": "No. They stay on the phone where you made them, which is why deleting the app removes them."
+      }
+    ]
+  },
+  "Cookie": {
+    "text": "We use cookies and third-party advertising partners to show ads and analyze traffic.",
+    "link": "Learn more in our Privacy Policy",
+    "accept": "Accept & Continue"
   }
 }

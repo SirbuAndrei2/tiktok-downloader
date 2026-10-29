@@ -2,10 +2,20 @@ import type { Metadata } from 'next'
 
 export const BASE = 'https://tokdown.org'
 
-export const LOCALES = ['en', 'de', 'ar'] as const
+export const LOCALES = ['en', 'de', 'ar', 'es', 'pt', 'id'] as const
 
 /** Open Graph locale per site locale (og:locale). */
-export const OG_LOCALE: Record<string, string> = { en: 'en_US', de: 'de_DE', ar: 'ar_SA' }
+export const OG_LOCALE: Record<string, string> = { en: 'en_US', de: 'de_DE', ar: 'ar_SA', es: 'es_LA', pt: 'pt_BR', id: 'id_ID' }
+
+/**
+ * <html lang> per site locale. The URL segment stays short (/pt), but the copy
+ * is Brazilian Portuguese and neutral Latin American Spanish. hreflang keeps the
+ * bare language codes so /pt and /es also serve Portugal and Spain.
+ */
+export const HTML_LANG: Record<string, string> = { en: 'en', de: 'de', ar: 'ar', es: 'es', pt: 'pt-BR', id: 'id' }
+
+/** Right-to-left locales. */
+export const RTL_LOCALES = new Set(['ar'])
 
 // Pages that define their own `openGraph` replace the layout's one entirely
 // (Next merges metadata shallowly), so every openGraph object must repeat this.
@@ -16,7 +26,7 @@ export const OG_IMAGE = {
   alt: 'TokDown — download TikTok, Facebook and Twitter videos without watermark',
 }
 
-/** '' for English (served at the root), '/de' or '/ar' otherwise. */
+/** '' for English (served at the root), '/<locale>' otherwise. */
 export function localePrefix(locale: string) {
   return locale === 'en' ? '' : `/${locale}`
 }
@@ -31,12 +41,10 @@ export function localeUrl(locale: string, path = '/') {
   return `${BASE}${prefix}${path}`
 }
 
-/** hreflang map (en/de/ar + x-default → English) for a page that exists in every locale. */
-export function hreflang(path: string) {
+/** hreflang map (every locale + x-default → English) for a page that exists in every locale. */
+export function hreflang(path: string): Record<string, string> {
   return {
-    en: localeUrl('en', path),
-    de: localeUrl('de', path),
-    ar: localeUrl('ar', path),
+    ...Object.fromEntries(LOCALES.map((l) => [l, localeUrl(l, path)])),
     'x-default': localeUrl('en', path),
   }
 }

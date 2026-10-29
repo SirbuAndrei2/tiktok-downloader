@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import Logo from '@/components/Logo'
 
 type LinkItem = { href: string; label: string }
@@ -45,10 +46,21 @@ export default function SiteFooter({ tagline, copyright, feedback, columns, spon
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-5">
           <p className="mono m-0 text-xs" style={{ color: 'var(--t4)' }}>{copyright}</p>
           {sponsored && (
-            <a href={SMART_LINK} target="_blank" rel="sponsored nofollow noopener" className="mono text-xs transition-colors hover:text-white" style={{ color: 'var(--t4)' }}>Sponsored</a>
+            <SponsoredLink />
           )}
         </div>
       </div>
     </footer>
+  )
+}
+
+/**
+ * Rendered only on locale pages (the legal layout passes sponsored={false}), so
+ * the translation lookup always runs after setRequestLocale and stays static.
+ */
+function SponsoredLink() {
+  const t = useTranslations('Footer')
+  return (
+    <a href={SMART_LINK} target="_blank" rel="sponsored nofollow noopener" className="mono text-xs transition-colors hover:text-white" style={{ color: 'var(--t4)' }}>{t('sponsored')}</a>
   )
 }

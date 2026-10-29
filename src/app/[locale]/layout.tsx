@@ -8,7 +8,7 @@ import { routing } from '@/i18n/routing'
 import CloudflareAnalytics from '@/components/CloudflareAnalytics'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import '../globals.css'
-import { BASE, OG_IMAGE } from '@/lib/seo'
+import { BASE, HTML_LANG, OG_IMAGE, RTL_LOCALES } from '@/lib/seo'
 import { siteGraph } from '@/lib/schema'
 import JsonLd from '@/components/JsonLd'
 
@@ -99,10 +99,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages()
 
-  const dir = locale === 'ar' ? 'rtl' : 'ltr'
+  const dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr'
 
   return (
-    <html lang={locale} dir={dir} className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang={HTML_LANG[locale] ?? locale} dir={dir} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <JsonLd data={siteGraph()} />
 

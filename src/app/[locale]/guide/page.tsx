@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
-import { ArrowLeftRight, ArrowRight, Film, Globe, ImagePlay, ListVideo, Lock, Music, Scale, Smartphone, Sparkles, TabletSmartphone, type LucideIcon } from 'lucide-react'
+import { ArrowLeftRight, ArrowRight, CircleSlash, Film, Globe, ImagePlay, Images, ListVideo, Lock, Monitor, Music, Save, Scale, Smartphone, Sparkles, TabletSmartphone, type LucideIcon } from 'lucide-react'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import CtaBand from '@/components/CtaBand'
@@ -16,6 +16,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 const ICONS: Record<string, LucideIcon> = {
   hd: Sparkles, audio: Music, iphone: Smartphone, android: TabletSmartphone,
+  pc: Monitor, slideshow: Images, noSave: CircleSlash, draft: Save,
   legal: Scale, mp4: Film, gif: ImagePlay, chrome: Globe, playlist: ListVideo, private: Lock, snaptik: ArrowLeftRight,
 }
 
@@ -78,7 +79,7 @@ export default async function GuideHub({ params }: Props) {
       <div className="relative flex min-h-screen w-full flex-col">
         <SiteHeader path={SLUG} locale={locale} localePath={localePath} labels={{ tools: tNav('tools'), guides: tNav('guides'), about: tNav('about'), language: tCommon('language') }} />
 
-        <main className="relative z-10 flex w-full flex-col items-center">
+        <main className="relative z-10 flex w-full flex-col items-center overflow-x-clip">
           <section className="relative w-full max-w-6xl px-5 pb-12 pt-14 sm:pt-20">
             <span aria-hidden className="blob blob--peach blob--animate -right-24 -top-10 h-72 w-72" />
             <span aria-hidden className="blob blob--sky -left-24 top-32 h-56 w-56" />

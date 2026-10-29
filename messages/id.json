@@ -1,0 +1,1817 @@
+{
+  "Downloader": {
+    "placeholder": "https://www.tiktok.com/@user/video/...",
+    "paste": "Tempel",
+    "download": "Download Video",
+    "fetching": "Mengambil video…",
+    "clear": "Hapus",
+    "errorNetwork": "Jaringan bermasalah. Coba lagi, ya.",
+    "tryAgain": "Coba lagi",
+    "downloadAnother": "← Download video lain",
+    "photo": {
+      "placeholder": "https://www.tiktok.com/@user/photo/...",
+      "download": "Download Foto",
+      "fetching": "Mengambil foto…",
+      "downloadAnother": "← Download slideshow lain"
+    },
+    "platforms": {
+      "facebook": {
+        "placeholder": "https://www.facebook.com/watch?v=… atau fb.watch/…",
+        "download": "Download Video",
+        "fetching": "Mengambil video…",
+        "downloadAnother": "← Download video lain"
+      },
+      "twitter": {
+        "placeholder": "https://x.com/user/status/…",
+        "download": "Download Video",
+        "fetching": "Mengambil tweet…",
+        "downloadAnother": "← Download tweet lain"
+      }
+    }
+  },
+  "VideoResult": {
+    "hdTitle": "HD · Tanpa Watermark",
+    "hdDesc": "Kualitas terbaik",
+    "sdTitle": "SD · Tanpa Watermark",
+    "sdDesc": "File lebih kecil",
+    "audioTitle": "Audio MP3",
+    "audioDesc": "Musiknya saja",
+    "downloadOptions": "Pilihan download",
+    "photosTitle": "{count} foto",
+    "downloadAll": "Download semua",
+    "downloadingAll": "Menyimpan…",
+    "photoAlt": "Foto {n}",
+    "downloadPhoto": "Download foto {n}",
+    "slideshowTitle": "Slideshow jadi video",
+    "slideshowDesc": "Semua slide plus musiknya",
+    "hdGeneric": "Video · Kualitas terbaik",
+    "sdGeneric": "Video · File lebih kecil",
+    "sourceLabel": "Sumber",
+    "hdWatermarked": "HD · Dengan watermark",
+    "sdWatermarked": "SD · Dengan watermark",
+    "fallbackNote": "Layanan tanpa watermark kami sedang penuh, jadi ini file asli TikTok yang masih ada watermark-nya. Coba lagi beberapa menit lagi untuk versi yang bersih."
+  },
+  "Nav": {
+    "about": "Tentang",
+    "downloadGuide": "Panduan Download",
+    "mp3Guide": "TikTok ke MP3",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Ketentuan",
+    "dmca": "DMCA",
+    "disclaimer": "Penafian",
+    "downloader": "Downloader",
+    "noWatermarkGuide": "Panduan Tanpa Watermark",
+    "tools": "Alat",
+    "guides": "Panduan",
+    "photoDownloader": "Download Foto TikTok",
+    "allGuides": "Semua panduan"
+  },
+  "Footer": {
+    "tagline": "Hanya untuk penggunaan pribadi. Kami tidak menyimpan video apa pun. Tidak berafiliasi dengan TikTok atau ByteDance.",
+    "copyright": "© {year} TikTok Downloader",
+    "notAffiliated": "© {year} TokDown. Tidak berafiliasi dengan TikTok, ByteDance, Meta, X, atau Google.",
+    "toolsHeading": "Alat",
+    "guidesHeading": "Panduan",
+    "legalHeading": "Legal",
+    "feedback": "Punya masukan? Kirim email ke",
+    "sponsored": "Bersponsor"
+  },
+  "Common": {
+    "backToDownloader": "Kembali ke downloader",
+    "guideUpdated": "Panduan · Diperbarui Mei 2026",
+    "tryItNow": "Coba sekarang — tanpa login, tanpa daftar.",
+    "relatedGuides": "Panduan terkait",
+    "language": "Bahasa",
+    "runsLocally": "Berjalan di browser kamu · tidak ada yang di-upload",
+    "inDepth": "Lebih dalam",
+    "linkToTool": "Tautkan ke alat ini",
+    "linkToToolHint": "Bermanfaat? Tempel kode ini di blog, postingan forum, atau dokumentasimu supaya orang lain juga bisa menemukannya.",
+    "copy": "Salin",
+    "copied": "Tersalin",
+    "adLabel": "Iklan",
+    "related": "Alat & panduan terkait"
+  },
+  "Home": {
+    "metaTitle": "Download Video TikTok Tanpa Watermark HD Gratis",
+    "metaDescription": "Download video TikTok tanpa watermark dalam HD atau simpan sound-nya jadi MP3. Gratis, tanpa login, di iPhone, Android, PC, dan Mac. Tempel link, beres.",
+    "metaKeywords": [
+      "download video tiktok tanpa watermark",
+      "download tiktok tanpa watermark hd",
+      "tiktok downloader",
+      "download video tiktok",
+      "tiktok mp3",
+      "download tiktok mp4",
+      "simpan video tiktok",
+      "download tiktok hd",
+      "tiktok downloader gratis",
+      "alternatif snaptik",
+      "alternatif ssstik"
+    ],
+    "badge": "Gratis · Tanpa Watermark · Kualitas HD",
+    "h1": "Download Video TikTok",
+    "h1Accent": "Tanpa Watermark",
+    "subtitle": "Gratis, kualitas HD, tanpa login — bisa di iPhone, Android, PC, dan Mac. Audionya juga bisa diambil jadi MP3.",
+    "step1": "Salin link TikTok",
+    "step2": "Tempel & Download",
+    "step3": "Simpan video HD",
+    "trust1": "✓ 100% Gratis",
+    "trust2": "✓ Tanpa daftar",
+    "trust3": "✓ Tanpa watermark",
+    "trust4": "✓ Semua perangkat",
+    "featuresTitle": "Semua yang kamu butuhkan",
+    "featuresSubtitle": "Alat gratis, tanpa kompromi",
+    "whyTitle": "Kenapa TokDown?",
+    "whySubtitle": "Kebanyakan downloader TikTok cuma bisa video. TokDown juga bisa menyimpan postingan foto, klip X dan Facebook, plus punya kompresor video dan pembuat GIF yang berjalan di browser kamu.",
+    "whyTableFeature": "Fitur",
+    "whyTableTokDown": "TokDown",
+    "whyTableOthers": "Lainnya",
+    "guidesTitle": "Panduan & Tutorial",
+    "guidesSubtitle": "Langkah demi langkah untuk setiap perangkat",
+    "guide1Title": "Cara Download Video TikTok Tanpa Watermark",
+    "guide1Desc": "Panduan langkah demi langkah untuk iPhone, Android, PC, dan Mac — lengkap dengan solusi masalah yang sering muncul.",
+    "guide2Title": "Cara Mengubah TikTok ke MP3",
+    "guide2Desc": "Ambil audio dari video TikTok mana pun dan simpan sebagai file MP3 dalam hitungan detik.",
+    "faqTitle": "Pertanyaan yang Sering Diajukan",
+    "faqSubtitle": "Semua yang perlu kamu tahu",
+    "features": [
+      {
+        "icon": "🚫",
+        "title": "Tanpa Watermark",
+        "desc": "Video bersih tanpa logo TikTok yang menempel."
+      },
+      {
+        "icon": "🎬",
+        "title": "Kualitas HD",
+        "desc": "Resolusi tertinggi yang di-upload kreatornya."
+      },
+      {
+        "icon": "🎵",
+        "title": "Audio MP3",
+        "desc": "Ambil dan simpan trek audionya saja."
+      },
+      {
+        "icon": "⚡",
+        "title": "Instan",
+        "desc": "Diproses dalam hitungan detik, tanpa antre."
+      },
+      {
+        "icon": "🔓",
+        "title": "Tanpa Login",
+        "desc": "Tanpa akun, tanpa daftar."
+      },
+      {
+        "icon": "📱",
+        "title": "Semua Perangkat",
+        "desc": "iPhone, Android, PC, dan Mac."
+      }
+    ],
+    "comparisons": [
+      {
+        "label": "HD tanpa watermark"
+      },
+      {
+        "label": "Ambil audio jadi MP3"
+      },
+      {
+        "label": "Tanpa akun atau login"
+      },
+      {
+        "label": "Kompresor & pembuat GIF, tanpa upload"
+      },
+      {
+        "label": "Bisa di semua perangkat"
+      },
+      {
+        "label": "Tidak ada file yang disimpan di server"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Bagaimana cara download video TikTok tanpa watermark?",
+        "a": "Buka TikTok, ketuk Bagikan di video mana pun, lalu Salin tautan. Tempel link-nya di atas dan klik Download. Pilih “HD · Tanpa Watermark” untuk menyimpan video bersih tanpa logo TikTok yang menempel."
+      },
+      {
+        "q": "Apakah TokDown gratis?",
+        "a": "Ya. Tidak perlu daftar, tidak perlu akun, dan tidak ada paket premium. Situs ini dibiayai iklan. Kalau layanan TikTok yang kami pakai sedang sibuk, kamu mungkin diminta mencoba lagi beberapa menit kemudian."
+      },
+      {
+        "q": "Bisakah download audio TikTok jadi MP3?",
+        "a": "Bisa. Setelah video diambil, akan muncul tombol “Audio MP3” untuk menyimpan trek suaranya saja. Cocok untuk sound TikTok, musik latar, dan voice-over."
+      },
+      {
+        "q": "Apakah bisa di iPhone dan Android?",
+        "a": "Bisa. TokDown adalah aplikasi web — buka saja di Safari (iPhone), Chrome (Android), atau browser modern lainnya. Tidak perlu instal aplikasi."
+      },
+      {
+        "q": "Bagaimana cara menyimpan video TikTok ke galeri iPhone?",
+        "a": "Setelah di-download, video tersimpan di app File. Buka File, cari videonya, ketuk Bagikan, lalu “Simpan Video” untuk memindahkannya ke app Foto."
+      },
+      {
+        "q": "Bagaimana cara menyimpan video TikTok di Android?",
+        "a": "Ketuk tombol download dan video langsung tersimpan di folder Download. Dari sana, buka lewat app Galeri."
+      },
+      {
+        "q": "Kenapa video TikTok privat tidak bisa di-download?",
+        "a": "Video privat butuh autentikasi login yang tidak bisa kami akses. Hanya video TikTok publik yang bisa di-download. Kalau videonya publik tapi tetap gagal, mungkin kreatornya menonaktifkan download di pengaturan akunnya."
+      },
+      {
+        "q": "Kualitas video apa saja yang tersedia?",
+        "a": "Ada HD (resolusi tertinggi yang di-upload kreator) dan SD, keduanya tanpa watermark. HD disarankan untuk dibagikan atau diedit."
+      },
+      {
+        "q": "Format apa saja yang didukung TokDown?",
+        "a": "Video di-download sebagai MP4 (HD atau SD, tanpa watermark). Audio di-download sebagai MP3. MP4 bisa diputar di semua perangkat; MP3 bisa dibuka di aplikasi musik apa pun."
+      },
+      {
+        "q": "Apakah TokDown aman dipakai?",
+        "a": "Aman. TokDown tidak pernah meminta data login TikTok kamu dan tidak menyimpan file video apa pun. Video dialirkan lewat server kami langsung ke perangkatmu dan tidak pernah disimpan di tengah jalan."
+      },
+      {
+        "q": "Kenapa TikTok menambahkan watermark?",
+        "a": "TikTok menempelkan watermark pada video yang disimpan lewat aplikasinya supaya orang kembali ke platform dan kontennya membawa merek TikTok. TokDown mengambil file sumber asli sebelum watermark ditambahkan, jadi yang kamu dapat adalah versi bersihnya."
+      },
+      {
+        "q": "Bisakah download slideshow atau postingan foto TikTok?",
+        "a": "Bisa. Tempel link postingan foto atau slideshow ke downloader foto TikTok (tokdown.org/photo-downloader) lalu simpan setiap gambar dalam ukuran penuh, satu per satu atau sekaligus, plus sound-nya sebagai MP3."
+      },
+      {
+        "q": "Apakah download video TikTok itu aman?",
+        "a": "Aman. TokDown tidak pernah meminta login TikTok kamu dan tidak pernah menyimpan video di servernya. File diambil dari CDN TikTok dan dialirkan ke perangkatmu dalam sekali jalan — tidak ada yang disimpan. Kami tidak punya akses ke akun TikTok kamu."
+      },
+      {
+        "q": "Bagaimana cara download TikTok tanpa instal aplikasi?",
+        "a": "Buka tokdown.org di browser apa pun di HP atau komputer — Safari, Chrome, Firefox, atau Edge. Tidak perlu download atau instal aplikasi. Tinggal tempel link dan download."
+      },
+      {
+        "q": "Bisakah download video TikTok di PC atau laptop?",
+        "a": "Bisa. Buka tokdown.org di Chrome, Edge, atau Firefox di Windows atau Mac. Tempel link TikTok dan klik Download. Video tersimpan di folder Download sebagai file MP4."
+      },
+      {
+        "q": "Kenapa video TikTok hasil download buram?",
+        "a": "Kemungkinan besar kamu memilih opsi SD, bukan HD. Kembali dan pilih “HD · Tanpa Watermark” untuk kualitas paling tajam. Pastikan juga koneksi internet stabil selama download — koneksi lambat bisa membuat download tidak selesai."
+      },
+      {
+        "q": "Berapa lama download TikTok?",
+        "a": "Kebanyakan download selesai dalam 5–15 detik. Video yang lebih panjang (3–10 menit) atau koneksi lambat bisa butuh sampai 30 detik. Tidak ada antrean atau waktu tunggu."
+      },
+      {
+        "q": "Apakah download video TikTok itu legal?",
+        "a": "Tergantung negaramu dan apa yang kamu lakukan dengan file-nya. Banyak negara mengizinkan salinan pribadi untuk ditonton sendiri, tapi ketentuan TikTok membatasi download di luar fitur bawaannya, dan meng-upload ulang, menyebarkan, atau memonetisasi video orang lain tanpa izin adalah pelanggaran hak cipta hampir di mana pun. Gunakan TokDown untuk keperluan pribadi dan untuk kontenmu sendiri."
+      },
+      {
+        "q": "Bisakah download siaran TikTok Live?",
+        "a": "Tidak. TikTok Live disiarkan secara real time dan tidak disimpan sebagai file video yang bisa di-download. Hanya video TikTok publik yang sudah direkam (bukan live) yang bisa di-download dengan TokDown."
+      },
+      {
+        "q": "Apakah TokDown bisa dipakai tanpa akun TikTok?",
+        "a": "Bisa. TokDown hanya bekerja dengan video TikTok yang tersedia untuk publik dan tidak butuh akun TikTok apa pun — baik milikmu maupun orang lain. Cukup tempel link video publik dan download."
+      }
+    ],
+    "eyebrow": "Gratis · Tanpa watermark · HD",
+    "heroNote": "Tempel link, pilih format, beres dalam hitungan detik.",
+    "facts": [
+      {
+        "value": "3",
+        "label": "langkah, dari awal sampai selesai"
+      },
+      {
+        "value": "0",
+        "label": "akun atau login"
+      },
+      {
+        "value": "HD",
+        "label": "video tanpa watermark"
+      },
+      {
+        "value": "MP3",
+        "label": "audio dalam satu ketukan"
+      }
+    ],
+    "stepsTitle": "Cara kerjanya",
+    "stepsSubtitle": "Tiga langkah. Tanpa akun, tanpa instal apa pun.",
+    "step1Desc": "Buka TikTok, ketuk Bagikan di video publik mana pun, lalu Salin tautan.",
+    "step2Desc": "Tempel link-nya di kolom paling atas dan tekan Download.",
+    "step3Desc": "Pilih HD, SD, atau MP3 dan file langsung tersimpan di perangkatmu.",
+    "toolsTitle": "Semua yang bisa dilakukan TokDown",
+    "toolsSubtitle": "Satu alat, banyak cara menyimpan konten favoritmu.",
+    "toolsCta": "Lihat semua alat",
+    "ctaTitle": "Siap menyimpan video?",
+    "ctaSubtitle": "Tanpa akun. Tanpa watermark. Tanpa biaya.",
+    "ctaButton": "Tempel link kamu"
+  },
+  "About": {
+    "metaTitle": "Tentang TokDown – Siapa di Balik Downloader Ini",
+    "metaDescription": "Cara kerja TokDown: dari mana file download berasal, apa yang tidak pernah disimpan, bagaimana iklan membiayai situs, dan cara menghubungi kami. Gratis.",
+    "h1": "Tentang",
+    "h1Accent": "TokDown",
+    "subtitle": "TokDown adalah kumpulan kecil alat download dan media gratis. Halaman ini menjelaskan cara kerjanya, apa yang tidak dilakukannya, dan bagaimana situs ini dibiayai.",
+    "storyTitle": "Cerita kami",
+    "story1": "Kebanyakan downloader TikTok “gratis” punya pola yang sama: tombol download asli disembunyikan di bawah tiga tombol palsu, kamu dilempar ke domain iklan, disuruh mengisi captcha, dan — beberapa di antaranya — bahkan meminta username dan password TikTok kamu. Menurut kami itu tidak bisa diterima.",
+    "story2": "TokDown dibuat sebagai alat yang dulu kami harap sudah ada: cepat, bersih, dan jujur. Kamu tempel link. Kamu dapat videonya. Sudah, itu saja.",
+    "story3": "Kami tidak menyimpan file video apa pun di server kami. Saat kamu menekan download, file dialirkan dari CDN TikTok lewat server kami ke perangkatmu tanpa pernah disimpan. Kami tidak mencatat apa yang kamu download; log server standar otomatis dihapus setelah 30 hari.",
+    "valuesTitle": "Prinsip kami",
+    "howTitle": "Cara kerja TokDown",
+    "how1": "Saat kamu menempel link, TokDown mengenali platformnya dan meminta media dari sumber publik: untuk TikTok, API pihak ketiga (TikWM) dengan halaman video publik TikTok sebagai cadangan; untuk X, data publik yang dipakai untuk tweet yang disematkan; untuk Facebook, embed video publik. Kamu mendapat file yang disajikan platform, tanpa di-encode ulang.",
+    "how2": "Versi “tanpa watermark” adalah file asli yang di-upload kreator sebelum aplikasi TikTok menempelkan logonya. Kedua versi ada di CDN TikTok; TokDown hanya menampilkan versi yang tepat.",
+    "how3": "File dialirkan lewat server kami ke perangkatmu dalam sekali jalan, karena CDN platform menolak download langsung dari browser; tidak ada yang ditulis ke disk. Kompresor video dan konverter MP4 ke GIF bekerja berbeda: keduanya berjalan sepenuhnya di browser kamu dan file-mu tidak pernah di-upload.",
+    "legalTitle": "Catatan hukum penting",
+    "legal": "TokDown ditujukan hanya untuk penggunaan pribadi dan non-komersial. Selalu hormati hak para kreator TikTok — men-download video tidak memindahkan hak ciptanya. Jangan menyebarkan, meng-upload ulang, atau memonetisasi konten yang di-download tanpa izin tegas dari kreator aslinya. TokDown tidak berafiliasi dengan, didukung oleh, atau terhubung dengan TikTok maupun ByteDance dalam bentuk apa pun.",
+    "contactTitle": "Kontak & bantuan",
+    "contact": "Ada pertanyaan, laporan bug, atau pemberitahuan hak cipta? Kirim email ke support@tokdown.org. Pemberitahuan hak cipta mengikuti proses yang dijelaskan di halaman DMCA kami.",
+    "values": [
+      {
+        "icon": "🔒",
+        "title": "Privasi nomor satu",
+        "desc": "Kami tidak pernah menyimpan video yang kamu download: file dialirkan lewat server kami tanpa disimpan, dan kami tidak punya database riwayat download-mu."
+      },
+      {
+        "icon": "⚡",
+        "title": "Cepat tanpa kompromi",
+        "desc": "Setiap download diproses dalam hitungan detik. Tanpa antrean, tanpa timer “harap tunggu” yang sengaja dibuat untuk menampilkan lebih banyak iklan."
+      },
+      {
+        "icon": "🚫",
+        "title": "Jujur soal iklan",
+        "desc": "Tidak ada tombol download palsu dan tidak ada captcha. Situs ini dibiayai iklan: banner, social bar, dan satu pop-under yang hanya terbuka setelah hasil download muncul, tidak pernah menggantikan tombol yang asli."
+      },
+      {
+        "icon": "🆓",
+        "title": "Benar-benar gratis",
+        "desc": "Tidak ada paket premium dan biaya tersembunyi. Layanan sumber bisa membatasi akses saat sedang ramai; kalau itu terjadi, kamu mendapat pesan yang jelas dan waktu untuk mencoba lagi, bukan tombol palsu."
+      }
+    ]
+  },
+  "GuideNoWatermark": {
+    "metaTitle": "Cara Download Video TikTok Tanpa Watermark",
+    "metaDescription": "Panduan lengkap download video TikTok tanpa watermark dalam HD di iPhone, Android, Windows, atau Mac, kenapa ada watermark, dan cara mengatasi error.",
+    "h1": "Cara Download Video TikTok Tanpa Watermark",
+    "subtitle": "Panduan lengkap dan jujur untuk iPhone, Android, Windows, dan Mac — termasuk solusi untuk masalah yang paling sering muncul.",
+    "stepsTitle": "Langkah demi langkah",
+    "ctaText": "Siap? Coba sekarang — tanpa login, tanpa daftar.",
+    "ctaButton": "Download video TikTok →",
+    "platformsTitle": "Menyimpan ke perangkatmu — per platform",
+    "troubleshootTitle": "Mengatasi masalah yang sering muncul",
+    "whyTitle": "Kenapa TikTok menambahkan watermark?",
+    "why1": "Saat kamu menyimpan video lewat tombol “Simpan video” bawaan TikTok, TikTok menempelkan watermark — username kamu dan logo TikTok — sebelum menyimpannya ke galeri. Ini disengaja: orang yang melihat video itu di tempat lain akan diarahkan kembali ke TikTok.",
+    "why2": "File video aslinya (tanpa watermark) tetap tersimpan di CDN TikTok. TokDown mengambil file asli itu secara langsung, sehingga watermark-nya sama sekali tidak ikut. Mekanisme teknisnya sama dengan yang dipakai fitur embed milik TikTok sendiri.",
+    "legalTitle": "Apakah legal?",
+    "legal": "Menyimpan video TikTok publik untuk ditonton sendiri ditoleransi di banyak negara (misalnya sebagai salinan pribadi), tapi ketentuan TikTok membatasi download di luar fitur bawaannya, dan aturannya berbeda di tiap negara. Yang jelas tidak boleh adalah menyebarkan, meng-upload ulang, atau memonetisasi video yang di-download tanpa izin tegas dari kreatornya. Selalu cantumkan kreator aslinya dan hormati hak ciptanya.",
+    "problemLabel": "Masalah:",
+    "fixLabel": "Solusi:",
+    "relatedGuide1Title": "Cara Mengubah TikTok ke MP3",
+    "relatedGuide1Desc": "Ambil audio dari video TikTok mana pun dalam hitungan detik.",
+    "relatedGuide2Title": "Tentang TokDown",
+    "relatedGuide2Desc": "Cara kerja TokDown dan alasan kami membuatnya.",
+    "steps": [
+      {
+        "title": "Buka TikTok dan cari videonya",
+        "body": "Buka aplikasi TikTok di HP, atau buka tiktok.com di browser. Gulir — atau cari — video yang ingin kamu simpan."
+      },
+      {
+        "title": "Ketuk Bagikan → Salin tautan",
+        "body": "Ketuk ikon panah (Bagikan) di sisi kanan video. Di menu berbagi yang muncul, ketuk Salin tautan. URL video sekarang ada di clipboard kamu."
+      },
+      {
+        "title": "Buka TokDown di browser",
+        "body": "Buka tokdown.org. Situs ini bisa dipakai di browser apa pun — Safari dan Chrome di HP, Edge atau Firefox di komputer. Tidak perlu download aplikasi."
+      },
+      {
+        "title": "Tempel link dan tekan Download",
+        "body": "Ketuk kolom input, tempel URL TikTok kamu, lalu tekan tombol Download. TokDown mengambil detail video dalam beberapa detik."
+      },
+      {
+        "title": "Klik “HD · Tanpa Watermark” dan simpan",
+        "body": "Setelah pilihan download muncul, pilih “HD · Tanpa Watermark” untuk menyimpan versi HD yang bersih. File tersimpan di folder Download atau app File."
+      }
+    ],
+    "platforms": [
+      {
+        "platform": "iPhone (Safari)",
+        "tip": "Setelah file selesai di-download, buka app File → Unduhan, tekan lama videonya, lalu ketuk Bagikan → Simpan Video untuk memindahkannya ke app Foto."
+      },
+      {
+        "platform": "Android (Chrome)",
+        "tip": "Video langsung tersimpan di folder Download. Buka app Galeri atau File untuk menemukannya. Beberapa HP Android meminta izin penyimpanan saat pertama kali."
+      },
+      {
+        "platform": "Windows (Chrome / Edge)",
+        "tip": "File tersimpan di folder Downloads default (biasanya C:\\Users\\NamaKamu\\Downloads). Bisa diputar di media player apa pun."
+      },
+      {
+        "platform": "Mac (Safari / Chrome)",
+        "tip": "Video tersimpan di ~/Downloads. Seret ke folder mana pun atau langsung ke aplikasi edit video seperti iMovie atau CapCut."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "Download langsung gagal",
+        "fix": "Pastikan videonya publik. Video TikTok privat tidak bisa di-download dengan alat pihak ketiga mana pun. Cek juga bahwa kamu menyalin link lengkap dari menu Bagikan — bukan dari address bar browser, yang bisa berupa URL redirect."
+      },
+      {
+        "problem": "Video bisa diputar tapi tidak ada suaranya",
+        "fix": "Ini masalah kompatibilitas browser yang jarang terjadi. Coba klik kanan tombol download dan pilih “Simpan link sebagai…”, atau pakai browser lain."
+      },
+      {
+        "problem": "“Download dinonaktifkan oleh kreator”",
+        "fix": "Kreator sudah mematikan download di pengaturan akun TikTok-nya. TokDown tidak bisa melewati batasan ini, karena diterapkan TikTok di sisi server."
+      },
+      {
+        "problem": "File tidak bisa diputar setelah di-download",
+        "fix": "Kemungkinan besar download berhenti di tengah jalan. Cek ukuran file-nya (video TikTok HD biasanya beberapa MB, bukan beberapa KB) dan download ulang dengan koneksi yang stabil. TokDown selalu memberikan MP4 (H.264), yang bisa diputar di semua player masa kini."
+      }
+    ]
+  },
+  "GuideMp3": {
+    "metaTitle": "TikTok ke MP3 – Download Lagu & Sound Gratis",
+    "metaDescription": "Ubah video TikTok apa pun jadi MP3 dan simpan audionya di HP atau PC. Gratis, instan, tanpa akun. Bisa di iPhone, Android, Windows, dan Mac.",
+    "h1": "TikTok ke MP3 — Download Audio Gratis",
+    "subtitle": "Ambil dan simpan audio dari video TikTok mana pun sebagai file MP3 dalam hitungan detik — tanpa login, tanpa aplikasi, bisa di perangkat apa pun.",
+    "stepsTitle": "Cara download audio TikTok jadi MP3",
+    "ctaText": "Coba sekarang — tempel link TikTok apa pun dan download audionya.",
+    "ctaButton": "Buka downloader TokDown →",
+    "useCasesTitle": "Kapan kamu cuma butuh audionya?",
+    "qualityTitle": "Seperti apa kualitas audionya?",
+    "quality1": "TikTok meng-encode audio hingga 128 kbps AAC. TokDown memberikan stream audio aslinya dan mengubahnya ke MP3 dengan bitrate yang sama — tidak ada penurunan kualitas akibat encode ulang dalam konversinya.",
+    "quality2": "Kalau video aslinya memakai musik dari pustaka sound berlisensi TikTok, kualitas audionya akan sebagus sumbernya. Voice-over dan audio rekaman pengguna mengikuti aturan yang sama — kualitasnya sesuai dengan yang direkam kreator.",
+    "copyrightTitle": "Hak cipta dan penggunaan yang sah",
+    "copyright": "Musik di video TikTok biasanya hanya berlisensi untuk dipakai di dalam TikTok. Men-download untuk didengarkan sendiri umumnya tidak masalah. Namun, memakai audio yang di-download di video, siaran, atau proyek komersialmu sendiri tanpa lisensi adalah pelanggaran hak cipta.",
+    "copyright2": "Voice-over, karya musik orisinal, dan rekaman pribadi yang dibagikan kreator adalah kekayaan intelektual mereka. Selalu minta izin sebelum memakai ulang konten orang lain di depan publik.",
+    "troubleshootTitle": "Mengatasi masalah",
+    "problemLabel": "Masalah:",
+    "fixLabel": "Solusi:",
+    "relatedGuide1Title": "Download Video TikTok Tanpa Watermark",
+    "relatedGuide1Desc": "Panduan video Full HD untuk iPhone, Android, PC, dan Mac.",
+    "relatedGuide2Title": "Tentang TokDown",
+    "relatedGuide2Desc": "Cara kerja TokDown dan alasan kami membuatnya.",
+    "steps": [
+      {
+        "title": "Cari video TikTok dengan audio yang kamu mau",
+        "body": "Buka aplikasi TikTok atau tiktok.com. Buka video yang sound, musik, atau voice-over-nya ingin kamu simpan."
+      },
+      {
+        "title": "Ketuk Bagikan → Salin tautan",
+        "body": "Ketuk ikon Bagikan (panah) di sisi kanan video. Di menu berbagi, ketuk “Salin tautan”. URL video sekarang ada di clipboard kamu."
+      },
+      {
+        "title": "Buka TokDown dan tempel link-nya",
+        "body": "Buka tokdown.org di browser apa pun. Tempel URL TikTok di kolom input dan tekan Download. Bisa di HP maupun komputer."
+      },
+      {
+        "title": "Klik “Audio MP3”",
+        "body": "Saat pilihan download muncul, klik tombol “Audio MP3”. File audio langsung mulai ter-download ke perangkatmu."
+      }
+    ],
+    "useCases": [
+      {
+        "icon": "🎧",
+        "title": "Dengar offline",
+        "desc": "Simpan sound TikTok yang lagi tren untuk didengarkan di mana saja tanpa kuota data."
+      },
+      {
+        "icon": "🎤",
+        "title": "Voice-over & ucapan",
+        "desc": "Ambil konten lisan — tutorial, tips, atau komentar — untuk didengar lagi nanti."
+      },
+      {
+        "icon": "🎼",
+        "title": "Menemukan musik",
+        "desc": "Simpan lagu yang kamu dengar di TikTok sebelum tahu nama penyanyinya, lalu cari pakai Shazam secara offline."
+      },
+      {
+        "icon": "📚",
+        "title": "Belajar bahasa",
+        "desc": "Simpan klip audio penutur asli untuk latihan pelafalan atau mengulang kosakata."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "Tombol “Audio MP3” tidak muncul",
+        "fix": "Pastikan kamu menyalin link berbagi TikTok yang lengkap, bukan URL pendek atau redirect. Ulangi langkah Bagikan → Salin tautan."
+      },
+      {
+        "problem": "File yang di-download tidak ada suaranya",
+        "fix": "Beberapa video TikTok memang tanpa suara (kreatornya tidak memakai audio). Pastikan videonya ada audionya sebelum di-download. Cek juga volume perangkatmu."
+      },
+      {
+        "problem": "File MP3 tidak bisa dibuka",
+        "fix": "Pastikan download-nya selesai: sound TikTok biasanya berukuran beberapa ratus KB sampai beberapa MB, jadi file yang sangat kecil berarti koneksinya terputus. Di iPhone, buka dari File → Unduhan; app Musik tidak bisa mengimpor file secara langsung."
+      },
+      {
+        "problem": "Audio terpotong sebelum selesai",
+        "fix": "Video TikTok bisa sampai 10 menit. Kalau videonya sangat panjang, pastikan download-nya benar-benar selesai. Koneksi lambat bisa membuat download tidak lengkap."
+      }
+    ]
+  },
+  "GuideIphone": {
+    "metaTitle": "Cara Download Video TikTok di iPhone ke Galeri",
+    "metaDescription": "Simpan video TikTok apa pun ke galeri iPhone tanpa watermark. Panduan langkah demi langkah untuk Safari di iOS — tanpa instal aplikasi, tanpa akun, gratis.",
+    "h1": "Cara Download Video TikTok di iPhone",
+    "subtitle": "Simpan video TikTok apa pun ke galeri iPhone dalam HD — tanpa watermark, tanpa aplikasi, tanpa akun TikTok. Bisa di Safari di semua iPhone.",
+    "stepsTitle": "Langkah demi langkah: download TikTok ke galeri iPhone",
+    "tipsTitle": "Tips khusus iPhone",
+    "troubleshootTitle": "Mengatasi masalah di iPhone",
+    "ctaText": "Siap mencoba? Tempel link TikTok apa pun di bawah — tanpa login.",
+    "ctaButton": "Download video TikTok →",
+    "steps": [
+      {
+        "title": "Buka TikTok dan cari videonya",
+        "body": "Buka aplikasi TikTok di iPhone, lalu gulir — atau cari — video yang ingin kamu simpan."
+      },
+      {
+        "title": "Ketuk Bagikan → Salin tautan",
+        "body": "Ketuk ikon Bagikan (panah ke kanan) di sisi kanan video. Di menu berbagi, ketuk “Salin tautan”. URL video sekarang ada di clipboard kamu."
+      },
+      {
+        "title": "Buka Safari dan masuk ke TokDown",
+        "body": "Buka Safari di iPhone. Ketik tokdown.org di address bar. Ketuk kolom input dan tempel link TikTok (tekan lama → Tempel)."
+      },
+      {
+        "title": "Ketuk Download dan pilih HD",
+        "body": "Ketuk tombol Download. Saat pilihan muncul, ketuk “HD · Tanpa Watermark” untuk men-download versi HD yang bersih."
+      },
+      {
+        "title": "Simpan ke galeri dari app File",
+        "body": "Di iPhone, file yang di-download masuk ke app File. Buka File → Unduhan. Tekan lama file videonya, lalu ketuk Bagikan → “Simpan Video”. Video pindah ke app Foto."
+      }
+    ],
+    "tips": [
+      {
+        "title": "Pakai Safari, bukan browser di dalam TikTok",
+        "body": "Browser bawaan TikTok memblokir download. Selalu buka tokdown.org di Safari (ikon kompas biru) — bukan di dalam TikTok."
+      },
+      {
+        "title": "Safari punya pengelola download sendiri",
+        "body": "Sejak iOS 13, Safari menampilkan tombol unduhan (panah dalam lingkaran) di address bar saat file sedang di-download. Ketuk untuk membuka file begitu selesai."
+      },
+      {
+        "title": "Atur lokasi download default",
+        "body": "Buka Pengaturan → Safari → Unduhan dan pilih “Di iPhone Saya” supaya file mudah ditemukan di app File."
+      },
+      {
+        "title": "Menyimpan banyak video",
+        "body": "Buka setiap link TikTok di tab Safari baru, download satu per satu, lalu pindahkan semuanya ke app Foto sekaligus. Kalau download mulai gagal setelah banyak percobaan beruntun, tunggu beberapa menit: layanan TikTok yang kami pakai membatasi akses saat sedang ramai."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "“Download gagal” atau pilihan tidak muncul",
+        "fix": "Pastikan videonya publik. Cek juga bahwa kamu menyalin link lengkap dari Bagikan → Salin tautan — bukan dari address bar browser."
+      },
+      {
+        "problem": "Opsi “Simpan Video” tidak ada di menu berbagi",
+        "fix": "Gulir ke bawah di menu berbagi — opsinya mungkin tersembunyi di bawah. Pastikan juga file-nya .mp4 yang valid dan akses Foto sudah diizinkan di Pengaturan → Privasi & Keamanan → Foto."
+      },
+      {
+        "problem": "Video tidak bisa diputar atau pratinjaunya kosong",
+        "fix": "Kemungkinan download berhenti di tengah jalan. Cek ukuran file di app File (video TikTok full HD biasanya beberapa MB) dan download ulang lewat Wi-Fi."
+      },
+      {
+        "problem": "Download sangat lambat",
+        "fix": "File TikTok HD bisa berukuran 20–80 MB. Pindah ke Wi-Fi supaya download lebih cepat."
+      }
+    ],
+    "eyebrow": "Panduan iPhone · Juni 2026",
+    "related": [
+      {
+        "title": "Download di Android",
+        "desc": "Simpan video TikTok ke galeri Android."
+      },
+      {
+        "title": "Panduan Tanpa Watermark",
+        "desc": "Panduan lengkap untuk semua perangkat."
+      },
+      {
+        "title": "TikTok ke MP3",
+        "desc": "Ambil audio dari video TikTok mana pun."
+      },
+      {
+        "title": "TikTok ke MP4",
+        "desc": "Download TikTok sebagai file MP4."
+      }
+    ]
+  },
+  "GuideAndroid": {
+    "metaTitle": "Cara Download Video TikTok di Android ke Galeri",
+    "metaDescription": "Download video TikTok apa pun ke galeri HP Android tanpa watermark — Samsung, Xiaomi, Huawei, dan semua merek Android. Gratis, HD, tanpa aplikasi.",
+    "h1": "Cara Download Video TikTok di Android",
+    "subtitle": "Simpan video TikTok apa pun ke galeri Android dalam HD — tanpa watermark, tanpa instal aplikasi, tanpa akun. Bisa di Samsung, Xiaomi, Huawei, dan semua merek Android.",
+    "stepsTitle": "Langkah demi langkah: download TikTok ke galeri Android",
+    "tipsTitle": "Tips khusus Android",
+    "troubleshootTitle": "Mengatasi masalah di Android",
+    "ctaText": "Siap? Tempel link TikTok apa pun dan simpan ke galeri kamu.",
+    "ctaButton": "Download video TikTok →",
+    "steps": [
+      {
+        "title": "Buka TikTok dan cari videonya",
+        "body": "Buka aplikasi TikTok dan buka video yang ingin kamu simpan."
+      },
+      {
+        "title": "Ketuk Bagikan → Salin tautan",
+        "body": "Ketuk ikon Bagikan (panah) di sisi kanan video. Di menu berbagi, ketuk “Salin tautan”. URL video sudah ada di clipboard kamu."
+      },
+      {
+        "title": "Buka Chrome dan masuk ke TokDown",
+        "body": "Buka Chrome di HP Android. Buka tokdown.org dan ketuk kolom input. Tempel link TikTok (tekan lama → Tempel)."
+      },
+      {
+        "title": "Ketuk Download dan pilih HD",
+        "body": "Ketuk tombol Download. Saat pilihan muncul, ketuk “HD · Tanpa Watermark”."
+      },
+      {
+        "title": "Temukan videonya di Galeri",
+        "body": "Video langsung tersimpan di folder Download. Buka app Galeri atau File untuk menemukan dan memutarnya."
+      }
+    ],
+    "tips": [
+      {
+        "title": "Beri izin penyimpanan saat pertama kali",
+        "body": "Di Android 12 ke bawah, Chrome mungkin meminta izin penyimpanan saat download pertama. Ketuk “Izinkan” agar file bisa disimpan."
+      },
+      {
+        "title": "Galeri Samsung langsung menampilkannya",
+        "body": "Di perangkat Samsung, video yang di-download langsung muncul di app Galeri, di album Download, begitu tersimpan."
+      },
+      {
+        "title": "Pengguna Xiaomi / MIUI",
+        "body": "Di HP Xiaomi, pakai browser bawaan atau Chrome. Video tersimpan di Download dan muncul di app Galeri di Album → Download."
+      },
+      {
+        "title": "Bagikan langsung dari notifikasi download",
+        "body": "Setelah download selesai, Android menampilkan notifikasi berisi file-nya. Ketuk untuk membuka video, atau tekan lama untuk langsung membagikannya ke WhatsApp, Telegram, atau aplikasi lain."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "Download mulai tapi file-nya 0 byte",
+        "fix": "Ini biasanya terjadi saat koneksi lambat. Coba lagi lewat Wi-Fi. Cek juga apakah ruang penyimpanan perangkatmu masih cukup."
+      },
+      {
+        "problem": "Video tidak muncul di Galeri",
+        "fix": "Buka app File dan cek folder Download secara manual. Beberapa versi Android butuh waktu sebentar sampai pemindai media mengenali file baru."
+      },
+      {
+        "problem": "Chrome menawarkan untuk membuka dengan aplikasi lain",
+        "fix": "Ketuk “Download”, jangan dibuka. Kalau muncul pertanyaan, pilih “Download file” untuk menyimpannya ke perangkat, bukan memutarnya secara streaming."
+      },
+      {
+        "problem": "Peringatan “Download diblokir” di Chrome",
+        "fix": "Peringatan ini muncul untuk beberapa jenis file. Ketuk “Tetap download” — TokDown hanya menyajikan file MP4 dan MP3 standar."
+      }
+    ],
+    "eyebrow": "Panduan Android · Juni 2026",
+    "related": [
+      {
+        "title": "Download di iPhone",
+        "desc": "Simpan video TikTok ke galeri iPhone."
+      },
+      {
+        "title": "Panduan Tanpa Watermark",
+        "desc": "Panduan lengkap untuk semua perangkat."
+      },
+      {
+        "title": "TikTok ke MP3",
+        "desc": "Ambil audio dari video TikTok mana pun."
+      },
+      {
+        "title": "TikTok ke MP4",
+        "desc": "Download TikTok sebagai file MP4."
+      }
+    ]
+  },
+  "Tools": {
+    "metaTitle": "Downloader Video & Konverter Gratis",
+    "metaDescription": "Semua alat TokDown di satu tempat: downloader video TikTok, Facebook, dan Twitter, simpan foto TikTok, thumbnail YouTube, kompres video, dan MP4 ke GIF.",
+    "eyebrow": "Alat & layanan",
+    "h1": "Semua yang bisa kamu lakukan dengan TokDown",
+    "subtitle": "Satu downloader gratis, banyak cara memakainya. Pilih yang kamu butuhkan di bawah; semua alat bisa dipakai tanpa akun.",
+    "useTool": "Pakai alat",
+    "readGuide": "Baca panduan",
+    "items": {
+      "video": {
+        "title": "Video TikTok tanpa watermark",
+        "desc": "Tempel link TikTok publik mana pun dan simpan MP4 yang bersih, HD atau SD, dalam hitungan detik."
+      },
+      "audio": {
+        "title": "TikTok ke MP3",
+        "desc": "Ambil suara dari video mana pun sebagai file MP3. Cocok untuk sound, voice-over, dan musik."
+      },
+      "hd": {
+        "title": "Download kualitas HD",
+        "desc": "Dapatkan resolusi tertinggi yang di-upload kreator, tanpa encode ulang."
+      },
+      "iphone": {
+        "title": "Download di iPhone",
+        "desc": "Cara menyimpan video TikTok ke galeri lewat Safari, langkah demi langkah."
+      },
+      "android": {
+        "title": "Download di Android",
+        "desc": "Simpan video TikTok ke galeri di HP Android mana pun, tanpa aplikasi."
+      },
+      "mp4": {
+        "title": "TikTok ke MP4",
+        "desc": "Semua tentang format MP4 dari TokDown dan cara memakainya di mana saja."
+      },
+      "gif": {
+        "title": "Video TikTok ke GIF",
+        "desc": "Ubah TikTok yang sudah di-download jadi GIF dengan konverter di browser, langkah demi langkah."
+      },
+      "chrome": {
+        "title": "Downloader TikTok untuk Chrome",
+        "desc": "Pakai TokDown di komputer tanpa ekstensi, plus shortcut yang membantu."
+      },
+      "playlist": {
+        "title": "Download playlist TikTok",
+        "desc": "Cara tercepat menyimpan beberapa video dari satu kreator atau koleksi."
+      },
+      "private": {
+        "title": "Video TikTok privat",
+        "desc": "Apa yang bisa dan tidak bisa di-download, dan cara mengurus klip privat milikmu sendiri."
+      },
+      "photo": {
+        "title": "Foto & slideshow TikTok",
+        "desc": "Simpan setiap gambar dari postingan foto TikTok dalam resolusi penuh, satu per satu atau sekaligus."
+      },
+      "facebook": {
+        "title": "Downloader video Facebook",
+        "desc": "Simpan video dan Reels Facebook publik sebagai MP4, dalam HD kalau tersedia."
+      },
+      "twitter": {
+        "title": "Downloader video Twitter / X",
+        "desc": "Download video dan GIF dari tweet publik mana pun cukup dengan sekali tempel."
+      },
+      "youtubeThumbnail": {
+        "title": "Download thumbnail YouTube",
+        "desc": "Ambil thumbnail ukuran penuh dari video YouTube mana pun, hingga 1280×720."
+      },
+      "compressor": {
+        "title": "Kompresor video",
+        "desc": "Perkecil file MP4 dan MOV langsung di browser. Tidak ada yang di-upload."
+      },
+      "mp4ToGif": {
+        "title": "MP4 ke GIF",
+        "desc": "Ubah klip video apa pun jadi GIF looping yang tajam, offline di browser kamu."
+      },
+      "legal": {
+        "title": "Legalkah download video TikTok?",
+        "desc": "Apa kata hukum hak cipta dan ketentuan TikTok sendiri soal menyimpan video, per negara, lengkap dengan sumbernya."
+      },
+      "snaptik": {
+        "title": "Alternatif SnapTik",
+        "desc": "Apa yang perlu dicek di downloader TikTok mana pun, dan apa saja yang dilakukan dan tidak dilakukan TokDown."
+      },
+      "pc": {
+        "title": "Download di PC & Mac",
+        "desc": "Simpan video TikTok di Windows, MacBook, atau Chromebook lewat browser apa pun, tanpa aplikasi."
+      },
+      "slideshow": {
+        "title": "Download slideshow TikTok",
+        "desc": "Simpan setiap foto, sound-nya, atau seluruh slideshow sebagai video."
+      },
+      "noSave": {
+        "title": "Tidak ada opsi “Simpan video”?",
+        "desc": "Kenapa tombolnya hilang di sebagian TikTok dan apa yang bisa kamu lakukan."
+      },
+      "draft": {
+        "title": "Simpan draf TikTok",
+        "desc": "Pindahkan draf ke galeri tanpa mempostingnya secara publik."
+      }
+    },
+    "intro": [
+      "Downloader mengambil postingan publik dari link-nya: video, sound, dan slideshow foto TikTok, video dan GIF dari X (Twitter), serta video Facebook publik. Semuanya hanya bekerja untuk konten publik dan bergantung pada apa yang disajikan tiap platform kepada pengunjung yang tidak login, jadi postingan yang privat, sudah dihapus, atau dibatasi usia akan menampilkan pesan error yang jelas, bukan file.",
+      "Konverter bekerja sebaliknya. Kompresor video dan konverter MP4 ke GIF berjalan sepenuhnya di browser kamu dengan WebAssembly, jadi file yang kamu pilih tidak pernah meninggalkan perangkatmu, dan alat thumbnail YouTube hanya membaca file gambar publik yang diterbitkan YouTube untuk setiap video. Pakai panduannya kalau kamu butuh langkah khusus untuk perangkat tertentu, misalnya menyimpan ke galeri iPhone."
+    ]
+  },
+  "PhotoDownloader": {
+    "metaTitle": "Download Foto TikTok Tanpa Watermark & Slideshow",
+    "metaDescription": "Download foto dan slideshow TikTok tanpa watermark: setiap gambar full HD, satu per satu atau sekaligus, plus sound-nya sebagai MP3. Gratis, tanpa login.",
+    "metaKeywords": [
+      "download foto tiktok",
+      "download foto tiktok tanpa watermark",
+      "download slideshow tiktok",
+      "download slide tiktok",
+      "simpan foto tiktok",
+      "tiktok photo downloader",
+      "download gambar tiktok",
+      "download foto tiktok hd"
+    ],
+    "eyebrow": "Gratis · Resolusi penuh · Semua slide",
+    "h1": "Download Foto TikTok",
+    "h1Accent": "& Slideshow",
+    "subtitle": "Tempel link postingan foto TikTok dan simpan setiap slide sebagai gambar ukuran penuh, atau ambil seluruh slideshow sebagai video lengkap dengan sound-nya.",
+    "heroNote": "Bisa untuk postingan foto, carousel, dan slideshow. Video juga bisa.",
+    "trust1": "100% Gratis",
+    "trust2": "Resolusi asli",
+    "trust3": "Tanpa watermark",
+    "trust4": "Tanpa login",
+    "stepsTitle": "Cara download slideshow TikTok",
+    "stepsSubtitle": "Tiga langkah, tanpa aplikasi dan tanpa akun.",
+    "step1": "Salin link postingan foto",
+    "step1Desc": "Buka postingan foto TikTok, ketuk Bagikan, lalu Salin tautan. Link foto berisi /photo/, bukan /video/.",
+    "step2": "Tempel di atas",
+    "step2Desc": "Tempel link-nya di kolom dan tekan Download Foto. Kami mengambil setiap slide dalam ukuran aslinya.",
+    "step3": "Simpan slide-nya",
+    "step3Desc": "Ketuk satu gambar untuk menyimpannya, atau pakai Download semua untuk menyimpan setiap slide. Sound-nya juga tersedia sebagai MP3.",
+    "featuresTitle": "Yang kamu dapat",
+    "featuresSubtitle": "Semua isi postingan, tanpa tambahan apa pun",
+    "features": [
+      {
+        "title": "Setiap slide, ukuran penuh",
+        "desc": "Gambar diambil langsung dari CDN TikTok dengan resolusi yang di-upload kreator. Tanpa kompresi, tanpa watermark."
+      },
+      {
+        "title": "Download semua sekaligus",
+        "desc": "Satu ketukan menyimpan seluruh carousel sesuai urutan, diberi nomor supaya tetap rapi di galeri kamu."
+      },
+      {
+        "title": "Slideshow sebagai MP4",
+        "desc": "Lebih suka video? Simpan slideshow yang sudah dirender lengkap dengan musiknya sebagai satu file MP4."
+      },
+      {
+        "title": "Sound sebagai MP3",
+        "desc": "Ambil trek audio yang dipakai di postingan foto dan simpan sebagai MP3."
+      }
+    ],
+    "faqTitle": "FAQ download foto",
+    "faqSubtitle": "Pertanyaan umum soal postingan foto TikTok",
+    "faq": [
+      {
+        "q": "Bagaimana membedakan postingan foto dan video?",
+        "a": "Postingan foto menampilkan titik-titik kecil atau penghitung halaman di bagian bawah dan digeser ke samping. Link berbaginya berisi /photo/, bukan /video/. TokDown menerima keduanya."
+      },
+      {
+        "q": "Apakah gambarnya ada watermark?",
+        "a": "Tidak. TikTok hanya menambahkan watermark pada video yang sudah dirender. Gambar di postingan foto disimpan sebagai file biasa, jadi yang kamu download adalah slide aslinya."
+      },
+      {
+        "q": "Kenapa Chrome minta izin untuk beberapa download?",
+        "a": "Download semua menyimpan setiap slide sebagai file terpisah. Chrome sekali meminta izin untuk men-download beberapa file dari situs yang sama. Pilih Izinkan dan slide lainnya akan menyusul."
+      },
+      {
+        "q": "Bisakah download slideshow sebagai video?",
+        "a": "Bisa. Kalau TikTok menyediakan versi yang sudah dirender, akan muncul tombol Slideshow jadi video. Isinya setiap slide dengan sound aslinya dalam format MP4."
+      },
+      {
+        "q": "Apakah bisa di iPhone?",
+        "a": "Bisa. Di Safari, setiap gambar akan terbuka atau tersimpan ke File; tekan lama foto dan pilih Simpan ke Foto untuk memasukkannya ke galeri. Di Android, file langsung masuk ke folder Download."
+      },
+      {
+        "q": "Bisakah download postingan foto privat?",
+        "a": "Tidak. Seperti semua downloader, TokDown hanya bisa mengambil postingan publik. Kalau akunnya privat atau postingannya khusus teman, link-nya tidak akan bisa dibuka."
+      }
+    ],
+    "ctaTitle": "Punya slideshow untuk disimpan?",
+    "ctaSubtitle": "Setiap slide, resolusi penuh, tanpa akun.",
+    "ctaButton": "Tempel link kamu",
+    "videoLink": "Butuh video? Pakai downloader video TikTok",
+    "detailsTitle": "Bagaimana slideshow TikTok disimpan",
+    "detailsSubtitle": "Kenapa gambarnya tidak ada watermark, dan apa yang harus dilakukan kalau postingan tidak mau termuat.",
+    "details": [
+      "Postingan foto TikTok, yang juga disebut slideshow atau carousel, bukanlah video. TikTok menyimpan setiap slide sebagai file gambar terpisah ditambah satu trek audio yang diputar di belakangnya. Watermark yang kamu lihat di TikTok yang disimpan hanya ditempelkan pada video yang sudah dirender, jadi gambar slide-nya sendiri bersih: TokDown memberikan file asli itu, diberi nomor sesuai urutan yang ditentukan kreator, bukan screenshot atau salinan yang di-encode ulang.",
+      "Penyebab slideshow gagal sama dengan video: akunnya privat, postingannya khusus teman atau sudah dihapus, atau layanan TikTok yang kami pakai sedang sibuk dan memintamu mencoba lagi beberapa menit kemudian. Kalau kamu ingin slideshow-nya jadi satu klip untuk WhatsApp atau Instagram, pakai versi video kalau TikTok menyediakannya, lalu perkecil dengan kompresor video kalau file-nya terlalu besar."
+    ]
+  },
+  "FacebookDownloader": {
+    "metaTitle": "Download Video Facebook – HD, Tanpa Watermark",
+    "metaDescription": "Download video dan Reels Facebook publik sebagai MP4 dalam HD, tanpa watermark. Tempel link facebook.com atau fb.watch. Gratis, tanpa login, di HP atau PC.",
+    "eyebrow": "Facebook · Reels · HD",
+    "h1": "Download video Facebook",
+    "h1Accent": "sekali tempel",
+    "subtitle": "Video publik, Reels, dan link Watch disimpan sebagai MP4, dalam HD kalau Facebook menyediakannya. Tanpa akun, tanpa ekstensi.",
+    "heroNote": "Bisa untuk link facebook.com, fb.watch, dan link berbagi",
+    "trust": [
+      "100% gratis",
+      "Tanpa login",
+      "HD kalau tersedia",
+      "Semua perangkat"
+    ],
+    "stepsTitle": "Cara kerjanya",
+    "stepsSubtitle": "Tiga langkah, tanpa instal apa pun.",
+    "steps": [
+      {
+        "title": "Salin link video",
+        "desc": "Di Facebook, ketuk Bagikan, lalu Salin tautan. Link Watch, Reels, dan fb.watch semuanya bisa."
+      },
+      {
+        "title": "Tempel di atas",
+        "desc": "Masukkan link ke kolom dan tekan Download. Kami membaca data video publiknya."
+      },
+      {
+        "title": "Simpan MP4-nya",
+        "desc": "Pilih HD atau SD dan file langsung ter-download ke perangkatmu."
+      }
+    ],
+    "featuresTitle": "Kenapa orang memakainya",
+    "featuresSubtitle": "Dibuat sesuai cara Facebook menyajikan video.",
+    "features": [
+      {
+        "title": "Reels dan Watch",
+        "desc": "Postingan biasa, Reels, halaman Watch, dan link pendek fb.watch semuanya didukung."
+      },
+      {
+        "title": "HD kalau ada",
+        "desc": "Kami memilih versi terbaik yang disediakan Facebook, dan otomatis beralih ke SD kalau HD tidak ada."
+      },
+      {
+        "title": "Tanpa login, selamanya",
+        "desc": "Kami tidak pernah meminta akun Facebook kamu. Hanya video publik yang bisa di-download."
+      },
+      {
+        "title": "Ramah HP",
+        "desc": "Tombol besar, langsung tersimpan ke galeri di Android dan ke File di iPhone."
+      }
+    ],
+    "faqTitle": "FAQ download Facebook",
+    "faqSubtitle": "Jawaban singkat untuk pertanyaan yang biasa muncul.",
+    "faq": [
+      {
+        "q": "Kenapa video gagal di-download?",
+        "a": "Videonya privat, diposting di grup tertutup, dibatasi usia, atau berupa siaran live. Hanya video yang bisa dilihat semua orang tanpa login yang bisa diambil."
+      },
+      {
+        "q": "Bisakah download Reels Facebook?",
+        "a": "Bisa. Tempel link Reel persis seperti yang diberikan Facebook dan kamu akan mendapat MP4."
+      },
+      {
+        "q": "Apakah ada watermark?",
+        "a": "Tidak. Kamu menerima file asli yang dialirkan Facebook, tanpa tambahan overlay apa pun."
+      },
+      {
+        "q": "Apakah bisa di iPhone?",
+        "a": "Bisa. Safari menyimpan MP4 ke File; dari sana kamu bisa memindahkannya ke Foto."
+      },
+      {
+        "q": "Apakah ini legal?",
+        "a": "Men-download untuk ditonton sendiri secara offline, untuk konten yang memang boleh kamu pakai, tidak masalah. Meng-upload ulang video orang lain tidak boleh. Hormati kreator dan ketentuan Facebook."
+      },
+      {
+        "q": "Apakah bisa di Android dan iPhone?",
+        "a": "Bisa. Di Android, MP4 masuk ke folder Download dan muncul di galeri. Di iPhone, Safari menyimpannya ke File, dan lewat menu Bagikan kamu bisa memindahkannya ke Foto."
+      },
+      {
+        "q": "Bisakah download audionya saja dari video Facebook?",
+        "a": "Download MP4-nya dulu, lalu pakai kompresor video atau alat pengambil audio apa pun. Opsi MP3 langsung sudah ada dalam rencana pengembangan."
+      }
+    ],
+    "ctaTitle": "Punya link Facebook?",
+    "ctaSubtitle": "Tempel dan simpan videonya dalam hitungan detik.",
+    "ctaButton": "Tempel link kamu",
+    "details": [
+      "Facebook menyajikan sebagian besar video publik dalam dua versi: file HD untuk koneksi cepat dan file SD untuk data seluler. TokDown membaca keduanya dari embed publik yang sama dengan yang dipakai Facebook untuk tombol berbaginya sendiri, karena itulah tidak perlu login, cookie, atau ekstensi browser. Kamu mendapat MP4 asli seperti yang di-upload halaman tersebut, dengan rasio aspek asli dan tanpa tambahan watermark atau logo.",
+      "Reels, episode Watch, video yang diposting di halaman, dan video profil publik semuanya bisa, termasuk link pendek fb.watch dan URL berbagi panjang dari aplikasi HP. Video di grup tertutup, profil privat, story, dan siaran live tidak tersedia untuk orang yang tidak login, jadi juga tidak bisa diambil di sini. Kalau link gagal, buka dulu di jendela browser privat: kalau Facebook memintamu login, videonya tidak publik."
+    ],
+    "detailsTitle": "Cara Facebook menyajikan video",
+    "detailsSubtitle": "Kenapa tidak perlu login, dan video mana yang tidak bisa dijangkau."
+  },
+  "TwitterDownloader": {
+    "metaTitle": "Download Video Twitter/X & GIF dalam HD",
+    "metaDescription": "Download video dan GIF dari Twitter / X dalam HD hingga 1080p. Tempel link tweet publik, dapatkan MP4-nya. Tanpa login, tanpa aplikasi, di HP maupun PC.",
+    "eyebrow": "Twitter / X · Video · GIF",
+    "h1": "Download video Twitter",
+    "h1Accent": "& GIF dalam HD",
+    "subtitle": "Tempel link tweet dan simpan video atau GIF-nya sebagai MP4. Bisa untuk link x.com, twitter.com, dan t.co.",
+    "heroNote": "Hanya tweet publik · bitrate terbaik dipilih otomatis",
+    "trust": [
+      "100% gratis",
+      "Tanpa login",
+      "GIF juga bisa",
+      "Semua perangkat"
+    ],
+    "stepsTitle": "Cara kerjanya",
+    "stepsSubtitle": "Masukkan link tweet, keluar MP4.",
+    "steps": [
+      {
+        "title": "Salin link tweet",
+        "desc": "Buka tweet-nya, ketuk Bagikan, lalu Salin tautan. x.com dan twitter.com sama-sama bisa."
+      },
+      {
+        "title": "Tempel di atas",
+        "desc": "Tekan Download. Kami membaca media publik tweet tersebut dan menampilkan versi yang tersedia."
+      },
+      {
+        "title": "Pilih kualitas",
+        "desc": "Pilih bitrate tertinggi atau file yang lebih kecil, lalu simpan ke perangkatmu."
+      }
+    ],
+    "featuresTitle": "Yang kamu dapat",
+    "featuresSubtitle": "File bersih, rasio aspek benar, tanpa terpotong.",
+    "features": [
+      {
+        "title": "Bitrate tertinggi",
+        "desc": "Twitter menyimpan beberapa versi MP4. Kami selalu menampilkan yang terbaik paling atas."
+      },
+      {
+        "title": "GIF sebagai MP4",
+        "desc": "GIF di Twitter sebenarnya video tanpa suara; kamu mendapatkannya sebagai file MP4 kecil yang bisa diputar berulang."
+      },
+      {
+        "title": "Tweet foto",
+        "desc": "Tweet berisi gambar ditampilkan sebagai galeri dengan download ukuran penuh untuk setiap gambar."
+      },
+      {
+        "title": "Link pendek",
+        "desc": "Link t.co diurai otomatis, jadi kamu bisa langsung menempelnya dari pesan."
+      }
+    ],
+    "faqTitle": "FAQ download Twitter / X",
+    "faqSubtitle": "Pertanyaan yang paling sering kami terima.",
+    "faq": [
+      {
+        "q": "Apakah perlu akun X?",
+        "a": "Tidak. Kami hanya membaca data yang diterbitkan X untuk tweet yang disematkan, dan itu tidak butuh login."
+      },
+      {
+        "q": "Kenapa muncul pesan tweet tidak tersedia?",
+        "a": "Akunnya diproteksi, tweet-nya sudah dihapus, atau ditandai sebagai konten sensitif. Semua itu tidak bisa dibaca tanpa login."
+      },
+      {
+        "q": "Bisakah download video dari balasan atau quote tweet?",
+        "a": "Bisa, tempel link tweet spesifik yang berisi videonya."
+      },
+      {
+        "q": "Bagaimana dengan Spaces atau siaran live?",
+        "a": "Tidak didukung. Hanya tweet video, GIF, dan foto biasa."
+      },
+      {
+        "q": "Bagaimana cara download GIF dari Twitter / X?",
+        "a": "Tempel link tweet yang berisi GIF. X menyimpan GIF sebagai file MP4 pendek tanpa suara, jadi kamu mendapat MP4 yang bisa diputar di mana saja. Kalau butuh file .gif sungguhan, buka di konverter MP4 ke GIF (tokdown.org/mp4-to-gif)."
+      },
+      {
+        "q": "Apakah kualitasnya turun?",
+        "a": "Tidak. Kamu mendapat file persis seperti yang dialirkan X pada bitrate yang dipilih, tanpa encode ulang."
+      },
+      {
+        "q": "Apakah TokDown menambahkan watermark ke video Twitter?",
+        "a": "Tidak. File dialirkan dari CDN milik X lewat proxy kami tanpa encode ulang, jadi tidak ada yang ditambahkan atau dihapus."
+      },
+      {
+        "q": "Bisakah download video dari tweet di dalam thread?",
+        "a": "Bisa. Buka tweet yang berisi video itu, salin link-nya dari menu Bagikan, lalu tempel. Setiap tweet dalam thread punya link sendiri."
+      }
+    ],
+    "ctaTitle": "Ada tweet yang mau disimpan?",
+    "ctaSubtitle": "Tempel link-nya dan pilih kualitas.",
+    "ctaButton": "Tempel link kamu",
+    "details": [
+      "Setiap video yang di-upload ke Twitter / X disimpan dalam beberapa versi MP4, biasanya 320p, 480p, 720p, dan untuk upload terbaru, 1080p. TokDown mengurutkannya berdasarkan bitrate dan menawarkan yang terbaik lebih dulu, jadi kamu selalu mendapat salinan paling tajam yang di-upload pemiliknya. GIF animasi di X sebenarnya file MP4 pendek tanpa suara; kamu juga menerimanya sebagai MP4, yang lebih kecil dan bisa diputar di mana saja, dan kamu bisa mengubahnya kembali jadi GIF sungguhan dengan alat MP4 ke GIF kami.",
+      "Alat ini membaca data publik yang sama dengan yang diterbitkan X untuk tweet yang disematkan, jadi akun yang diproteksi, tweet yang sudah dihapus, dan postingan yang ditandai sensitif tidak bisa dibaca tanpa login dan akan menampilkan error, bukan file yang salah. Link pendek t.co diurai otomatis, dan link yang disalin dari aplikasi X, dari twitter.com, atau dari pesan semuanya bekerja dengan cara yang sama."
+    ],
+    "detailsTitle": "Cara X menyimpan video dan GIF",
+    "detailsSubtitle": "Versi, bitrate, dan apa yang tidak bisa dibaca tanpa login."
+  },
+  "YoutubeThumbnail": {
+    "metaTitle": "Download Thumbnail YouTube – HD, Shorts Juga",
+    "metaDescription": "Download thumbnail video atau Shorts YouTube dalam semua ukuran, dari 120×90 hingga HD 1280×720. Tempel link atau ID video. Gratis, instan, tanpa login.",
+    "eyebrow": "YouTube · Thumbnail · HD",
+    "h1": "Download thumbnail YouTube",
+    "h1Accent": "dalam full HD",
+    "subtitle": "Tempel link YouTube atau ID video dan ambil gambar sampulnya dalam semua ukuran yang disediakan YouTube, hingga 1280×720.",
+    "heroNote": "Bisa untuk link watch, youtu.be, Shorts, dan embed",
+    "trust": [
+      "100% gratis",
+      "Tanpa login",
+      "Semua ukuran",
+      "Instan"
+    ],
+    "stepsTitle": "Cara kerjanya",
+    "stepsSubtitle": "Masukkan link, keluar gambar.",
+    "steps": [
+      {
+        "title": "Salin link video",
+        "desc": "URL YouTube apa pun bisa: watch?v=, youtu.be, Shorts, embed, atau cukup ID 11 karakternya."
+      },
+      {
+        "title": "Tempel di atas",
+        "desc": "Kami menampilkan semua ukuran thumbnail yang dimiliki YouTube untuk video itu, lengkap dengan pratinjau langsung."
+      },
+      {
+        "title": "Download atau salin",
+        "desc": "Simpan JPG yang kamu butuhkan atau salin URL langsungnya untuk dipakai di desainmu sendiri."
+      }
+    ],
+    "featuresTitle": "Kenapa kreator memakainya",
+    "featuresSubtitle": "Cara tercepat mendapatkan gambar sampul yang bersih.",
+    "features": [
+      {
+        "title": "Full HD kalau tersedia",
+        "desc": "Gambar maxres 1280×720 ditampilkan paling atas setiap kali channel meng-upload-nya."
+      },
+      {
+        "title": "Kelima ukuran",
+        "desc": "Ukuran HD, SD, HQ, MQ, dan default, masing-masing dengan pratinjau dan tombol download sendiri."
+      },
+      {
+        "title": "Salin URL langsung",
+        "desc": "Butuh di Figma atau Canva? Salin link gambarnya dengan sekali klik."
+      },
+      {
+        "title": "Shorts juga",
+        "desc": "Link Shorts dan link pendek youtu.be diurai sama seperti video biasa."
+      }
+    ],
+    "faqTitle": "FAQ thumbnail",
+    "faqSubtitle": "Jawaban singkat.",
+    "faq": [
+      {
+        "q": "Kenapa tidak ada gambar 1280×720?",
+        "a": "YouTube hanya membuat thumbnail maxres kalau video dan thumbnail kustom yang di-upload beresolusi tinggi. Video lama atau beresolusi rendah hanya punya ukuran yang lebih kecil."
+      },
+      {
+        "q": "Bolehkah memakai thumbnail itu di videoku sendiri?",
+        "a": "Thumbnail adalah milik channel yang membuatnya. Pakai untuk referensi, pratinjau, dan channel milikmu sendiri; minta izin sebelum memakai ulang karya orang lain."
+      },
+      {
+        "q": "Apakah ini men-download videonya?",
+        "a": "Tidak. Alat ini hanya mengambil gambar sampul. Stream videonya sama sekali tidak disentuh."
+      },
+      {
+        "q": "Apakah bisa untuk video privat?",
+        "a": "Hanya kalau thumbnail-nya bisa diakses publik. Video privat biasanya tidak punya thumbnail publik."
+      },
+      {
+        "q": "Berapa ukuran thumbnail YouTube?",
+        "a": "Ukuran upload yang disarankan adalah 1280×720 piksel (16:9), di bawah 2 MB, dalam format JPG, PNG, atau GIF. Itu juga ukuran gambar maxresdefault yang diberikan alat ini."
+      },
+      {
+        "q": "Bisakah download thumbnail dari YouTube Shorts?",
+        "a": "Bisa. Tempel link Shorts-nya; alat ini mengambil ID videonya dan menampilkan ukuran yang sama seperti yang disediakan YouTube untuk video biasa."
+      }
+    ],
+    "ctaTitle": "Butuh gambar sampul?",
+    "ctaSubtitle": "Tempel link YouTube dan pilih ukurannya.",
+    "ctaButton": "Tempel link kamu",
+    "tool": {
+      "placeholder": "https://www.youtube.com/watch?v=… atau ID video",
+      "button": "Ambil thumbnail",
+      "invalid": "Itu sepertinya bukan link YouTube atau ID video 11 karakter.",
+      "clear": "Hapus",
+      "previewAlt": "Pratinjau thumbnail YouTube",
+      "download": "Download",
+      "copy": "Salin URL",
+      "copied": "Tersalin",
+      "sizes": {
+        "maxresdefault": "Full HD",
+        "sddefault": "Standar",
+        "hqdefault": "Kualitas tinggi",
+        "mqdefault": "Sedang",
+        "default": "Kecil"
+      }
+    },
+    "details": [
+      "YouTube membuat hingga lima ukuran thumbnail untuk setiap video: 120×90, 320×180, 480×360, 640×480, dan versi full HD 1280×720 yang disebut maxresdefault. Semuanya adalah file JPG publik yang disajikan dari server gambar YouTube. TokDown menyusun URL persisnya dari ID video, mengecek ukuran mana yang tersedia, dan menampilkan pratinjau masing-masing, jadi kamu bisa memilih resolusi yang dibutuhkan tanpa menebak-nebak.",
+      "Kreator memakainya untuk mendapatkan kembali thumbnail yang file sumbernya sudah tidak ada, untuk membuat playlist dan halaman channel, atau untuk membandingkan desain sampul kompetitor. Desainer menempel URL langsungnya ke Figma atau Canva. Karena yang diambil hanya gambarnya, alat ini cepat, bisa untuk Shorts maupun video biasa, dan tidak pernah menyentuh stream videonya."
+    ],
+    "detailsTitle": "Penjelasan ukuran thumbnail YouTube",
+    "detailsSubtitle": "Lima ukuran publik per video, dan kapan versi HD-nya tidak ada."
+  },
+  "VideoCompressor": {
+    "metaTitle": "Kompres Video Online – Gratis, Tanpa Upload",
+    "metaDescription": "Kompres video MP4, MOV, dan WebM gratis di browser. Perkecil file untuk Discord, WhatsApp, atau email tanpa penurunan kualitas yang terlihat. Tanpa upload.",
+    "eyebrow": "Kompres · MP4 · Privat",
+    "h1": "Kompres video",
+    "h1Accent": "tanpa upload",
+    "subtitle": "Perkecil video untuk WhatsApp, email, atau Discord. Seluruh prosesnya berjalan di perangkatmu dengan ffmpeg, jadi tidak ada yang keluar dari browser kamu.",
+    "heroNote": "Hingga 500 MB per file · hasil MP4 · H.264 + AAC",
+    "trust": [
+      "100% gratis",
+      "Tanpa upload",
+      "Tanpa watermark",
+      "Semua perangkat"
+    ],
+    "stepsTitle": "Cara kerjanya",
+    "stepsSubtitle": "Tiga langkah, tanpa server.",
+    "steps": [
+      {
+        "title": "Pilih video",
+        "desc": "Seret MP4, MOV, WebM, atau MKV ke sini, atau pilih dari HP kamu. File tetap di perangkatmu."
+      },
+      {
+        "title": "Pilih preset",
+        "desc": "Kecil untuk aplikasi chat, Seimbang untuk media sosial, Kualitas untuk menjaga detail 1080p."
+      },
+      {
+        "title": "Download hasilnya",
+        "desc": "MP4 hasil kompresi siap di browser kamu. Bandingkan ukurannya dan simpan."
+      }
+    ],
+    "featuresTitle": "Apa bedanya",
+    "featuresSubtitle": "Kebanyakan kompresor meng-upload file-mu. Yang ini tidak pernah.",
+    "features": [
+      {
+        "title": "Benar-benar privat",
+        "desc": "Video diproses oleh ffmpeg yang dikompilasi ke WebAssembly, di dalam tab browser kamu."
+      },
+      {
+        "title": "Tanpa batas jumlah",
+        "desc": "Kompres file sebanyak yang kamu mau, satu per satu, tanpa antre dan tanpa akun."
+      },
+      {
+        "title": "Preset pintar",
+        "desc": "Batas resolusi dan CRF disetel untuk batas lampiran umum 16 MB dan 25 MB."
+      },
+      {
+        "title": "Bisa diputar di mana saja",
+        "desc": "Hasilnya MP4 H.264 dengan audio AAC dan fast-start, kombinasi yang paling kompatibel."
+      }
+    ],
+    "faqTitle": "FAQ kompresi",
+    "faqSubtitle": "Yang ditanyakan orang sebelum menekan tombolnya.",
+    "faq": [
+      {
+        "q": "Apakah videoku di-upload ke suatu tempat?",
+        "a": "Tidak. Kompresor berjalan sepenuhnya di browser kamu. Kamu bahkan bisa offline setelah halamannya termuat."
+      },
+      {
+        "q": "Kenapa lebih lambat dari layanan online?",
+        "a": "Karena alat ini memakai CPU perangkatmu sendiri, bukan server. Klip 1080p berdurasi 1 menit biasanya butuh satu sampai tiga menit di laptop, lebih lama di HP."
+      },
+      {
+        "q": "Seberapa kecil file-nya nanti?",
+        "a": "Biasanya 50 sampai 80% lebih kecil dengan preset Seimbang. Rekaman layar yang sudah terkompresi menyusut lebih sedikit."
+      },
+      {
+        "q": "Berapa ukuran file maksimal?",
+        "a": "500 MB per file. File yang lebih besar bisa menghabiskan memori yang boleh dipakai satu tab browser."
+      },
+      {
+        "q": "Apakah bisa di iPhone?",
+        "a": "Bisa, di Safari 16 atau yang lebih baru. Video yang sangat panjang bisa lambat; coba preset Kecil dulu."
+      },
+      {
+        "q": "Bagaimana cara kompres video untuk Discord?",
+        "a": "Pilih preset Kecil. Sebagian besar klip jadi di bawah batas upload Discord gratis; untuk video yang lebih panjang, potong dulu atau pakai rekaman layar dengan resolusi lebih rendah."
+      },
+      {
+        "q": "Bisakah kompres video jadi 10 MB?",
+        "a": "Belum ada pengaturan target ukuran yang pasti, tapi preset Kecil biasanya mengecilkan video HP 1080p berdurasi satu menit jadi 5 sampai 12 MB. Kalau masih perlu lebih kecil, jalankan lagi preset yang sama pada hasilnya."
+      }
+    ],
+    "ctaTitle": "File terlalu besar untuk dikirim?",
+    "ctaSubtitle": "Kompres di sini, secara privat.",
+    "ctaButton": "Pilih video",
+    "tool": {
+      "drop": "Seret video ke sini atau ketuk untuk memilih",
+      "hint": "MP4, MOV, WebM, MKV · hingga 500 MB",
+      "presetLabel": "Preset kompresi",
+      "presets": {
+        "small": {
+          "title": "Kecil",
+          "desc": "Maks. 720p · paling pas untuk WhatsApp dan email"
+        },
+        "balanced": {
+          "title": "Seimbang",
+          "desc": "Maks. 1080p · cocok untuk media sosial"
+        },
+        "quality": {
+          "title": "Kualitas",
+          "desc": "Hingga 1080p · menjaga detail halus"
+        }
+      },
+      "run": "Kompres video",
+      "loadingEngine": "Memuat mesin…",
+      "processing": "Mengompres… {pct}%",
+      "done": "Selesai. Video hasil kompresi sudah siap.",
+      "download": "Download MP4",
+      "reset": "Mulai lagi",
+      "errorEngine": "Mesin video gagal dimuat. Cek koneksi kamu dan coba lagi.",
+      "errorRun": "Kompresi gagal. Coba preset lain atau file yang lebih kecil.",
+      "tooLarge": "File itu terlalu besar. Batasnya {max}.",
+      "previewAlt": "Pratinjau"
+    },
+    "details": [
+      "Kebanyakan kompresor online meng-upload video kamu ke server, memprosesnya di sana, lalu membiarkanmu men-download hasilnya. TokDown melakukan sebaliknya: encoder ffmpeg dimuat sebagai WebAssembly ke tab browser kamu dan seluruh prosesnya berjalan di perangkatmu sendiri. File-mu tidak pernah meninggalkan komputer atau HP, tidak ada antrean, tidak ada biaya berdasarkan ukuran, dan tidak ada watermark. Saat pertama kali dijalankan, encoder di-download sekali; setelah itu disimpan di cache.",
+      "Ketiga preset disesuaikan dengan batas yang memang sering ditemui orang. Kecil ditujukan untuk lampiran WhatsApp, Telegram, dan email dengan membatasi resolusi di 720p dan rasio kompresi yang lebih tinggi. Seimbang menjaga hingga 1080p untuk upload ke Instagram, TikTok, dan YouTube. Kualitas menjaga detail paling banyak untuk arsip atau diedit lebih lanjut. Semua preset menghasilkan video H.264 dengan audio AAC dalam container MP4, yang bisa diputar di semua HP, browser, dan aplikasi edit."
+    ],
+    "detailsTitle": "Kenapa tidak ada yang di-upload",
+    "detailsSubtitle": "Encoder berjalan di tab kamu; preset-nya sesuai dengan batas upload yang umum."
+  },
+  "Mp4ToGif": {
+    "metaTitle": "MP4 ke GIF Online – Gratis, Kualitas Tinggi",
+    "metaDescription": "Ubah klip MP4, MOV, atau WebM jadi GIF berkualitas tinggi secara gratis. Atur waktu mulai, durasi, FPS, dan ukuran. Berjalan di browser, tanpa upload.",
+    "eyebrow": "GIF · Klip · Privat",
+    "h1": "Konverter MP4 ke GIF",
+    "h1Accent": "di browser kamu",
+    "subtitle": "Pilih momen yang pas, atur frame rate dan ukurannya, dan dapatkan GIF looping yang tajam. Prosesnya berlangsung di perangkatmu.",
+    "heroNote": "Hingga 15 detik per GIF · palet warna yang dioptimalkan",
+    "trust": [
+      "100% gratis",
+      "Tanpa upload",
+      "FPS & ukuran bebas diatur",
+      "Semua perangkat"
+    ],
+    "stepsTitle": "Cara kerjanya",
+    "stepsSubtitle": "Potong, atur, download.",
+    "steps": [
+      {
+        "title": "Pilih video",
+        "desc": "Seret MP4, MOV, atau WebM apa pun. Untuk TikTok, download dulu videonya dengan TokDown."
+      },
+      {
+        "title": "Atur klipnya",
+        "desc": "Tentukan di mana GIF dimulai, berapa lama durasinya, frame rate, dan lebarnya."
+      },
+      {
+        "title": "Download GIF-nya",
+        "desc": "Lihat pratinjau loop-nya lalu simpan. Bagikan di chat, dokumen, atau postingan media sosial."
+      }
+    ],
+    "featuresTitle": "Kenapa GIF-nya bagus",
+    "featuresSubtitle": "Detail kecil yang dilewatkan kebanyakan konverter.",
+    "features": [
+      {
+        "title": "Palet yang dioptimalkan",
+        "desc": "Palet dua tahap per klip menjaga warna tetap bersih, tidak belang dan tidak berbintik."
+      },
+      {
+        "title": "Penskalaan tajam",
+        "desc": "Resampling Lanczos menjaga teks dan tepi tetap tajam di ukuran kecil."
+      },
+      {
+        "title": "Kamu yang atur ukurannya",
+        "desc": "Lebar 240 sampai 800 px dan 10 sampai 24 fps, jadi kamu bisa menyesuaikan dengan batas upload apa pun."
+      },
+      {
+        "title": "Privat sejak awal",
+        "desc": "Konversi berjalan di browser kamu dengan ffmpeg; videonya tidak pernah meninggalkan perangkatmu."
+      }
+    ],
+    "faqTitle": "FAQ GIF",
+    "faqSubtitle": "Jawaban singkat.",
+    "faq": [
+      {
+        "q": "Bagaimana cara membuat GIF dari TikTok?",
+        "a": "Download dulu TikTok-nya sebagai MP4 dengan TokDown, lalu seret file itu ke sini."
+      },
+      {
+        "q": "Kenapa GIF-nya besar?",
+        "a": "GIF adalah format lama: setiap frame adalah gambar utuh. Kurangi lebar atau frame rate-nya, atau perpendek klipnya."
+      },
+      {
+        "q": "Bisakah membuat GIF lebih dari 15 detik?",
+        "a": "Tidak di sini. GIF yang lebih panjang bisa berukuran puluhan megabyte; untuk klip panjang, pakai kompresor video dan bagikan sebagai MP4."
+      },
+      {
+        "q": "Apakah suaranya ikut?",
+        "a": "Tidak. GIF tidak bisa membawa audio."
+      },
+      {
+        "q": "Bagaimana cara membuat GIF dari video iPhone?",
+        "a": "Buka halaman ini di Safari, ketuk kotak video di atas, pilih video dari Foto, atur klipnya, lalu ketuk Buat GIF. GIF tersimpan ke File dan bisa dibagikan dari sana."
+      },
+      {
+        "q": "Pengaturan terbaik untuk GIF berukuran kecil?",
+        "a": "Mulai dengan lebar 320 px, 12 fps, dan klip di bawah 5 detik. Kalau masih terlalu besar, turunkan frame rate dulu sebelum mengurangi lebarnya."
+      }
+    ],
+    "ctaTitle": "Ada momen yang layak di-loop?",
+    "ctaSubtitle": "Buat GIF-nya di sini.",
+    "ctaButton": "Pilih video",
+    "tool": {
+      "drop": "Seret video ke sini atau ketuk untuk memilih",
+      "hint": "MP4, MOV, WebM · hingga 500 MB",
+      "start": "Mulai (detik)",
+      "duration": "Durasi (detik, maks. 15)",
+      "fps": "Frame rate",
+      "width": "Lebar",
+      "run": "Buat GIF",
+      "loadingEngine": "Memuat mesin…",
+      "processing": "Merender… {pct}%",
+      "done": "Selesai. GIF kamu sudah siap.",
+      "download": "Download GIF",
+      "reset": "Mulai lagi",
+      "errorEngine": "Mesin video gagal dimuat. Cek koneksi kamu dan coba lagi.",
+      "errorRun": "Konversi gagal. Coba klip yang lebih pendek atau lebar yang lebih kecil.",
+      "tooLarge": "File itu terlalu besar. Batasnya {max}.",
+      "previewAlt": "Pratinjau GIF"
+    },
+    "details": [
+      "GIF adalah format berusia 30 tahun dengan palet 256 warna dan tanpa kompresi antar-frame, karena itulah konverter sederhana menghasilkan file yang besar dan berbintik. TokDown menjalankan proses ffmpeg dua tahap di browser kamu: tahap pertama menganalisis klipmu dan membuat palet khusus, tahap kedua memetakan setiap frame ke palet itu dengan ordered dithering. Hasilnya, teks tetap terbaca dan gradasi tetap halus dengan ukuran yang jauh lebih kecil.",
+      "Kamu yang mengatur tiga hal yang menentukan ukuran file: durasi klip (hingga 15 detik), frame rate (10 sampai 24 fps), dan lebar (240 sampai 800 piksel). Untuk aplikasi chat, 480 px di 15 fps adalah pilihan default yang bagus; untuk dokumentasi atau README, 640 px di 12 fps terlihat tajam dan tetap kecil. Karena semuanya berjalan secara lokal, kamu bisa mencoba berulang kali tanpa meng-upload apa pun."
+    ],
+    "detailsTitle": "Cara mendapatkan GIF yang kecil dan tajam",
+    "detailsSubtitle": "Palet khusus per klip, dan tiga pengaturan yang menentukan ukuran file."
+  },
+  "GuideHub": {
+    "metaTitle": "Panduan Download TikTok: iPhone, Android, MP3",
+    "metaDescription": "Panduan lengkap menyimpan video, sound, dan slideshow TikTok di iPhone, Android, dan PC, plus jawaban jujur soal watermark, video privat, dan hukum.",
+    "eyebrow": "Panduan",
+    "h1": "Panduan download TikTok",
+    "subtitle": "Bantuan langkah demi langkah untuk setiap perangkat dan format, ditulis berdasarkan cara kerja alatnya yang sebenarnya.",
+    "intro": [
+      "Kebanyakan pertanyaan soal TikTok bermuara pada tiga hal: perangkat apa yang kamu pakai, format apa yang kamu butuhkan, dan apakah postingannya publik. Mulailah dengan panduan perangkat kalau file download tidak muncul di tempat yang kamu harapkan, dengan panduan MP3 kalau kamu cuma mau suaranya, dan dengan panduan watermark kalau kamu ingin tahu kenapa video yang disimpan dari aplikasi ada logonya.",
+      "Setiap panduan menjelaskan ketukan yang persis, error yang mungkin muncul, dan artinya. Kalau sesuatu memang tidak bisa dilakukan, seperti men-download video privat atau seluruh profil sekali klik, panduannya mengatakannya terus terang, bukan mengarahkanmu ke alat yang meminta password kamu."
+    ],
+    "translatedTitle": "Mulai di sini",
+    "englishTitle": "Panduan lainnya (bahasa Inggris)",
+    "englishNote": "Panduan berikut saat ini hanya tersedia dalam bahasa Inggris."
+  },
+  "GuidePc": {
+    "metaTitle": "Cara Download Video TikTok di Laptop, PC & Mac",
+    "metaDescription": "Download video TikTok di PC Windows, laptop, atau Mac tanpa aplikasi atau ekstensi: salin link, tempel di TokDown, dan simpan MP4-nya tanpa watermark.",
+    "eyebrow": "Panduan PC & Mac · Oktober 2026",
+    "h1": "Cara Download Video TikTok di Laptop, PC, dan Mac",
+    "subtitle": "Simpan video TikTok ke PC Windows, laptop, atau MacBook dari browser apa pun: tanpa aplikasi, tanpa ekstensi, tanpa akun, dan tanpa watermark di file-nya.",
+    "answerTitle": "Jawaban singkatnya",
+    "answer": "Buka videonya di tiktok.com, salin alamat dari address bar browser (atau pakai Bagikan → Salin tautan), tempel di TokDown, lalu klik Download. MP4-nya masuk ke folder Downloads. Kamu tidak butuh aplikasi TikTok untuk Windows, emulator Android seperti BlueStacks, atau ekstensi browser.",
+    "stepsTitle": "Langkah demi langkah: simpan video TikTok di komputer",
+    "steps": [
+      {
+        "title": "Buka videonya di tiktok.com",
+        "body": "Di Chrome, Edge, Firefox, atau Safari, buka tiktok.com lalu klik videonya. Address bar berubah jadi link seperti tiktok.com/@nama/video/123…: itulah link yang kamu butuhkan."
+      },
+      {
+        "title": "Salin link-nya",
+        "body": "Klik address bar dan tekan Ctrl+C di Windows atau Cmd+C di Mac, atau klik Bagikan → Salin tautan di samping video. Link yang disalin dari aplikasi HP (vm.tiktok.com/…) juga bisa, misalnya kalau kamu mengirimnya ke diri sendiri."
+      },
+      {
+        "title": "Tempel di TokDown",
+        "body": "Buka tokdown.org di tab baru (Ctrl+T atau Cmd+T), klik kolomnya dan tempel dengan Ctrl+V atau Cmd+V, atau klik Tempel. Lalu klik Download Video."
+      },
+      {
+        "title": "Pilih format",
+        "body": "Klik HD · Tanpa Watermark untuk kualitas terbaik, SD untuk file yang lebih kecil, atau Audio MP3 untuk suaranya saja. Kalau layanan tanpa watermark sedang sibuk, kamu mungkin mendapat file asli TikTok yang masih ada watermark-nya, disertai catatan soal itu."
+      },
+      {
+        "title": "Temukan file-nya",
+        "body": "Windows: folder Downloads (C:\\Users\\NamaKamu\\Downloads), atau tekan Ctrl+J di Chrome atau Edge. Mac: Downloads di Finder, atau panah download di toolbar Safari. Klik dua kali untuk memutarnya."
+      }
+    ],
+    "ctaText": "Link sudah disalin? Tempel di halaman utama dan pilih HD.",
+    "ctaButton": "Buka downloader TikTok",
+    "sections": [
+      {
+        "title": "Perlukah aplikasi TikTok di komputer?",
+        "paragraphs": [
+          "Tidak. Banyak hasil pencarian “download TikTok di PC” menjelaskan cara menginstal aplikasi TikTok dari Microsoft Store, atau cara menjalankan aplikasi Android di Mac lewat emulator seperti BlueStacks. Keduanya tidak diperlukan untuk menyimpan video: situs TikTok bisa memutar semua video publik di browser, dan link-nya sudah cukup untuk downloader.",
+          "Opsi download bawaan TikTok, kalau diizinkan kreatornya, memberimu file dengan logo TikTok dan username kreator yang menempel. Downloader web memberimu file seperti saat di-upload, karena itulah hasilnya terlihat lebih bersih saat kamu edit atau crop."
+        ]
+      },
+      {
+        "title": "Windows atau Mac: apa bedanya",
+        "paragraphs": [
+          "Hanya shortcut-nya (Ctrl di Windows, Cmd di Mac) dan lokasi file-nya. Saat pertama kali, Safari mungkin bertanya apakah download dari tokdown.org diizinkan: klik Izinkan. Chrome dan Edge menampilkan file yang selesai di panel download kecil di kanan atas.",
+          "MP4-nya memakai video H.264 dan audio AAC, yang bisa dibuka semua player dan editor masa kini: Foto, Clipchamp, dan VLC di Windows, QuickTime dan iMovie di Mac, serta Premiere Pro, DaVinci Resolve, atau CapCut di keduanya. Tidak perlu konversi."
+        ]
+      }
+    ],
+    "tipsTitle": "Tips menyimpan banyak video di komputer",
+    "tips": [
+      {
+        "title": "Biarkan TokDown di tab sendiri",
+        "body": "Salin link di tab TikTok, pindah dengan Ctrl+Tab, tempel, download, lalu klik “Download video lain”. Ini cara manual tercepat; tidak ada download satu klik untuk seluruh profil."
+      },
+      {
+        "title": "Tentukan lokasi file",
+        "body": "Chrome dan Edge: Setelan → Download → “Tanyakan lokasi penyimpanan setiap file”. Safari: Pengaturan → Umum → Lokasi unduhan file. Folder khusus TikTok membuat folder Downloads tetap rapi."
+      },
+      {
+        "title": "Ganti nama sambil jalan",
+        "body": "Nama file diambil dari video, jadi caption yang panjang menghasilkan nama file yang panjang. Ganti namanya langsung kalau kamu sedang mengumpulkan klip untuk sebuah proyek."
+      },
+      {
+        "title": "Slideshow ter-download sebagai gambar",
+        "body": "Postingan foto tersimpan sebagai gambar terpisah. Chrome sekali meminta izin untuk beberapa download dari situs ini: klik Izinkan dan slide lainnya menyusul."
+      }
+    ],
+    "troubleshootTitle": "Mengatasi masalah di PC dan Mac",
+    "troubleshoot": [
+      {
+        "problem": "Link tidak diterima",
+        "fix": "Pastikan yang kamu salin adalah link video (berisi /video/ atau /photo/, atau diawali vm.tiktok.com atau vt.tiktok.com), bukan halaman profil atau pencarian. Link ke video privat, khusus teman, atau yang sudah dihapus juga akan gagal."
+      },
+      {
+        "problem": "Video terbuka di tab, bukan ter-download",
+        "fix": "Klik kanan tombol download lalu pilih “Simpan link sebagai…” di Chrome, Edge, atau Firefox, atau “Unduh File Tertaut” di Safari."
+      },
+      {
+        "problem": "“Layanan sibuk” atau hanya ada versi dengan watermark",
+        "fix": "Layanan gratis yang mengambil file bersih punya batas harian. Tunggu beberapa menit lalu coba lagi; komputermu tidak bermasalah."
+      }
+    ],
+    "faqTitle": "FAQ PC dan Mac",
+    "faq": [
+      {
+        "q": "Bisakah download video TikTok di PC tanpa aplikasi?",
+        "a": "Bisa. Salin link video dari tiktok.com, tempel di TokDown di browser apa pun, lalu klik Download. Tidak ada yang perlu diinstal di Windows atau macOS."
+      },
+      {
+        "q": "Bisakah download video TikTok di MacBook tanpa BlueStacks?",
+        "a": "Bisa. Emulator hanya diperlukan untuk menjalankan aplikasi Android. Untuk menyimpan video, situs TikTok dan browser sudah cukup, di MacBook Air, MacBook Pro, atau Mac lainnya."
+      },
+      {
+        "q": "Apakah bisa di Chromebook atau Linux?",
+        "a": "Bisa. TokDown berjalan di browser modern apa pun, jadi Chromebook dan laptop Linux bekerja dengan cara yang sama dan file masuk ke folder Downloads."
+      },
+      {
+        "q": "Apakah perlu instal sesuatu? Apakah aman?",
+        "a": "Tidak perlu instal apa pun dan tanpa ekstensi. TokDown adalah situs web, jadi tidak bisa membaca tab lain atau data browser kamu. Situs ini dibiayai iklan: setelah hasil download pertamamu, satu jendela iklan mungkin terbuka di latar belakang, yang bisa langsung kamu tutup."
+      },
+      {
+        "q": "Bisakah download banyak TikTok sekaligus di PC?",
+        "a": "Tidak. TokDown menyimpan satu video per link. Hati-hati dengan alat yang menjanjikan download seluruh profil dengan imbalan login TikTok kamu: jangan pernah memberikan password kamu ke situs web."
+      },
+      {
+        "q": "Apakah download video TikTok di komputer itu legal?",
+        "a": "Perangkatnya tidak berpengaruh. Salinan pribadi untuk dipakai sendiri biasanya boleh, tergantung negaramu; memposting ulang atau memakai video orang lain secara komersial tanpa izin tidak boleh, dan ketentuan TikTok membatasi alat download dari luar."
+      }
+    ]
+  },
+  "GuideSlideshow": {
+    "metaTitle": "Cara Download Slideshow TikTok dengan Sound",
+    "metaDescription": "Simpan slideshow TikTok dengan tiga cara: setiap foto ukuran penuh tanpa watermark, sound-nya sebagai MP3, atau seluruh slideshow jadi video. Tanpa login.",
+    "eyebrow": "Panduan slideshow · Oktober 2026",
+    "h1": "Cara Download Slideshow TikTok",
+    "subtitle": "Postingan foto TikTok bukan video, jadi cara menyimpannya berbeda. Begini cara menyimpan fotonya, musiknya, atau seluruh slideshow-nya.",
+    "answerTitle": "Jawaban singkatnya",
+    "answer": "Salin link postingannya (Bagikan → Salin tautan), tempel di downloader foto TokDown, lalu tekan Download Foto. Kamu mendapat setiap slide sebagai gambar ukuran penuh tanpa watermark, tombol Download semua, dan sound-nya sebagai MP3. Kalau TikTok juga menyediakan versi yang sudah dirender, tombol “Slideshow jadi video” menyimpannya sebagai satu MP4 lengkap dengan musiknya.",
+    "stepsTitle": "Langkah demi langkah: download slideshow TikTok",
+    "steps": [
+      {
+        "title": "Pastikan itu postingan foto",
+        "body": "Postingan foto digeser ke samping dan menampilkan titik-titik atau penghitung seperti 1/8 di bagian bawah. Link-nya berisi /photo/, bukan /video/."
+      },
+      {
+        "title": "Salin link-nya",
+        "body": "Ketuk Bagikan (panah), lalu Salin tautan. Di komputer, salin alamat dari address bar browser."
+      },
+      {
+        "title": "Tempel di downloader foto",
+        "body": "Buka tokdown.org/photo-downloader, tempel link-nya, lalu ketuk Download Foto. Downloader video di halaman utama juga menerima link foto."
+      },
+      {
+        "title": "Simpan slide-nya",
+        "body": "Ketuk gambar untuk menyimpan slide itu, atau Download semua untuk menyimpan setiap slide sesuai urutan, diberi nomor supaya tetap rapi. Chrome sekali meminta izin untuk beberapa download: ketuk Izinkan."
+      },
+      {
+        "title": "Simpan sound-nya atau versi videonya",
+        "body": "Ketuk Audio MP3 untuk musiknya. Kalau muncul tombol “Slideshow jadi video”, kamu mendapat satu MP4 berisi setiap slide dan sound-nya."
+      }
+    ],
+    "ctaText": "Punya link slideshow? Tempel di downloader foto.",
+    "ctaButton": "Buka downloader foto",
+    "sections": [
+      {
+        "title": "Foto, sound, atau video: mana yang kamu butuhkan?",
+        "paragraphs": [
+          "Pilih fotonya kalau kamu ingin mencetak, mengedit, atau membagikan satu gambar: itu file asli, tanpa watermark dan tanpa kompresi tambahan. Pilih MP3 kalau kamu cuma mau musik atau voice-over-nya. Pilih versi video kalau kamu ingin slideshow-nya persis seperti diputar di TikTok, misalnya untuk dikirim lewat aplikasi chat.",
+          "Versi video hanya muncul kalau TikTok sudah merender versi itu untuk postingannya. Kalau tidak ada, susun ulang dari gambar dan MP3-nya di editor apa pun seperti CapCut, iMovie, atau Clipchamp: masukkan slide sesuai urutan, tambahkan audionya, dan beri setiap slide dua atau tiga detik."
+        ]
+      },
+      {
+        "title": "Kenapa slideshow sering bikin downloader lain gagal",
+        "paragraphs": [
+          "Slideshow adalah kumpulan gambar ditambah satu trek audio yang diputar TikTok bersamaan. Downloader yang dibuat khusus untuk video mencari file video, tidak menemukannya, lalu gagal atau cuma memberikan gambar pertama. TokDown membaca daftar gambarnya langsung, dan itu juga sebabnya slide-nya tidak ada watermark: TikTok hanya menempelkan logonya pada video yang sudah dirender."
+        ]
+      }
+    ],
+    "tipsTitle": "Tips untuk HP dan komputer",
+    "tips": [
+      {
+        "title": "iPhone: simpan ke Foto",
+        "body": "Di Safari, gambar bisa terbuka di tab baru atau masuk ke File. Tekan lama gambarnya dan pilih Simpan ke Foto untuk memasukkannya ke galeri."
+      },
+      {
+        "title": "Android: cek folder Download",
+        "body": "Gambar masuk ke folder Download dan sebentar kemudian muncul di Google Foto atau Galeri di album Download."
+      },
+      {
+        "title": "Jaga urutannya",
+        "body": "Pakai Download semua, jangan menyimpan slide satu per satu: file-nya diberi nomor sesuai urutan yang ditentukan kreator."
+      },
+      {
+        "title": "Cantumkan kreatornya",
+        "body": "Kalau kamu membagikan slide dengan izin kreator, tag akun aslinya. Gambarnya tidak ada watermark, jadi kredit ada di tanganmu."
+      }
+    ],
+    "troubleshootTitle": "Mengatasi masalah",
+    "troubleshoot": [
+      {
+        "problem": "Hanya gambar pertama yang ter-download",
+        "fix": "Browser kamu memblokir download tambahan. Cari ikon download yang diblokir di address bar, izinkan beberapa download untuk tokdown.org, lalu tekan Download semua lagi."
+      },
+      {
+        "problem": "Tidak ada tombol “Slideshow jadi video”",
+        "fix": "TikTok tidak menyediakan video yang sudah dirender untuk postingan ini. Simpan gambar dan MP3-nya lalu gabungkan di editor, seperti dijelaskan di atas."
+      },
+      {
+        "problem": "Tombol MP3 tidak ada",
+        "fix": "Sebagian postingan tidak punya file sound terpisah yang bisa diambil, atau memang tanpa suara. Gambarnya tetap bisa di-download seperti biasa."
+      },
+      {
+        "problem": "“Postingan tidak ditemukan”",
+        "fix": "Akunnya mungkin privat, postingannya khusus teman, atau sudah dihapus. Hanya postingan publik yang bisa diambil."
+      }
+    ],
+    "faqTitle": "FAQ slideshow",
+    "faq": [
+      {
+        "q": "Bisakah download slideshow TikTok sebagai video?",
+        "a": "Bisa, kalau TikTok menyediakan versi yang sudah dirender: TokDown lalu menampilkan tombol “Slideshow jadi video” yang menyimpan satu MP4 lengkap dengan musiknya. Kalau tidak ada, simpan foto dan MP3-nya lalu gabungkan di editor video."
+      },
+      {
+        "q": "Bagaimana cara download foto slideshow TikTok tanpa watermark?",
+        "a": "Setiap slide ter-download sebagai file gambar asli. TikTok hanya menambahkan watermark pada video yang sudah dirender, jadi gambarnya bersih."
+      },
+      {
+        "q": "Bisakah menyimpan slideshow TikTok dengan sound-nya?",
+        "a": "Bisa. Sound-nya tersedia sebagai MP3 terpisah di samping gambar, dan sudah termasuk dalam versi video kalau tersedia."
+      },
+      {
+        "q": "Apakah tombol Simpan bawaan TikTok bisa untuk slideshow?",
+        "a": "Tergantung versi aplikasi dan pengaturan download kreatornya, TikTok mungkin mengizinkanmu menyimpan satu foto atau versi video dengan logonya. Downloader memberimu semua slide sekaligus, tanpa logo."
+      },
+      {
+        "q": "Apakah bisa di PC dan Mac?",
+        "a": "Bisa. Tempel link-nya di browser apa pun dan pakai Download semua; gambarnya masuk ke folder Downloads."
+      },
+      {
+        "q": "Bisakah download slideshow dari akun privat?",
+        "a": "Tidak. Seperti semua downloader, TokDown hanya bisa mengambil postingan publik."
+      }
+    ]
+  },
+  "GuideNoSave": {
+    "metaTitle": "Opsi Simpan Video TikTok Hilang? Ini Sebabnya",
+    "metaDescription": "Tombol Simpan video di TikTok hilang? Ini sebabnya (pengaturan kreator, akun privat, usia di bawah 16), cara mengaktifkannya, dan apa yang bisa dilakukan.",
+    "eyebrow": "Bantuan · Oktober 2026",
+    "h1": "Tidak Ada Opsi “Simpan Video” di TikTok? Ini Sebabnya",
+    "subtitle": "Tombol Simpan video hilang karena beberapa alasan tertentu. Cari tahu penyebabnya, aktifkan untuk videomu sendiri, dan lihat pilihanmu untuk video orang lain.",
+    "answerTitle": "Jawaban singkatnya",
+    "answer": "TikTok menyembunyikan atau menonaktifkan Simpan video kalau kreatornya mematikan download video, kalau akunnya privat, atau kalau kreatornya berusia di bawah 16 tahun, yang download-nya selalu mati. Untuk videomu sendiri, aktifkan di Pengaturan dan privasi → Privasi → Unduhan. Untuk video orang lain, minta ke kreatornya atau simpan di Favorit.",
+    "stepsTitle": "Yang bisa dilakukan saat Simpan video tidak ada",
+    "steps": [
+      {
+        "title": "Cari tahu penyebabnya",
+        "body": "Buka profil kreatornya. Ikon gembok atau tulisan “Akun ini privat” berarti akunnya privat. Kalau profilnya publik tapi Simpan video tidak ada atau berwarna abu-abu, kreatornya sudah mematikan download atau berusia di bawah 16 tahun."
+      },
+      {
+        "title": "Videomu sendiri? Aktifkan download",
+        "body": "Buka Profil → menu (☰) → Pengaturan dan privasi → Privasi → Unduhan, lalu aktifkan. Syaratnya akun publik dan usia 16 tahun ke atas, dan pengaturan ini berlaku untuk semua videomu, yang lama maupun yang akan datang."
+      },
+      {
+        "title": "Simpan di Favorit",
+        "body": "Ketuk ikon bookmark untuk menambahkan video ke tab Favorit di profilmu. Ini bukan salinan offline, tapi selalu diizinkan dan videonya tetap bersama kreatornya."
+      },
+      {
+        "title": "Minta ke kreatornya",
+        "body": "Komentar atau pesan yang meminta file-nya, atau izin untuk menyimpannya, adalah cara paling bersih, dan satu-satunya cara kalau kamu ingin memakainya ulang. Simpan balasannya sebagai bukti izin."
+      },
+      {
+        "title": "Salinan pribadi dari video publik",
+        "body": "Downloader web seperti TokDown membaca file publik yang sama dengan yang diputar browser kamu, jadi bisa mengambil video publik meski tombolnya mati. Boleh atau tidaknya tergantung aturan salinan pribadi di negaramu dan ketentuan TikTok, yang membatasi alat download dari luar. Simpan salinan seperti itu untuk dirimu sendiri, jangan pernah diposting ulang, dan jangan sentuh video kreator yang masih di bawah umur."
+      }
+    ],
+    "ctaText": "Menyimpan video publik untuk dirimu sendiri saja? Tempel link-nya.",
+    "ctaButton": "Buka downloader",
+    "sections": [
+      {
+        "title": "Alasan tombolnya hilang",
+        "paragraphs": [
+          "Kreator mematikan download. Setiap kreator berusia 16 tahun ke atas bisa menentukan apakah orang lain boleh men-download videonya. Kalau pengaturannya mati, TikTok menyembunyikan atau menonaktifkan Simpan video untuk semua orang lain, baik di postingan lama maupun baru.",
+          "Akunnya privat. Akun privat sama sekali tidak bisa mengaktifkan download, jadi videonya tidak pernah menampilkan opsi itu, bahkan untuk pengikut yang sudah disetujui.",
+          "Kreatornya di bawah 16 tahun. TikTok mematikan download untuk akun seperti ini dan tidak mengizinkan mereka mengaktifkannya. Untuk usia 16 dan 17 tahun, pengaturannya mati secara default tapi bisa diaktifkan.",
+          "Masalahnya ada di sisimu. Kalau Simpan video tidak ada di semua video, termasuk dari akun publik yang besar, perbarui aplikasi TikTok, mulai ulang aplikasinya, dan pastikan kamu sudah login."
+        ]
+      },
+      {
+        "title": "Rekam layar bukan celah",
+        "paragraphs": [
+          "Rekam layar bisa dilakukan di HP mana pun, tapi caption, tombol, dan notifikasi ikut terekam, dan kualitasnya turun sesuai resolusi layarmu. Aturannya juga tetap sama: batasan hak cipta dan salinan pribadi berlaku untuk rekaman sama seperti untuk download."
+        ]
+      }
+    ],
+    "tipsTitle": "",
+    "tips": [],
+    "troubleshootTitle": "",
+    "troubleshoot": [],
+    "faqTitle": "FAQ Simpan video",
+    "faq": [
+      {
+        "q": "Kenapa sebagian video TikTok tidak bisa disimpan?",
+        "a": "Karena kreatornya mematikan download, akunnya privat, atau kreatornya berusia di bawah 16 tahun. Dalam setiap kasus itu, TikTok menghapus atau menonaktifkan opsi Simpan video untuk pengguna lain."
+      },
+      {
+        "q": "Bagaimana cara mengaktifkan download untuk video TikTok-ku?",
+        "a": "Profil → menu (☰) → Pengaturan dan privasi → Privasi → Unduhan. Akunmu harus publik dan kamu harus berusia 16 tahun ke atas; pengaturan ini berlaku untuk semua postinganmu."
+      },
+      {
+        "q": "Bisakah download TikTok kalau kreatornya mematikan download?",
+        "a": "Secara teknis, downloader web bisa mengambil video publik apa pun. Kreatornya sudah memberi tanda bahwa ia tidak ingin salinannya beredar, jadi simpan hanya untuk ditonton sendiri, jangan pernah diposting ulang, dan lewati sama sekali untuk kreator yang masih di bawah umur. Ketentuan TikTok juga membatasi alat download dari luar."
+      },
+      {
+        "q": "Apakah mematikan download menghapus salinan yang sudah disimpan orang?",
+        "a": "Tidak. Menurut TikTok, salinan yang disimpan saat download masih aktif tetap ada di perangkat orang lain. Mematikan pengaturan itu hanya menghentikan download baru."
+      },
+      {
+        "q": "Bisakah menyimpan video dari akun privat?",
+        "a": "Tidak, baik dengan tombol TikTok maupun alat web mana pun. Minta orangnya mengirimkan file-nya kepadamu."
+      }
+    ]
+  },
+  "GuideDraft": {
+    "metaTitle": "Cara Menyimpan Draf TikTok ke Galeri",
+    "metaDescription": "Simpan draf TikTok ke galeri tanpa ada yang melihatnya: trik Hanya saya, tombol Simpan ke perangkat, dan cara mencadangkan draf sebelum ganti HP baru.",
+    "eyebrow": "Panduan draf · Oktober 2026",
+    "h1": "Cara Menyimpan Draf TikTok ke Galeri",
+    "subtitle": "Draf hanya ada di dalam aplikasi TikTok di HP kamu. Begini cara memindahkannya ke galeri tanpa dilihat orang lain.",
+    "answerTitle": "Jawaban singkatnya",
+    "answer": "Kebanyakan versi aplikasi tidak punya tombol “ekspor draf”. Cara yang bisa diandalkan: buka drafnya, ketuk Berikutnya, atur siapa yang bisa menonton ke Hanya saya, aktifkan Simpan ke perangkat, lalu posting. Tidak ada orang lain yang melihat postingannya, dan salinannya masuk ke galeri kamu. Setelah itu kamu bisa menghapus postingan privatnya; salinan yang tersimpan tetap ada. Nama menu bisa sedikit berbeda di tiap versi aplikasi.",
+    "stepsTitle": "Langkah demi langkah: simpan draf tanpa mempostingnya secara publik",
+    "steps": [
+      {
+        "title": "Buka draf kamu",
+        "body": "Buka Profil lalu ketuk Draf, kotak pertama di grid video kamu. Ketuk draf yang ingin kamu simpan."
+      },
+      {
+        "title": "Masuk ke layar posting",
+        "body": "Ketuk Berikutnya. Jangan ubah videonya; layar posting hanya dipakai untuk mengekspornya."
+      },
+      {
+        "title": "Atur penonton ke Hanya saya",
+        "body": "Ketuk pengaturan visibilitas (“Semua orang dapat melihat postingan ini”) dan pilih Hanya saya. Postingannya tidak akan muncul untuk pengikut atau di halaman Untuk Anda."
+      },
+      {
+        "title": "Aktifkan Simpan ke perangkat",
+        "body": "Buka Opsi lainnya dan aktifkan Simpan ke perangkat. Di beberapa versi, tombolnya ada langsung di layar posting."
+      },
+      {
+        "title": "Posting, lalu cek galeri",
+        "body": "Ketuk Posting. Setelah upload selesai, videonya ada di app Foto atau Galeri. Postingan privatnya boleh disimpan atau dihapus: menghapusnya tidak menghapus salinan yang tersimpan."
+      }
+    ],
+    "ctaText": "Mau menyimpan TikTok publik milik orang lain? Tempel link-nya di downloader.",
+    "ctaButton": "Buka downloader",
+    "sections": [
+      {
+        "title": "Kenapa draf perlu dicadangkan",
+        "paragraphs": [
+          "Draf disimpan di HP kamu di dalam aplikasi TikTok, bukan di akun TikTok kamu. Menghapus aplikasi, menghapus penyimpanannya, atau pindah ke HP baru akan menghapus draf, dan login lagi tidak akan mengembalikannya. Kalau sebuah draf penting, ekspor sebelum salah satu hal itu terjadi."
+        ]
+      },
+      {
+        "title": "Cara lain, dan kekurangannya",
+        "paragraphs": [
+          "Rekam layar menjaga semuanya tetap privat dan tidak perlu posting, tapi salinannya ikut merekam apa pun yang ada di layar dan resolusinya hanya sebatas layar kamu. Mulai rekam, putar draf dalam layar penuh di pratinjau editor, lalu potong bagian awal dan akhirnya.",
+          "Beberapa versi aplikasi punya opsi simpan langsung di layar draf atau di editor. Kalau kamu melihatnya, pakai saja: itu cara tercepat. Opsi ini tidak tersedia di semua versi atau di semua wilayah, karena itulah metode Hanya saya di atas adalah yang paling bisa diandalkan."
+        ]
+      }
+    ],
+    "tipsTitle": "Tips",
+    "tips": [
+      {
+        "title": "Salinan tanpa watermark",
+        "body": "Salinan dari Simpan ke perangkat dibuat di HP kamu dari hasil editanmu sendiri, jadi biasanya tanpa logo TikTok. Menyimpan video yang sudah diposting nanti lewat menu Bagikan akan menambahkan logo dan username kamu."
+      },
+      {
+        "title": "Memposting belakangan",
+        "body": "Kalau akhirnya kamu memutuskan untuk mempublikasikan videonya, buka postingan privatnya, ketuk ⋯ → Pengaturan privasi, lalu ubah ke Semua orang, tidak perlu meng-upload file-nya lagi."
+      },
+      {
+        "title": "Ganti HP baru",
+        "body": "Ekspor setiap draf yang ingin kamu simpan dengan langkah di atas, lalu pindahkan file-nya lewat iCloud Foto, Google Foto, atau kabel. TikTok tidak punya fitur pindah draf."
+      }
+    ],
+    "troubleshootTitle": "Mengatasi masalah",
+    "troubleshoot": [
+      {
+        "problem": "Tombol Simpan ke perangkat tidak ada",
+        "fix": "Perbarui TikTok. Kalau masih tidak ada, tetap posting sebagai Hanya saya, lalu buka postingannya, ketuk Bagikan atau ⋯ dan pilih Simpan video; salinan itu mungkin ada watermark-nya."
+      },
+      {
+        "problem": "Videonya tidak muncul di galeri",
+        "fix": "Pastikan TikTok diizinkan menyimpan ke foto kamu. iPhone: Pengaturan → TikTok → Foto. Android: Setelan → Aplikasi → TikTok → Izin → Foto dan video."
+      },
+      {
+        "problem": "Bisakah TokDown men-download drafku?",
+        "fix": "Tidak, dan alat web lain juga tidak bisa. Draf tidak pernah keluar dari HP kamu, dan postingan Hanya saya bersifat privat, jadi keduanya tidak punya link publik yang bisa diambil."
+      }
+    ],
+    "faqTitle": "FAQ draf",
+    "faq": [
+      {
+        "q": "Bisakah menyimpan draf TikTok tanpa mempostingnya?",
+        "a": "Di kebanyakan versi aplikasi tidak ada tombol langsung. Rekam layar bisa dilakukan tanpa posting; selain itu, posting sebagai Hanya saya dengan Simpan ke perangkat aktif, yang tidak bisa dilihat orang lain."
+      },
+      {
+        "q": "Apakah pengikutku bisa melihat postingan Hanya saya?",
+        "a": "Tidak. Postingan Hanya saya hanya bisa dilihat olehmu. Postingan itu tidak muncul di feed pengikut atau di halaman Untuk Anda."
+      },
+      {
+        "q": "Apakah draf TikTok ikut pindah ke HP baru?",
+        "a": "Tidak. Draf disimpan di perangkat, bukan di akun kamu, jadi ekspor draf yang ingin kamu simpan sebelum ganti HP."
+      },
+      {
+        "q": "Apakah menghapus postingan privat ikut menghapus video yang tersimpan?",
+        "a": "Tidak. Salinan di galeri kamu adalah file terpisah dan tetap ada saat kamu menghapus postingannya."
+      },
+      {
+        "q": "Apakah draf TikTok tersimpan di cloud?",
+        "a": "Tidak. Draf tetap berada di HP tempat kamu membuatnya, karena itulah menghapus aplikasi ikut menghapusnya."
+      }
+    ]
+  },
+  "Cookie": {
+    "text": "Kami menggunakan cookie dan mitra iklan pihak ketiga untuk menampilkan iklan dan menganalisis trafik.",
+    "link": "Selengkapnya di Kebijakan Privasi kami",
+    "accept": "Terima & Lanjutkan"
+  }
+}

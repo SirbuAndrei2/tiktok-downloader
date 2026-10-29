@@ -7,8 +7,8 @@
  */
 export const PAGE_DATES: Record<string, { published: string; modified: string }> = {
   '/': { published: '2026-04-24', modified: '2026-10-27' },
-  '/tools': { published: '2026-10-20', modified: '2026-10-27' },
-  '/guide': { published: '2026-10-27', modified: '2026-10-27' },
+  '/tools': { published: '2026-10-20', modified: '2026-10-29' },
+  '/guide': { published: '2026-10-27', modified: '2026-10-29' },
   '/about': { published: '2026-05-24', modified: '2026-10-27' },
   '/photo-downloader': { published: '2026-10-20', modified: '2026-10-27' },
   '/facebook-video-downloader': { published: '2026-10-20', modified: '2026-10-27' },
@@ -20,6 +20,10 @@ export const PAGE_DATES: Record<string, { published: string; modified: string }>
   '/guide/tiktok-to-mp3': { published: '2026-05-24', modified: '2026-10-27' },
   '/guide/download-tiktok-on-iphone': { published: '2026-06-10', modified: '2026-10-27' },
   '/guide/download-tiktok-on-android': { published: '2026-06-10', modified: '2026-10-27' },
+  '/guide/download-tiktok-on-pc': { published: '2026-10-29', modified: '2026-10-29' },
+  '/guide/download-tiktok-slideshow': { published: '2026-10-29', modified: '2026-10-29' },
+  '/guide/tiktok-no-save-video-option': { published: '2026-10-29', modified: '2026-10-29' },
+  '/guide/save-tiktok-draft': { published: '2026-10-29', modified: '2026-10-29' },
   '/guide/tiktok-to-mp4': { published: '2026-06-02', modified: '2026-10-27' },
   '/guide/snaptik-alternative': { published: '2026-06-02', modified: '2026-10-27' },
   '/guide/tiktok-downloader-chrome': { published: '2026-06-10', modified: '2026-10-27' },

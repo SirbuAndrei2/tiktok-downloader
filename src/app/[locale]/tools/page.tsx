@@ -4,7 +4,7 @@ import { breadcrumbs, itemList } from '@/lib/schema'
 import JsonLd from '@/components/JsonLd'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
-import { ArrowLeftRight, ArrowRight, AtSign, Clapperboard, Film, Globe, ImageDown, ImagePlay, Images, ListVideo, Lock, Minimize2, Music, Scale, Smartphone, Sparkles, TabletSmartphone, type LucideIcon } from 'lucide-react'
+import { ArrowLeftRight, ArrowRight, AtSign, Clapperboard, Film, Globe, ImageDown, ImagePlay, Images, ListVideo, Lock, Minimize2, Monitor, Music, Scale, Smartphone, Sparkles, TabletSmartphone, type LucideIcon } from 'lucide-react'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import CtaBand from '@/components/CtaBand'
@@ -23,10 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({ locale, path: SLUG, title: t('metaTitle'), description: t('metaDescription') })
 }
 
-type ToolKey = 'video' | 'photo' | 'facebook' | 'twitter' | 'youtubeThumbnail' | 'compressor' | 'mp4ToGif' | 'audio' | 'hd' | 'iphone' | 'android' | 'mp4' | 'gif' | 'chrome' | 'playlist' | 'private' | 'legal' | 'snaptik'
+type ToolKey = 'video' | 'photo' | 'facebook' | 'twitter' | 'youtubeThumbnail' | 'compressor' | 'mp4ToGif' | 'audio' | 'hd' | 'iphone' | 'android' | 'pc' | 'slideshow' | 'mp4' | 'gif' | 'chrome' | 'playlist' | 'private' | 'legal' | 'snaptik'
 
 // `tool` = a translated tool page (every locale); `guide` = translated guide (every locale);
-// `enGuide` = English-only guide (hidden on /de, /ar); none = the home downloader itself.
+// `enGuide` = English-only guide (hidden outside /en); none = the home downloader itself.
 const TOOLS: { key: ToolKey; Icon: LucideIcon; tool?: string; guide?: string; enGuide?: string }[] = [
   { key: 'video', Icon: Film },
   { key: 'photo', Icon: Images, tool: '/photo-downloader' },
@@ -39,6 +39,8 @@ const TOOLS: { key: ToolKey; Icon: LucideIcon; tool?: string; guide?: string; en
   { key: 'hd', Icon: Sparkles, guide: '/guide/download-tiktok-without-watermark' },
   { key: 'iphone', Icon: Smartphone, guide: '/guide/download-tiktok-on-iphone' },
   { key: 'android', Icon: TabletSmartphone, guide: '/guide/download-tiktok-on-android' },
+  { key: 'pc', Icon: Monitor, guide: '/guide/download-tiktok-on-pc' },
+  { key: 'slideshow', Icon: Images, guide: '/guide/download-tiktok-slideshow' },
   { key: 'mp4', Icon: Film, enGuide: '/guide/tiktok-to-mp4' },
   { key: 'gif', Icon: ImagePlay, enGuide: '/guide/tiktok-video-to-gif' },
   { key: 'chrome', Icon: Globe, enGuide: '/guide/tiktok-downloader-chrome' },

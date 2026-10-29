@@ -1,6 +1,6 @@
 # TokDown
 
-> Free online video downloader and media tools: download TikTok videos without watermark in HD, save TikTok photo slideshows, download Facebook and Twitter/X videos, grab YouTube thumbnails, compress videos and convert MP4 to GIF. No login, no app. Available in English, German and Arabic.
+> Free online video downloader and media tools: download TikTok videos without watermark in HD, save TikTok photo slideshows, download Facebook and Twitter/X videos, grab YouTube thumbnails, compress videos and convert MP4 to GIF. No login, no app. Available in English, German, Arabic, Spanish, Portuguese (Brazil) and Indonesian.
 
 Site: https://tokdown.org · Contact: support@tokdown.org · Not affiliated with TikTok, ByteDance, Meta, X or Google.
 
@@ -20,6 +20,10 @@ Site: https://tokdown.org · Contact: support@tokdown.org · Not affiliated with
 - [TikTok to MP3](https://tokdown.org/guide/tiktok-to-mp3)
 - [Download TikTok on iPhone](https://tokdown.org/guide/download-tiktok-on-iphone)
 - [Download TikTok on Android](https://tokdown.org/guide/download-tiktok-on-android)
+- [Download TikTok videos on PC and Mac](https://tokdown.org/guide/download-tiktok-on-pc): save TikToks on Windows, MacBook, Chromebook or Linux from any browser, no app, emulator or extension.
+- [Download a TikTok slideshow](https://tokdown.org/guide/download-tiktok-slideshow): every photo of a photo post without watermark, the sound as MP3, or the slideshow as one video when TikTok provides it.
+- [No "Save video" option on TikTok](https://tokdown.org/guide/tiktok-no-save-video-option): why the button disappears (creator turned downloads off, private account, creator under 16), how to turn downloads on for your own videos, and the respectful options for other people's videos.
+- [Save a TikTok draft to your camera roll](https://tokdown.org/guide/save-tiktok-draft): export a draft without anyone seeing it (post as Only me with Save to device on); drafts live only on the phone.
 - [TikTok to MP4](https://tokdown.org/guide/tiktok-to-mp4)
 - [TikTok downloader for Chrome](https://tokdown.org/guide/tiktok-downloader-chrome)
 - [TikTok video to GIF](https://tokdown.org/guide/tiktok-video-to-gif): download the MP4, then convert it in the browser with the MP4 to GIF tool.
@@ -29,7 +33,8 @@ Site: https://tokdown.org · Contact: support@tokdown.org · Not affiliated with
 - [Is it legal to download TikTok videos?](https://tokdown.org/guide/is-it-legal-to-download-tiktok-videos): copyright law (US, EU, Germany, UK) and TikTok's terms, with sources.
 
 ## Languages
-- German: https://tokdown.org/de · Arabic: https://tokdown.org/ar. All tools, /tools, /guide, /about and the four guides watermark, MP3, iPhone and Android exist in German and Arabic; the other guides are English only.
+- German: https://tokdown.org/de · Arabic: https://tokdown.org/ar · Spanish: https://tokdown.org/es · Portuguese (Brazil): https://tokdown.org/pt · Indonesian: https://tokdown.org/id
+- All tools, /tools, /guide, /about and eight guides (watermark, MP3, iPhone, Android, PC and Mac, slideshow, missing Save video option, drafts) exist in every language at the same path under the language prefix (e.g. https://tokdown.org/es/guide/download-tiktok-on-pc). The other guides are English only.
 
 ## Facts worth citing
 - Downloads are streamed through TokDown's server in a single pass; no video is stored.

@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next'
-import { BASE, hreflang, localeUrl } from '@/lib/seo'
+import { BASE, LOCALES, hreflang, localeUrl } from '@/lib/seo'
 import { pageDates } from '@/lib/content-dates'
 
-// Translated pages: emitted for /, /de and /ar with hreflang alternates that
+// Translated pages: emitted for every locale (/, /de, /ar, /es, /pt, /id) with hreflang alternates that
 // mirror the <link rel="alternate"> tags on each page.
 const CONTENT_ROUTES = [
   '/',
@@ -18,10 +18,14 @@ const CONTENT_ROUTES = [
   '/guide/tiktok-to-mp3',
   '/guide/download-tiktok-on-iphone',
   '/guide/download-tiktok-on-android',
+  '/guide/download-tiktok-on-pc',
+  '/guide/download-tiktok-slideshow',
+  '/guide/tiktok-no-save-video-option',
+  '/guide/save-tiktok-draft',
   '/about',
 ]
 
-// English-only guides under [locale]/guide that 404 for /de and /ar (keep in sync with EN_GUIDES in lib/nav.ts)
+// English-only guides under [locale]/guide that 404 for every other locale (keep in sync with EN_GUIDES in lib/nav.ts)
 const NEW_GUIDE_ROUTES = [
   '/guide/is-it-legal-to-download-tiktok-videos',
   '/guide/tiktok-to-mp4',
@@ -38,7 +42,7 @@ const LEGAL_ROUTES = ['/privacy', '/terms', '/dmca', '/disclaimer']
 // priority are omitted: Google ignores both.
 export default function sitemap(): MetadataRoute.Sitemap {
   const translated = CONTENT_ROUTES.flatMap((path) =>
-    (['en', 'de', 'ar'] as const).map((locale) => ({
+    LOCALES.map((locale) => ({
       url: localeUrl(locale, path),
       lastModified: new Date(pageDates(path).modified),
       alternates: { languages: hreflang(path) },

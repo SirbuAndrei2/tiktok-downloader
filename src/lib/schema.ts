@@ -1,4 +1,4 @@
-import { BASE, OG_IMAGE, localeUrl } from '@/lib/seo'
+import { BASE, LOCALES, OG_IMAGE, localeUrl } from '@/lib/seo'
 
 /**
  * JSON-LD builders shared by every page. One Organization and one WebSite node
@@ -29,7 +29,7 @@ export function siteGraph(): Json {
           '@type': 'ContactPoint',
           contactType: 'customer support',
           email: 'support@tokdown.org',
-          availableLanguage: ['en', 'de', 'ar'],
+          availableLanguage: [...LOCALES],
         },
       },
       {
@@ -38,7 +38,7 @@ export function siteGraph(): Json {
         name: 'TokDown',
         alternateName: 'TokDown.org',
         url: `${BASE}/`,
-        inLanguage: ['en', 'de', 'ar'],
+        inLanguage: [...LOCALES],
         publisher: { '@id': ORG_ID },
       },
     ],

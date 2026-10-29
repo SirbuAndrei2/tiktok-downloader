@@ -1,26 +1,33 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { CONSENT_KEY, grantAnalyticsConsent } from '@/components/GoogleAnalytics'
 
-export default function CookieConsent() {
-  const [show, setShow] = useState(false)
+// localStorage has no change events we care about here: read it once on the
+// client, render nothing on the server (no hydration mismatch, no setState in an effect).
+const noopSubscribe = () => () => {}
+const needsConsentSnapshot = () => {
+  try {
+    return !localStorage.getItem(CONSENT_KEY)
+  } catch {
+    return false
+  }
+}
 
-  useEffect(() => {
-    const consent = localStorage.getItem(CONSENT_KEY)
-    if (!consent) {
-      setShow(true)
-    }
-  }, [])
+export default function CookieConsent() {
+  const t = useTranslations('Cookie')
+  const needsConsent = useSyncExternalStore(noopSubscribe, needsConsentSnapshot, () => false)
+  const [dismissed, setDismissed] = useState(false)
 
   const acceptCookies = () => {
     localStorage.setItem(CONSENT_KEY, 'accepted')
     grantAnalyticsConsent()
-    setShow(false)
+    setDismissed(true)
   }
 
-  if (!show) return null
+  if (!needsConsent || dismissed) return null
 
   return (
     <div
@@ -33,10 +40,10 @@ export default function CookieConsent() {
       }}
     >
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p className="leading-relaxed text-center sm:text-left font-medium">
-          We use cookies and third-party advertising partners to show ads and analyze traffic.{' '}
+        <p className="leading-relaxed text-center sm:text-start font-medium">
+          {t('text')}{' '}
           <Link href="/privacy" className="underline font-bold">
-            Learn more in our Privacy Policy
+            {t('link')}
           </Link>
           .
         </p>
@@ -45,7 +52,7 @@ export default function CookieConsent() {
             onClick={acceptCookies}
             className="btn-brand h-11 rounded-full px-5 text-sm"
           >
-            Accept &amp; Continue
+            {t('accept')}
           </button>
         </div>
       </div>

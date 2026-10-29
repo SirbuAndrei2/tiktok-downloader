@@ -6,6 +6,9 @@ const LOCALES = [
   { code: 'en', label: 'EN', name: 'English' },
   { code: 'de', label: 'DE', name: 'Deutsch' },
   { code: 'ar', label: 'AR', name: 'العربية' },
+  { code: 'es', label: 'ES', name: 'Español' },
+  { code: 'pt', label: 'PT', name: 'Português' },
+  { code: 'id', label: 'ID', name: 'Bahasa Indonesia' },
 ] as const
 
 interface Props {
@@ -24,7 +27,7 @@ export default function SiteHeader({ locale, localePath, labels, path = '/' }: P
   ]
   return (
     <header className="site-header w-full">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-6 px-5">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-3 px-5 sm:gap-6">
         <Link href={localePath || '/'} className="flex items-center gap-2.5 no-underline" aria-label="TokDown">
           <Logo />
           <span className="text-[1.05rem] font-semibold tracking-tight" style={{ color: 'var(--t1)' }}>TokDown</span>
@@ -51,7 +54,7 @@ export default function SiteHeader({ locale, localePath, labels, path = '/' }: P
                 hrefLang={l.code}
                 title={l.name}
                 aria-current={active ? 'page' : undefined}
-                className={cn('mono inline-flex h-8 min-w-9 items-center justify-center rounded-full px-2.5 text-xs font-medium transition-colors', active ? '' : 'hover:text-white')}
+                className={cn('mono inline-flex h-8 min-w-8 items-center justify-center rounded-full px-2 text-xs sm:min-w-9 sm:px-2.5 font-medium transition-colors', active ? '' : 'hover:text-white')}
                 style={active ? { color: 'var(--lime-fg)', background: 'var(--lime)' } : { color: 'var(--t3)' }}
               >
                 {l.label}

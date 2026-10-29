@@ -1,7 +1,7 @@
 import { defineRouting } from 'next-intl/routing'
 
 export const routing = defineRouting({
-  locales: ['en', 'de', 'ar'],
+  locales: ['en', 'de', 'ar', 'es', 'pt', 'id'],
   defaultLocale: 'en',
   localePrefix: 'as-needed',
   // Every URL serves exactly one language: no Accept-Language/cookie redirect

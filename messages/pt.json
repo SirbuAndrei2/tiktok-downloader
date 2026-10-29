@@ -1,0 +1,1817 @@
+{
+  "Downloader": {
+    "placeholder": "https://www.tiktok.com/@user/video/...",
+    "paste": "Colar",
+    "download": "Baixar vídeo",
+    "fetching": "Buscando o vídeo…",
+    "clear": "Limpar",
+    "errorNetwork": "Erro de rede. Tente de novo.",
+    "tryAgain": "Tentar de novo",
+    "downloadAnother": "← Baixar outro vídeo",
+    "photo": {
+      "placeholder": "https://www.tiktok.com/@user/photo/...",
+      "download": "Baixar fotos",
+      "fetching": "Buscando as fotos…",
+      "downloadAnother": "← Baixar outro carrossel"
+    },
+    "platforms": {
+      "facebook": {
+        "placeholder": "https://www.facebook.com/watch?v=… ou fb.watch/…",
+        "download": "Baixar vídeo",
+        "fetching": "Buscando o vídeo…",
+        "downloadAnother": "← Baixar outro vídeo"
+      },
+      "twitter": {
+        "placeholder": "https://x.com/user/status/…",
+        "download": "Baixar vídeo",
+        "fetching": "Buscando o post…",
+        "downloadAnother": "← Baixar outro post"
+      }
+    }
+  },
+  "VideoResult": {
+    "hdTitle": "HD · Sem marca d'água",
+    "hdDesc": "Melhor qualidade",
+    "sdTitle": "SD · Sem marca d'água",
+    "sdDesc": "Arquivo menor",
+    "audioTitle": "Áudio MP3",
+    "audioDesc": "Só a música",
+    "downloadOptions": "Opções de download",
+    "photosTitle": "{count} fotos",
+    "downloadAll": "Baixar todas",
+    "downloadingAll": "Salvando…",
+    "photoAlt": "Foto {n}",
+    "downloadPhoto": "Baixar foto {n}",
+    "slideshowTitle": "Carrossel em vídeo",
+    "slideshowDesc": "Todas as fotos com música",
+    "hdGeneric": "Vídeo · Melhor qualidade",
+    "sdGeneric": "Vídeo · Arquivo menor",
+    "sourceLabel": "Fonte",
+    "hdWatermarked": "HD · Com marca d'água",
+    "sdWatermarked": "SD · Com marca d'água",
+    "fallbackNote": "Nosso serviço sem marca d'água está no limite agora, então este é o arquivo original do TikTok, com marca d'água. Tente de novo em alguns minutos para ter uma cópia limpa."
+  },
+  "Nav": {
+    "about": "Sobre",
+    "downloadGuide": "Guia de download",
+    "mp3Guide": "TikTok para MP3",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos",
+    "dmca": "DMCA",
+    "disclaimer": "Aviso legal",
+    "downloader": "Baixar vídeos",
+    "noWatermarkGuide": "Guia sem marca d'água",
+    "tools": "Ferramentas",
+    "guides": "Guias",
+    "photoDownloader": "Baixar fotos do TikTok",
+    "allGuides": "Todos os guias"
+  },
+  "Footer": {
+    "tagline": "Somente para uso pessoal. Não armazenamos nenhum vídeo. Não temos vínculo com o TikTok nem com a ByteDance.",
+    "copyright": "© {year} TikTok Downloader",
+    "notAffiliated": "© {year} TokDown. Sem vínculo com TikTok, ByteDance, Meta, X ou Google.",
+    "toolsHeading": "Ferramentas",
+    "guidesHeading": "Guias",
+    "legalHeading": "Jurídico",
+    "feedback": "Tem alguma sugestão? Escreva para",
+    "sponsored": "Patrocinado"
+  },
+  "Common": {
+    "backToDownloader": "Voltar para o downloader",
+    "guideUpdated": "Guia · Atualizado em maio de 2026",
+    "tryItNow": "Experimente agora — sem login, sem cadastro.",
+    "relatedGuides": "Guias relacionados",
+    "language": "Idioma",
+    "runsLocally": "Roda no seu navegador · nada é enviado",
+    "inDepth": "Em detalhes",
+    "linkToTool": "Link para esta ferramenta",
+    "linkToToolHint": "Achou útil? Cole este trecho no seu blog, num post de fórum ou na sua documentação para que outras pessoas também encontrem.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "adLabel": "Publicidade",
+    "related": "Ferramentas e guias relacionados"
+  },
+  "Home": {
+    "metaTitle": "Baixar vídeo do TikTok sem marca d'água em HD",
+    "metaDescription": "Baixe vídeos do TikTok sem marca d'água em HD ou salve o som em MP3. Grátis, sem login, no iPhone, Android, PC e Mac. Cole o link e pronto.",
+    "metaKeywords": [
+      "baixar vídeo do tiktok",
+      "baixar vídeo do tiktok sem marca d'água",
+      "baixar tiktok sem marca d'água online",
+      "tiktok sem marca d'água",
+      "tiktok mp3",
+      "tiktok para mp3",
+      "baixar tiktok mp4",
+      "salvar vídeo do tiktok",
+      "baixar tiktok em hd",
+      "alternativa ao snaptik",
+      "alternativa ao ssstiktok"
+    ],
+    "badge": "Grátis · Sem marca d'água · Qualidade HD",
+    "h1": "Baixar vídeo do TikTok",
+    "h1Accent": "sem marca d'água",
+    "subtitle": "Grátis, em HD, sem login — funciona no iPhone, Android, PC e Mac. Também extrai o áudio em MP3.",
+    "step1": "Copie o link do TikTok",
+    "step2": "Cole e baixe",
+    "step3": "Salve o vídeo em HD",
+    "trust1": "✓ 100% grátis",
+    "trust2": "✓ Sem cadastro",
+    "trust3": "✓ Sem marca d'água",
+    "trust4": "✓ Todos os aparelhos",
+    "featuresTitle": "Tudo o que você precisa",
+    "featuresSubtitle": "Ferramentas grátis, sem meio-termo",
+    "whyTitle": "Por que o TokDown?",
+    "whySubtitle": "A maioria dos sites para baixar TikTok para no vídeo. O TokDown também salva posts de fotos, clipes do X e do Facebook, e tem um compressor e um criador de GIF que rodam no seu navegador.",
+    "whyTableFeature": "Recurso",
+    "whyTableTokDown": "TokDown",
+    "whyTableOthers": "Outros",
+    "guidesTitle": "Guias e tutoriais",
+    "guidesSubtitle": "Passo a passo para cada aparelho",
+    "guide1Title": "Como baixar vídeo do TikTok sem marca d'água",
+    "guide1Desc": "Passo a passo para iPhone, Android, PC e Mac — com dicas para os problemas mais comuns.",
+    "guide2Title": "Como converter TikTok para MP3",
+    "guide2Desc": "Extraia o áudio de qualquer vídeo do TikTok e salve como MP3 em segundos.",
+    "faqTitle": "Perguntas frequentes",
+    "faqSubtitle": "Tudo o que você precisa saber",
+    "features": [
+      {
+        "icon": "🚫",
+        "title": "Sem marca d'água",
+        "desc": "Vídeo limpo, sem o logo do TikTok gravado na imagem."
+      },
+      {
+        "icon": "🎬",
+        "title": "Qualidade HD",
+        "desc": "A maior resolução que o criador enviou."
+      },
+      {
+        "icon": "🎵",
+        "title": "Áudio MP3",
+        "desc": "Extraia e salve só a faixa de áudio."
+      },
+      {
+        "icon": "⚡",
+        "title": "Na hora",
+        "desc": "Pronto em segundos, sem fila."
+      },
+      {
+        "icon": "🔓",
+        "title": "Sem login",
+        "desc": "Nenhuma conta, nenhum cadastro."
+      },
+      {
+        "icon": "📱",
+        "title": "Todos os aparelhos",
+        "desc": "iPhone, Android, PC e Mac."
+      }
+    ],
+    "comparisons": [
+      {
+        "label": "HD sem marca d'água"
+      },
+      {
+        "label": "Extração de áudio em MP3"
+      },
+      {
+        "label": "Sem conta nem login"
+      },
+      {
+        "label": "Compressor e criador de GIF, sem upload"
+      },
+      {
+        "label": "Funciona em todos os aparelhos"
+      },
+      {
+        "label": "Nenhum arquivo guardado em servidores"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como baixar vídeo do TikTok sem marca d'água?",
+        "a": "Abra o TikTok, toque em Compartilhar em qualquer vídeo e depois em Copiar link. Cole o link acima e clique em Baixar vídeo. Escolha “HD · Sem marca d'água” para salvar um vídeo limpo, sem o logo do TikTok gravado na imagem."
+      },
+      {
+        "q": "O TokDown é grátis?",
+        "a": "Sim. Não tem cadastro, conta nem plano premium. O site é mantido por anúncios. Quando o serviço do TikTok estiver sobrecarregado, talvez você precise tentar de novo em alguns minutos."
+      },
+      {
+        "q": "Dá para baixar o áudio do TikTok em MP3?",
+        "a": "Sim. Depois de buscar o vídeo, aparece o botão “Áudio MP3” para salvar só a trilha sonora. Útil para sons do TikTok, músicas de fundo e narrações."
+      },
+      {
+        "q": "Funciona no iPhone e no Android?",
+        "a": "Sim. O TokDown é um app web — abra no Safari (iPhone), no Chrome (Android) ou em qualquer navegador moderno. Não precisa instalar nenhum app."
+      },
+      {
+        "q": "Como salvar um vídeo do TikTok na galeria do iPhone?",
+        "a": "Depois de baixar, o vídeo vai para o app Arquivos. Abra o Arquivos, encontre o vídeo, toque em Compartilhar e depois em “Salvar Vídeo” para mandá-lo para o app Fotos."
+      },
+      {
+        "q": "Como salvar um vídeo do TikTok no Android?",
+        "a": "Toque no botão de download e o vídeo é salvo direto na pasta Downloads. De lá, abra no app Galeria."
+      },
+      {
+        "q": "Por que não consigo baixar um vídeo privado do TikTok?",
+        "a": "Vídeos privados exigem login, e nós não temos esse acesso. Só dá para baixar vídeos públicos do TikTok. Se o vídeo é público e mesmo assim falha, o criador pode ter desativado os downloads nas configurações."
+      },
+      {
+        "q": "Quais qualidades de vídeo estão disponíveis?",
+        "a": "Oferecemos HD (a maior resolução que o criador enviou) e SD, as duas sem marca d'água. HD é o recomendado para compartilhar ou editar."
+      },
+      {
+        "q": "Quais formatos o TokDown oferece?",
+        "a": "Os vídeos são baixados em MP4 (HD ou SD, sem marca d'água). O áudio vem em MP3. MP4 roda em qualquer aparelho; MP3 funciona em qualquer app de música."
+      },
+      {
+        "q": "O TokDown é seguro?",
+        "a": "Sim. O TokDown nunca pede seus dados de acesso do TikTok e não armazena nenhum arquivo de vídeo. O vídeo passa pelo nosso servidor direto para o seu aparelho e não é salvo em nenhum momento."
+      },
+      {
+        "q": "Por que o TikTok coloca marca d'água, afinal?",
+        "a": "O TikTok aplica uma marca d'água nos vídeos salvos pelo próprio app para incentivar o compartilhamento de volta na plataforma e identificar o conteúdo com a marca. O TokDown busca o arquivo original antes de a marca d'água ser aplicada, então o que você recebe é a versão limpa."
+      },
+      {
+        "q": "Dá para baixar carrosséis ou posts de fotos do TikTok?",
+        "a": "Sim. Cole o link do post de fotos ou do carrossel no downloader de fotos do TikTok (tokdown.org/photo-downloader) e salve cada imagem em tamanho original, uma por uma ou todas de uma vez, além do som em MP3."
+      },
+      {
+        "q": "É seguro baixar vídeos do TikTok?",
+        "a": "Sim. O TokDown nunca pede seu login do TikTok e nunca guarda vídeos nos servidores. O arquivo é buscado na CDN do TikTok e enviado ao seu aparelho de uma só vez — nada fica armazenado. Não temos acesso à sua conta do TikTok."
+      },
+      {
+        "q": "Como baixar TikTok sem instalar app?",
+        "a": "Abra tokdown.org em qualquer navegador no celular ou no computador — Safari, Chrome, Firefox ou Edge. Não precisa baixar nem instalar nenhum app. É só colar o link e baixar."
+      },
+      {
+        "q": "Dá para baixar vídeos do TikTok no PC ou notebook?",
+        "a": "Sim. Abra tokdown.org no Chrome, Edge ou Firefox, no Windows ou no Mac. Cole o link do TikTok e clique em Baixar vídeo. O vídeo é salvo na pasta Downloads como arquivo MP4."
+      },
+      {
+        "q": "Por que o vídeo do TikTok que baixei ficou borrado?",
+        "a": "O mais provável é que você tenha escolhido SD em vez de HD. Volte e escolha “HD · Sem marca d'água” para a melhor nitidez. Confira também se a sua internet estava estável durante o download — uma conexão lenta pode deixar o download incompleto."
+      },
+      {
+        "q": "Quanto tempo leva para baixar um TikTok?",
+        "a": "A maioria dos downloads termina em 5–15 segundos. Vídeos mais longos (3–10 minutos) ou internet mais lenta podem levar até 30 segundos. Não há fila nem espera."
+      },
+      {
+        "q": "Baixar vídeos do TikTok é legal?",
+        "a": "Depende do seu país e do que você faz com o arquivo. Muitos países permitem uma cópia privada para assistir por conta própria, mas os termos do TikTok restringem o download fora dos recursos do próprio app, e repostar, redistribuir ou monetizar o vídeo de outra pessoa sem permissão é violação de direitos autorais em quase todo lugar. Use o TokDown para uso pessoal e para o seu próprio conteúdo."
+      },
+      {
+        "q": "Dá para baixar lives do TikTok?",
+        "a": "Não. As lives do TikTok são transmitidas em tempo real e não ficam guardadas como arquivos de vídeo para baixar. Só vídeos públicos gravados (que não são lives) podem ser baixados com o TokDown."
+      },
+      {
+        "q": "O TokDown funciona sem conta no TikTok?",
+        "a": "Sim. O TokDown só trabalha com vídeos públicos do TikTok e não precisa de nenhuma conta do TikTok — nem a sua, nem a de ninguém. É só colar o link público do vídeo e baixar."
+      }
+    ],
+    "eyebrow": "Grátis · Sem marca d'água · HD",
+    "heroNote": "Cole um link, escolha o formato e pronto, em segundos.",
+    "facts": [
+      {
+        "value": "3",
+        "label": "passos, do início ao fim"
+      },
+      {
+        "value": "0",
+        "label": "contas ou logins"
+      },
+      {
+        "value": "HD",
+        "label": "vídeo sem marca d'água"
+      },
+      {
+        "value": "MP3",
+        "label": "áudio com um toque"
+      }
+    ],
+    "stepsTitle": "Como funciona",
+    "stepsSubtitle": "Três passos. Sem conta, nada para instalar.",
+    "step1Desc": "Abra o TikTok, toque em Compartilhar em qualquer vídeo público e depois em Copiar link.",
+    "step2Desc": "Cole o link no campo lá em cima e toque em Baixar vídeo.",
+    "step3Desc": "Escolha HD, SD ou MP3 e o arquivo é salvo direto no seu aparelho.",
+    "toolsTitle": "Tudo o que o TokDown faz",
+    "toolsSubtitle": "Uma ferramenta, várias formas de salvar o que você curte.",
+    "toolsCta": "Ver todas as ferramentas",
+    "ctaTitle": "Pronto para salvar um vídeo?",
+    "ctaSubtitle": "Sem conta. Sem marca d'água. Sem custo.",
+    "ctaButton": "Cole seu link"
+  },
+  "About": {
+    "metaTitle": "Sobre o TokDown – quem faz este downloader",
+    "metaDescription": "Como o TokDown funciona: de onde vêm os downloads, o que nunca é armazenado, como os anúncios pagam o site e como falar com a gente. Grátis, sem conta.",
+    "h1": "Sobre o",
+    "h1Accent": "TokDown",
+    "subtitle": "O TokDown é um pequeno conjunto de ferramentas grátis para baixar e editar mídia. Esta página explica como ele funciona, o que ele não faz e como é pago.",
+    "storyTitle": "Nossa história",
+    "story1": "A maioria dos sites “grátis” para baixar TikTok segue a mesma receita: esconde o botão de download de verdade embaixo de três falsos, redireciona você por domínios de anúncios, obriga a resolver captchas e — alguns deles — chega a pedir seu usuário e senha do TikTok. Para nós, isso é inaceitável.",
+    "story2": "O TokDown nasceu para ser a ferramenta que a gente queria que existisse: rápida, limpa e honesta. Você cola um link. Você recebe seu vídeo. Só isso.",
+    "story3": "Não guardamos nenhum arquivo de vídeo nos nossos servidores. Quando você toca em baixar, o arquivo vem da CDN do TikTok, passa pelo nosso servidor e chega ao seu aparelho sem nunca ser salvo. Não mantemos registro do que você baixou; os logs padrão do servidor são apagados automaticamente após 30 dias.",
+    "valuesTitle": "No que acreditamos",
+    "howTitle": "Como o TokDown funciona",
+    "how1": "Quando você cola um link, o TokDown identifica a plataforma e pede a mídia a uma fonte pública: no TikTok, uma API de terceiros (TikWM), com a página pública do vídeo no TikTok como alternativa; no X, os dados públicos usados nos tweets incorporados; no Facebook, o player público de incorporação. Você recebe o arquivo que a plataforma entrega, sem recodificação.",
+    "how2": "A versão “sem marca d'água” é o arquivo original enviado pelo criador, antes de o app do TikTok sobrepor o logo. As duas versões existem na CDN do TikTok; o TokDown só mostra a certa.",
+    "how3": "O arquivo passa pelo nosso servidor até o seu aparelho de uma só vez, porque as CDNs das plataformas recusam downloads diretos pelo navegador; nada é gravado em disco. O compressor de vídeo e o conversor de MP4 para GIF funcionam de outro jeito: rodam inteiramente no seu navegador e o seu arquivo nunca é enviado.",
+    "legalTitle": "Aviso legal importante",
+    "legal": "O TokDown é destinado apenas a uso pessoal e não comercial. Respeite sempre os direitos dos criadores do TikTok — baixar um vídeo não transfere os direitos autorais. Não redistribua, reposte nem monetize conteúdo baixado sem a permissão expressa do criador original. O TokDown não tem nenhuma afiliação, endosso ou vínculo com o TikTok ou a ByteDance.",
+    "contactTitle": "Contato e suporte",
+    "contact": "Dúvidas, relatos de bugs ou uma notificação de direitos autorais? Escreva para support@tokdown.org. As notificações de direitos autorais seguem o processo descrito na nossa página de DMCA.",
+    "values": [
+      {
+        "icon": "🔒",
+        "title": "Privacidade em primeiro lugar",
+        "desc": "Nunca guardamos os vídeos que você baixa: os arquivos passam pelo nosso servidor sem ser salvos, e não mantemos nenhum banco de dados dos seus downloads."
+      },
+      {
+        "icon": "⚡",
+        "title": "Velocidade sem concessões",
+        "desc": "Cada download fica pronto em segundos. Sem filas, sem contadores de “aguarde” feitos para mostrar mais anúncios."
+      },
+      {
+        "icon": "🚫",
+        "title": "Transparência com os anúncios",
+        "desc": "Sem botões de download falsos e sem captchas. O site é pago por anúncios: banners, uma barra social e um pop-under que só abre depois que o resultado do download aparece, nunca no lugar do botão de verdade."
+      },
+      {
+        "icon": "🆓",
+        "title": "Grátis de verdade",
+        "desc": "Sem plano premium e sem taxas escondidas. Os serviços de origem podem limitar o uso em horários de pico; quando isso acontece, você recebe uma mensagem clara e um tempo para tentar de novo, em vez de um botão falso."
+      }
+    ]
+  },
+  "GuideNoWatermark": {
+    "metaTitle": "Baixar TikTok sem marca d'água: guia completo",
+    "metaDescription": "Passo a passo: baixe qualquer vídeo do TikTok sem marca d'água em HD no iPhone, Android, Windows ou Mac, entenda a marca d'água e resolva erros.",
+    "h1": "Como baixar vídeo do TikTok sem marca d'água",
+    "subtitle": "Um passo a passo completo e honesto para iPhone, Android, Windows e Mac — com soluções para os problemas mais comuns.",
+    "stepsTitle": "Passo a passo",
+    "ctaText": "Pronto? Experimente agora — sem login, sem cadastro.",
+    "ctaButton": "Baixar um vídeo do TikTok →",
+    "platformsTitle": "Salvando no seu aparelho — por plataforma",
+    "troubleshootTitle": "Como resolver os problemas mais comuns",
+    "whyTitle": "Por que o TikTok coloca marca d'água?",
+    "why1": "Quando você salva um vídeo pelo botão “Salvar vídeo” do próprio TikTok, o app sobrepõe uma marca d'água — seu nome de usuário e o logo do TikTok — antes de salvar na galeria. Isso é proposital: leva quem vê o vídeo em outro lugar de volta ao TikTok.",
+    "why2": "O arquivo de vídeo original (sem marca d'água) continua hospedado na CDN do TikTok. O TokDown busca esse arquivo original diretamente, sem passar pela marca d'água. É o mesmo mecanismo técnico que o recurso de incorporação do próprio TikTok usa.",
+    "legalTitle": "É legal?",
+    "legal": "Salvar um TikTok público para assistir em particular é tolerado em muitos países (por exemplo, como cópia privada), mas os termos do TikTok restringem o download fora dos recursos do próprio app, e as regras variam de país para país. O que claramente não é permitido é redistribuir, repostar ou monetizar vídeos baixados sem a permissão expressa do criador. Dê sempre o crédito ao criador original e respeite os direitos autorais dele.",
+    "problemLabel": "Problema:",
+    "fixLabel": "Solução:",
+    "relatedGuide1Title": "Como converter TikTok para MP3",
+    "relatedGuide1Desc": "Extraia o áudio de qualquer vídeo do TikTok em segundos.",
+    "relatedGuide2Title": "Sobre o TokDown",
+    "relatedGuide2Desc": "Como o TokDown funciona e por que o criamos.",
+    "steps": [
+      {
+        "title": "Abra o TikTok e encontre o vídeo",
+        "body": "Abra o app do TikTok no celular ou acesse tiktok.com no navegador. Role até o vídeo que você quer salvar — ou pesquise por ele."
+      },
+      {
+        "title": "Toque em Compartilhar → Copiar link",
+        "body": "Toque no ícone de seta (Compartilhar) do lado direito do vídeo. No menu de compartilhamento que aparece, toque em Copiar link. O endereço do vídeo agora está na sua área de transferência."
+      },
+      {
+        "title": "Abra o TokDown no navegador",
+        "body": "Acesse tokdown.org. O site funciona em qualquer navegador — Safari e Chrome no celular, Edge ou Firefox no computador. Não precisa baixar nenhum app."
+      },
+      {
+        "title": "Cole o link e toque em Baixar vídeo",
+        "body": "Toque no campo de texto, cole o link do TikTok e toque no botão Baixar vídeo. O TokDown busca os dados do vídeo em poucos segundos."
+      },
+      {
+        "title": "Clique em “HD · Sem marca d'água” e salve",
+        "body": "Quando as opções de download aparecerem, escolha “HD · Sem marca d'água” para salvar a versão limpa em alta definição. O arquivo vai para a pasta Downloads ou para o app Arquivos."
+      }
+    ],
+    "platforms": [
+      {
+        "platform": "iPhone (Safari)",
+        "tip": "Depois do download, abra o app Arquivos → Downloads, toque e segure o vídeo e toque em Compartilhar → Salvar Vídeo para mandá-lo para o app Fotos."
+      },
+      {
+        "platform": "Android (Chrome)",
+        "tip": "O vídeo é salvo direto na pasta Downloads. Abra o app Galeria ou Arquivos para encontrá-lo. Alguns celulares Android pedem permissão de armazenamento na primeira vez."
+      },
+      {
+        "platform": "Windows (Chrome / Edge)",
+        "tip": "O arquivo vai para a pasta Downloads padrão (geralmente C:\\Users\\SeuNome\\Downloads). Ele abre em qualquer player de mídia."
+      },
+      {
+        "platform": "Mac (Safari / Chrome)",
+        "tip": "O vídeo é salvo em ~/Downloads. Arraste-o para qualquer pasta ou direto para um editor de vídeo como o iMovie ou o CapCut."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "O download falha na hora",
+        "fix": "Confira se o vídeo é público. Nenhuma ferramenta de terceiros consegue baixar vídeos privados do TikTok. Confira também se você copiou o link completo pelo menu Compartilhar — e não da barra de endereço do navegador, que pode ser um link de redirecionamento."
+      },
+      {
+        "problem": "O vídeo roda, mas sem som",
+        "fix": "É um problema raro de compatibilidade do navegador. Clique com o botão direito no botão de download e escolha “Salvar link como…”, ou tente outro navegador."
+      },
+      {
+        "problem": "“Download desativado pelo criador”",
+        "fix": "O criador desativou os downloads nas configurações da conta do TikTok. O TokDown não consegue contornar essa restrição, porque ela é aplicada pelo próprio servidor do TikTok."
+      },
+      {
+        "problem": "O arquivo não abre depois do download",
+        "fix": "O mais provável é que o download tenha parado antes do fim. Confira o tamanho do arquivo (um TikTok em HD costuma ter vários MB, não poucos KB) e baixe de novo com uma conexão estável. O TokDown sempre entrega MP4 (H.264), que roda em qualquer player atual."
+      }
+    ]
+  },
+  "GuideMp3": {
+    "metaTitle": "TikTok para MP3 – baixar sons do TikTok grátis",
+    "metaDescription": "Converta qualquer vídeo do TikTok para MP3 e salve o áudio no celular ou no PC. Grátis, na hora, sem conta. Funciona no iPhone, Android, Windows e Mac.",
+    "h1": "TikTok para MP3 — baixe o áudio grátis",
+    "subtitle": "Extraia e salve o áudio de qualquer vídeo do TikTok em MP3 em segundos — sem login, sem app, em qualquer aparelho.",
+    "stepsTitle": "Como baixar o áudio do TikTok em MP3",
+    "ctaText": "Experimente agora — cole qualquer link do TikTok e baixe o áudio.",
+    "ctaButton": "Ir para o downloader do TokDown →",
+    "useCasesTitle": "Quando vale a pena baixar só o áudio?",
+    "qualityTitle": "Qual a qualidade do áudio?",
+    "quality1": "O TikTok codifica o áudio em AAC de até 128 kbps. O TokDown entrega o fluxo de áudio original e converte para MP3 com a mesma taxa de bits — a conversão não causa perda por recodificação.",
+    "quality2": "Se o vídeo original usou uma música da biblioteca de sons licenciados do TikTok, a qualidade do áudio será tão boa quanto a da fonte. Narrações e áudios gravados pelo usuário seguem a mesma regra — a qualidade é a mesma da gravação do criador.",
+    "copyrightTitle": "Direitos autorais e uso legal",
+    "copyright": "As músicas que aparecem nos vídeos do TikTok normalmente são licenciadas só para uso dentro do TikTok. Baixar para ouvir por conta própria em geral não tem problema. Mas usar o áudio baixado nos seus próprios vídeos, lives ou projetos comerciais sem obter uma licença é violação de direitos autorais.",
+    "copyright2": "Narrações, composições originais e gravações pessoais compartilhadas pelos criadores são propriedade intelectual deles. Peça sempre permissão antes de reutilizar publicamente o conteúdo de outra pessoa.",
+    "troubleshootTitle": "Solução de problemas",
+    "problemLabel": "Problema:",
+    "fixLabel": "Solução:",
+    "relatedGuide1Title": "Baixar TikTok sem marca d'água",
+    "relatedGuide1Desc": "Guia completo de vídeo em HD para iPhone, Android, PC e Mac.",
+    "relatedGuide2Title": "Sobre o TokDown",
+    "relatedGuide2Desc": "Como o TokDown funciona e por que o criamos.",
+    "steps": [
+      {
+        "title": "Encontre o vídeo do TikTok com o áudio que você quer",
+        "body": "Abra o app do TikTok ou tiktok.com. Vá até o vídeo cujo som, música ou narração você quer salvar."
+      },
+      {
+        "title": "Toque em Compartilhar → Copiar link",
+        "body": "Toque no ícone de Compartilhar (a seta) do lado direito do vídeo. No menu de compartilhamento, toque em “Copiar link”. O endereço do vídeo agora está na sua área de transferência."
+      },
+      {
+        "title": "Abra o TokDown e cole o link",
+        "body": "Acesse tokdown.org em qualquer navegador. Cole o link do TikTok no campo de texto e toque em Baixar vídeo. Funciona no celular e no computador."
+      },
+      {
+        "title": "Clique em “Áudio MP3”",
+        "body": "Quando as opções de download aparecerem, clique no botão “Áudio MP3”. O arquivo de áudio começa a baixar no seu aparelho na hora."
+      }
+    ],
+    "useCases": [
+      {
+        "icon": "🎧",
+        "title": "Ouvir offline",
+        "desc": "Salve os sons em alta do TikTok para ouvir onde estiver, sem gastar dados móveis."
+      },
+      {
+        "icon": "🎤",
+        "title": "Narrações e falas",
+        "desc": "Extraia conteúdo falado — tutoriais, conselhos ou comentários — para consultar depois."
+      },
+      {
+        "icon": "🎼",
+        "title": "Descobrir músicas",
+        "desc": "Salve uma música que você ouviu no TikTok antes de saber quem é o artista e depois identifique no Shazam, mesmo offline."
+      },
+      {
+        "icon": "📚",
+        "title": "Aprender idiomas",
+        "desc": "Salve trechos de áudio de falantes nativos para treinar a pronúncia ou revisar vocabulário."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "O botão “Áudio MP3” não aparece",
+        "fix": "Confira se você copiou o link completo de compartilhamento do TikTok, e não um link encurtado ou de redirecionamento. Repita o caminho Compartilhar → Copiar link."
+      },
+      {
+        "problem": "O arquivo baixado está sem som",
+        "fix": "Alguns vídeos do TikTok são mudos (o criador não usou áudio). Confirme que o vídeo tem som antes de baixar. Confira também o volume do seu aparelho."
+      },
+      {
+        "problem": "O arquivo MP3 não abre",
+        "fix": "Confira se o download terminou: um som do TikTok costuma ter de algumas centenas de KB a alguns MB, então um arquivo minúsculo indica que a conexão caiu. No iPhone, abra pelo app Arquivos → Downloads; o app Música não importa arquivos diretamente."
+      },
+      {
+        "problem": "O áudio corta antes do fim",
+        "fix": "Os vídeos do TikTok podem ter até 10 minutos. Se o vídeo for muito longo, confira se o download terminou por completo. Uma conexão lenta pode gerar downloads incompletos."
+      }
+    ]
+  },
+  "GuideIphone": {
+    "metaTitle": "Baixar TikTok no iPhone – salvar na galeria",
+    "metaDescription": "Salve qualquer vídeo do TikTok no app Fotos do iPhone sem marca d'água. Passo a passo para o Safari no iOS — sem instalar app, sem conta, grátis.",
+    "h1": "Como baixar vídeo do TikTok no iPhone",
+    "subtitle": "Salve qualquer vídeo do TikTok no app Fotos em HD — sem marca d'água, sem app e sem conta no TikTok. Funciona no Safari de qualquer iPhone.",
+    "stepsTitle": "Passo a passo: baixar TikTok no iPhone e salvar no app Fotos",
+    "tipsTitle": "Dicas para iPhone",
+    "troubleshootTitle": "Solução de problemas no iPhone",
+    "ctaText": "Quer testar? Cole qualquer link do TikTok abaixo — sem login.",
+    "ctaButton": "Baixar um vídeo do TikTok →",
+    "steps": [
+      {
+        "title": "Abra o TikTok e encontre o vídeo",
+        "body": "Abra o app do TikTok no iPhone e role até o vídeo que você quer salvar — ou pesquise por ele."
+      },
+      {
+        "title": "Toque em Compartilhar → Copiar link",
+        "body": "Toque no ícone de Compartilhar (a seta apontando para a direita) do lado direito do vídeo. No menu de compartilhamento, toque em “Copiar link”. O endereço do vídeo agora está na sua área de transferência."
+      },
+      {
+        "title": "Abra o Safari e acesse o TokDown",
+        "body": "Abra o Safari no iPhone. Digite tokdown.org na barra de endereço. Toque no campo de texto e cole o link do TikTok (toque e segure → Colar)."
+      },
+      {
+        "title": "Toque em Baixar vídeo e escolha HD",
+        "body": "Toque no botão Baixar vídeo. Quando as opções aparecerem, toque em “HD · Sem marca d'água” para baixar a versão limpa em alta definição."
+      },
+      {
+        "title": "Salve no app Fotos pelo Arquivos",
+        "body": "No iPhone, os arquivos baixados vão para o app Arquivos. Abra Arquivos → Downloads. Toque e segure o arquivo de vídeo e toque em Compartilhar → “Salvar Vídeo”. O vídeo vai para o app Fotos."
+      }
+    ],
+    "tips": [
+      {
+        "title": "Use o Safari, não o navegador interno do TikTok",
+        "body": "O navegador interno do TikTok bloqueia downloads. Abra sempre tokdown.org no Safari (o ícone de bússola azul) — não dentro do próprio TikTok."
+      },
+      {
+        "title": "O Safari tem seu próprio gerenciador de downloads",
+        "body": "Desde o iOS 13, o Safari mostra um botão de downloads (uma seta dentro de um círculo) na barra de endereço enquanto um arquivo está baixando. Toque nele para abrir o arquivo assim que terminar."
+      },
+      {
+        "title": "Defina o local padrão dos downloads",
+        "body": "Vá em Ajustes → Safari → Downloads e escolha “No Meu iPhone”, para encontrar os arquivos facilmente no app Arquivos."
+      },
+      {
+        "title": "Salvando vários vídeos",
+        "body": "Abra cada link do TikTok em uma nova aba do Safari, baixe um depois do outro e depois mova todos para o app Fotos de uma vez. Se os downloads começarem a falhar depois de uma sequência, espere alguns minutos: o serviço do TikTok que usamos limita o uso nos horários de pico."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "“Falha no download” ou nenhuma opção aparece",
+        "fix": "Confira se o vídeo é público. Confira também se você copiou o link completo por Compartilhar → Copiar link — e não da barra de endereço do navegador."
+      },
+      {
+        "problem": "A opção “Salvar Vídeo” não aparece no menu de compartilhamento",
+        "fix": "Role para baixo no menu de compartilhamento — a opção pode estar mais abaixo. Confira também se o arquivo é um .mp4 válido e se o acesso às Fotos está liberado em Ajustes → Privacidade e Segurança → Fotos."
+      },
+      {
+        "problem": "O vídeo não roda ou mostra uma prévia em branco",
+        "fix": "O download provavelmente parou antes do fim. Confira o tamanho do arquivo no app Arquivos (um TikTok completo em HD costuma ter vários MB) e baixe de novo pelo Wi-Fi."
+      },
+      {
+        "problem": "O download está muito lento",
+        "fix": "Arquivos do TikTok em HD podem ter de 20 a 80 MB. Use o Wi-Fi para baixar mais rápido."
+      }
+    ],
+    "eyebrow": "Guia para iPhone · junho de 2026",
+    "related": [
+      {
+        "title": "Baixar no Android",
+        "desc": "Salve vídeos do TikTok na galeria do Android."
+      },
+      {
+        "title": "Guia sem marca d'água",
+        "desc": "Guia completo para todos os aparelhos."
+      },
+      {
+        "title": "TikTok para MP3",
+        "desc": "Extraia o áudio de qualquer vídeo do TikTok."
+      },
+      {
+        "title": "TikTok para MP4",
+        "desc": "Baixe TikTok como arquivo MP4."
+      }
+    ]
+  },
+  "GuideAndroid": {
+    "metaTitle": "Baixar TikTok no Android – salvar na galeria",
+    "metaDescription": "Baixe qualquer vídeo do TikTok na galeria do seu Android sem marca d'água — Samsung, Xiaomi, Motorola e todas as marcas. Grátis, em HD, sem app.",
+    "h1": "Como baixar vídeo do TikTok no Android",
+    "subtitle": "Salve qualquer vídeo do TikTok na galeria do Android em HD — sem marca d'água, sem instalar app e sem conta. Funciona em Samsung, Xiaomi, Motorola e todas as marcas de Android.",
+    "stepsTitle": "Passo a passo: baixar TikTok na galeria do Android",
+    "tipsTitle": "Dicas para Android",
+    "troubleshootTitle": "Solução de problemas no Android",
+    "ctaText": "Pronto? Cole qualquer link do TikTok e salve na sua galeria.",
+    "ctaButton": "Baixar um vídeo do TikTok →",
+    "steps": [
+      {
+        "title": "Abra o TikTok e encontre o vídeo",
+        "body": "Abra o app do TikTok e vá até o vídeo que você quer salvar."
+      },
+      {
+        "title": "Toque em Compartilhar → Copiar link",
+        "body": "Toque no ícone de Compartilhar (a seta) do lado direito do vídeo. No menu de compartilhamento, toque em “Copiar link”. O endereço do vídeo está na sua área de transferência."
+      },
+      {
+        "title": "Abra o Chrome e acesse o TokDown",
+        "body": "Abra o Chrome no seu celular Android. Acesse tokdown.org e toque no campo de texto. Cole o link do TikTok (toque e segure → Colar)."
+      },
+      {
+        "title": "Toque em Baixar vídeo e escolha HD",
+        "body": "Toque no botão Baixar vídeo. Quando as opções aparecerem, toque em “HD · Sem marca d'água”."
+      },
+      {
+        "title": "Encontre o vídeo na Galeria",
+        "body": "O vídeo é salvo direto na pasta Downloads. Abra o app Galeria ou o app Arquivos para encontrar e assistir."
+      }
+    ],
+    "tips": [
+      {
+        "title": "Dê a permissão de armazenamento na primeira vez",
+        "body": "No Android 12 ou anterior, o Chrome pode pedir permissão de armazenamento no primeiro download. Toque em “Permitir” para liberar o salvamento de arquivos."
+      },
+      {
+        "title": "A Galeria da Samsung encontra o vídeo sozinha",
+        "body": "Nos aparelhos Samsung, os vídeos baixados aparecem no app Galeria, no álbum Downloads, logo depois de salvos."
+      },
+      {
+        "title": "Usuários de Xiaomi / MIUI",
+        "body": "Nos celulares Xiaomi, use o navegador próprio ou o Chrome. O vídeo é salvo em Downloads e aparece no app de fotos, em Álbuns → Downloads."
+      },
+      {
+        "title": "Compartilhe direto pela notificação do download",
+        "body": "Quando o download termina, o Android mostra uma notificação com o arquivo. Toque nela para abrir o vídeo, ou toque e segure para compartilhar direto no WhatsApp, Telegram ou outros apps."
+      }
+    ],
+    "troubleshoot": [
+      {
+        "problem": "O download começa, mas o arquivo tem 0 bytes",
+        "fix": "Isso costuma acontecer com conexões lentas. Tente de novo pelo Wi-Fi. Confira também se há espaço de armazenamento suficiente no aparelho."
+      },
+      {
+        "problem": "O vídeo não aparece na Galeria",
+        "fix": "Abra o app Arquivos e confira a pasta Downloads manualmente. Em algumas versões do Android é preciso esperar um pouco até o sistema indexar o novo arquivo."
+      },
+      {
+        "problem": "O Chrome pergunta se quer abrir com um app externo",
+        "fix": "Escolha baixar em vez de abrir. Se aparecer um aviso, selecione a opção de fazer o download do arquivo para salvá-lo no aparelho em vez de só reproduzi-lo."
+      },
+      {
+        "problem": "Aviso de “Download bloqueado” no Chrome",
+        "fix": "Esse aviso aparece para alguns tipos de arquivo. Toque em “Fazer download mesmo assim” — o TokDown só entrega arquivos MP4 e MP3 padrão."
+      }
+    ],
+    "eyebrow": "Guia para Android · junho de 2026",
+    "related": [
+      {
+        "title": "Baixar no iPhone",
+        "desc": "Salve vídeos do TikTok no app Fotos do iPhone."
+      },
+      {
+        "title": "Guia sem marca d'água",
+        "desc": "Guia completo para todos os aparelhos."
+      },
+      {
+        "title": "TikTok para MP3",
+        "desc": "Extraia o áudio de qualquer vídeo do TikTok."
+      },
+      {
+        "title": "TikTok para MP4",
+        "desc": "Baixe TikTok como arquivo MP4."
+      }
+    ]
+  },
+  "Tools": {
+    "metaTitle": "Ferramentas grátis para baixar e converter vídeos",
+    "metaDescription": "Todas as ferramentas do TokDown: baixar vídeos do TikTok, Facebook e Twitter, fotos do TikTok, thumbnails do YouTube, compressor de vídeo e MP4 para GIF.",
+    "eyebrow": "Ferramentas e serviços",
+    "h1": "Tudo o que dá para fazer com o TokDown",
+    "subtitle": "Um downloader grátis, várias formas de usar. Escolha o que você precisa abaixo; todas as ferramentas funcionam sem conta.",
+    "useTool": "Usar a ferramenta",
+    "readGuide": "Ler o guia",
+    "items": {
+      "video": {
+        "title": "Vídeo do TikTok sem marca d'água",
+        "desc": "Cole qualquer link público do TikTok e salve o MP4 limpo, em HD ou SD, em segundos."
+      },
+      "audio": {
+        "title": "TikTok para MP3",
+        "desc": "Extraia o som de qualquer vídeo em MP3. Ideal para sons, narrações e músicas."
+      },
+      "hd": {
+        "title": "Download em HD",
+        "desc": "Receba a maior resolução que o criador enviou, sem recodificação."
+      },
+      "iphone": {
+        "title": "Baixar no iPhone",
+        "desc": "Como salvar vídeos do TikTok no app Fotos pelo Safari, passo a passo."
+      },
+      "android": {
+        "title": "Baixar no Android",
+        "desc": "Salve vídeos do TikTok na galeria de qualquer celular Android, sem app."
+      },
+      "mp4": {
+        "title": "TikTok para MP4",
+        "desc": "Tudo sobre o formato MP4 que o TokDown entrega e como usá-lo em qualquer lugar."
+      },
+      "gif": {
+        "title": "Vídeo do TikTok para GIF",
+        "desc": "Transforme um TikTok baixado em GIF com o conversor no navegador, passo a passo."
+      },
+      "chrome": {
+        "title": "Baixar TikTok no Chrome",
+        "desc": "Use o TokDown no computador sem extensões, com os atalhos que ajudam."
+      },
+      "playlist": {
+        "title": "Baixar uma playlist do TikTok",
+        "desc": "O jeito mais rápido de salvar vários vídeos de um criador ou de uma coleção."
+      },
+      "private": {
+        "title": "Vídeos privados do TikTok",
+        "desc": "O que dá e o que não dá para baixar, e como lidar com seus próprios vídeos privados."
+      },
+      "photo": {
+        "title": "Fotos e carrosséis do TikTok",
+        "desc": "Salve todas as imagens de um post de fotos do TikTok em resolução original, uma por uma ou todas de uma vez."
+      },
+      "facebook": {
+        "title": "Baixar vídeos do Facebook",
+        "desc": "Salve vídeos e Reels públicos do Facebook em MP4, em HD quando disponível."
+      },
+      "twitter": {
+        "title": "Baixar vídeos do Twitter / X",
+        "desc": "Baixe vídeos e GIFs de qualquer tweet público só colando o link."
+      },
+      "youtubeThumbnail": {
+        "title": "Baixar thumbnail do YouTube",
+        "desc": "Pegue a thumbnail em tamanho original de qualquer vídeo do YouTube, até 1280×720."
+      },
+      "compressor": {
+        "title": "Compressor de vídeo",
+        "desc": "Reduza arquivos MP4 e MOV direto no navegador. Nada é enviado."
+      },
+      "mp4ToGif": {
+        "title": "MP4 para GIF",
+        "desc": "Transforme qualquer trecho de vídeo em um GIF nítido e em loop, offline no navegador."
+      },
+      "legal": {
+        "title": "É legal baixar TikToks?",
+        "desc": "O que a lei de direitos autorais e os próprios termos do TikTok dizem sobre salvar vídeos, país por país, com fontes."
+      },
+      "snaptik": {
+        "title": "Alternativa ao SnapTik",
+        "desc": "O que conferir em qualquer site para baixar TikTok, e exatamente o que o TokDown faz e não faz."
+      },
+      "pc": {
+        "title": "Baixar no PC e no Mac",
+        "desc": "Salve vídeos do TikTok no Windows, MacBook ou Chromebook em qualquer navegador, sem app."
+      },
+      "slideshow": {
+        "title": "Baixar um carrossel do TikTok",
+        "desc": "Guarde cada foto, o som ou o carrossel inteiro como vídeo."
+      },
+      "noSave": {
+        "title": "Sem a opção “Salvar vídeo”?",
+        "desc": "Por que o botão some em alguns TikToks e o que você pode fazer."
+      },
+      "draft": {
+        "title": "Salvar um rascunho do TikTok",
+        "desc": "Leve um rascunho para a galeria do celular sem postar publicamente."
+      }
+    },
+    "intro": [
+      "Os downloaders buscam um post público pelo link: vídeos, sons e carrosséis de fotos do TikTok, vídeos e GIFs do X (Twitter) e vídeos públicos do Facebook. Eles só funcionam com conteúdo público e dependem do que cada plataforma mostra para quem não está logado, então um post privado, apagado ou com restrição de idade retorna um erro claro em vez de um arquivo.",
+      "Os conversores funcionam ao contrário. O compressor de vídeo e o conversor de MP4 para GIF rodam inteiramente no seu navegador com WebAssembly, então o arquivo que você escolhe nunca sai do seu aparelho, e a ferramenta de thumbnails do YouTube só lê os arquivos de imagem públicos que o YouTube publica para cada vídeo. Use os guias quando precisar de passos específicos para o seu aparelho, como salvar no app Fotos do iPhone."
+    ]
+  },
+  "PhotoDownloader": {
+    "metaTitle": "Baixar fotos do TikTok sem marca d'água",
+    "metaDescription": "Baixe fotos e carrosséis do TikTok sem marca d'água: cada imagem em Full HD, uma por uma ou todas de uma vez, e o som em MP3. Grátis, sem login.",
+    "metaKeywords": [
+      "baixar fotos do tiktok",
+      "baixar foto do tiktok sem marca d'água",
+      "baixar carrossel do tiktok",
+      "baixar slideshow tiktok",
+      "salvar fotos do tiktok",
+      "baixar imagens do tiktok",
+      "tiktok modo foto baixar",
+      "baixar fotos do tiktok na galeria"
+    ],
+    "eyebrow": "Grátis · Resolução original · Todas as fotos",
+    "h1": "Baixar fotos do TikTok",
+    "h1Accent": "e carrosséis",
+    "subtitle": "Cole o link de um post no modo foto do TikTok e salve cada slide como imagem em tamanho original, ou baixe o carrossel inteiro como vídeo, com o som.",
+    "heroNote": "Funciona com posts de fotos e carrosséis. Vídeos também funcionam.",
+    "trust1": "100% grátis",
+    "trust2": "Resolução original",
+    "trust3": "Sem marca d'água",
+    "trust4": "Sem login",
+    "stepsTitle": "Como baixar um carrossel do TikTok",
+    "stepsSubtitle": "Três passos, sem app e sem conta.",
+    "step1": "Copie o link do post de fotos",
+    "step1Desc": "Abra o post de fotos no TikTok, toque em Compartilhar e depois em Copiar link. Links de fotos têm /photo/ em vez de /video/.",
+    "step2": "Cole acima",
+    "step2Desc": "Cole o link no campo e toque em Baixar fotos. Buscamos cada slide no tamanho original.",
+    "step3": "Salve os slides",
+    "step3Desc": "Toque em uma imagem para salvá-la ou use Baixar todas para salvar todos os slides. O som também está disponível em MP3.",
+    "featuresTitle": "O que você recebe",
+    "featuresSubtitle": "Tudo o que está no post, nada a mais",
+    "features": [
+      {
+        "title": "Cada slide em tamanho original",
+        "desc": "As imagens vêm direto da CDN do TikTok na resolução que o criador enviou. Sem compressão, sem marca d'água."
+      },
+      {
+        "title": "Baixe tudo de uma vez",
+        "desc": "Um toque salva o carrossel inteiro em ordem, numerado para continuar organizado na sua galeria."
+      },
+      {
+        "title": "Carrossel em MP4",
+        "desc": "Prefere vídeo? Salve o carrossel já montado, com a música, em um único MP4."
+      },
+      {
+        "title": "Som em MP3",
+        "desc": "Extraia a faixa de áudio usada no post de fotos e salve em MP3."
+      }
+    ],
+    "faqTitle": "Perguntas sobre o download de fotos",
+    "faqSubtitle": "Dúvidas comuns sobre posts de fotos do TikTok",
+    "faq": [
+      {
+        "q": "Como diferenciar um post de fotos de um vídeo?",
+        "a": "Posts de fotos mostram pontinhos ou um contador de páginas embaixo e passam para o lado. O link de compartilhamento tem /photo/ em vez de /video/. O TokDown aceita os dois."
+      },
+      {
+        "q": "As imagens têm marca d'água?",
+        "a": "Não. O TikTok só coloca a marca d'água em vídeos renderizados. As imagens de um post de fotos ficam guardadas como arquivos simples, então o que você baixa é o slide original."
+      },
+      {
+        "q": "Por que o Chrome pede para permitir vários downloads?",
+        "a": "O Baixar todas salva cada slide como um arquivo separado. O Chrome pede permissão uma vez para baixar vários arquivos do mesmo site. Escolha Permitir e os outros slides vêm em seguida."
+      },
+      {
+        "q": "Dá para baixar o carrossel como vídeo?",
+        "a": "Sim. Quando o TikTok oferece uma versão renderizada, aparece o botão Carrossel em vídeo. Ele traz todos os slides com o som original em MP4."
+      },
+      {
+        "q": "Funciona no iPhone?",
+        "a": "Sim. No Safari, cada imagem abre ou é salva no app Arquivos; toque e segure uma foto e escolha Salvar em Fotos para colocá-la na galeria. No Android, os arquivos vão direto para Downloads."
+      },
+      {
+        "q": "Dá para baixar posts de fotos privados?",
+        "a": "Não. Como qualquer downloader, o TokDown só consegue buscar posts públicos. Se a conta for privada ou o post for só para amigos, o link não vai abrir."
+      }
+    ],
+    "ctaTitle": "Tem um carrossel para salvar?",
+    "ctaSubtitle": "Cada slide, em resolução original, sem conta.",
+    "ctaButton": "Cole seu link",
+    "videoLink": "Precisa de um vídeo? Use o downloader de vídeos do TikTok",
+    "detailsTitle": "Como o TikTok guarda os carrosséis",
+    "detailsSubtitle": "Por que as imagens não têm marca d'água e o que fazer quando um post não carrega.",
+    "details": [
+      "Um post de fotos do TikTok, também chamado de carrossel ou slideshow, não é um vídeo. O TikTok guarda cada slide como um arquivo de imagem separado, mais uma faixa de áudio que toca por baixo. A marca d'água que você vê nos TikToks salvos é gravada só nos vídeos renderizados, então as imagens dos slides são limpas: o TokDown entrega esses arquivos originais, numerados na ordem que o criador definiu, em vez de capturas de tela ou de uma cópia recodificada.",
+      "Os motivos mais comuns para um carrossel falhar são os mesmos dos vídeos: a conta é privada, o post é só para amigos ou foi apagado, ou o serviço do TikTok que usamos está sobrecarregado e pede para você tentar de novo em alguns minutos. Se quiser o carrossel como um único vídeo para o WhatsApp ou o Instagram, use a versão em vídeo quando o TikTok oferecer e, se o arquivo ficar grande demais, reduza com o compressor de vídeo."
+    ]
+  },
+  "FacebookDownloader": {
+    "metaTitle": "Baixar vídeo do Facebook – HD, sem marca d'água",
+    "metaDescription": "Baixe vídeos e Reels públicos do Facebook em MP4 e HD, sem marca d'água. Cole um link do facebook.com ou fb.watch. Grátis, sem login, em qualquer aparelho.",
+    "eyebrow": "Facebook · Reels · HD",
+    "h1": "Baixe vídeos do Facebook",
+    "h1Accent": "só colando o link",
+    "subtitle": "Vídeos públicos, Reels e links do Watch salvos em MP4, em HD quando o Facebook oferece. Sem conta, sem extensão.",
+    "heroNote": "Funciona com links do facebook.com, do fb.watch e de compartilhamento",
+    "trust": [
+      "100% grátis",
+      "Sem login",
+      "HD quando disponível",
+      "Todos os aparelhos"
+    ],
+    "stepsTitle": "Como funciona",
+    "stepsSubtitle": "Três passos, nada para instalar.",
+    "steps": [
+      {
+        "title": "Copie o link do vídeo",
+        "desc": "No Facebook, toque em Compartilhar e depois em Copiar link. Links do Watch, de Reels e do fb.watch funcionam."
+      },
+      {
+        "title": "Cole acima",
+        "desc": "Cole o link no campo e toque em Baixar vídeo. Lemos os dados públicos do vídeo."
+      },
+      {
+        "title": "Salve o MP4",
+        "desc": "Escolha HD ou SD e o arquivo é baixado direto no seu aparelho."
+      }
+    ],
+    "featuresTitle": "Por que as pessoas usam",
+    "featuresSubtitle": "Feito para o jeito como o Facebook realmente entrega os vídeos.",
+    "features": [
+      {
+        "title": "Reels e Watch",
+        "desc": "Posts comuns, Reels, páginas do Watch e links curtos do fb.watch são todos compatíveis."
+      },
+      {
+        "title": "HD quando existe",
+        "desc": "Pegamos a melhor versão que o Facebook disponibiliza e, se não houver HD, passamos para SD sem complicação."
+      },
+      {
+        "title": "Sem login, nunca",
+        "desc": "Nunca pedimos sua conta do Facebook. Só vídeos públicos podem ser baixados."
+      },
+      {
+        "title": "Feito para o celular",
+        "desc": "Botões grandes, salvamento direto na galeria do Android e no app Arquivos do iPhone."
+      }
+    ],
+    "faqTitle": "Perguntas sobre downloads do Facebook",
+    "faqSubtitle": "Respostas curtas para as dúvidas de sempre.",
+    "faq": [
+      {
+        "q": "Por que um vídeo não baixa?",
+        "a": "Ele é privado, foi postado em um grupo fechado, tem restrição de idade ou é uma live. Só dá para buscar vídeos que todo mundo vê sem fazer login."
+      },
+      {
+        "q": "Dá para baixar Reels do Facebook?",
+        "a": "Sim. Cole o link do Reel exatamente como o Facebook entrega e você recebe um MP4."
+      },
+      {
+        "q": "Tem marca d'água?",
+        "a": "Não. Você recebe o arquivo original que o Facebook transmite, sem nenhuma sobreposição adicionada."
+      },
+      {
+        "q": "Funciona no iPhone?",
+        "a": "Sim. O Safari salva o MP4 no app Arquivos; de lá você pode mover para o app Fotos."
+      },
+      {
+        "q": "Isso é legal?",
+        "a": "Baixar para assistir offline, para uso pessoal, um conteúdo que você tem o direito de usar não tem problema. Repostar vídeos de outras pessoas, não. Respeite os criadores e os termos do Facebook."
+      },
+      {
+        "q": "Funciona no Android e no iPhone?",
+        "a": "Sim. No Android, o MP4 vai para a pasta Downloads e aparece na galeria. No iPhone, o Safari salva no app Arquivos, e o menu Compartilhar permite mover para o app Fotos."
+      },
+      {
+        "q": "Dá para baixar só o áudio de um vídeo do Facebook?",
+        "a": "Baixe o MP4 primeiro e depois use o compressor de vídeo ou qualquer extrator de áudio. Uma opção direta de MP3 está nos planos."
+      }
+    ],
+    "ctaTitle": "Tem um link do Facebook?",
+    "ctaSubtitle": "Cole e salve o vídeo em segundos.",
+    "ctaButton": "Cole seu link",
+    "details": [
+      "O Facebook entrega a maioria dos vídeos públicos em duas versões: um arquivo HD para conexões rápidas e um arquivo SD para dados móveis. O TokDown lê as duas a partir do mesmo player público de incorporação que o Facebook usa nos próprios botões de compartilhar, e é por isso que não precisa de login, cookie nem extensão de navegador. Você recebe o MP4 original enviado pela página, com a proporção original e sem marca d'água ou logo adicionados.",
+      "Reels, episódios do Watch, vídeos postados em páginas e vídeos de perfis públicos funcionam, incluindo links curtos do fb.watch e os links longos de compartilhamento que o app gera. Vídeos de grupos fechados, perfis privados, stories e transmissões ao vivo não ficam disponíveis para quem não está logado, então também não dá para buscá-los aqui. Se um link falhar, abra-o primeiro numa janela anônima do navegador: se o Facebook pedir login, o vídeo não é público."
+    ],
+    "detailsTitle": "Como o Facebook entrega os vídeos",
+    "detailsSubtitle": "Por que não precisa de login e quais vídeos ficam fora do alcance."
+  },
+  "TwitterDownloader": {
+    "metaTitle": "Baixar vídeo do Twitter / X – vídeos e GIFs em HD",
+    "metaDescription": "Baixe vídeos e GIFs do Twitter / X em HD, até 1080p. Cole o link de um tweet público e receba o MP4: sem login, sem app. No iPhone, Android e PC.",
+    "eyebrow": "Twitter / X · Vídeo · GIF",
+    "h1": "Baixe vídeos do Twitter",
+    "h1Accent": "e GIFs em HD",
+    "subtitle": "Cole o link de um tweet e salve o vídeo ou o GIF em MP4. Funciona com links do x.com, twitter.com e t.co.",
+    "heroNote": "Só tweets públicos · a melhor taxa de bits é escolhida automaticamente",
+    "trust": [
+      "100% grátis",
+      "Sem login",
+      "GIFs também",
+      "Todos os aparelhos"
+    ],
+    "stepsTitle": "Como funciona",
+    "stepsSubtitle": "Entra o link do tweet, sai o MP4.",
+    "steps": [
+      {
+        "title": "Copie o link do tweet",
+        "desc": "Abra o tweet, toque em Compartilhar e depois em Copiar link. Links do x.com e do twitter.com funcionam."
+      },
+      {
+        "title": "Cole acima",
+        "desc": "Toque em Baixar vídeo. Lemos a mídia pública do tweet e listamos as versões disponíveis."
+      },
+      {
+        "title": "Escolha a qualidade",
+        "desc": "Escolha a maior taxa de bits ou um arquivo menor e salve no seu aparelho."
+      }
+    ],
+    "featuresTitle": "O que você recebe",
+    "featuresSubtitle": "Arquivos limpos, proporção correta, sem cortes.",
+    "features": [
+      {
+        "title": "Maior taxa de bits",
+        "desc": "O Twitter guarda várias versões em MP4. Sempre mostramos a melhor primeiro."
+      },
+      {
+        "title": "GIFs em MP4",
+        "desc": "Os GIFs do Twitter na verdade são vídeos sem som; você recebe arquivos MP4 pequenos e que rodam em loop."
+      },
+      {
+        "title": "Tweets com fotos",
+        "desc": "Tweets com imagens mostram uma galeria com download em tamanho original para cada foto."
+      },
+      {
+        "title": "Links curtos",
+        "desc": "Links t.co são resolvidos automaticamente, então dá para colar direto de uma mensagem."
+      }
+    ],
+    "faqTitle": "Perguntas sobre downloads do Twitter / X",
+    "faqSubtitle": "As perguntas que mais recebemos.",
+    "faq": [
+      {
+        "q": "Preciso de uma conta no X?",
+        "a": "Não. Lemos só o que o X publica para tweets incorporados, o que não exige login."
+      },
+      {
+        "q": "Por que aparece que o tweet está indisponível?",
+        "a": "A conta é protegida, o tweet foi apagado ou está marcado como sensível. Esses não podem ser lidos sem login."
+      },
+      {
+        "q": "Dá para baixar o vídeo de uma resposta ou de um tweet com citação?",
+        "a": "Sim, cole o link do tweet específico que tem o vídeo."
+      },
+      {
+        "q": "E Spaces ou transmissões ao vivo?",
+        "a": "Não são compatíveis. Só tweets normais com vídeo, GIF ou foto."
+      },
+      {
+        "q": "Como baixar um GIF do Twitter / X?",
+        "a": "Cole o link do tweet com o GIF. O X guarda os GIFs como arquivos MP4 curtos e sem som, então você recebe um MP4 que roda em qualquer lugar. Se precisar de um arquivo .gif de verdade, abra-o no conversor de MP4 para GIF (tokdown.org/mp4-to-gif)."
+      },
+      {
+        "q": "A qualidade é reduzida?",
+        "a": "Não. Você recebe exatamente o arquivo que o X transmite na taxa de bits escolhida, sem recodificação."
+      },
+      {
+        "q": "O TokDown coloca marca d'água nos vídeos do Twitter?",
+        "a": "Não. O arquivo vem da própria CDN do X e passa pelo nosso proxy sem nenhuma recodificação, então nada é adicionado nem removido."
+      },
+      {
+        "q": "Dá para baixar o vídeo de um tweet que está numa thread?",
+        "a": "Sim. Abra exatamente o tweet que tem o vídeo, copie o link pelo menu Compartilhar e cole. Cada tweet de uma thread tem o próprio link."
+      }
+    ],
+    "ctaTitle": "Tem um tweet para salvar?",
+    "ctaSubtitle": "Cole o link e escolha a qualidade.",
+    "ctaButton": "Cole seu link",
+    "details": [
+      "Todo vídeo enviado ao Twitter / X é guardado em várias versões MP4, normalmente 320p, 480p, 720p e, nos envios mais recentes, 1080p. O TokDown lista essas versões pela taxa de bits e oferece a melhor primeiro, para você sempre receber a cópia mais nítida que o autor enviou. Os GIFs animados do X na verdade são arquivos MP4 curtos e sem som; você também os recebe em MP4, que é menor e roda em qualquer lugar, e pode transformá-los de volta em um GIF de verdade com a nossa ferramenta de MP4 para GIF.",
+      "A ferramenta lê os mesmos dados públicos que o X publica para tweets incorporados, então contas protegidas, tweets apagados e posts marcados como sensíveis não podem ser lidos sem login e retornam um erro, e não um arquivo errado. Links curtos t.co são resolvidos automaticamente, e links copiados do app do X, do twitter.com ou de uma mensagem funcionam do mesmo jeito."
+    ],
+    "detailsTitle": "Como o X guarda vídeos e GIFs",
+    "detailsSubtitle": "Versões, taxas de bits e o que não dá para ler sem login."
+  },
+  "YoutubeThumbnail": {
+    "metaTitle": "Baixar thumbnail do YouTube – HD e Shorts",
+    "metaDescription": "Baixe a thumbnail de qualquer vídeo ou Short do YouTube em todos os tamanhos, de 120×90 até HD 1280×720. Cole um link ou o ID do vídeo. Grátis, sem login.",
+    "eyebrow": "YouTube · Thumbnails · HD",
+    "h1": "Baixe thumbnails do YouTube",
+    "h1Accent": "em Full HD",
+    "subtitle": "Cole um link do YouTube ou o ID do vídeo e pegue a imagem de capa em todos os tamanhos que o YouTube oferece, até 1280×720.",
+    "heroNote": "Funciona com links watch, youtu.be, Shorts e embed",
+    "trust": [
+      "100% grátis",
+      "Sem login",
+      "Todos os tamanhos",
+      "Na hora"
+    ],
+    "stepsTitle": "Como funciona",
+    "stepsSubtitle": "Entra o link, sai a imagem.",
+    "steps": [
+      {
+        "title": "Copie o link do vídeo",
+        "desc": "Qualquer link do YouTube funciona: watch?v=, youtu.be, Shorts, embed ou só o ID de 11 caracteres."
+      },
+      {
+        "title": "Cole acima",
+        "desc": "Listamos todos os tamanhos de thumbnail que o YouTube tem para aquele vídeo, com prévia."
+      },
+      {
+        "title": "Baixe ou copie",
+        "desc": "Salve o JPG que você precisa ou copie o link direto para usar nos seus próprios designs."
+      }
+    ],
+    "featuresTitle": "Por que os criadores usam",
+    "featuresSubtitle": "O jeito mais rápido de conseguir uma imagem de capa limpa.",
+    "features": [
+      {
+        "title": "Full HD quando disponível",
+        "desc": "A imagem maxres de 1280×720 aparece primeiro sempre que o canal enviou uma."
+      },
+      {
+        "title": "Os cinco tamanhos",
+        "desc": "Tamanhos HD, SD, HQ, MQ e padrão, cada um com prévia e botão de download próprio."
+      },
+      {
+        "title": "Cópia do link direto",
+        "desc": "Precisa no Figma ou no Canva? Copie o link da imagem com um clique."
+      },
+      {
+        "title": "Shorts também",
+        "desc": "Links de Shorts e links curtos youtu.be são lidos como os de vídeos normais."
+      }
+    ],
+    "faqTitle": "Perguntas sobre thumbnails",
+    "faqSubtitle": "Respostas rápidas.",
+    "faq": [
+      {
+        "q": "Por que não aparece a imagem de 1280×720?",
+        "a": "O YouTube só gera a thumbnail maxres quando o vídeo enviado e a thumbnail personalizada estão em alta resolução. Vídeos antigos ou de baixa resolução só têm os tamanhos menores."
+      },
+      {
+        "q": "Posso usar a thumbnail no meu próprio vídeo?",
+        "a": "As thumbnails pertencem ao canal que as criou. Use como referência, em prévias e no seu próprio canal; peça permissão antes de reutilizar a arte de outra pessoa."
+      },
+      {
+        "q": "Isso baixa o vídeo?",
+        "a": "Não. Esta ferramenta só busca a imagem de capa. Ela nunca mexe no vídeo em si."
+      },
+      {
+        "q": "Funciona com vídeos privados?",
+        "a": "Só se a thumbnail estiver acessível publicamente. Vídeos privados normalmente não têm."
+      },
+      {
+        "q": "Qual é o tamanho da thumbnail do YouTube?",
+        "a": "O tamanho recomendado para envio é 1280×720 pixels (16:9), com menos de 2 MB, em JPG, PNG ou GIF. É também o tamanho da imagem maxresdefault que esta ferramenta retorna."
+      },
+      {
+        "q": "Dá para baixar a thumbnail de um Short do YouTube?",
+        "a": "Sim. Cole o link do Short; a ferramenta extrai o ID do vídeo e lista os mesmos tamanhos que o YouTube oferece para vídeos normais."
+      }
+    ],
+    "ctaTitle": "Precisa de uma imagem de capa?",
+    "ctaSubtitle": "Cole o link do YouTube e escolha o tamanho.",
+    "ctaButton": "Cole seu link",
+    "tool": {
+      "placeholder": "https://www.youtube.com/watch?v=… ou ID do vídeo",
+      "button": "Buscar thumbnails",
+      "invalid": "Isso não parece um link do YouTube nem um ID de vídeo de 11 caracteres.",
+      "clear": "Limpar",
+      "previewAlt": "Prévia da thumbnail do YouTube",
+      "download": "Baixar",
+      "copy": "Copiar link",
+      "copied": "Copiado",
+      "sizes": {
+        "maxresdefault": "Full HD",
+        "sddefault": "Padrão",
+        "hqdefault": "Alta qualidade",
+        "mqdefault": "Média",
+        "default": "Pequena"
+      }
+    },
+    "details": [
+      "O YouTube gera até cinco tamanhos de thumbnail para cada vídeo: 120×90, 320×180, 480×360, 640×480 e a versão Full HD de 1280×720, chamada maxresdefault. Todas são arquivos JPG públicos servidos pelos servidores de imagem do YouTube. O TokDown monta os links exatos a partir do ID do vídeo, confere quais tamanhos existem e mostra uma prévia de cada um, para você escolher a resolução de que precisa sem adivinhar.",
+      "Criadores usam isso para recuperar uma thumbnail cujo arquivo original não têm mais, para montar playlists e páginas de canal ou para comparar como os concorrentes criam as capas. Designers colam o link direto no Figma ou no Canva. Como só a imagem é buscada, a ferramenta é rápida, funciona tanto com Shorts quanto com vídeos normais e nunca mexe no vídeo em si."
+    ],
+    "detailsTitle": "Os tamanhos de thumbnail do YouTube",
+    "detailsSubtitle": "Cinco tamanhos públicos por vídeo, e quando falta o HD."
+  },
+  "VideoCompressor": {
+    "metaTitle": "Comprimir vídeo online – grátis, sem upload",
+    "metaDescription": "Comprima vídeos MP4, MOV e WebM grátis no navegador. Reduza arquivos para Discord, WhatsApp ou e-mail sem perda visível de qualidade. Nada é enviado.",
+    "eyebrow": "Comprimir · MP4 · Privado",
+    "h1": "Compressor de vídeo",
+    "h1Accent": "sem upload",
+    "subtitle": "Reduza um vídeo para o WhatsApp, e-mail ou Discord. Todo o processo roda no seu aparelho com ffmpeg, então nada sai do seu navegador.",
+    "heroNote": "Até 500 MB por arquivo · saída em MP4 · H.264 + AAC",
+    "trust": [
+      "100% grátis",
+      "Sem upload",
+      "Sem marca d'água",
+      "Qualquer aparelho"
+    ],
+    "stepsTitle": "Como funciona",
+    "stepsSubtitle": "Três passos, zero servidores.",
+    "steps": [
+      {
+        "title": "Escolha um vídeo",
+        "desc": "Arraste um MP4, MOV, WebM ou MKV, ou escolha um do celular. Ele fica no seu aparelho."
+      },
+      {
+        "title": "Escolha um preset",
+        "desc": "Pequeno para apps de mensagem, Equilibrado para redes sociais, Qualidade para manter os detalhes em 1080p."
+      },
+      {
+        "title": "Baixe o resultado",
+        "desc": "O MP4 comprimido fica pronto no navegador. Compare os tamanhos e salve."
+      }
+    ],
+    "featuresTitle": "Por que ele é diferente",
+    "featuresSubtitle": "A maioria dos compressores envia seu arquivo. Este nunca envia.",
+    "features": [
+      {
+        "title": "Privado de verdade",
+        "desc": "O vídeo é processado pelo ffmpeg compilado para WebAssembly, dentro da aba do navegador."
+      },
+      {
+        "title": "Sem limite de quantidade",
+        "desc": "Comprima quantos arquivos quiser, um depois do outro, sem filas nem contas."
+      },
+      {
+        "title": "Presets inteligentes",
+        "desc": "Limites de resolução e CRF ajustados para os limites de anexo comuns de 16 MB e 25 MB."
+      },
+      {
+        "title": "Roda em qualquer lugar",
+        "desc": "A saída é MP4 H.264 com áudio AAC e fast-start, a combinação mais compatível."
+      }
+    ],
+    "faqTitle": "Perguntas sobre compressão",
+    "faqSubtitle": "O que as pessoas perguntam antes de apertar o botão.",
+    "faq": [
+      {
+        "q": "Meu vídeo é enviado para algum lugar?",
+        "a": "Não. O compressor roda inteiramente no seu navegador. Você pode até ficar offline depois que a página carregar."
+      },
+      {
+        "q": "Por que é mais lento que um serviço online?",
+        "a": "Porque usa o processador do seu próprio aparelho em vez de um servidor. Um vídeo de 1 minuto em 1080p costuma levar de um a três minutos num notebook, e mais num celular."
+      },
+      {
+        "q": "Quanto menor o arquivo vai ficar?",
+        "a": "Normalmente de 50 a 80% menor com o preset Equilibrado. Gravações de tela que já são comprimidas diminuem menos."
+      },
+      {
+        "q": "Qual o tamanho máximo do arquivo?",
+        "a": "500 MB por arquivo. Arquivos maiores podem esgotar a memória que uma aba do navegador pode usar."
+      },
+      {
+        "q": "Funciona no iPhone?",
+        "a": "Sim, no Safari 16 ou mais recente. Vídeos muito longos podem demorar; comece pelo preset Pequeno."
+      },
+      {
+        "q": "Como comprimir um vídeo para o Discord?",
+        "a": "Escolha o preset Pequeno. Ele deixa a maioria dos vídeos abaixo do limite de upload gratuito do Discord; para vídeos mais longos, corte antes ou use uma gravação de tela em resolução menor."
+      },
+      {
+        "q": "Dá para comprimir um vídeo para 10 MB?",
+        "a": "Ainda não há uma opção de tamanho exato, mas o preset Pequeno costuma reduzir um vídeo de celular de um minuto em 1080p para 5 a 12 MB. Se precisar de menos, rode o mesmo preset de novo no resultado."
+      }
+    ],
+    "ctaTitle": "Arquivo grande demais para enviar?",
+    "ctaSubtitle": "Comprima aqui mesmo, com privacidade.",
+    "ctaButton": "Escolher um vídeo",
+    "tool": {
+      "drop": "Arraste um vídeo para cá ou toque para escolher",
+      "hint": "MP4, MOV, WebM, MKV · até 500 MB",
+      "presetLabel": "Preset de compressão",
+      "presets": {
+        "small": {
+          "title": "Pequeno",
+          "desc": "Máx. 720p · ideal para WhatsApp e e-mail"
+        },
+        "balanced": {
+          "title": "Equilibrado",
+          "desc": "Máx. 1080p · bom para redes sociais"
+        },
+        "quality": {
+          "title": "Qualidade",
+          "desc": "Até 1080p · mantém os detalhes finos"
+        }
+      },
+      "run": "Comprimir vídeo",
+      "loadingEngine": "Carregando o mecanismo…",
+      "processing": "Comprimindo… {pct}%",
+      "done": "Pronto. Seu vídeo comprimido está pronto.",
+      "download": "Baixar MP4",
+      "reset": "Começar de novo",
+      "errorEngine": "Não foi possível carregar o mecanismo de vídeo. Confira sua conexão e tente de novo.",
+      "errorRun": "A compressão falhou. Tente outro preset ou um arquivo menor.",
+      "tooLarge": "Esse arquivo é grande demais. O limite é {max}.",
+      "previewAlt": "Prévia"
+    },
+    "details": [
+      "A maioria dos compressores online envia seu vídeo para um servidor, processa lá e deixa você baixar o resultado. O TokDown faz o contrário: o codificador ffmpeg é carregado como WebAssembly na aba do navegador e todo o processo roda no seu próprio aparelho. Seu arquivo nunca sai do computador ou do celular, não há fila, nem cobrança por tamanho, nem marca d'água. Na primeira vez, o codificador é baixado uma única vez; depois disso fica em cache.",
+      "Os três presets correspondem aos limites que as pessoas realmente encontram. O Pequeno mira anexos do WhatsApp, Telegram e e-mail, limitando a resolução a 720p com uma compressão maior. O Equilibrado mantém até 1080p para posts no Instagram, TikTok e YouTube. O Qualidade preserva o máximo de detalhes para arquivar ou continuar editando. Todos os presets geram vídeo H.264 com áudio AAC em um contêiner MP4, que roda em qualquer celular, navegador e app de edição."
+    ],
+    "detailsTitle": "Por que nada é enviado",
+    "detailsSubtitle": "O codificador roda na sua aba; os presets seguem os limites de upload mais comuns."
+  },
+  "Mp4ToGif": {
+    "metaTitle": "MP4 para GIF – conversor grátis em alta qualidade",
+    "metaDescription": "Converta vídeos MP4, MOV ou WebM em GIFs de alta qualidade, grátis. Escolha o início, a duração, o FPS e o tamanho. Roda no navegador, nada é enviado.",
+    "eyebrow": "GIF · Clipes · Privado",
+    "h1": "Conversor de MP4 para GIF",
+    "h1Accent": "no seu navegador",
+    "subtitle": "Escolha o momento exato, defina a taxa de quadros e o tamanho e receba um GIF nítido em loop. O processamento acontece no seu aparelho.",
+    "heroNote": "Até 15 segundos por GIF · cores com paleta otimizada",
+    "trust": [
+      "100% grátis",
+      "Sem upload",
+      "FPS e tamanho ajustáveis",
+      "Qualquer aparelho"
+    ],
+    "stepsTitle": "Como funciona",
+    "stepsSubtitle": "Corte, ajuste, baixe.",
+    "steps": [
+      {
+        "title": "Escolha um vídeo",
+        "desc": "Arraste qualquer MP4, MOV ou WebM. Para TikToks, baixe o vídeo antes com o TokDown."
+      },
+      {
+        "title": "Defina o trecho",
+        "desc": "Escolha onde o GIF começa, quanto tempo dura, a taxa de quadros e a largura."
+      },
+      {
+        "title": "Baixe o GIF",
+        "desc": "Veja a prévia do loop e salve. Compartilhe em conversas, documentos ou posts nas redes."
+      }
+    ],
+    "featuresTitle": "Por que os GIFs ficam bons",
+    "featuresSubtitle": "Pequenos detalhes que a maioria dos conversores ignora.",
+    "features": [
+      {
+        "title": "Paleta otimizada",
+        "desc": "Uma paleta em duas passagens para cada trecho mantém as cores limpas, sem faixas nem ruído."
+      },
+      {
+        "title": "Redimensionamento nítido",
+        "desc": "A reamostragem Lanczos mantém textos e bordas nítidos mesmo em tamanhos pequenos."
+      },
+      {
+        "title": "Você controla o tamanho",
+        "desc": "Largura de 240 a 800 px e de 10 a 24 fps, para caber em qualquer limite de upload."
+      },
+      {
+        "title": "Privado por padrão",
+        "desc": "A conversão roda no seu navegador com ffmpeg; o vídeo nunca sai do seu aparelho."
+      }
+    ],
+    "faqTitle": "Perguntas sobre GIF",
+    "faqSubtitle": "Respostas rápidas.",
+    "faq": [
+      {
+        "q": "Como fazer um GIF de um TikTok?",
+        "a": "Primeiro baixe o TikTok em MP4 com o TokDown e depois arraste o arquivo para cá."
+      },
+      {
+        "q": "Por que o GIF ficou grande?",
+        "a": "GIF é um formato antigo: cada quadro é uma imagem completa. Diminua a largura ou a taxa de quadros, ou encurte o trecho."
+      },
+      {
+        "q": "Dá para fazer um GIF com mais de 15 segundos?",
+        "a": "Aqui não. GIFs mais longos chegam a dezenas de megabytes; para trechos longos, use o compressor de vídeo e compartilhe um MP4."
+      },
+      {
+        "q": "O som é mantido?",
+        "a": "Não. GIFs não têm áudio."
+      },
+      {
+        "q": "Como fazer um GIF de um vídeo do iPhone?",
+        "a": "Abra esta página no Safari, toque na área de upload, escolha o vídeo no app Fotos, defina o trecho e toque em Criar GIF. O GIF é salvo no app Arquivos e pode ser compartilhado de lá."
+      },
+      {
+        "q": "Qual a melhor configuração para um GIF pequeno?",
+        "a": "Comece com 320 px de largura, 12 fps e um trecho de menos de 5 segundos. Se ainda ficar grande, reduza a taxa de quadros antes de reduzir a largura."
+      }
+    ],
+    "ctaTitle": "Tem um momento que merece virar loop?",
+    "ctaSubtitle": "Faça o GIF aqui mesmo.",
+    "ctaButton": "Escolher um vídeo",
+    "tool": {
+      "drop": "Arraste um vídeo para cá ou toque para escolher",
+      "hint": "MP4, MOV, WebM · até 500 MB",
+      "start": "Início (s)",
+      "duration": "Duração (s, máx. 15)",
+      "fps": "Taxa de quadros",
+      "width": "Largura",
+      "run": "Criar GIF",
+      "loadingEngine": "Carregando o mecanismo…",
+      "processing": "Gerando… {pct}%",
+      "done": "Pronto. Seu GIF está pronto.",
+      "download": "Baixar GIF",
+      "reset": "Começar de novo",
+      "errorEngine": "Não foi possível carregar o mecanismo de vídeo. Confira sua conexão e tente de novo.",
+      "errorRun": "A conversão falhou. Tente um trecho mais curto ou uma largura menor.",
+      "tooLarge": "Esse arquivo é grande demais. O limite é {max}.",
+      "previewAlt": "Prévia do GIF"
+    },
+    "details": [
+      "O GIF é um formato de 30 anos, com paleta de 256 cores e sem compressão entre quadros, e é por isso que conversores simples geram arquivos enormes e granulados. O TokDown roda no seu navegador um processo ffmpeg em duas passagens: a primeira analisa o trecho e cria uma paleta personalizada, a segunda aplica essa paleta a cada quadro com pontilhamento ordenado. O resultado mantém os textos legíveis e os degradês suaves, com uma fração do tamanho.",
+      "Você controla as três coisas que definem o tamanho do arquivo: a duração do trecho (até 15 segundos), a taxa de quadros (de 10 a 24 fps) e a largura (de 240 a 800 pixels). Para apps de mensagem, 480 px a 15 fps é um bom padrão; para documentação ou um README, 640 px a 12 fps fica nítido e continua leve. Como tudo roda localmente, você pode testar quantas vezes quiser sem enviar nada."
+    ],
+    "detailsTitle": "Como fazer um GIF pequeno e nítido",
+    "detailsSubtitle": "Uma paleta personalizada por trecho e as três configurações que definem o tamanho do arquivo."
+  },
+  "GuideHub": {
+    "metaTitle": "Guias para baixar TikTok – iPhone, Android, MP3",
+    "metaDescription": "Passo a passo para salvar vídeos, sons e carrosséis do TikTok no iPhone, Android e PC, com respostas sinceras sobre marca d'água, vídeos privados e a lei.",
+    "eyebrow": "Guias",
+    "h1": "Guias para baixar TikTok",
+    "subtitle": "Ajuda passo a passo para cada aparelho e formato, escrita a partir de como as ferramentas realmente funcionam.",
+    "intro": [
+      "A maioria das dúvidas sobre o TikTok se resume a três coisas: qual aparelho você usa, qual formato você precisa e se o post é público. Comece pelos guias por aparelho se um download não aparecer onde você espera, pelo guia de MP3 se você só quer o som e pelo guia da marca d'água se quiser entender por que os vídeos salvos pelo app vêm com logo.",
+      "Cada guia mostra exatamente onde tocar, os erros que podem aparecer e o que eles significam. Quando algo não é possível, como baixar um vídeo privado ou um perfil inteiro com um clique, o guia diz isso com clareza, em vez de mandar você para uma ferramenta que pede sua senha."
+    ],
+    "translatedTitle": "Comece por aqui",
+    "englishTitle": "Mais guias (em inglês)",
+    "englishNote": "Por enquanto, estes guias só estão disponíveis em inglês."
+  },
+  "GuidePc": {
+    "metaTitle": "Como baixar vídeo do TikTok no PC e no Mac",
+    "metaDescription": "Baixe vídeos do TikTok no PC com Windows, notebook ou Mac sem app nem extensão: copie o link, cole no TokDown e salve o MP4, sem marca d'água.",
+    "eyebrow": "Guia para PC e Mac · outubro de 2026",
+    "h1": "Como baixar vídeo do TikTok no PC e no Mac",
+    "subtitle": "Salve vídeos do TikTok num PC com Windows, notebook ou MacBook em qualquer navegador: sem app, sem extensão, sem conta e sem marca d'água no arquivo.",
+    "answerTitle": "A resposta curta",
+    "answer": "Abra o vídeo no tiktok.com, copie o endereço da barra do navegador (ou use Compartilhar → Copiar link), cole no TokDown e clique em Baixar vídeo. O MP4 vai para a pasta Downloads. Você não precisa do app do TikTok para Windows, de um emulador de Android como o BlueStacks nem de extensão de navegador.",
+    "stepsTitle": "Passo a passo: salvar um vídeo do TikTok no computador",
+    "steps": [
+      {
+        "title": "Abra o vídeo no tiktok.com",
+        "body": "No Chrome, Edge, Firefox ou Safari, acesse tiktok.com e clique no vídeo. A barra de endereço muda para um link como tiktok.com/@nome/video/123…: esse é o link de que você precisa."
+      },
+      {
+        "title": "Copie o link",
+        "body": "Clique na barra de endereço e aperte Ctrl+C no Windows ou Cmd+C no Mac, ou clique em Compartilhar → Copiar link ao lado do vídeo. Links copiados no app do celular (vm.tiktok.com/…) também funcionam, por exemplo se você mandá-los para si mesmo."
+      },
+      {
+        "title": "Cole no TokDown",
+        "body": "Abra tokdown.org em uma nova aba (Ctrl+T ou Cmd+T), clique no campo e cole com Ctrl+V ou Cmd+V, ou clique em Colar. Depois clique em Baixar vídeo."
+      },
+      {
+        "title": "Escolha o formato",
+        "body": "Clique em HD · Sem marca d'água para a melhor qualidade, em SD para um arquivo menor ou em Áudio MP3 só para o som. Se o serviço sem marca d'água estiver sobrecarregado, você pode receber o arquivo original do TikTok, com marca d'água, junto com um aviso explicando isso."
+      },
+      {
+        "title": "Encontre o arquivo",
+        "body": "Windows: a pasta Downloads (C:\\Users\\SeuNome\\Downloads), ou aperte Ctrl+J no Chrome ou no Edge. Mac: Downloads no Finder, ou a seta de downloads na barra de ferramentas do Safari. Clique duas vezes para assistir."
+      }
+    ],
+    "ctaText": "Copiou o link? Cole na página inicial e escolha HD.",
+    "ctaButton": "Abrir o downloader de TikTok",
+    "sections": [
+      {
+        "title": "Você precisa do app do TikTok no computador?",
+        "paragraphs": [
+          "Não. Muitos resultados de “baixar TikTok no PC” explicam como instalar o app do TikTok pela Microsoft Store ou como rodar o app de Android no Mac com um emulador como o BlueStacks. Nenhum dos dois é necessário para salvar um vídeo: o site do TikTok reproduz qualquer vídeo público no navegador, e o link dele é tudo de que um downloader precisa.",
+          "A opção de download do próprio TikTok, quando o criador permite, gera um arquivo com o logo do TikTok e o nome de usuário do criador gravados na imagem. Um downloader web entrega o arquivo como ele foi enviado, e é por isso que ele fica mais limpo quando você edita ou corta."
+        ]
+      },
+      {
+        "title": "Windows ou Mac: o que muda",
+        "paragraphs": [
+          "Só os atalhos (Ctrl no Windows, Cmd no Mac) e o lugar onde os arquivos vão parar. Na primeira vez, o Safari pode perguntar se você quer permitir downloads de tokdown.org: clique em Permitir. O Chrome e o Edge mostram os arquivos baixados num pequeno painel de downloads no canto superior direito.",
+          "O MP4 usa vídeo H.264 e áudio AAC, que qualquer player e editor atual abre: Fotos, Clipchamp e VLC no Windows, QuickTime e iMovie no Mac, e Premiere Pro, DaVinci Resolve ou CapCut nos dois. Não precisa converter nada."
+        ]
+      }
+    ],
+    "tipsTitle": "Dicas para salvar vários vídeos no computador",
+    "tips": [
+      {
+        "title": "Deixe o TokDown numa aba só para ele",
+        "body": "Copie um link na aba do TikTok, troque de aba com Ctrl+Tab, cole, baixe e depois clique em “Baixar outro vídeo”. É a rotina manual mais rápida; não existe download de um perfil inteiro com um clique."
+      },
+      {
+        "title": "Escolha para onde vão os arquivos",
+        "body": "Chrome e Edge: Configurações → Downloads → ative a opção de perguntar onde salvar cada arquivo. Safari: Ajustes → Geral → local de download dos arquivos. Uma pasta só para o TikTok deixa os Downloads organizados."
+      },
+      {
+        "title": "Renomeie na hora",
+        "body": "Os arquivos recebem o nome do vídeo, então legendas longas viram nomes de arquivo longos. Renomeie logo se estiver juntando clipes para um projeto."
+      },
+      {
+        "title": "Carrosséis são baixados como imagens",
+        "body": "Posts de fotos são salvos como imagens separadas. O Chrome pede uma vez para permitir vários downloads do site: clique em Permitir e os outros slides vêm em seguida."
+      }
+    ],
+    "troubleshootTitle": "Solução de problemas no PC e no Mac",
+    "troubleshoot": [
+      {
+        "problem": "O link não é aceito",
+        "fix": "Confira se você copiou o link de um vídeo (ele contém /video/ ou /photo/, ou começa com vm.tiktok.com ou vt.tiktok.com), e não de um perfil ou de uma página de busca. Links de vídeos privados, só para amigos ou apagados também falham."
+      },
+      {
+        "problem": "O vídeo abre numa aba em vez de baixar",
+        "fix": "Clique com o botão direito no botão de download e escolha “Salvar link como…” no Chrome, Edge ou Firefox, ou “Baixar Arquivo Vinculado” no Safari."
+      },
+      {
+        "problem": "“Serviço ocupado” ou só uma versão com marca d'água",
+        "fix": "O serviço gratuito que busca os arquivos limpos tem um limite diário. Espere alguns minutos e tente de novo; não há nada de errado com o seu computador."
+      }
+    ],
+    "faqTitle": "Perguntas sobre PC e Mac",
+    "faq": [
+      {
+        "q": "Dá para baixar vídeos do TikTok no PC sem app?",
+        "a": "Sim. Copie o link do vídeo no tiktok.com, cole no TokDown em qualquer navegador e clique em Baixar vídeo. Não precisa instalar nada no Windows nem no macOS."
+      },
+      {
+        "q": "Dá para baixar vídeos do TikTok num MacBook sem BlueStacks?",
+        "a": "Sim. Um emulador só é necessário para rodar o app de Android. Para salvar um vídeo, o site do TikTok e um navegador bastam, num MacBook Air, MacBook Pro ou qualquer outro Mac."
+      },
+      {
+        "q": "Funciona no Chromebook ou no Linux?",
+        "a": "Sim. O TokDown roda em qualquer navegador moderno, então Chromebooks e notebooks com Linux funcionam do mesmo jeito e os arquivos vão para a pasta Downloads."
+      },
+      {
+        "q": "Preciso instalar alguma coisa? É seguro?",
+        "a": "Nada para instalar e nenhuma extensão. O TokDown é um site, então não consegue ler suas outras abas nem os dados do navegador. Ele é mantido por anúncios: depois do primeiro resultado de download, uma janela de anúncio pode abrir em segundo plano, e você pode simplesmente fechá-la."
+      },
+      {
+        "q": "Dá para baixar vários TikToks de uma vez no PC?",
+        "a": "Não. O TokDown salva um vídeo por link. Cuidado com ferramentas que prometem baixar perfis inteiros em troca do seu login do TikTok: nunca dê sua senha a um site."
+      },
+      {
+        "q": "É legal baixar vídeos do TikTok no computador?",
+        "a": "O aparelho não faz diferença. Uma cópia privada para uso próprio costuma ser aceita, dependendo do seu país; repostar ou usar comercialmente o vídeo de outra pessoa sem permissão não é, e os termos do TikTok restringem ferramentas de download externas."
+      }
+    ]
+  },
+  "GuideSlideshow": {
+    "metaTitle": "Como baixar carrossel do TikTok com música",
+    "metaDescription": "Salve um carrossel do TikTok de 3 jeitos: cada foto em tamanho original sem marca d'água, o som em MP3 ou o carrossel todo em vídeo. Sem app, sem login.",
+    "eyebrow": "Guia de carrossel · outubro de 2026",
+    "h1": "Como baixar um carrossel do TikTok",
+    "subtitle": "Os posts de fotos do TikTok não são vídeos, então salvá-los funciona de outro jeito. Veja como guardar as fotos, a música ou o carrossel inteiro.",
+    "answerTitle": "A resposta curta",
+    "answer": "Copie o link do post (Compartilhar → Copiar link), cole no downloader de fotos do TokDown e toque em Baixar fotos. Você recebe cada slide como imagem em tamanho original, sem marca d'água, um botão Baixar todas e o som em MP3. Quando o TikTok também oferece uma versão renderizada, um botão “Carrossel em vídeo” salva tudo num único MP4 com a música.",
+    "stepsTitle": "Passo a passo: baixar um carrossel do TikTok",
+    "steps": [
+      {
+        "title": "Confira se é um post de fotos",
+        "body": "Posts de fotos passam para o lado e mostram pontinhos ou um contador como 1/8 embaixo. O link deles tem /photo/ em vez de /video/."
+      },
+      {
+        "title": "Copie o link",
+        "body": "Toque em Compartilhar (a seta) e depois em Copiar link. No computador, copie o endereço da barra do navegador."
+      },
+      {
+        "title": "Cole no downloader de fotos",
+        "body": "Abra tokdown.org/photo-downloader, cole o link e toque em Baixar fotos. O downloader de vídeos da página inicial também aceita links de fotos."
+      },
+      {
+        "title": "Salve os slides",
+        "body": "Toque em uma imagem para salvar aquele slide, ou em Baixar todas para salvar todos os slides em ordem, numerados para continuarem organizados. O Chrome pede uma vez para permitir vários downloads: toque em Permitir."
+      },
+      {
+        "title": "Salve o som ou a versão em vídeo",
+        "body": "Toque em Áudio MP3 para a música. Se aparecer o botão “Carrossel em vídeo”, ele gera um MP4 com todos os slides e o som."
+      }
+    ],
+    "ctaText": "Tem o link de um carrossel? Cole no downloader de fotos.",
+    "ctaButton": "Abrir o downloader de fotos",
+    "sections": [
+      {
+        "title": "Fotos, som ou vídeo: qual você precisa?",
+        "paragraphs": [
+          "Escolha as fotos quando quiser imprimir, editar ou compartilhar uma imagem só: são os arquivos originais, sem marca d'água e sem compressão extra. Escolha o MP3 quando quiser só a música ou a narração. Escolha a versão em vídeo quando quiser o carrossel exatamente como ele roda no TikTok, por exemplo para mandar num app de mensagens.",
+          "A versão em vídeo só aparece quando o TikTok gerou uma para o post. Se ela não existir, monte de novo a partir das imagens e do MP3 em qualquer editor, como CapCut, iMovie ou Clipchamp: adicione os slides em ordem, coloque o áudio e deixe cada slide por dois ou três segundos."
+        ]
+      },
+      {
+        "title": "Por que os carrosséis complicam outros downloaders",
+        "paragraphs": [
+          "Um carrossel é um conjunto de imagens mais uma faixa de áudio que o TikTok toca junto. Downloaders feitos só para vídeos procuram um arquivo de vídeo, não encontram nenhum e falham ou devolvem só a primeira imagem. O TokDown lê a própria lista de imagens, e é também por isso que os slides não têm marca d'água: o TikTok só grava o logo nos vídeos renderizados."
+        ]
+      }
+    ],
+    "tipsTitle": "Dicas para celular e computador",
+    "tips": [
+      {
+        "title": "iPhone: salve no app Fotos",
+        "body": "No Safari, uma imagem pode abrir numa nova aba ou ir para o app Arquivos. Toque e segure a imagem e escolha Salvar em Fotos para colocá-la na galeria."
+      },
+      {
+        "title": "Android: procure em Downloads",
+        "body": "As imagens vão para a pasta Downloads e, depois de alguns instantes, aparecem no Google Fotos ou na Galeria, em Downloads."
+      },
+      {
+        "title": "Mantenha a ordem",
+        "body": "Use Baixar todas em vez de salvar os slides um por um: os arquivos são numerados na ordem que o criador definiu."
+      },
+      {
+        "title": "Dê o crédito ao criador",
+        "body": "Se compartilhar um slide com a permissão do criador, marque a conta original. As imagens não têm marca d'água, então o crédito fica por sua conta."
+      }
+    ],
+    "troubleshootTitle": "Solução de problemas",
+    "troubleshoot": [
+      {
+        "problem": "Só a primeira imagem é baixada",
+        "fix": "Seu navegador bloqueou os downloads extras. Procure um ícone de download bloqueado na barra de endereço, permita vários downloads para tokdown.org e toque em Baixar todas de novo."
+      },
+      {
+        "problem": "Não aparece o botão “Carrossel em vídeo”",
+        "fix": "O TikTok não ofereceu um vídeo renderizado para este post. Salve as imagens e o MP3 e junte tudo num editor, como explicado acima."
+      },
+      {
+        "problem": "O botão de MP3 não aparece",
+        "fix": "Alguns posts não têm um arquivo de som separado disponível, ou não têm som nenhum. As imagens continuam sendo baixadas normalmente."
+      },
+      {
+        "problem": "“Post não encontrado”",
+        "fix": "A conta pode ser privada, o post pode ser só para amigos ou ter sido apagado. Só dá para buscar posts públicos."
+      }
+    ],
+    "faqTitle": "Perguntas sobre carrosséis",
+    "faq": [
+      {
+        "q": "Dá para baixar um carrossel do TikTok como vídeo?",
+        "a": "Sim, quando o TikTok oferece uma versão renderizada: o TokDown mostra então um botão “Carrossel em vídeo” que salva um MP4 com a música. Se não houver, salve as fotos e o MP3 e junte tudo num editor de vídeo."
+      },
+      {
+        "q": "Como baixar as fotos de um carrossel do TikTok sem marca d'água?",
+        "a": "Cada slide é baixado como o arquivo de imagem original. O TikTok só coloca a marca d'água nos vídeos renderizados, então as imagens vêm limpas."
+      },
+      {
+        "q": "Dá para salvar um carrossel do TikTok com o som?",
+        "a": "Sim. O som é oferecido como um MP3 separado ao lado das imagens, e faz parte da versão em vídeo quando ela está disponível."
+      },
+      {
+        "q": "O botão de salvar do próprio TikTok funciona com carrosséis?",
+        "a": "Dependendo da versão do app e da configuração de download do criador, o TikTok pode deixar você salvar uma foto ou uma versão em vídeo com o logo. Um downloader entrega todos os slides de uma vez, sem o logo."
+      },
+      {
+        "q": "Funciona no PC e no Mac?",
+        "a": "Sim. Cole o link em qualquer navegador e use Baixar todas; as imagens vão para a pasta Downloads."
+      },
+      {
+        "q": "Dá para baixar carrosséis de contas privadas?",
+        "a": "Não. Como qualquer downloader, o TokDown só consegue buscar posts públicos."
+      }
+    ]
+  },
+  "GuideNoSave": {
+    "metaTitle": "TikTok sem opção “Salvar vídeo”? Veja por quê",
+    "metaDescription": "Sumiu o botão Salvar vídeo no TikTok? Por que ele some (opção do criador, conta privada ou menor de 16), como ativar nos seus vídeos e o que mais fazer.",
+    "eyebrow": "Ajuda · outubro de 2026",
+    "h1": "Sem a opção “Salvar vídeo” no TikTok? Veja por quê",
+    "subtitle": "O botão Salvar vídeo some por alguns motivos específicos. Descubra o seu, resolva nos seus próprios vídeos e veja as opções para vídeos de outras pessoas.",
+    "answerTitle": "A resposta curta",
+    "answer": "O TikTok esconde ou deixa cinza o Salvar vídeo quando o criador desativou os downloads de vídeo, quando a conta é privada ou quando o criador tem menos de 16 anos, caso em que os downloads ficam sempre desativados. Nos seus próprios vídeos, ative em Configurações e privacidade → Privacidade → Downloads. No vídeo de outra pessoa, peça ao criador ou guarde nos seus Favoritos.",
+    "stepsTitle": "O que fazer quando o Salvar vídeo não aparece",
+    "steps": [
+      {
+        "title": "Descubra o motivo",
+        "body": "Abra o perfil do criador. Um cadeado ou a mensagem “Esta conta é privada” indica uma conta privada. Se o perfil é público e o Salvar vídeo não aparece ou está cinza, o criador desativou os downloads ou tem menos de 16 anos."
+      },
+      {
+        "title": "É o seu vídeo? Ative os downloads",
+        "body": "Vá em Perfil → menu (☰) → Configurações e privacidade → Privacidade → Downloads e ative a opção. É preciso ter uma conta pública e 16 anos ou mais, e a configuração vale para todos os seus vídeos, antigos e futuros."
+      },
+      {
+        "title": "Guarde nos Favoritos",
+        "body": "Toque no ícone de marcador para adicionar o vídeo à aba Favoritos do seu perfil. Não é uma cópia offline, mas é sempre permitido e mantém o vídeo junto com o criador."
+      },
+      {
+        "title": "Peça ao criador",
+        "body": "Um comentário ou uma mensagem pedindo o arquivo, ou a permissão para salvá-lo, é o caminho mais correto, e o único se você quiser reutilizar o vídeo. Guarde a resposta como prova da permissão."
+      },
+      {
+        "title": "Uma cópia privada de um vídeo público",
+        "body": "Um downloader web como o TokDown lê o mesmo arquivo público que o seu navegador reproduz, então consegue buscar um vídeo público mesmo quando o botão está desativado. Se isso é aceitável depende das regras de cópia privada do seu país e dos termos do TikTok, que restringem ferramentas de download externas. Guarde essa cópia só para você, nunca reposte e deixe em paz os vídeos de criadores jovens."
+      }
+    ],
+    "ctaText": "Vai salvar um vídeo público só para você? Cole o link.",
+    "ctaButton": "Abrir o downloader",
+    "sections": [
+      {
+        "title": "Os motivos para o botão sumir",
+        "paragraphs": [
+          "O criador desativou os downloads. Todo criador com 16 anos ou mais decide se outras pessoas podem baixar os vídeos dele. Quando a opção está desativada, o TikTok esconde ou deixa cinza o Salvar vídeo para todo mundo, tanto em posts antigos quanto novos.",
+          "A conta é privada. Contas privadas não podem ativar os downloads de jeito nenhum, então os vídeos delas nunca mostram a opção, nem para seguidores aprovados.",
+          "O criador tem menos de 16 anos. O TikTok desativa os downloads dessas contas e não deixa que sejam ativados. Para quem tem 16 ou 17 anos, a opção começa desativada e pode ser ativada.",
+          "O problema é do seu lado. Se o Salvar vídeo não aparece em nenhum vídeo, inclusive de contas públicas grandes, atualize o app do TikTok, reinicie e confira se você está logado."
+        ]
+      },
+      {
+        "title": "Gravar a tela não é uma brecha",
+        "paragraphs": [
+          "Gravar a tela funciona em qualquer celular, mas você também grava legendas, botões e notificações, e a qualidade cai para a resolução da sua tela. Isso também não muda as regras: os mesmos limites de direitos autorais e de cópia privada valem para uma gravação e para um download."
+        ]
+      }
+    ],
+    "tipsTitle": "",
+    "tips": [],
+    "troubleshootTitle": "",
+    "troubleshoot": [],
+    "faqTitle": "Perguntas sobre o Salvar vídeo",
+    "faq": [
+      {
+        "q": "Por que não consigo salvar alguns vídeos do TikTok?",
+        "a": "Porque o criador desativou os downloads, a conta é privada ou o criador tem menos de 16 anos. Em todos esses casos, o TikTok remove ou deixa cinza a opção Salvar vídeo para os outros usuários."
+      },
+      {
+        "q": "Como ativar os downloads dos meus vídeos no TikTok?",
+        "a": "Perfil → menu (☰) → Configurações e privacidade → Privacidade → Downloads. Sua conta precisa ser pública e você precisa ter 16 anos ou mais; a configuração vale para todos os seus posts."
+      },
+      {
+        "q": "Dá para baixar um TikTok quando o criador desativou os downloads?",
+        "a": "Tecnicamente, um downloader web consegue buscar qualquer vídeo público. O criador deixou claro que não quer cópias circulando, então guarde estritamente para assistir em particular, nunca reposte e não faça isso de jeito nenhum com criadores jovens. Os termos do TikTok também restringem ferramentas de download externas."
+      },
+      {
+        "q": "Desativar os downloads apaga as cópias que as pessoas já salvaram?",
+        "a": "Não. Segundo o TikTok, as cópias salvas enquanto os downloads estavam ativados continuam nos aparelhos das outras pessoas. Desativar a opção só impede novos downloads."
+      },
+      {
+        "q": "Dá para salvar um vídeo de uma conta privada?",
+        "a": "Não, nem pelo botão do TikTok nem por nenhuma ferramenta web. Peça para a pessoa mandar o arquivo para você."
+      }
+    ]
+  },
+  "GuideDraft": {
+    "metaTitle": "Salvar rascunho do TikTok na galeria sem postar",
+    "metaDescription": "Salve um rascunho do TikTok na galeria sem ninguém ver: o truque do Somente eu, a opção Salvar no dispositivo e um backup antes de trocar de celular.",
+    "eyebrow": "Guia de rascunhos · outubro de 2026",
+    "h1": "Como salvar um rascunho do TikTok na galeria",
+    "subtitle": "Os rascunhos ficam só dentro do app do TikTok no seu celular. Veja como levar um para a galeria sem que mais ninguém veja.",
+    "answerTitle": "A resposta curta",
+    "answer": "A maioria das versões do app não tem um botão de “exportar rascunho”. O jeito que sempre funciona: abra o rascunho, toque em Avançar, defina quem pode assistir como Somente eu, ative Salvar no dispositivo e publique. Ninguém mais vê o post, e uma cópia vai para a sua galeria. Depois você pode apagar o post privado; a cópia salva continua lá. Os nomes dos menus variam um pouco entre as versões do app.",
+    "stepsTitle": "Passo a passo: salvar um rascunho sem postar publicamente",
+    "steps": [
+      {
+        "title": "Abra seus rascunhos",
+        "body": "Vá até o seu Perfil e toque em Rascunhos, o primeiro quadro da sua grade de vídeos. Toque no rascunho que você quer guardar."
+      },
+      {
+        "title": "Vá para a tela de publicação",
+        "body": "Toque em Avançar. Não altere o vídeo; você só usa a tela de publicação para exportá-lo."
+      },
+      {
+        "title": "Defina quem pode assistir como Somente eu",
+        "body": "Toque na configuração de visibilidade (“Todos podem ver esta publicação”) e escolha Somente eu. O post não vai aparecer para os seguidores nem na página Para Você."
+      },
+      {
+        "title": "Ative Salvar no dispositivo",
+        "body": "Abra Mais opções e ative Salvar no dispositivo. Em algumas versões, a opção fica direto na tela de publicação."
+      },
+      {
+        "title": "Publique e confira a galeria",
+        "body": "Toque em Publicar. Quando o envio terminar, o vídeo estará no app Fotos ou na Galeria. Mantenha ou apague o post privado: apagá-lo não apaga a cópia salva."
+      }
+    ],
+    "ctaText": "Quer salvar o TikTok público de outra pessoa? Cole o link no downloader.",
+    "ctaButton": "Abrir o downloader",
+    "sections": [
+      {
+        "title": "Por que fazer backup dos rascunhos",
+        "paragraphs": [
+          "Os rascunhos ficam guardados no seu celular, dentro do app do TikTok, e não na sua conta do TikTok. Apagar o app, limpar o armazenamento dele ou trocar de celular apaga os rascunhos, e fazer login de novo não os traz de volta. Se um rascunho é importante, exporte antes que alguma dessas coisas aconteça."
+        ]
+      },
+      {
+        "title": "Outros jeitos, e seus pontos fracos",
+        "paragraphs": [
+          "Gravar a tela mantém tudo privado e não exige publicar, mas a cópia inclui tudo o que estiver na tela e fica limitada à resolução da sua tela. Comece a gravação, reproduza o rascunho em tela cheia na prévia do editor e corte o começo e o fim depois.",
+          "Algumas versões do app oferecem uma opção de salvar direto na tela de rascunhos ou no editor. Se aparecer, use: é o jeito mais rápido. Ela não está disponível em todas as versões nem em todas as regiões, e é por isso que o método do Somente eu acima é o mais confiável."
+        ]
+      }
+    ],
+    "tipsTitle": "Dicas",
+    "tips": [
+      {
+        "title": "Cópia sem marca d'água",
+        "body": "A cópia do Salvar no dispositivo é gerada no seu celular a partir da sua própria edição, então normalmente vem sem o logo do TikTok. Salvar o vídeo publicado depois, pelo menu Compartilhar, adiciona o logo e o seu nome de usuário."
+      },
+      {
+        "title": "Publicar depois",
+        "body": "Se você decidir publicar o vídeo afinal, abra o post privado, toque em ⋯ → Configurações de privacidade e mude para Todos, em vez de enviar o arquivo de novo."
+      },
+      {
+        "title": "Trocando de celular",
+        "body": "Exporte todos os rascunhos que quer guardar com os passos acima e depois transfira os arquivos pelo Fotos do iCloud, pelo Google Fotos ou por cabo. O TikTok não transfere rascunhos."
+      }
+    ],
+    "troubleshootTitle": "Solução de problemas",
+    "troubleshoot": [
+      {
+        "problem": "A opção Salvar no dispositivo não aparece",
+        "fix": "Atualize o TikTok. Se continuar sem aparecer, publique como Somente eu mesmo assim, depois abra o post, toque em Compartilhar ou ⋯ e escolha Salvar vídeo; essa cópia pode vir com marca d'água."
+      },
+      {
+        "problem": "O vídeo não apareceu na minha galeria",
+        "fix": "Confira se o TikTok tem permissão para salvar nas suas fotos. iPhone: Ajustes → TikTok → Fotos. Android: Configurações → Apps → TikTok → Permissões → Fotos e vídeos."
+      },
+      {
+        "problem": "O TokDown consegue baixar meu rascunho?",
+        "fix": "Não, e nenhuma outra ferramenta web consegue. Um rascunho nunca sai do seu celular, e um post Somente eu é privado, então nenhum dos dois tem um link público para buscar."
+      }
+    ],
+    "faqTitle": "Perguntas sobre rascunhos",
+    "faq": [
+      {
+        "q": "Dá para salvar um rascunho do TikTok sem postar?",
+        "a": "Na maioria das versões do app não há um botão direto. Gravar a tela funciona sem publicar; fora isso, publique como Somente eu com Salvar no dispositivo ativado, e ninguém mais consegue ver."
+      },
+      {
+        "q": "Meus seguidores vão ver um post Somente eu?",
+        "a": "Não. Um post Somente eu fica visível só para você. Ele não aparece no feed dos seguidores nem na página Para Você."
+      },
+      {
+        "q": "Os rascunhos do TikTok passam para um celular novo?",
+        "a": "Não. Os rascunhos ficam guardados no aparelho, não na sua conta, então exporte os que quiser guardar antes de trocar."
+      },
+      {
+        "q": "Apagar o post privado apaga o vídeo salvo?",
+        "a": "Não. A cópia na sua galeria é um arquivo separado e continua lá quando você apaga o post."
+      },
+      {
+        "q": "Os rascunhos do TikTok ficam salvos na nuvem?",
+        "a": "Não. Eles ficam no celular onde você os criou, e é por isso que apagar o app remove os rascunhos."
+      }
+    ]
+  },
+  "Cookie": {
+    "text": "Usamos cookies e parceiros de publicidade terceiros para exibir anúncios e analisar o tráfego.",
+    "link": "Saiba mais na nossa Política de Privacidade",
+    "accept": "Aceitar e continuar"
+  }
+}

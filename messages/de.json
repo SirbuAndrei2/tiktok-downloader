@@ -73,7 +73,8 @@
     "toolsHeading": "Tools",
     "guidesHeading": "Anleitungen",
     "legalHeading": "Rechtliches",
-    "feedback": "Feedback? Schreib uns an"
+    "feedback": "Feedback? Schreib uns an",
+    "sponsored": "Gesponsert"
   },
   "Common": {
     "backToDownloader": "Zurück zum Downloader",
@@ -565,6 +566,25 @@
         "problem": "Download ist sehr langsam",
         "fix": "HD-Dateien können 20–80 MB groß sein. Wechsle zu WLAN für schnellere Downloads."
       }
+    ],
+    "eyebrow": "iPhone-Anleitung · Juni 2026",
+    "related": [
+      {
+        "title": "TikTok auf Android",
+        "desc": "TikTok-Videos in Android-Galerie speichern."
+      },
+      {
+        "title": "Kein Wasserzeichen",
+        "desc": "Komplette Anleitung für alle Geräte."
+      },
+      {
+        "title": "TikTok zu MP3",
+        "desc": "Audio aus TikTok-Videos extrahieren."
+      },
+      {
+        "title": "TikTok zu MP4",
+        "desc": "TikTok als MP4-Datei herunterladen."
+      }
     ]
   },
   "GuideAndroid": {
@@ -633,6 +653,25 @@
       {
         "problem": "\"Download blockiert\"-Warnung in Chrome",
         "fix": "Tippe auf \"Trotzdem herunterladen\" — TokDown liefert nur Standard MP4/MP3-Dateien."
+      }
+    ],
+    "eyebrow": "Android-Anleitung · Juni 2026",
+    "related": [
+      {
+        "title": "TikTok auf iPhone",
+        "desc": "TikTok-Videos in iPhone-Kamerarolle speichern."
+      },
+      {
+        "title": "Kein Wasserzeichen",
+        "desc": "Komplette Anleitung für alle Geräte."
+      },
+      {
+        "title": "TikTok zu MP3",
+        "desc": "Audio aus TikTok-Videos extrahieren."
+      },
+      {
+        "title": "TikTok zu MP4",
+        "desc": "TikTok als MP4-Datei herunterladen."
       }
     ]
   },
@@ -716,6 +755,22 @@
       "snaptik": {
         "title": "SnapTik-Alternative",
         "desc": "Worauf du bei jedem TikTok-Downloader achten solltest und was TokDown kann und nicht kann."
+      },
+      "pc": {
+        "title": "Download am PC & Mac",
+        "desc": "TikTok-Videos unter Windows, auf dem MacBook oder Chromebook in jedem Browser speichern, ohne App."
+      },
+      "slideshow": {
+        "title": "TikTok-Diashow herunterladen",
+        "desc": "Behalte jedes Foto, den Sound oder die ganze Diashow als Video."
+      },
+      "noSave": {
+        "title": "Kein „Video speichern“?",
+        "desc": "Warum der Button bei manchen TikToks fehlt und was du tun kannst."
+      },
+      "draft": {
+        "title": "TikTok-Entwurf speichern",
+        "desc": "Bring einen Entwurf in deine Galerie oder Fotos-App, ohne ihn öffentlich zu posten."
       }
     },
     "intro": [
@@ -1343,5 +1398,415 @@
     "translatedTitle": "Hier starten",
     "englishTitle": "Weitere Anleitungen (Englisch)",
     "englishNote": "Diese Anleitungen gibt es bisher nur auf Englisch."
+  },
+  "GuidePc": {
+    "metaTitle": "TikTok Video herunterladen am PC und Mac",
+    "metaDescription": "TikTok Video herunterladen am PC, Laptop oder Mac, ohne App und ohne Erweiterung: Link kopieren, in TokDown einfügen, MP4 ohne Wasserzeichen speichern.",
+    "eyebrow": "PC- & Mac-Anleitung · Oktober 2026",
+    "h1": "TikTok-Videos am PC und Mac herunterladen",
+    "subtitle": "Speichere TikTok-Videos auf einem Windows-PC, Laptop oder MacBook in jedem Browser: ohne App, ohne Erweiterung, ohne Konto und ohne Wasserzeichen in der Datei.",
+    "answerTitle": "Die kurze Antwort",
+    "answer": "Öffne das Video auf tiktok.com, kopiere die Adresse aus der Browserleiste (oder nutze Teilen → Link kopieren), füge sie in TokDown ein und klicke auf „Video herunterladen“. Die MP4-Datei landet in deinem Downloads-Ordner. Du brauchst weder die TikTok-App für Windows noch einen Android-Emulator wie BlueStacks noch eine Browser-Erweiterung.",
+    "stepsTitle": "Schritt für Schritt: TikTok-Video am Computer speichern",
+    "steps": [
+      {
+        "title": "Video auf tiktok.com öffnen",
+        "body": "Geh in Chrome, Edge, Firefox oder Safari auf tiktok.com und klicke auf das Video. In der Adressleiste steht dann ein Link wie tiktok.com/@name/video/123…: Genau diesen Link brauchst du."
+      },
+      {
+        "title": "Link kopieren",
+        "body": "Klicke in die Adressleiste und drücke Ctrl+C unter Windows oder Cmd+C auf dem Mac, oder klicke neben dem Video auf Teilen → Link kopieren. Links aus der Handy-App (vm.tiktok.com/…) funktionieren auch, zum Beispiel wenn du sie dir selbst schickst."
+      },
+      {
+        "title": "In TokDown einfügen",
+        "body": "Öffne tokdown.org in einem neuen Tab (Ctrl+T oder Cmd+T), klicke in das Feld und füge den Link mit Ctrl+V oder Cmd+V ein, oder klicke auf „Einfügen“. Klicke dann auf „Video herunterladen“."
+      },
+      {
+        "title": "Format wählen",
+        "body": "Klicke auf „HD · Ohne Wasserzeichen“ für die beste Qualität, auf SD für eine kleinere Datei oder auf „Audio MP3“, wenn du nur den Ton willst. Ist der Dienst ohne Wasserzeichen gerade ausgelastet, bekommst du stattdessen die Original-TikTok-Datei mit Wasserzeichen, mit einem Hinweis dazu."
+      },
+      {
+        "title": "Datei finden",
+        "body": "Windows: im Downloads-Ordner (C:\\Users\\DeinName\\Downloads), oder drück in Chrome oder Edge Ctrl+J. Mac: Downloads im Finder oder der Download-Pfeil in der Safari-Symbolleiste. Mit einem Doppelklick spielst du das Video ab."
+      }
+    ],
+    "ctaText": "Link kopiert? Füge ihn auf der Startseite ein und wähle HD.",
+    "ctaButton": "Zum TikTok-Downloader",
+    "sections": [
+      {
+        "title": "Brauchst du die TikTok-App auf dem Computer?",
+        "paragraphs": [
+          "Nein. Viele Treffer zu „TikTok herunterladen PC“ erklären, wie du die TikTok-App aus dem Microsoft Store installierst oder die Android-App über einen Emulator wie BlueStacks auf dem Mac laufen lässt. Für das Speichern eines Videos brauchst du beides nicht: Die TikTok-Website spielt jedes öffentliche Video im Browser ab, und ihr Link ist alles, was ein Downloader braucht.",
+          "TikToks eigene Download-Funktion liefert, wenn der Creator sie erlaubt, eine Datei mit eingebranntem TikTok-Logo und Nutzernamen. Ein Web-Downloader gibt dir die Datei so, wie sie hochgeladen wurde. Deshalb sieht sie sauberer aus, wenn du sie schneidest oder zuschneidest."
+        ]
+      },
+      {
+        "title": "Windows oder Mac: Was ist anders?",
+        "paragraphs": [
+          "Nur die Tastenkürzel (Ctrl unter Windows, Cmd auf dem Mac) und der Speicherort. Beim ersten Mal fragt Safari eventuell, ob Downloads von tokdown.org erlaubt werden sollen: Klicke auf „Erlauben“. Chrome und Edge zeigen fertige Dateien in einem kleinen Download-Feld oben rechts.",
+          "Die MP4 nutzt H.264-Video und AAC-Audio, das öffnet jeder aktuelle Player und jedes Schnittprogramm: Fotos, Clipchamp und VLC unter Windows, QuickTime und iMovie auf dem Mac, Premiere Pro, DaVinci Resolve oder CapCut auf beiden. Eine Umwandlung ist nicht nötig."
+        ]
+      }
+    ],
+    "tipsTitle": "Tipps, wenn du mehrere Videos am Computer speicherst",
+    "tips": [
+      {
+        "title": "TokDown im eigenen Tab lassen",
+        "body": "Link im TikTok-Tab kopieren, mit Ctrl+Tab wechseln, einfügen, herunterladen und dann auf „Weiteres Video herunterladen“ klicken. Das ist der schnellste Weg von Hand; ein ganzes Profil mit einem Klick herunterzuladen geht nicht."
+      },
+      {
+        "title": "Speicherort festlegen",
+        "body": "Chrome und Edge: Einstellungen → Downloads → „Vor dem Download von Dateien nach dem Speicherort fragen“. Safari: Einstellungen → Allgemein → Speicherort für Downloads. Ein eigener TikTok-Ordner hält den Downloads-Ordner aufgeräumt."
+      },
+      {
+        "title": "Gleich umbenennen",
+        "body": "Dateien werden nach dem Video benannt, lange Beschreibungen ergeben also lange Dateinamen. Benenne sie direkt um, wenn du Clips für ein Projekt sammelst."
+      },
+      {
+        "title": "Diashows kommen als Bilder",
+        "body": "Fotobeiträge werden als einzelne Bilder gespeichert. Chrome fragt einmal, ob mehrere Downloads von der Seite erlaubt sind: Klicke auf „Zulassen“, dann folgen die restlichen Bilder."
+      }
+    ],
+    "troubleshootTitle": "Fehlerbehebung am PC und Mac",
+    "troubleshoot": [
+      {
+        "problem": "Der Link wird nicht angenommen",
+        "fix": "Prüfe, ob du einen Video-Link kopiert hast (er enthält /video/ oder /photo/ oder beginnt mit vm.tiktok.com oder vt.tiktok.com) und keine Profil- oder Suchseite. Links zu privaten, nur für Freunde sichtbaren oder gelöschten Videos funktionieren ebenfalls nicht."
+      },
+      {
+        "problem": "Das Video öffnet sich in einem Tab, statt herunterzuladen",
+        "fix": "Klicke mit der rechten Maustaste auf den Download-Button und wähle in Chrome, Edge oder Firefox „Link speichern unter…“, in Safari „Verknüpfte Datei laden“."
+      },
+      {
+        "problem": "„Dienst ausgelastet“ oder nur eine Version mit Wasserzeichen",
+        "fix": "Der kostenlose Dienst, der die sauberen Dateien holt, hat ein Tageslimit. Warte ein paar Minuten und versuch es erneut; mit deinem Computer ist alles in Ordnung."
+      }
+    ],
+    "faqTitle": "FAQ zu PC und Mac",
+    "faq": [
+      {
+        "q": "Kann ich TikTok-Videos am PC ohne App herunterladen?",
+        "a": "Ja. Kopiere den Video-Link von tiktok.com, füge ihn in einem beliebigen Browser in TokDown ein und klicke auf „Video herunterladen“. Unter Windows und macOS musst du nichts installieren."
+      },
+      {
+        "q": "Kann ich TikTok-Videos auf dem MacBook ohne BlueStacks herunterladen?",
+        "a": "Ja. Einen Emulator brauchst du nur, um die Android-App auszuführen. Zum Speichern eines Videos reichen die TikTok-Website und ein Browser, egal ob auf einem MacBook Air, MacBook Pro oder einem anderen Mac."
+      },
+      {
+        "q": "Funktioniert das auf einem Chromebook oder unter Linux?",
+        "a": "Ja. TokDown läuft in jedem modernen Browser, Chromebooks und Linux-Laptops funktionieren also genauso, und die Dateien landen im Downloads-Ordner."
+      },
+      {
+        "q": "Muss ich etwas installieren? Ist das sicher?",
+        "a": "Keine Installation, keine Erweiterung. TokDown ist eine Website und kann deshalb weder deine anderen Tabs noch deine Browserdaten lesen. Die Seite finanziert sich über Werbung: Nach deinem ersten Download-Ergebnis kann sich ein Werbefenster im Hintergrund öffnen, das du einfach schließen kannst."
+      },
+      {
+        "q": "Kann ich am PC viele TikToks auf einmal herunterladen?",
+        "a": "Nein. TokDown speichert ein Video pro Link. Vorsicht bei Tools, die ganze Profile versprechen, wenn du dich dafür mit deinem TikTok-Konto anmeldest: Gib einer Website niemals dein Passwort."
+      },
+      {
+        "q": "Ist es legal, TikTok-Videos auf dem Computer herunterzuladen?",
+        "a": "Das Gerät spielt keine Rolle. Eine Privatkopie für den eigenen Gebrauch ist je nach Land meist in Ordnung; fremde Videos ohne Erlaubnis erneut zu posten oder kommerziell zu nutzen dagegen nicht, und TikToks Nutzungsbedingungen schränken externe Download-Tools ein."
+      }
+    ]
+  },
+  "GuideSlideshow": {
+    "metaTitle": "TikTok Diashow herunterladen – mit Sound",
+    "metaDescription": "TikTok Diashow herunterladen auf drei Arten: jedes Foto in voller Größe ohne Wasserzeichen, den Sound als MP3 oder alles als Video. Ohne App, ohne Login.",
+    "eyebrow": "Diashow-Anleitung · Oktober 2026",
+    "h1": "TikTok-Diashow herunterladen",
+    "subtitle": "TikTok-Fotobeiträge sind keine Videos, deshalb funktioniert das Speichern anders. So behältst du die Fotos, die Musik oder die ganze Diashow.",
+    "answerTitle": "Die kurze Antwort",
+    "answer": "Kopiere den Link des Beitrags (Teilen → Link kopieren), füge ihn in den Foto-Downloader von TokDown ein und tippe auf „Fotos herunterladen“. Du bekommst jedes Bild in voller Größe ohne Wasserzeichen, einen Button „Alle herunterladen“ und den Sound als MP3. Stellt TikTok zusätzlich eine gerenderte Version bereit, speichert der Button „Slideshow als Video“ alles als ein MP4 mit Musik.",
+    "stepsTitle": "Schritt für Schritt: TikTok-Diashow herunterladen",
+    "steps": [
+      {
+        "title": "Prüfen, ob es ein Fotobeitrag ist",
+        "body": "Fotobeiträge wischt man seitlich, unten siehst du Punkte oder einen Zähler wie 1/8. Ihr Link enthält /photo/ statt /video/."
+      },
+      {
+        "title": "Link kopieren",
+        "body": "Tippe auf Teilen (den Pfeil) und dann auf Link kopieren. Am Computer kopierst du die Adresse aus der Browserleiste."
+      },
+      {
+        "title": "In den Foto-Downloader einfügen",
+        "body": "Öffne tokdown.org/photo-downloader, füge den Link ein und tippe auf „Fotos herunterladen“. Der Video-Downloader auf der Startseite nimmt Foto-Links ebenfalls an."
+      },
+      {
+        "title": "Bilder speichern",
+        "body": "Tippe auf ein Bild, um nur dieses zu speichern, oder auf „Alle herunterladen“, um alle Bilder der Reihe nach zu sichern, durchnummeriert, damit die Reihenfolge stimmt. Chrome fragt einmal, ob mehrere Downloads erlaubt sind: Tippe auf „Zulassen“."
+      },
+      {
+        "title": "Sound oder Videoversion speichern",
+        "body": "Tippe auf „Audio MP3“ für die Musik. Erscheint ein Button „Slideshow als Video“, bekommst du ein MP4 mit allen Bildern und dem Sound."
+      }
+    ],
+    "ctaText": "Du hast einen Diashow-Link? Füge ihn in den Foto-Downloader ein.",
+    "ctaButton": "Zum Foto-Downloader",
+    "sections": [
+      {
+        "title": "Fotos, Sound oder Video: Was brauchst du?",
+        "paragraphs": [
+          "Nimm die Fotos, wenn du ein einzelnes Bild drucken, bearbeiten oder teilen willst: Es sind die Originaldateien, ohne Wasserzeichen und ohne zusätzliche Komprimierung. Nimm die MP3, wenn du nur die Musik oder das Voice-over willst. Nimm die Videoversion, wenn du die Diashow genau so willst, wie sie auf TikTok läuft, etwa um sie in einer Chat-App zu verschicken.",
+          "Die Videoversion erscheint nur, wenn TikTok für den Beitrag eine gerendert hat. Fehlt sie, baust du sie in einem beliebigen Editor wie CapCut, iMovie oder Clipchamp aus den Bildern und der MP3 nach: Bilder der Reihe nach einfügen, Audio dazu und jedem Bild zwei bis drei Sekunden geben."
+        ]
+      },
+      {
+        "title": "Warum andere Downloader an Diashows scheitern",
+        "paragraphs": [
+          "Eine Diashow besteht aus mehreren Bildern und einer Tonspur, die TikTok zusammen abspielt. Downloader, die nur für Videos gebaut sind, suchen eine Videodatei, finden keine und brechen ab oder liefern nur das erste Bild. TokDown liest die Bilderliste selbst aus. Deshalb haben die Bilder auch kein Wasserzeichen: TikTok brennt sein Logo nur in gerenderte Videos ein."
+        ]
+      }
+    ],
+    "tipsTitle": "Tipps für Handy und Computer",
+    "tips": [
+      {
+        "title": "iPhone: in Fotos sichern",
+        "body": "In Safari öffnet sich ein Bild eventuell in einem neuen Tab oder landet in der Dateien-App. Drück lange auf das Bild und wähle „Zu Fotos hinzufügen“, dann ist es in deinen Aufnahmen."
+      },
+      {
+        "title": "Android: im Downloads-Ordner nachsehen",
+        "body": "Bilder landen im Downloads-Ordner und erscheinen nach kurzer Zeit in Google Fotos oder deiner Galerie unter Downloads."
+      },
+      {
+        "title": "Reihenfolge behalten",
+        "body": "Nutze „Alle herunterladen“, statt die Bilder einzeln zu speichern: Die Dateien sind in der Reihenfolge nummeriert, die der Creator festgelegt hat."
+      },
+      {
+        "title": "Creator nennen",
+        "body": "Wenn du ein Bild mit Erlaubnis des Creators teilst, markiere das Originalkonto. Die Bilder tragen kein Wasserzeichen, die Quellenangabe liegt also bei dir."
+      }
+    ],
+    "troubleshootTitle": "Fehlerbehebung",
+    "troubleshoot": [
+      {
+        "problem": "Nur das erste Bild wird heruntergeladen",
+        "fix": "Dein Browser hat die weiteren Downloads blockiert. Such in der Adressleiste nach einem Symbol für blockierte Downloads, erlaube mehrere Downloads für tokdown.org und tippe erneut auf „Alle herunterladen“."
+      },
+      {
+        "problem": "Kein Button „Slideshow als Video“",
+        "fix": "TikTok hat für diesen Beitrag kein gerendertes Video bereitgestellt. Speichere die Bilder und die MP3 und füge sie wie oben beschrieben in einem Editor zusammen."
+      },
+      {
+        "problem": "Der MP3-Button fehlt",
+        "fix": "Bei manchen Beiträgen gibt es keine separate Tondatei oder gar keinen Ton. Die Bilder lassen sich trotzdem ganz normal herunterladen."
+      },
+      {
+        "problem": "„Beitrag nicht gefunden“",
+        "fix": "Das Konto ist vielleicht privat, der Beitrag nur für Freunde sichtbar oder gelöscht. Nur öffentliche Beiträge lassen sich abrufen."
+      }
+    ],
+    "faqTitle": "FAQ zu Diashows",
+    "faq": [
+      {
+        "q": "Kann man eine TikTok-Diashow als Video herunterladen?",
+        "a": "Ja, wenn TikTok eine gerenderte Version bereitstellt: Dann zeigt TokDown den Button „Slideshow als Video“, der ein MP4 mit Musik speichert. Andernfalls speicherst du die Fotos und die MP3 und fügst sie in einem Videoeditor zusammen."
+      },
+      {
+        "q": "Wie lade ich Bilder einer TikTok-Diashow ohne Wasserzeichen herunter?",
+        "a": "Jedes Bild wird als Original-Bilddatei heruntergeladen. TikTok fügt sein Wasserzeichen nur gerenderten Videos hinzu, die Bilder sind also sauber."
+      },
+      {
+        "q": "Kann ich eine TikTok-Diashow mit Sound speichern?",
+        "a": "Ja. Der Sound wird neben den Bildern als separate MP3 angeboten und ist in der Videoversion enthalten, wenn es eine gibt."
+      },
+      {
+        "q": "Funktioniert TikToks eigener Speichern-Button bei Diashows?",
+        "a": "Je nach App-Version und Download-Einstellung des Creators lässt TikTok dich ein Foto oder eine Videoversion mit Logo speichern. Ein Downloader gibt dir alle Bilder auf einmal, ohne Logo."
+      },
+      {
+        "q": "Funktioniert das am PC und Mac?",
+        "a": "Ja. Füge den Link in einem beliebigen Browser ein und nutze „Alle herunterladen“; die Bilder landen in deinem Downloads-Ordner."
+      },
+      {
+        "q": "Kann ich Diashows von privaten Konten herunterladen?",
+        "a": "Nein. Wie jeder Downloader kann TokDown nur öffentliche Beiträge abrufen."
+      }
+    ]
+  },
+  "GuideNoSave": {
+    "metaTitle": "TikTok Video speichern geht nicht? Gründe & Hilfe",
+    "metaDescription": "TikTok Video speichern geht nicht? Warum die Option fehlt (Creator-Einstellung, privates Konto, unter 16), wie du sie für deine Videos einschaltest.",
+    "eyebrow": "Hilfe · Oktober 2026",
+    "h1": "„Video speichern“ fehlt bei TikTok? Daran liegt’s",
+    "subtitle": "Der Button „Video speichern“ verschwindet aus ein paar ganz bestimmten Gründen. Finde deinen, behebe ihn bei deinen eigenen Videos und sieh, welche Möglichkeiten du bei fremden hast.",
+    "answerTitle": "Die kurze Antwort",
+    "answer": "TikTok blendet „Video speichern“ aus oder graut es aus, wenn der Creator Video-Downloads deaktiviert hat, wenn das Konto privat ist oder wenn der Creator unter 16 ist, denn dann sind Downloads immer aus. Für deine eigenen Videos schaltest du es unter Einstellungen und Datenschutz → Datenschutz → Downloads ein. Bei fremden Videos frag den Creator oder speichere das Video in deinen Favoriten.",
+    "stepsTitle": "Was tun, wenn „Video speichern“ fehlt?",
+    "steps": [
+      {
+        "title": "Den Grund herausfinden",
+        "body": "Öffne das Profil des Creators. Ein Schloss-Symbol oder „Dieses Konto ist privat“ heißt: privates Konto. Ist das Profil öffentlich und „Video speichern“ fehlt oder ist ausgegraut, hat der Creator Downloads deaktiviert oder ist unter 16."
+      },
+      {
+        "title": "Dein eigenes Video? Downloads einschalten",
+        "body": "Geh zu Profil → Menü (☰) → Einstellungen und Datenschutz → Datenschutz → Downloads und schalte es ein. Dafür brauchst du ein öffentliches Konto und musst mindestens 16 sein; die Einstellung gilt für alle deine Videos, alte und neue."
+      },
+      {
+        "title": "In den Favoriten behalten",
+        "body": "Tippe auf das Lesezeichen-Symbol, um das Video zum Tab „Favoriten“ in deinem Profil hinzuzufügen. Das ist keine Offline-Kopie, aber immer erlaubt, und das Video bleibt beim Creator."
+      },
+      {
+        "title": "Den Creator fragen",
+        "body": "Ein Kommentar oder eine Nachricht mit der Bitte um die Datei oder um Erlaubnis zum Speichern ist der sauberste Weg, und der einzige, wenn du das Video weiterverwenden willst. Heb die Antwort als Nachweis der Erlaubnis auf."
+      },
+      {
+        "title": "Eine Privatkopie eines öffentlichen Videos",
+        "body": "Ein Web-Downloader wie TokDown liest dieselbe öffentliche Datei, die dein Browser abspielt, und kann ein öffentliches Video deshalb auch dann holen, wenn der Button aus ist. Ob das in Ordnung ist, hängt von den Regeln zur Privatkopie in deinem Land und von TikToks Nutzungsbedingungen ab, die externe Download-Tools einschränken. Behalte so eine Kopie für dich, poste sie nie erneut und lass die Videos junger Creator in Ruhe."
+      }
+    ],
+    "ctaText": "Du speicherst ein öffentliches Video nur für dich? Füge seinen Link ein.",
+    "ctaButton": "Zum Downloader",
+    "sections": [
+      {
+        "title": "Die Gründe, warum der Button verschwindet",
+        "paragraphs": [
+          "Der Creator hat Downloads deaktiviert. Jeder Creator ab 16 entscheidet selbst, ob andere seine Videos herunterladen dürfen. Ist die Einstellung aus, blendet TikTok „Video speichern“ für alle anderen aus oder graut es aus, bei alten und neuen Beiträgen gleichermaßen.",
+          "Das Konto ist privat. Private Konten können Downloads gar nicht einschalten, ihre Videos zeigen die Option also nie, nicht einmal bestätigten Followern.",
+          "Der Creator ist unter 16. TikTok schaltet Downloads für diese Konten ab und lässt sie nicht einschalten. Bei 16- und 17-Jährigen ist die Einstellung anfangs aus und lässt sich einschalten.",
+          "Das Problem liegt bei dir. Fehlt „Video speichern“ bei jedem Video, auch bei großen öffentlichen Konten, aktualisiere die TikTok-App, starte sie neu und prüfe, ob du angemeldet bist."
+        ]
+      },
+      {
+        "title": "Bildschirmaufnahme ist kein Schlupfloch",
+        "paragraphs": [
+          "Eine Bildschirmaufnahme funktioniert auf jedem Handy, aber du nimmst auch Beschreibungen, Buttons und Benachrichtigungen mit auf, und die Qualität sinkt auf die Auflösung deines Bildschirms. An den Regeln ändert sie auch nichts: Für eine Aufnahme gelten dieselben Grenzen bei Urheberrecht und Privatkopie wie für einen Download."
+        ]
+      }
+    ],
+    "tipsTitle": "",
+    "tips": [],
+    "troubleshootTitle": "",
+    "troubleshoot": [],
+    "faqTitle": "FAQ zu „Video speichern“",
+    "faq": [
+      {
+        "q": "Warum kann ich manche TikTok-Videos nicht speichern?",
+        "a": "Weil der Creator Downloads deaktiviert hat, das Konto privat ist oder der Creator unter 16 ist. In jedem dieser Fälle entfernt TikTok die Option „Video speichern“ für andere Nutzer oder graut sie aus."
+      },
+      {
+        "q": "Wie schalte ich Downloads für meine TikTok-Videos ein?",
+        "a": "Profil → Menü (☰) → Einstellungen und Datenschutz → Datenschutz → Downloads. Dein Konto muss öffentlich sein und du musst mindestens 16 sein; die Einstellung gilt für alle deine Beiträge."
+      },
+      {
+        "q": "Kann ich ein TikTok herunterladen, wenn der Creator Downloads deaktiviert hat?",
+        "a": "Technisch kann ein Web-Downloader jedes öffentliche Video abrufen. Der Creator hat aber signalisiert, dass er keine Kopien im Umlauf haben will. Behalte es also strikt für dich zum Anschauen, poste es nie erneut und lass es bei jungen Creatorn ganz bleiben. Auch TikToks Nutzungsbedingungen schränken externe Download-Tools ein."
+      },
+      {
+        "q": "Löscht das Abschalten der Downloads Kopien, die andere schon gespeichert haben?",
+        "a": "Nein. Laut TikTok bleiben Kopien, die gespeichert wurden, als Downloads noch an waren, auf den Geräten der anderen. Das Abschalten verhindert nur neue Downloads."
+      },
+      {
+        "q": "Kann ich ein Video von einem privaten Konto speichern?",
+        "a": "Nein, weder mit TikToks Button noch mit einem Web-Tool. Bitte die Person, dir die Datei zu schicken."
+      }
+    ]
+  },
+  "GuideDraft": {
+    "metaTitle": "TikTok Entwurf in Galerie speichern: So geht’s",
+    "metaDescription": "TikTok Entwurf in Galerie oder Fotos-App speichern, ohne dass jemand ihn sieht: der „Nur ich“-Trick, der Schalter „Auf Gerät speichern“ und ein Backup.",
+    "eyebrow": "Entwürfe-Anleitung · Oktober 2026",
+    "h1": "TikTok-Entwurf in der Galerie speichern",
+    "subtitle": "Entwürfe liegen nur in der TikTok-App auf deinem Handy. So bekommst du einen in deine Galerie oder Fotos-App, ohne dass ihn jemand anderes sieht.",
+    "answerTitle": "Die kurze Antwort",
+    "answer": "Die meisten App-Versionen haben keinen Button „Entwurf exportieren“. Der zuverlässige Weg: Entwurf öffnen, auf „Weiter“ tippen, bei der Sichtbarkeit „Nur ich“ wählen, „Auf Gerät speichern“ einschalten und posten. Niemand sonst sieht den Beitrag, und eine Kopie landet in deiner Galerie. Den privaten Beitrag kannst du danach löschen, die gespeicherte Kopie bleibt. Die Menünamen unterscheiden sich je nach App-Version leicht.",
+    "stepsTitle": "Schritt für Schritt: Entwurf speichern, ohne ihn öffentlich zu posten",
+    "steps": [
+      {
+        "title": "Entwürfe öffnen",
+        "body": "Geh zu deinem Profil und tippe auf „Entwürfe“, die erste Kachel in deinem Video-Raster. Tippe auf den Entwurf, den du behalten willst."
+      },
+      {
+        "title": "Zum Posten-Bildschirm wechseln",
+        "body": "Tippe auf „Weiter“. Verändere das Video nicht; du nutzt den Posten-Bildschirm nur zum Exportieren."
+      },
+      {
+        "title": "Sichtbarkeit auf „Nur ich“ stellen",
+        "body": "Tippe auf die Sichtbarkeitseinstellung („Jeder kann diesen Beitrag ansehen“) und wähle „Nur ich“. Der Beitrag erscheint weder bei deinen Followern noch auf der „Für dich“-Seite."
+      },
+      {
+        "title": "„Auf Gerät speichern“ einschalten",
+        "body": "Öffne „Weitere Optionen“ und schalte „Auf Gerät speichern“ ein. Bei manchen Versionen sitzt der Schalter direkt auf dem Posten-Bildschirm."
+      },
+      {
+        "title": "Posten und Galerie prüfen",
+        "body": "Tippe auf „Posten“. Ist der Upload fertig, ist das Video in deiner Fotos-App oder Galerie. Den privaten Beitrag kannst du behalten oder löschen: Löschen entfernt die gespeicherte Kopie nicht."
+      }
+    ],
+    "ctaText": "Du willst lieber ein öffentliches TikTok von jemand anderem speichern? Füge seinen Link in den Downloader ein.",
+    "ctaButton": "Zum Downloader",
+    "sections": [
+      {
+        "title": "Warum du Entwürfe sichern solltest",
+        "paragraphs": [
+          "Entwürfe werden auf deinem Handy in der TikTok-App gespeichert, nicht in deinem TikTok-Konto. Wenn du die App löschst, ihren Speicher leerst oder auf ein neues Handy wechselst, sind sie weg, und erneutes Anmelden holt sie nicht zurück. Ist dir ein Entwurf wichtig, exportiere ihn, bevor so etwas passiert."
+        ]
+      },
+      {
+        "title": "Andere Wege und ihre Nachteile",
+        "paragraphs": [
+          "Eine Bildschirmaufnahme bleibt komplett privat und kommt ohne Posten aus, aber die Kopie enthält alles, was auf dem Bildschirm zu sehen ist, und erreicht nur die Auflösung deines Bildschirms. Starte die Aufnahme, spiel den Entwurf in der Vorschau des Editors im Vollbild ab und schneide Anfang und Ende danach weg.",
+          "Manche App-Versionen bieten direkt in den Entwürfen oder im Editor eine Speichern-Option. Wenn du eine siehst, nutze sie: Das ist am schnellsten. Sie gibt es aber nicht in jeder Version und nicht in jeder Region, deshalb ist die „Nur ich“-Methode oben der zuverlässige Weg."
+        ]
+      }
+    ],
+    "tipsTitle": "Tipps",
+    "tips": [
+      {
+        "title": "Kopie ohne Wasserzeichen",
+        "body": "Die Kopie über „Auf Gerät speichern“ entsteht auf deinem Handy aus deiner eigenen Bearbeitung und hat deshalb meist kein TikTok-Logo. Speicherst du das gepostete Video später über das Teilen-Menü, kommen Logo und Nutzername dazu."
+      },
+      {
+        "title": "Später veröffentlichen",
+        "body": "Willst du das Video doch veröffentlichen, öffne den privaten Beitrag, tippe auf ⋯ → Datenschutzeinstellungen und stell ihn auf „Alle“, statt die Datei erneut hochzuladen."
+      },
+      {
+        "title": "Neues Handy",
+        "body": "Exportiere jeden Entwurf, den du behalten willst, mit den Schritten oben und übertrage die Dateien dann mit iCloud-Fotos, Google Fotos oder per Kabel. TikTok selbst kann Entwürfe nicht übertragen."
+      }
+    ],
+    "troubleshootTitle": "Fehlerbehebung",
+    "troubleshoot": [
+      {
+        "problem": "Der Schalter „Auf Gerät speichern“ fehlt",
+        "fix": "Aktualisiere TikTok. Fehlt er dann immer noch, poste trotzdem mit „Nur ich“, öffne danach den Beitrag, tippe auf Teilen oder ⋯ und wähle „Video speichern“; diese Kopie kann das Wasserzeichen tragen."
+      },
+      {
+        "problem": "Das Video ist nicht in meiner Galerie",
+        "fix": "Prüfe, ob TikTok in deine Fotos speichern darf. iPhone: Einstellungen → TikTok → Fotos. Android: Einstellungen → Apps → TikTok → Berechtigungen → Fotos und Videos."
+      },
+      {
+        "problem": "Kann TokDown meinen Entwurf herunterladen?",
+        "fix": "Nein, und auch kein anderes Web-Tool. Ein Entwurf verlässt dein Handy nie, und ein „Nur ich“-Beitrag ist privat, keiner von beiden hat also einen öffentlichen Link, den man abrufen könnte."
+      }
+    ],
+    "faqTitle": "FAQ zu Entwürfen",
+    "faq": [
+      {
+        "q": "Kann man einen TikTok-Entwurf speichern, ohne ihn zu posten?",
+        "a": "In den meisten App-Versionen gibt es dafür keinen direkten Button. Eine Bildschirmaufnahme geht ohne Posten; ansonsten postest du ihn mit „Nur ich“ und eingeschaltetem „Auf Gerät speichern“, dann sieht ihn niemand sonst."
+      },
+      {
+        "q": "Sehen meine Follower einen „Nur ich“-Beitrag?",
+        "a": "Nein. Einen „Nur ich“-Beitrag siehst nur du. Er erscheint weder im Feed deiner Follower noch auf der „Für dich“-Seite."
+      },
+      {
+        "q": "Werden TikTok-Entwürfe auf ein neues Handy übertragen?",
+        "a": "Nein. Entwürfe sind auf dem Gerät gespeichert, nicht in deinem Konto. Exportiere die, die du behalten willst, also vor dem Wechsel."
+      },
+      {
+        "q": "Löscht das Entfernen des privaten Beitrags das gespeicherte Video?",
+        "a": "Nein. Die Kopie in deiner Galerie oder Fotos-App ist eine eigene Datei und bleibt, wenn du den Beitrag löschst."
+      },
+      {
+        "q": "Werden TikTok-Entwürfe in der Cloud gespeichert?",
+        "a": "Nein. Sie bleiben auf dem Handy, auf dem du sie erstellt hast. Deshalb sind sie weg, wenn du die App löschst."
+      }
+    ]
+  },
+  "Cookie": {
+    "text": "Wir verwenden Cookies und Werbepartner von Drittanbietern, um Anzeigen auszuspielen und Zugriffe zu analysieren.",
+    "link": "Mehr dazu in unserer Datenschutzerklärung",
+    "accept": "Akzeptieren & weiter"
   }
 }
