@@ -201,7 +201,11 @@ export default function Downloader({ variant = 'video', platform = 'tiktok' }: {
         {state.status === 'success' && (
           <div ref={resultRef} className="fade-up flex flex-col gap-4 scroll-mt-20">
             <VideoResult data={state.data} />
-            <AdsterraBanner size="300x250" lazy={false} />
+            {/* Highest-attention moment, so the unit stays in view with the result, but py-8 keeps
+                ≥48px clear of the download buttons above and "Download another" below (accidental taps). */}
+            <div className="py-8">
+              <AdsterraBanner size="300x250" lazy={false} />
+            </div>
             <button onClick={reset} className="btn-ghost inline-flex h-12 items-center justify-center rounded-full px-5 text-sm">
               {v('downloadAnother')}
             </button>

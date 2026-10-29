@@ -89,6 +89,11 @@ export default async function DownloadPrivateTikTok({ params }: Props) {
             </p>
           </section>
 
+          {/* Phones only: first ad after the opening section instead of only at the end */}
+          <div className="w-full max-w-2xl mb-12 md:hidden">
+            <AdsterraBanner size="300x250" only="mobile" />
+          </div>
+
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           <section className="w-full max-w-2xl mb-12" aria-labelledby="levels-h">

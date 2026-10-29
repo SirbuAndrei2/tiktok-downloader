@@ -253,6 +253,12 @@ export default async function Page({ params }: Props) {
             </div>
           </section>
 
+          {/* Phones only (desktop has the side rails): between the tools grid and the comparison table,
+              halfway down the page instead of just before the FAQ. */}
+          <div className="w-full max-w-6xl px-5 pt-16 md:hidden">
+            <AdsterraBanner size="300x250" only="mobile" />
+          </div>
+
           {/* ── Why TokDown ────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pt-24" aria-labelledby="why-h">
             <div className="grid gap-10 lg:grid-cols-12">
@@ -283,10 +289,6 @@ export default async function Page({ params }: Props) {
               </BlurFade>
             </div>
           </section>
-
-          <div className="w-full max-w-6xl px-5 pt-16 md:hidden">
-            <AdsterraBanner size="300x250" only="mobile" />
-          </div>
 
           {/* ── FAQ ────────────────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 pb-24 pt-24" aria-labelledby="faq-h">

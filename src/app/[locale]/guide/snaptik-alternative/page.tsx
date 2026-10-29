@@ -145,6 +145,11 @@ export default async function SnaptikAlternative({ params }: Props) {
             </div>
           </section>
 
+          {/* Phones only: first ad after the opening section instead of only at the end */}
+          <div className="w-full max-w-2xl mb-12 md:hidden">
+            <AdsterraBanner size="300x250" only="mobile" />
+          </div>
+
           <Separator className="mb-10 max-w-2xl w-full" style={{ background: 'var(--line)' }} />
 
           {/* What TokDown does (no scores for other sites: we have no dated test of them) */}

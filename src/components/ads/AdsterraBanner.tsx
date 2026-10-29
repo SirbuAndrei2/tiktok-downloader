@@ -37,7 +37,11 @@ interface Props {
    * and 320×50 below. Only one unit is ever mounted.
    */
   size?: Size | 'responsive' | 'inline'
-  /** Mount only on phones (<768px) or only on larger screens. Nothing is rendered server-side for these, so no hidden impressions. */
+  /**
+   * Mount only on phones (<768px) or only on larger screens. Server-side and on the first client render an empty
+   * shell reserves the slot's height on the matching viewport (hidden by CSS on the other), and the iframe is only
+   * created once the viewport matches: no hidden impressions, no layout shift.
+   */
   only?: 'mobile' | 'desktop'
   className?: string
   lazy?: boolean
@@ -57,13 +61,18 @@ export default function AdsterraBanner({ size = '300x250', only, className = '',
   const pending = size === 'inline' && viewport === 'unknown'
   const dev = process.env.NODE_ENV === 'development'
   if (!key) return null
-  if (only && viewport !== only) return null
+  // `only` slots: before the viewport is known (server HTML, first client render) an empty shell holds the
+  // space on the matching viewport only (CSS), so the slot does not shift the page when the unit mounts.
+  // No iframe is requested until the viewport matches, so there are no hidden impressions.
+  const holdOnly = only !== undefined && viewport === 'unknown'
+  if (only && !holdOnly && viewport !== only) return null
+  const onlyClass = only === 'mobile' ? 'md:hidden' : only === 'desktop' ? 'max-md:hidden' : ''
 
   return (
-    <aside className={`ad-slot mx-auto w-full max-w-full ${className}`} style={{ maxWidth: Math.max(w, 300) + 2 }} aria-label={t('adLabel')}>
+    <aside className={`ad-slot mx-auto w-full max-w-full ${onlyClass} ${className}`} style={{ maxWidth: Math.max(w, 300) + 2 }} aria-label={t('adLabel')}>
       <span className="ad-slot-label" aria-hidden>{t('adLabel')}</span>
       <div className="flex items-center justify-center p-2" style={{ minHeight: reserve + 16 }}>
-        {pending ? null : dev ? (
+        {pending || holdOnly ? null : dev ? (
           <span className="mono text-[10px]" style={{ color: 'var(--t4)' }}>Adsterra banner · {resolved}</span>
         ) : (
           <iframe

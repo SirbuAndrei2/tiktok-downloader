@@ -129,6 +129,11 @@ export default async function PhotoDownloaderPage({ params }: Props) {
             </div>
           </section>
 
+          {/* Phones only: a 300×250 under the hero, as on home and the tool pages (desktop layout unchanged) */}
+          <div className="w-full max-w-6xl px-5 pt-4 md:hidden">
+            <AdsterraBanner size="300x250" only="mobile" />
+          </div>
+
           {/* ── How it works ───────────────────────────────────── */}
           <section className="w-full max-w-6xl px-5 py-20" aria-labelledby="steps-h">
             <SectionIntro id="steps-h" eyebrow={tNav('photoDownloader')} title={t('stepsTitle')} subtitle={t('stepsSubtitle')} />
